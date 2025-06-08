@@ -1,6 +1,6 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import { useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import { DateCell } from "../../../../components/common/table/table-cells/date-cell";
 import { TextCell } from "../../../../components/common/table/table-cells/text-cell";
 import QuoteStatusBadge from "../quote-status-badge";
@@ -8,28 +8,28 @@ import QuoteStatusBadge from "../quote-status-badge";
 const columnHelper = createColumnHelper<any>();
 
 export const useQuotesTableColumns = () => {
-  const { t } = useTranslation();
+  const { t } = useB2BTranslation();
 
   return useMemo(
     () => [
       columnHelper.accessor("draft_order.display_id", {
-        header: t("fields.id"),
+        header: t("routes.quotes.table.id"),
         cell: ({ getValue }) => <TextCell text={`#${getValue()}`} />,
       }),
       columnHelper.accessor("status", {
-        header: t("fields.status"),
+        header: t("routes.quotes.table.status"),
         cell: ({ getValue }) => <QuoteStatusBadge status={getValue()} />,
       }),
       columnHelper.accessor("customer.email", {
-        header: t("fields.email"),
+        header: t("routes.quotes.table.customer"),
         cell: ({ getValue }) => <TextCell text={getValue()} />,
       }),
       columnHelper.accessor("draft_order.customer.employee.company.name", {
-        header: t("fields.company"),
+        header: t("routes.quotes.table.company"),
         cell: ({ getValue }) => <TextCell text={getValue()} />,
       }),
       columnHelper.accessor("draft_order.total", {
-        header: t("fields.total"),
+        header: t("routes.quotes.table.amount"),
         cell: ({ getValue, row }) => {
           <TextCell
             text={`${row.original.draft_order.currency_code.toUpperCase()} ${getValue()}`}
@@ -38,7 +38,7 @@ export const useQuotesTableColumns = () => {
       }),
 
       columnHelper.accessor("created_at", {
-        header: t("fields.createdAt"),
+        header: t("routes.quotes.table.createdAt"),
         cell: ({ getValue }) => <DateCell date={getValue()} />,
       }),
     ],

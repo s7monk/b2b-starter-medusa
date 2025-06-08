@@ -1,6 +1,7 @@
 import { DataTable } from "../../../../admin/components";
 import { useDataTable } from "../../../../admin/hooks";
 import { useApprovals } from "../../../../admin/hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import { useApprovalsTableColumns } from "./table/columns";
 import { useApprovalsTableFilters } from "./table/filters";
 import { useApprovalsTableQuery } from "./table/query";
@@ -8,6 +9,7 @@ import { useApprovalsTableQuery } from "./table/query";
 const PAGE_SIZE = 50;
 
 export const ApprovalsTable = () => {
+  const { t } = useB2BTranslation();
   const { searchParams, raw } = useApprovalsTableQuery({
     pageSize: PAGE_SIZE,
   });
@@ -42,8 +44,8 @@ export const ApprovalsTable = () => {
         orderBy={["id", "created_at"]}
         queryObject={raw}
         noRecords={{
-          title: "No approvals found",
-          message: "There are currently no approvals.",
+          title: t("routes.approvals.noApprovals"),
+          message: t("routes.approvals.noApprovalsDescription"),
         }}
       />
     </div>

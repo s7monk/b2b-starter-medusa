@@ -1,6 +1,6 @@
 import { createColumnHelper } from "@tanstack/react-table";
 import { useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import { TextCell } from "../../../../components/common/table/table-cells/text-cell";
 import { StatusBadge } from "@medusajs/ui";
 import { ApprovalStatusType } from "../../../../../types/approval";
@@ -11,26 +11,36 @@ import { ApprovalActions } from "../approval-actions";
 const columnHelper = createColumnHelper<any>();
 
 export const useApprovalsTableColumns = () => {
-  const { t } = useTranslation();
+  const { t } = useB2BTranslation();
 
   return useMemo(
     () => [
       columnHelper.accessor("id", {
-        header: t("fields.id"),
+        header: t("routes.approvals.table.orderId"),
         cell: ({ getValue }) => <TextCell text={`#${getValue().slice(-4)}`} />,
       }),
       columnHelper.accessor("updated_at", {
-        header: t("Updated at"),
+        header: t("routes.approvals.table.requestedAt"),
         cell: ({ getValue }) => <DateCell date={getValue()} />,
       }),
       columnHelper.accessor("company.name", {
-        header: t("fields.company"),
+        header: t("routes.approvals.table.company"),
         cell: ({ getValue }) => <TextCell text={getValue()} />,
       }),
       columnHelper.accessor("approval_status.status", {
-        header: t("fields.status"),
+        header: t("routes.approvals.table.status"),
         cell: ({ getValue }) => {
           const status = getValue();
+          const getStatusText = (status: string) => {
+            switch (status) {
+              case ApprovalStatusType.APPROVED:
+                return t("routes.approvals.status.approved");
+              case ApprovalStatusType.REJECTED:
+                return t("routes.approvals.status.rejected");
+              default:
+                return t("routes.approvals.status.pending");
+            }
+          };
           return (
             <StatusBadge
               color={
@@ -41,7 +51,7 @@ export const useApprovalsTableColumns = () => {
                   : "purple"
               }
             >
-              {status.charAt(0).toUpperCase() + status.slice(1).toLowerCase()}
+              {getStatusText(status)}
             </StatusBadge>
           );
         },
@@ -56,7 +66,7 @@ export const useApprovalsTableColumns = () => {
         ),
       }),
       columnHelper.accessor("actions", {
-        header: t("Actions"),
+        header: t("routes.approvals.table.actions"),
         cell: ({ row }) => <ApprovalActions cart={row.original} />,
       }),
     ],

@@ -1,0 +1,168 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "报价",
+      "companies": "公司", 
+      "approvals": "审批"
+    },
+    "routes": {
+    "quotes": {
+      "title": "报价",
+      "subtitle": "管理客户报价和提案",
+      "noQuotes": "无记录",
+      "noQuotesDescription": "当前没有报价。请从店面创建一个。",
+      "table": {
+        "id": "报价号",
+        "customer": "客户",
+        "status": "状态",
+        "company": "公司", 
+        "amount": "金额",
+        "createdAt": "创建时间",
+        "actions": "操作"
+      },
+      "status": {
+        "pending_merchant": "等待商家处理",
+        "pending_customer": "等待客户回复", 
+        "merchant_rejected": "商家已拒绝",
+        "customer_rejected": "客户已拒绝",
+        "accepted": "已接受"
+      },
+      "actions": {
+        "sendQuote": "发送报价",
+        "rejectQuote": "拒绝报价",
+        "viewOrder": "查看订单"
+      },
+      "details": {
+        "header": "报价详情",
+        "customer": "客户",
+        "items": "商品",
+        "total": "总计",
+        "subtotal": "小计",
+        "shipping": "运费",
+        "tax": "税费",
+        "messages": "消息"
+      },
+      "confirmations": {
+        "sendTitle": "发送报价？",
+        "sendDescription": "您即将向客户发送此报价。是否继续？",
+        "rejectTitle": "拒绝报价？",
+        "rejectDescription": "您即将拒绝客户的报价。是否继续？"
+      },
+      "toasts": {
+        "sendSuccess": "成功向客户发送报价",
+        "rejectSuccess": "成功拒绝客户报价"
+      },
+      "acceptance": {
+        "message": "客户已接受报价。订单已准备好处理。"
+      }
+    },
+    "companies": {
+      "title": "公司",
+      "subtitle": "管理客户公司和组织",
+      "createCompany": "创建",
+      "noCompanies": "未找到公司", 
+      "noCompaniesDescription": "当前没有公司。创建一个开始吧。",
+      "table": {
+        "name": "公司名称",
+        "phone": "电话",
+        "email": "邮箱",
+        "address": "地址",
+        "employees": "员工",
+        "customerGroup": "客户组",
+        "actions": "操作"
+      },
+      "form": {
+        "generalInfo": "基本信息",
+        "name": "公司名称",
+        "email": "邮箱",
+        "phone": "电话号码",
+        "address": "地址",
+        "city": "城市",
+        "state": "省份",
+        "zipCode": "邮政编码",
+        "country": "国家",
+        "currency": "货币",
+        "logoUrl": "公司Logo网址",
+        "selectCountry": "选择国家",
+        "selectCurrency": "选择货币",
+        "logo": "公司徽标",
+        "website": "网站",
+        "description": "描述"
+      },
+      "actions": {
+        "edit": "编辑公司",
+        "delete": "删除公司",
+        "viewEmployees": "查看员工",
+        "assignGroup": "分配客户组"
+      },
+      "details": {
+        "overview": "概览",
+        "employees": "员工",
+        "orders": "订单",
+        "settings": "设置"
+      }
+    },
+    "approvals": {
+      "title": "审批", 
+      "subtitle": "管理订单审批工作流",
+      "noApprovals": "无记录",
+      "noApprovalsDescription": "当前没有待审批的请求。",
+      "table": {
+        "orderId": "订单号",
+        "customer": "客户",
+        "company": "公司",
+        "amount": "金额",
+        "status": "状态",
+        "requestedAt": "申请时间",
+        "actions": "操作"
+      },
+      "status": {
+        "pending": "待审批",
+        "approved": "已批准",
+        "rejected": "已拒绝",
+        "expired": "已过期"
+      },
+      "actions": {
+        "approve": "批准",
+        "reject": "拒绝",
+        "review": "审核"
+      },
+      "details": {
+        "approvalRequest": "审批请求",
+        "requestedBy": "申请人",
+        "reason": "原因",
+        "orderDetails": "订单详情"
+      },
+      "confirmations": {
+        "approveTitle": "批准订单？",
+        "approveDescription": "您即将批准此订单。是否继续？",
+        "rejectTitle": "拒绝订单？",
+        "rejectDescription": "您即将拒绝此订单审批请求。是否继续？"
+      },
+      "toasts": {
+        "approveSuccess": "订单审批成功",
+        "rejectSuccess": "订单审批已拒绝"
+      }
+    }
+  },
+  "common": {
+    "loading": "加载中...",
+    "noData": "暂无数据",
+    "search": "搜索",
+    "filter": "筛选",
+    "export": "导出",
+    "import": "导入",
+    "refresh": "刷新",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "view": "查看",
+    "create": "创建",
+    "back": "返回",
+    "next": "下一页",
+    "previous": "上一页",
+    "error": "错误"
+    }
+  }
+} 

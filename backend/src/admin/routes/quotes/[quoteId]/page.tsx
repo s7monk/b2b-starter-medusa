@@ -72,9 +72,8 @@ const QuoteDetails = () => {
 
   const handleSendQuote = async () => {
     const res = await prompt({
-      title: "Send quote?",
-      description:
-        "You are about to send this quote to the customer. Do you want to continue?",
+      title: t("b2b:routes.quotes.confirmations.sendTitle"),
+      description: t("b2b:routes.quotes.confirmations.sendDescription"),
       confirmText: t("actions.continue"),
       cancelText: t("actions.cancel"),
       variant: "confirmation",
@@ -84,7 +83,7 @@ const QuoteDetails = () => {
       await sendQuote(
         {},
         {
-          onSuccess: () => toast.success("Successfully sent quote to customer"),
+          onSuccess: () => toast.success(t("b2b:routes.quotes.toasts.sendSuccess")),
           onError: (e) => toast.error(e.message),
         }
       );
@@ -93,9 +92,8 @@ const QuoteDetails = () => {
 
   const handleRejectQuote = async () => {
     const res = await prompt({
-      title: "Reject quote?",
-      description:
-        "You are about to reject this customer's quote. Do you want to continue?",
+      title: t("b2b:routes.quotes.confirmations.rejectTitle"),
+      description: t("b2b:routes.quotes.confirmations.rejectDescription"),
       confirmText: t("actions.continue"),
       cancelText: t("actions.cancel"),
       variant: "confirmation",
@@ -104,7 +102,7 @@ const QuoteDetails = () => {
     if (res) {
       await rejectQuote(void 0, {
         onSuccess: () =>
-          toast.success("Successfully rejected customer's quote"),
+          toast.success(t("b2b:routes.quotes.toasts.rejectSuccess")),
         onError: (e) => toast.error(e.message),
       });
     }
@@ -131,14 +129,14 @@ const QuoteDetails = () => {
               <div className="flex items-center justify-between px-6 py-4">
                 <Text className="txt-compact-small">
                   <CheckCircleSolid className="inline-block mr-2 text-green-500 text-lg" />
-                  Quote accepted by customer. Order is ready for processing.
+                  {t("b2b:routes.quotes.acceptance.message")}
                 </Text>
 
                 <Button
                   size="small"
                   onClick={() => navigate(`/orders/${quote.draft_order_id}`)}
                 >
-                  View Order
+                  {t("b2b:routes.quotes.actions.viewOrder")}
                 </Button>
               </div>
             </Container>
@@ -159,7 +157,7 @@ const QuoteDetails = () => {
                     onClick={() => handleRejectQuote()}
                     disabled={isSendingQuote}
                   >
-                    Reject Quote
+                    {t("b2b:routes.quotes.actions.rejectQuote")}
                   </Button>
                 )}
 
@@ -170,7 +168,7 @@ const QuoteDetails = () => {
                     onClick={() => handleSendQuote()}
                     disabled={isSendingQuote}
                   >
-                    Send Quote
+                    {t("b2b:routes.quotes.actions.sendQuote")}
                   </Button>
                 )}
               </div>
@@ -185,12 +183,12 @@ const QuoteDetails = () => {
         <div className="mt-2 flex w-full max-w-[100%] flex-col gap-y-3 xl:mt-0 xl:max-w-[400px]">
           <Container className="divide-y p-0">
             <div className="flex items-center justify-between px-6 py-4">
-              <Heading level="h2">Customer</Heading>
+              <Heading level="h2">{t("b2b:routes.quotes.details.customer")}</Heading>
             </div>
 
             <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
               <Text size="small" weight="plus" leading="compact">
-                Email
+                {t("fields.email")}
               </Text>
 
               <Link

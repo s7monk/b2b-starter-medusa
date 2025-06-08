@@ -1,0 +1,162 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Quotes",
+      "companies": "Companies", 
+      "approvals": "Approvals"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Quotes",
+      "subtitle": "Manage customer quotes and proposals",
+      "noQuotes": "No quotes found",
+      "noQuotesDescription": "There are currently no quotes. Create one from the storefront.",
+      "table": {
+        "id": "Quote ID",
+        "customer": "Customer",
+        "status": "Status",
+        "company": "Company", 
+        "amount": "Amount",
+        "createdAt": "Created",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending_merchant": "Pending Merchant",
+        "pending_customer": "Pending Customer", 
+        "merchant_rejected": "Merchant Rejected",
+        "customer_rejected": "Customer Rejected",
+        "accepted": "Accepted"
+      },
+      "actions": {
+        "sendQuote": "Send Quote",
+        "rejectQuote": "Reject Quote",
+        "viewOrder": "View Order"
+      },
+      "details": {
+        "header": "Quote Details",
+        "customer": "Customer",
+        "items": "Items",
+        "total": "Total",
+        "subtotal": "Subtotal",
+        "shipping": "Shipping",
+        "tax": "Tax",
+        "messages": "Messages"
+      },
+      "confirmations": {
+        "sendTitle": "Send quote?",
+        "sendDescription": "You are about to send this quote to the customer. Do you want to continue?",
+        "rejectTitle": "Reject quote?",
+        "rejectDescription": "You are about to reject this customer's quote. Do you want to continue?"
+      },
+      "toasts": {
+        "sendSuccess": "Successfully sent quote to customer",
+        "rejectSuccess": "Successfully rejected customer's quote"
+      },
+      "acceptance": {
+        "message": "Quote accepted by customer. Order is ready for processing."
+      }
+    },
+    "companies": {
+      "title": "Companies",
+      "subtitle": "Manage customer companies and organizations",
+      "createCompany": "Create Company",
+      "noCompanies": "No companies found", 
+      "noCompaniesDescription": "There are currently no companies. Create one to get started.",
+      "table": {
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "employees": "Employees",
+        "customerGroup": "Customer Group",
+        "actions": "Actions"
+      },
+      "form": {
+        "generalInfo": "General Information",
+        "name": "Company Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "address": "Address",
+        "city": "City",
+        "state": "State",
+        "zipCode": "ZIP Code",
+        "logo": "Company Logo",
+        "website": "Website",
+        "description": "Description"
+      },
+      "actions": {
+        "edit": "Edit Company",
+        "delete": "Delete Company",
+        "viewEmployees": "View Employees",
+        "assignGroup": "Assign Customer Group"
+      },
+      "details": {
+        "overview": "Overview",
+        "employees": "Employees",
+        "orders": "Orders",
+        "settings": "Settings"
+      }
+    },
+    "approvals": {
+      "title": "Approvals", 
+      "subtitle": "Manage order approval workflows",
+      "noApprovals": "No approvals found",
+      "noApprovalsDescription": "There are currently no pending approvals.",
+      "table": {
+        "orderId": "Order ID",
+        "customer": "Customer",
+        "company": "Company",
+        "amount": "Amount",
+        "status": "Status",
+        "requestedAt": "Requested",
+        "actions": "Actions"
+      },
+      "status": {
+        "pending": "Pending Approval",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "expired": "Expired"
+      },
+      "actions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "review": "Review"
+      },
+      "details": {
+        "approvalRequest": "Approval Request",
+        "requestedBy": "Requested By",
+        "reason": "Reason",
+        "orderDetails": "Order Details"
+      },
+      "confirmations": {
+        "approveTitle": "Approve order?",
+        "approveDescription": "You are about to approve this order. Do you want to continue?",
+        "rejectTitle": "Reject order?",
+        "rejectDescription": "You are about to reject this order approval request. Do you want to continue?"
+      },
+      "toasts": {
+        "approveSuccess": "Order approved successfully",
+        "rejectSuccess": "Order approval rejected successfully"
+      }
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "noData": "No data available",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "create": "Create",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+    }
+  }
+} 

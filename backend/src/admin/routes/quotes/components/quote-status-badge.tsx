@@ -1,12 +1,5 @@
 import { StatusBadge } from "@medusajs/ui";
-
-const StatusTitles: Record<string, string> = {
-  accepted: "Accepted",
-  customer_rejected: "Customer Rejected",
-  merchant_rejected: "Merchant Rejected",
-  pending_merchant: "Pending Merchant",
-  pending_customer: "Pending Customer",
-};
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 
 const StatusColors: Record<string, "green" | "orange" | "red" | "blue"> = {
   accepted: "green",
@@ -17,9 +10,28 @@ const StatusColors: Record<string, "green" | "orange" | "red" | "blue"> = {
 };
 
 export default function QuoteStatusBadge({ status }: { status: string }) {
+  const { t } = useB2BTranslation();
+
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case "accepted":
+        return t("routes.quotes.status.accepted");
+      case "customer_rejected":
+        return t("routes.quotes.status.customer_rejected");
+      case "merchant_rejected":
+        return t("routes.quotes.status.merchant_rejected");
+      case "pending_merchant":
+        return t("routes.quotes.status.pending_merchant");
+      case "pending_customer":
+        return t("routes.quotes.status.pending_customer");
+      default:
+        return status;
+    }
+  };
+
   return (
     <StatusBadge color={StatusColors[status]}>
-      {StatusTitles[status]}
+      {getStatusText(status)}
     </StatusBadge>
   );
 }

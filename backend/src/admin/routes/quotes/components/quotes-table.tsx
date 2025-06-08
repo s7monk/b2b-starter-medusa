@@ -1,6 +1,7 @@
 import { DataTable } from "../../../../admin/components";
 import { useDataTable } from "../../../../admin/hooks";
 import { useQuotes } from "../../../../admin/hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import { useQuotesTableColumns } from "./table/columns";
 import { useQuotesTableFilters } from "./table/filters";
 import { useQuotesTableQuery } from "./table/query";
@@ -9,6 +10,7 @@ const PAGE_SIZE = 50;
 const PREFIX = "quo";
 
 export const QuotesTable = () => {
+  const { t } = useB2BTranslation();
   const { searchParams, raw } = useQuotesTableQuery({
     pageSize: PAGE_SIZE,
     prefix: PREFIX,
@@ -51,9 +53,8 @@ export const QuotesTable = () => {
         orderBy={["id", "created_at"]}
         queryObject={raw}
         noRecords={{
-          title: "No quotes found",
-          message:
-            "There are currently no quotes. Create one from the storefront.",
+          title: t("routes.quotes.noQuotes"),
+          message: t("routes.quotes.noQuotesDescription"),
         }}
       />
     </div>

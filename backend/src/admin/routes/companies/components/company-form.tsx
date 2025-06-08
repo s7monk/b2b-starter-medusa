@@ -2,6 +2,7 @@ import { Button, Drawer, Input, Label, Select, Text } from "@medusajs/ui";
 import { AdminUpdateCompany } from "../../../../types";
 import { useState } from "react";
 import { useRegions } from "../../../hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 
 export function CompanyForm({
   company,
@@ -14,6 +15,7 @@ export function CompanyForm({
   loading: boolean;
   error: Error | null;
 }) {
+  const { t } = useB2BTranslation();
   const [formData, setFormData] = useState<AdminUpdateCompany>(
     company || ({} as AdminUpdateCompany)
   );
@@ -39,7 +41,7 @@ export function CompanyForm({
     <form>
       <Drawer.Body className="p-4">
         <div className="flex flex-col gap-2">
-          <Label size="xsmall">Company Name</Label>
+          <Label size="xsmall">{t("routes.companies.form.name")}</Label>
           <Input
             type="text"
             name="name"
@@ -47,7 +49,7 @@ export function CompanyForm({
             onChange={handleChange}
             placeholder="Medusa"
           />
-          <Label size="xsmall">Company Phone</Label>
+          <Label size="xsmall">{t("routes.companies.form.phone")}</Label>
           <Input
             type="text"
             name="phone"
@@ -55,7 +57,7 @@ export function CompanyForm({
             onChange={handleChange}
             placeholder="1234567890"
           />
-          <Label size="xsmall">Company Email</Label>
+          <Label size="xsmall">{t("routes.companies.form.email")}</Label>
           <Input
             type="email"
             name="email"
@@ -63,7 +65,7 @@ export function CompanyForm({
             onChange={handleChange}
             placeholder="medusa@medusa.com"
           />
-          <Label size="xsmall">Company Address</Label>
+          <Label size="xsmall">{t("routes.companies.form.address")}</Label>
           <Input
             type="text"
             name="address"
@@ -71,7 +73,7 @@ export function CompanyForm({
             onChange={handleChange}
             placeholder="1234 Main St"
           />
-          <Label size="xsmall">Company City</Label>
+          <Label size="xsmall">{t("routes.companies.form.city")}</Label>
           <Input
             type="text"
             name="city"
@@ -79,7 +81,7 @@ export function CompanyForm({
             onChange={handleChange}
             placeholder="New York"
           />
-          <Label size="xsmall">Company State</Label>
+          <Label size="xsmall">{t("routes.companies.form.state")}</Label>
           <Input
             type="text"
             name="state"
@@ -87,7 +89,7 @@ export function CompanyForm({
             onChange={handleChange}
             placeholder="NY"
           />
-          <Label size="xsmall">Company Zip</Label>
+          <Label size="xsmall">{t("routes.companies.form.zipCode")}</Label>
           <Input
             type="text"
             name="zip"
@@ -97,7 +99,7 @@ export function CompanyForm({
           />
           <div className="flex gap-4 w-full">
             <div className="flex flex-col gap-2 w-1/2">
-              <Label size="xsmall">Company Country</Label>
+              <Label size="xsmall">{t("routes.companies.form.country")}</Label>
               <Select
                 name="country"
                 value={formData.country || ""}
@@ -105,7 +107,7 @@ export function CompanyForm({
                 disabled={regionsLoading}
               >
                 <Select.Trigger disabled={regionsLoading}>
-                  <Select.Value placeholder="Select a country" />
+                  <Select.Value placeholder={t("routes.companies.form.selectCountry")} />
                 </Select.Trigger>
                 <Select.Content className="z-50">
                   {countries?.map((country) => (
@@ -120,7 +122,7 @@ export function CompanyForm({
               </Select>
             </div>
             <div className="flex flex-col gap-2 w-1/2">
-              <Label size="xsmall">Currency</Label>
+              <Label size="xsmall">{t("routes.companies.form.currency")}</Label>
 
               <Select
                 name="currency_code"
@@ -130,7 +132,7 @@ export function CompanyForm({
                 disabled={regionsLoading}
               >
                 <Select.Trigger disabled={regionsLoading}>
-                  <Select.Value placeholder="Select a currency" />
+                  <Select.Value placeholder={t("routes.companies.form.selectCurrency")} />
                 </Select.Trigger>
 
                 <Select.Content className="z-50">
@@ -144,7 +146,7 @@ export function CompanyForm({
             </div>
           </div>
           {/* TODO: Add logo upload */}
-          <Label size="xsmall">Company Logo URL</Label>
+          <Label size="xsmall">{t("routes.companies.form.logoUrl")}</Label>
           <Input
             type="text"
             name="logo_url"
@@ -156,17 +158,17 @@ export function CompanyForm({
       </Drawer.Body>
       <Drawer.Footer>
         <Drawer.Close asChild>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="secondary">{t("common.cancel")}</Button>
         </Drawer.Close>
         <Button
           isLoading={loading}
           onClick={async () => await handleSubmit(formData)}
         >
-          Save
+          {t("common.save")}
         </Button>
         {error && (
           <Text className="txt-compact-small text-ui-fg-warning">
-            Error: {error?.message}
+            {t("common.error")}: {error?.message}
           </Text>
         )}
       </Drawer.Footer>

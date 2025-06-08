@@ -11,9 +11,14 @@ import {
 } from "@medusajs/ui";
 import { QueryCompany } from "../../../types";
 import { useAdminCustomerGroups, useCompanies } from "../../hooks/api";
+import { useB2BTranslation } from "../../hooks/use-b2b-translation";
+import { useMenuLabelUpdater } from "../../lib/menu-label-updater";
 import { CompanyActionsMenu, CompanyCreateDrawer } from "./components";
+import "../../lib/init-i18n";
 
 const Companies = () => {
+  const { t } = useB2BTranslation();
+  useMenuLabelUpdater(); // 启用菜单标签更新
   const { data, isPending } = useCompanies({
     fields:
       "*employees,*employees.customer,*employees.company,*customer_group,*approval_settings",
@@ -25,21 +30,21 @@ const Companies = () => {
     <>
       <Container className="flex flex-col p-0 overflow-hidden">
         <div className="p-6 flex justify-between">
-          <Heading className="font-sans font-medium h1-core">Companies</Heading>
+          <Heading className="font-sans font-medium h1-core">{t("routes.companies.title")}</Heading>
           <CompanyCreateDrawer />
         </div>
-        {isPending && <Text>Loading...</Text>}
+        {isPending && <Text>{t("common.loading")}</Text>}
         <Table>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell></Table.HeaderCell>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Phone</Table.HeaderCell>
-              <Table.HeaderCell>Email</Table.HeaderCell>
-              <Table.HeaderCell>Address</Table.HeaderCell>
-              <Table.HeaderCell>Employees</Table.HeaderCell>
-              <Table.HeaderCell>Customer Group</Table.HeaderCell>
-              <Table.HeaderCell>Actions</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.name")}</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.phone")}</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.email")}</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.address")}</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.employees")}</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.customerGroup")}</Table.HeaderCell>
+              <Table.HeaderCell>{t("routes.companies.table.actions")}</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           {data?.companies && (
