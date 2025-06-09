@@ -25,20 +25,27 @@ const MENU_TRANSLATIONS: Record<string, Record<string, string>> = {
 const updateMenuLabels = (language: string = 'zh') => {
   const translations = MENU_TRANSLATIONS[language] || MENU_TRANSLATIONS.en
   
-  // 查找扩展菜单项并更新标签
-  setTimeout(() => {
-    const menuItems = document.querySelectorAll('nav a[href^="/"], nav button')
-    
-    menuItems.forEach((item) => {
-      const textElement = item.querySelector('span, p')
-      if (textElement) {
-        const currentText = textElement.textContent?.trim()
-        if (currentText && translations[currentText]) {
-          textElement.textContent = translations[currentText]
-        }
+  // 立即更新，不使用setTimeout
+  const menuItems = document.querySelectorAll('nav a[href^="/"], nav button')
+  
+  menuItems.forEach((item) => {
+    const textElement = item.querySelector('span, p')
+    if (textElement) {
+      const currentText = textElement.textContent?.trim()
+      if (currentText && translations[currentText]) {
+        textElement.textContent = translations[currentText]
       }
-    })
-  }, 100)
+    }
+  })
+  
+  // 也检查直接包含文本的菜单项
+  const allMenuElements = document.querySelectorAll('nav span, nav p, nav a')
+  allMenuElements.forEach((element) => {
+    const currentText = element.textContent?.trim()
+    if (currentText && translations[currentText] && currentText !== translations[currentText]) {
+      element.textContent = translations[currentText]
+    }
+  })
 }
 
 /**
@@ -50,17 +57,75 @@ const setupGlobalMenuUpdater = () => {
   
   // 监听路由变化
   let lastUrl = location.href
-  new MutationObserver(() => {
-    const url = location.href
-    if (url !== lastUrl) {
-      lastUrl = url
-      // 路由变化时更新菜单
-      updateMenuLabels()
-    }
-  }).observe(document, { subtree: true, childList: true })
   
-  // 定期更新（作为后备方案）
-  setInterval(updateMenuLabels, 2000)
+  // 更精确的MutationObserver，特别关注菜单区域的变化
+  const observer = new MutationObserver((mutations) => {
+    let shouldUpdate = false
+    
+    // 检查URL变化
+    const currentUrl = location.href
+    if (currentUrl !== lastUrl) {
+      lastUrl = currentUrl
+      shouldUpdate = true
+    }
+    
+    // 检查是否有菜单相关的DOM变化
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList') {
+        // 检查是否是导航菜单区域的变化
+        const target = mutation.target as Element
+        if (target.tagName === 'NAV' || 
+            target.closest('nav') || 
+            target.querySelector('nav') ||
+            target.classList?.contains('navigation') ||
+            target.classList?.contains('sidebar')) {
+          shouldUpdate = true
+        }
+        
+        // 检查新添加的节点是否包含我们关心的菜单项
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const element = node as Element
+            const text = element.textContent?.trim()
+            if (text && (text === 'Companies' || text === 'Quotes' || text === 'Approvals')) {
+              shouldUpdate = true
+            }
+          }
+        })
+      }
+    })
+    
+    if (shouldUpdate) {
+      // 立即更新
+      updateMenuLabels()
+      // 再延迟一点点再次更新，确保DOM完全渲染
+      setTimeout(updateMenuLabels, 10)
+    }
+  })
+  
+  // 观察整个文档的变化，但重点关注子树和属性变化
+  observer.observe(document, { 
+    subtree: true, 
+    childList: true, 
+    attributes: true,
+    attributeFilter: ['class', 'style'] // 监听样式变化（比如展开/折叠）
+  })
+  
+  // 更频繁的定期更新（作为后备方案）
+  setInterval(updateMenuLabels, 500)
+  
+  // 监听点击事件，特别是可能导致菜单展开/折叠的点击
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element
+    // 如果点击的是菜单相关元素，延迟一点更新
+    if (target.closest('nav') || 
+        target.classList?.contains('expand') ||
+        target.classList?.contains('collapse') ||
+        target.closest('[role="button"]')) {
+      setTimeout(updateMenuLabels, 50)
+      setTimeout(updateMenuLabels, 150)
+    }
+  })
 }
 
 // 在应用启动时初始化B2B翻译
