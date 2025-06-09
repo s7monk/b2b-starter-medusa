@@ -35,9 +35,6 @@ export const retrieveCustomer = async (): Promise<B2BCustomer | null> => {
   return await sdk.client
     .fetch<{ customer: B2BCustomer }>(`/store/customers/me`, {
       method: "GET",
-      query: {
-        fields: "*employee, *orders",
-      },
       headers,
       next,
       cache: "force-cache",
