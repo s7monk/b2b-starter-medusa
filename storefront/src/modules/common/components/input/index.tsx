@@ -64,7 +64,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               className
             )}
             {...props}
-            value={value ?? ""}
+            {...(value !== undefined && { value })}
             ref={inputRef}
           />
           <label
