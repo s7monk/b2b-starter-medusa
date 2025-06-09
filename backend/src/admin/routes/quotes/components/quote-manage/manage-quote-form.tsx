@@ -4,6 +4,7 @@ import { Button, Heading, toast } from "@medusajs/ui";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import {
   RouteFocusModal,
   useRouteModal,
@@ -22,6 +23,7 @@ type ReturnCreateFormProps = {
 
 export const ManageQuoteForm = ({ order }: ReturnCreateFormProps) => {
   const { t } = useTranslation();
+  const { t: tB2B } = useB2BTranslation();
   const { handleSuccess } = useRouteModal();
   const { order: preview } = useOrderPreview(order.id);
 
@@ -43,7 +45,7 @@ export const ManageQuoteForm = ({ order }: ReturnCreateFormProps) => {
     try {
       await confirmQuote({});
 
-      toast.success("Successfully updated quote");
+      toast.success(tB2B("routes.quotes.toasts.updateSuccess"));
       handleSuccess();
     } catch (e) {
       toast.error(t("general.error"), {
@@ -63,7 +65,7 @@ export const ManageQuoteForm = ({ order }: ReturnCreateFormProps) => {
 
         <RouteFocusModal.Body className="flex size-full justify-center overflow-y-auto">
           <div className="mt-16 w-[720px] max-w-[100%] px-4 md:p-0">
-            <Heading level="h1">Manage Quote</Heading>
+            <Heading level="h1">{tB2B("routes.quotes.details.manageQuote")}</Heading>
 
             <ManageItemsSection preview={preview} order={order} />
 

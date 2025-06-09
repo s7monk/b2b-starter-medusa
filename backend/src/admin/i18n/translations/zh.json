@@ -50,6 +50,9 @@
         "selectItem": "选择商品",
         "send": "发送",
         "manage": "管理",
+        "manageQuote": "管理报价",
+        "updatePrice": "更新价格", 
+        "overridePriceHint": "覆盖此产品的单价",
         "phone": "电话",
         "spendingLimit": "消费限额",
         "company": "公司",
@@ -63,7 +66,9 @@
       },
       "toasts": {
         "sendSuccess": "成功向客户发送报价",
-        "rejectSuccess": "成功拒绝客户报价"
+        "rejectSuccess": "成功拒绝客户报价",
+        "messageSuccess": "成功向客户发送消息",
+        "updateSuccess": "成功更新报价"
       },
       "acceptance": {
         "message": "客户已接受报价。订单已准备好处理。"
@@ -267,7 +272,10 @@
     "previous": "上一页",
     "error": "错误",
     "confirmDeletion": "确认删除",
-    "confirmDeletionDesc": "您确定要删除此项目吗？此操作无法撤销。"
+    "confirmDeletionDesc": "您确定要删除此项目吗？此操作无法撤销。",
+    "confirmLeaveForm": "您确定要离开此表单吗？",
+    "confirmLeaveFormDesc": "您有未保存的更改，如果退出此表单将会丢失。",
+    "continue": "继续"
     }
   }
 } 

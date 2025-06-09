@@ -27,6 +27,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       topLabel,
       colSpan = 1,
       className,
+      value,
       ...props
     },
     ref
@@ -63,6 +64,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               className
             )}
             {...props}
+            value={value ?? ""}
             ref={inputRef}
           />
           <label

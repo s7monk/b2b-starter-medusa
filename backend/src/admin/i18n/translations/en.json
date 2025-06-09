@@ -50,6 +50,9 @@
         "selectItem": "Select Item",
         "send": "Send",
         "manage": "Manage",
+        "manageQuote": "Manage Quote",
+        "updatePrice": "Update Price",
+        "overridePriceHint": "Override the unit price of this product",
         "phone": "Phone",
         "spendingLimit": "Spending Limit",
         "company": "Company",
@@ -63,7 +66,9 @@
       },
       "toasts": {
         "sendSuccess": "Successfully sent quote to customer",
-        "rejectSuccess": "Successfully rejected customer's quote"
+        "rejectSuccess": "Successfully rejected customer's quote",
+        "messageSuccess": "Successfully sent message to customer",
+        "updateSuccess": "Successfully updated quote"
       },
       "acceptance": {
         "message": "Quote accepted by customer. Order is ready for processing."
@@ -261,7 +266,10 @@
     "next": "Next",
     "previous": "Previous",
     "confirmDeletion": "Confirm Deletion",
-    "confirmDeletionDesc": "Are you sure you want to delete this item? This action cannot be undone."
+    "confirmDeletionDesc": "Are you sure you want to delete this item? This action cannot be undone.",
+    "confirmLeaveForm": "Are you sure you want to leave this form?",
+    "confirmLeaveFormDesc": "You have unsaved changes that will be lost if you exit this form.",
+    "continue": "Continue"
     }
   }
 } 

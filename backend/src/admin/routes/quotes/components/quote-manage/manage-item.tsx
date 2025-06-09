@@ -16,6 +16,7 @@ import {
 } from "@medusajs/ui";
 import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import {
   ActionMenu,
   AmountCell,
@@ -44,6 +45,7 @@ function ManageItem({
   orderId,
 }: ManageItemProps) {
   const { t } = useTranslation();
+  const { t: tB2B } = useB2BTranslation();
   const [showPriceForm, setShowPriceForm] = useState(false);
 
   const { mutateAsync: addItems } = useAddItemsToQuote(orderId);
@@ -235,7 +237,7 @@ function ManageItem({
               {
                 actions: [
                   {
-                    label: "Update Price",
+                    label: tB2B("routes.quotes.details.updatePrice"),
                     onClick: () => setShowPriceForm(!showPriceForm),
                     icon: <PencilSquare />,
                   },
@@ -273,7 +275,7 @@ function ManageItem({
           <div>
             <Form.Label>{t("fields.price")}</Form.Label>
             <Form.Hint className="!mt-1">
-              Override the unit price of this product
+              {tB2B("routes.quotes.details.overridePriceHint")}
             </Form.Hint>
           </div>
 

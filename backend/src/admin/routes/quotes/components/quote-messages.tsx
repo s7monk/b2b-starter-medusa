@@ -60,7 +60,7 @@ export function QuoteMessages({
     await createMessage(
       {},
       {
-        onSuccess: () => toast.success("Successfully sent message to customer"),
+        onSuccess: () => toast.success(t("routes.quotes.toasts.messageSuccess")),
         onError: (e) => toast.error(e.message),
       }
     );
@@ -75,7 +75,7 @@ export function QuoteMessages({
       {
         onSuccess: () => {
           form.reset();
-          toast.success("Successfully sent message to customer");
+          toast.success(t("routes.quotes.toasts.messageSuccess"));
         },
         onError: (e) => toast.error(e.message),
       }

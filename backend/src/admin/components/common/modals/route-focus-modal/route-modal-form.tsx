@@ -3,6 +3,7 @@ import { PropsWithChildren } from "react";
 import { FieldValues, UseFormReturn } from "react-hook-form";
 import { useBlocker } from "react-router-dom";
 import { Form } from "../../form";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 
 type RouteModalFormProps<TFieldValues extends FieldValues> = PropsWithChildren<{
   form: UseFormReturn<TFieldValues>;
@@ -16,6 +17,7 @@ export const RouteModalForm = <TFieldValues extends FieldValues = any>({
   children,
   onClose,
 }: RouteModalFormProps<TFieldValues>) => {
+  const { t } = useB2BTranslation();
   const {
     formState: { isDirty },
   } = form;
@@ -66,20 +68,20 @@ export const RouteModalForm = <TFieldValues extends FieldValues = any>({
         <Prompt.Content>
           <Prompt.Header>
             <Prompt.Title>
-              Are you sure you want to leave this form?
+              {t("common.confirmLeaveForm")}
             </Prompt.Title>
 
             <Prompt.Description>
-              You have unsaved changes that will be lost if you exit this form.
+              {t("common.confirmLeaveFormDesc")}
             </Prompt.Description>
           </Prompt.Header>
 
           <Prompt.Footer>
             <Prompt.Cancel onClick={handleCancel} type="button">
-              Cancel
+              {t("common.cancel")}
             </Prompt.Cancel>
             <Prompt.Action onClick={handleContinue} type="button">
-              Continue
+              {t("common.continue")}
             </Prompt.Action>
           </Prompt.Footer>
         </Prompt.Content>
