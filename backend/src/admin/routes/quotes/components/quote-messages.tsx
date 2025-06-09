@@ -15,6 +15,7 @@ import { useParams } from "react-router-dom";
 import { z } from "zod";
 import { Form } from "../../../components/common/form";
 import { useCreateQuoteMessage } from "../../../hooks/api/quotes";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import { QuoteItem } from "./quote-details";
 
 export const CreateQuoteMessageForm = z.object({
@@ -30,6 +31,7 @@ export function QuoteMessages({
   preview: AdminOrderPreview;
 }) {
   const { quoteId } = useParams();
+  const { t } = useB2BTranslation();
 
   /**
    * FORM
@@ -83,7 +85,7 @@ export function QuoteMessages({
   return (
     <Container className="divide-y divide-dashed p-0">
       <div className="flex items-center justify-between px-6 py-4">
-        <Heading level="h2">Messages</Heading>
+        <Heading level="h2">{t("routes.quotes.details.messages")}</Heading>
       </div>
 
       <div>
@@ -128,16 +130,16 @@ export function QuoteMessages({
                   <Form.Item>
                     <div className="flex items-center gap-3">
                       <div className="flex-1">
-                        <Form.Label>Pick Quote Item</Form.Label>
+                        <Form.Label>{t("routes.quotes.details.pickQuoteItem")}</Form.Label>
                         <Form.Hint>
-                          Select a quote item to write a message around
+                          {t("routes.quotes.details.selectQuoteItem")}
                         </Form.Hint>
                       </div>
                       <div className="flex-1">
                         <Form.Control>
                           <Select onValueChange={onChange} {...field}>
                             <Select.Trigger className="bg-ui-bg-base" ref={ref}>
-                              <Select.Value placeholder="Select Item" />
+                              <Select.Value placeholder={t("routes.quotes.details.selectItem")} />
                             </Select.Trigger>
                             <Select.Content>
                               {preview.items.map((l) => (
@@ -177,7 +179,7 @@ export function QuoteMessages({
               disabled={isCreatingMessage}
               onClick={() => handleCreateMessage}
             >
-              Send
+              {t("routes.quotes.details.send")}
             </Button>
           </form>
         </Form>

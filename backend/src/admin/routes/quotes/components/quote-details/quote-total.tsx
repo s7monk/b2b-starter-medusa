@@ -1,7 +1,7 @@
 import { AdminOrder, AdminOrderPreview } from "@medusajs/framework/types";
 import { Text } from "@medusajs/ui";
-import { useTranslation } from "react-i18next";
 import { formatAmount } from "../../../../utils";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 
 export const QuoteTotal = ({
   order,
@@ -10,7 +10,7 @@ export const QuoteTotal = ({
   order: AdminOrder;
   preview: AdminOrderPreview;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useB2BTranslation();
 
   return (
     <div className=" flex flex-col gap-y-2 px-6 py-4">
@@ -21,7 +21,7 @@ export const QuoteTotal = ({
           size="small"
           leading="compact"
         >
-          Original Total
+          {t("routes.quotes.details.originalTotal")}
         </Text>
         <Text
           weight="plus"
@@ -40,7 +40,7 @@ export const QuoteTotal = ({
           leading="compact"
           weight="plus"
         >
-          Quote Total
+          {t("routes.quotes.details.quoteTotal")}
         </Text>
         <Text
           className="text-ui-fg-subtle text-bold"

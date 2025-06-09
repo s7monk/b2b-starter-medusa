@@ -2,12 +2,15 @@ import { AdminOrder } from "@medusajs/framework/types";
 import { Text } from "@medusajs/ui";
 import { ReactNode } from "react";
 import { formatAmount } from "../../../../utils";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 
 export const CostBreakdown = ({ order }: { order: AdminOrder }) => {
+  const { t } = useB2BTranslation();
+  
   return (
     <div className="text-ui-fg-subtle flex flex-col gap-y-2 px-6 py-4">
       <Cost
-        label="Discounts"
+        label={t("routes.quotes.details.discounts")}
         secondaryValue=""
         value={
           order.discount_total > 0
@@ -21,10 +24,9 @@ export const CostBreakdown = ({ order }: { order: AdminOrder }) => {
         )
         .map((sm, i) => {
           return (
-            <div>
+            <div key={sm.id}>
               <Cost
-                key={sm.id}
-                label={"Shipping"}
+                label={t("routes.quotes.details.shipping")}
                 secondaryValue={sm.name}
                 value={formatAmount(sm.total, order.currency_code)}
               />

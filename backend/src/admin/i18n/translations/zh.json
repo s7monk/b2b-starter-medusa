@@ -34,13 +34,26 @@
       },
       "details": {
         "header": "报价详情",
+        "quoteSummary": "报价摘要",
         "customer": "客户",
         "items": "商品",
         "total": "总计",
         "subtotal": "小计",
         "shipping": "运费",
         "tax": "税费",
-        "messages": "消息"
+        "messages": "消息",
+        "originalTotal": "原始总计",
+        "quoteTotal": "报价总计",
+        "discounts": "折扣",
+        "pickQuoteItem": "选择报价商品",
+        "selectQuoteItem": "选择一个报价商品来编写相关消息",
+        "selectItem": "选择商品",
+        "send": "发送",
+        "manage": "管理",
+        "phone": "电话",
+        "spendingLimit": "消费限额",
+        "company": "公司",
+        "name": "名称"
       },
       "confirmations": {
         "sendTitle": "发送报价？",

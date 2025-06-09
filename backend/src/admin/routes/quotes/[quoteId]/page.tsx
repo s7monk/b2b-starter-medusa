@@ -202,7 +202,7 @@ const QuoteDetails = () => {
 
             <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
               <Text size="small" weight="plus" leading="compact">
-                Phone
+                {t("b2b:routes.quotes.details.phone")}
               </Text>
 
               <Text size="small" leading="compact" className="text-pretty">
@@ -212,7 +212,7 @@ const QuoteDetails = () => {
 
             <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
               <Text size="small" weight="plus" leading="compact">
-                Spending Limit
+                {t("b2b:routes.quotes.details.spendingLimit")}
               </Text>
 
               <Text size="small" leading="compact" className="text-pretty">
@@ -226,12 +226,12 @@ const QuoteDetails = () => {
 
           <Container className="divide-y p-0">
             <div className="flex items-center justify-between px-6 py-4">
-              <Heading level="h2">Company</Heading>
+              <Heading level="h2">{t("b2b:routes.quotes.details.company")}</Heading>
             </div>
 
             <div className="text-ui-fg-subtle grid grid-cols-2 items-start px-6 py-4">
               <Text size="small" weight="plus" leading="compact">
-                Name
+                {t("b2b:routes.quotes.details.name")}
               </Text>
 
               <Link

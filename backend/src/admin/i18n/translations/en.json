@@ -34,13 +34,26 @@
       },
       "details": {
         "header": "Quote Details",
+        "quoteSummary": "Quote Summary",
         "customer": "Customer",
         "items": "Items",
         "total": "Total",
         "subtotal": "Subtotal",
         "shipping": "Shipping",
         "tax": "Tax",
-        "messages": "Messages"
+        "messages": "Messages",
+        "originalTotal": "Original Total",
+        "quoteTotal": "Quote Total",
+        "discounts": "Discounts",
+        "pickQuoteItem": "Pick Quote Item",
+        "selectQuoteItem": "Select a quote item to write a message around",
+        "selectItem": "Select Item",
+        "send": "Send",
+        "manage": "Manage",
+        "phone": "Phone",
+        "spendingLimit": "Spending Limit",
+        "company": "Company",
+        "name": "Name"
       },
       "confirmations": {
         "sendTitle": "Send quote?",

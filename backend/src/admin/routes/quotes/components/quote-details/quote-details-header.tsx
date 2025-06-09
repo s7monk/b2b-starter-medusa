@@ -2,6 +2,7 @@ import { EllipsisHorizontal, PencilSquare } from "@medusajs/icons";
 import { DropdownMenu, Heading, IconButton } from "@medusajs/ui";
 import { useNavigate } from "react-router-dom";
 import { AdminQuoteResponse } from "../../../../../types";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import QuoteStatusBadge from "../quote-status-badge";
 
 export const QuoteDetailsHeader = ({
@@ -10,10 +11,11 @@ export const QuoteDetailsHeader = ({
   quote: AdminQuoteResponse["quote"];
 }) => {
   const navigate = useNavigate();
+  const { t } = useB2BTranslation();
 
   return (
     <div className="flex items-center justify-between px-6 py-4">
-      <Heading level="h2">Quote Summary</Heading>
+      <Heading level="h2">{t("routes.quotes.details.quoteSummary")}</Heading>
 
       <div className="flex items-center gap-x-4">
         <div className="flex items-center gap-x-1.5">
@@ -39,7 +41,7 @@ export const QuoteDetailsHeader = ({
               }
             >
               <PencilSquare />
-              Manage
+              {t("routes.quotes.details.manage")}
             </DropdownMenu.Item>
           </DropdownMenu.Content>
         </DropdownMenu>
