@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import { AdminCreateEmployee, QueryCompany } from "../../../../../types";
 import { CoolSwitch } from "../../../../components/common";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import { currencySymbolMap } from "../../../../utils";
 
 export function EmployeesCreateForm({
@@ -22,6 +23,7 @@ export function EmployeesCreateForm({
   error: Error | null;
   company: QueryCompany;
 }) {
+  const { t } = useB2BTranslation();
   const [formData, setFormData] = useState<
     Omit<AdminCreateEmployee, "spending_limit"> & {
       spending_limit: string;
@@ -62,57 +64,57 @@ export function EmployeesCreateForm({
     <form onSubmit={onSubmit}>
       <Drawer.Body className="flex flex-col p-4 gap-6">
         <div className="flex flex-col gap-3">
-          <h2 className="h2-core">Details</h2>
+          <h2 className="h2-core">{t("routes.companies.employees.form.details")}</h2>
           <div className="flex flex-col gap-2">
             <Label size="xsmall" className="txt-compact-small font-medium">
-              First Name
+              {t("routes.companies.employees.form.firstName")}
             </Label>
             <Input
               type="text"
               name="first_name"
               onChange={handleChange}
-              placeholder="John"
+              placeholder={t("routes.companies.employees.form.firstNamePlaceholder")}
             />
           </div>
           <div className="flex flex-col gap-2">
             <Label size="xsmall" className="txt-compact-small font-medium">
-              Last Name
+              {t("routes.companies.employees.form.lastName")}
             </Label>
             <Input
               type="text"
               name="last_name"
               onChange={handleChange}
-              placeholder="Doe"
+              placeholder={t("routes.companies.employees.form.lastNamePlaceholder")}
             />
           </div>
           <div className="flex flex-col gap-2">
             <Label size="xsmall" className="txt-compact-small font-medium">
-              Email
+              {t("routes.companies.employees.form.email")}
             </Label>
             <Input
               type="email"
               name="email"
               onChange={handleChange}
-              placeholder="john.doe@example.com"
+              placeholder={t("routes.companies.employees.form.emailPlaceholder")}
             />
           </div>
           <div className="flex flex-col gap-2">
             <Label size="xsmall" className="txt-compact-small font-medium">
-              Phone
+              {t("routes.companies.employees.form.phone")}
             </Label>
             <Input
               type="text"
               name="phone"
               onChange={handleChange}
-              placeholder="0612345678"
+              placeholder={t("routes.companies.employees.form.phonePlaceholder")}
             />
           </div>
         </div>
         <div className="flex flex-col gap-3">
-          <h2 className="h2-core">Permissions</h2>
+          <h2 className="h2-core">{t("routes.companies.employees.form.permissions")}</h2>
           <div className="flex flex-col gap-2">
             <Label size="xsmall" className="txt-compact-small font-medium">
-              Spending Limit ({company.currency_code?.toUpperCase() || "USD"})
+              {t("routes.companies.employees.form.spendingLimit")} ({company.currency_code?.toUpperCase() || "USD"})
             </Label>
             <CurrencyInput
               symbol={currencySymbolMap[company.currency_code || "USD"]}
@@ -126,32 +128,32 @@ export function EmployeesCreateForm({
                   spending_limit: e.target.value.replace(/[^0-9]/g, ""),
                 })
               }
-              placeholder="1000"
+              placeholder={t("routes.companies.employees.form.spendingLimitPlaceholder")}
             />
           </div>
           <div className="flex flex-col gap-2">
             <Label size="xsmall" className="txt-compact-small font-medium">
-              Admin Access
+              {t("routes.companies.employees.form.adminAccess")}
             </Label>
             <CoolSwitch
               fieldName="is_admin"
-              label="Is Admin"
-              description="Enable to grant admin access"
+              label={t("routes.companies.employees.form.isAdmin")}
+              description={t("routes.companies.employees.form.isAdminDesc")}
               checked={formData.is_admin || false}
               onChange={(checked) =>
                 setFormData({ ...formData, is_admin: checked })
               }
-              tooltip="Admins can manage the company's details and employee permissions."
+              tooltip={t("routes.companies.employees.form.isAdminTooltip")}
             />
           </div>
         </div>
       </Drawer.Body>
       <Drawer.Footer>
         <Drawer.Close asChild>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="secondary">{t("common.cancel")}</Button>
         </Drawer.Close>
         <Button type="submit" disabled={loading}>
-          {loading ? "Saving..." : "Save"}
+          {loading ? t("routes.companies.employees.form.saving") : t("routes.companies.employees.form.save")}
         </Button>
         {error && <Text className="text-red-500">{error.message}</Text>}
       </Drawer.Footer>

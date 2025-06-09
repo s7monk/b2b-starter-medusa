@@ -6,9 +6,11 @@ import {
   useAdminCreateCustomer,
   useCreateEmployee,
 } from "../../../../hooks/api";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import { EmployeesCreateForm } from "./employees-create-form";
 
 export function EmployeeCreateDrawer({ company }: { company: QueryCompany }) {
+  const { t } = useB2BTranslation();
   const [open, setOpen] = useState(false);
 
   const {
@@ -35,7 +37,7 @@ export function EmployeeCreateDrawer({ company }: { company: QueryCompany }) {
     });
 
     if (!customer?.id) {
-      toast.error("Failed to create customer");
+      toast.error(t("routes.companies.employees.createCustomerError"));
       return;
     }
 
@@ -46,14 +48,12 @@ export function EmployeeCreateDrawer({ company }: { company: QueryCompany }) {
     });
 
     if (!employee) {
-      toast.error("Failed to create employee");
+      toast.error(t("routes.companies.employees.createEmployeeError"));
       return;
     }
 
     setOpen(false);
-    toast.success(
-      `Employee ${customer?.first_name} ${customer?.last_name} created successfully`
-    );
+    toast.success(t("routes.companies.employees.createEmployeeSuccess"));
   };
 
   const loading = createCustomerLoading || createEmployeeLoading;
@@ -63,12 +63,12 @@ export function EmployeeCreateDrawer({ company }: { company: QueryCompany }) {
     <Drawer open={open} onOpenChange={setOpen}>
       <Drawer.Trigger asChild>
         <Button variant="secondary" size="small">
-          Add
+          {t("routes.companies.companyDetails.add")}
         </Button>
       </Drawer.Trigger>
       <Drawer.Content>
         <Drawer.Header>
-          <Drawer.Title>Add Company Customer</Drawer.Title>
+          <Drawer.Title>{t("routes.companies.employees.createEmployee")}</Drawer.Title>
         </Drawer.Header>
         <EmployeesCreateForm
           handleSubmit={handleSubmit}

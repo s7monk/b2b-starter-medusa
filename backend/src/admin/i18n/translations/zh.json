@@ -93,13 +93,103 @@
         "edit": "编辑公司",
         "delete": "删除公司",
         "viewEmployees": "查看员工",
-        "assignGroup": "分配客户组"
+        "assignGroup": "分配客户组",
+        "editDetails": "编辑详情",
+        "manageCustomerGroup": "管理客户组",
+        "approvalSettings": "审批设置"
       },
       "details": {
         "overview": "概览",
         "employees": "员工",
         "orders": "订单",
         "settings": "设置"
+      },
+      "toasts": {
+        "updateSuccess": "公司更新成功",
+        "updateError": "公司更新失败",
+        "deleteSuccess": "公司删除成功",
+        "addToGroupSuccess": "公司已成功添加到客户组",
+        "addToGroupError": "添加公司到客户组失败",
+        "removeFromGroupSuccess": "公司已成功从客户组移除",
+        "removeFromGroupError": "从客户组移除公司失败"
+      },
+      "customerGroup": {
+        "title": "管理客户组",
+        "addToGroup": "添加到客户组",
+        "hint": "将 {companyName} 添加到客户组将自动添加 {employeeCount} 个关联员工到该客户组。",
+        "customerGroupColumn": "客户组",
+        "actionsColumn": "操作",
+        "addButton": "添加",
+        "removeButton": "移除",
+        "noGroupsFound": "未找到客户组"
+      },
+      "approvalSettings": {
+        "title": "公司审批设置",
+        "requiresAdminApproval": "需要管理员审批",
+        "requiresAdminApprovalDesc": "此公司下达的所有订单需要公司管理员审批。",
+        "requiresSalesManagerApproval": "需要销售经理审批",
+        "requiresSalesManagerApprovalDesc": "此公司下达的所有订单需要销售经理审批。",
+        "updateSuccess": "公司审批设置更新成功",
+        "updateError": "公司审批设置更新失败"
+      },
+      "companyDetails": {
+        "notFound": "未找到公司",
+        "phone": "电话",
+        "email": "邮箱",
+        "address": "地址",
+        "city": "城市",
+        "state": "省份",
+        "currency": "货币",
+        "customerGroup": "客户组",
+        "approvalSettings": "审批设置",
+        "requiresAdminApproval": "需要管理员审批",
+        "requiresSalesManagerApproval": "需要销售经理审批",
+        "noApprovalRequired": "无需审批",
+        "employees": "员工",
+        "name": "姓名",
+        "spendingLimit": "消费限额",
+        "actions": "操作",
+        "admin": "管理员",
+        "add": "添加",
+        "noEmployees": "无记录",
+        "noEmployeesDesc": "此公司没有任何员工。"
+      },
+      "employees": {
+        "createEmployee": "添加公司客户",
+        "createEmployeeSuccess": "员工创建成功",
+        "createCustomerError": "创建客户失败",
+        "createEmployeeError": "创建员工失败",
+        "form": {
+          "details": "详细信息",
+          "firstName": "名字",
+          "lastName": "姓氏",
+          "email": "邮箱",
+          "phone": "电话",
+          "permissions": "权限",
+          "spendingLimit": "消费限额",
+          "adminAccess": "管理员权限",
+          "isAdmin": "是管理员",
+          "isAdminDesc": "启用以授予管理员访问权限",
+          "isAdminTooltip": "管理员可以管理公司的详细信息和员工权限。",
+          "firstNamePlaceholder": "John",
+          "lastNamePlaceholder": "Doe",
+          "emailPlaceholder": "john.doe@example.com",
+          "phonePlaceholder": "0612345678",
+          "spendingLimitPlaceholder": "1000",
+          "saving": "保存中...",
+          "save": "保存"
+        },
+        "actions": {
+          "edit": "编辑",
+          "delete": "删除",
+          "deleteSuccess": "员工删除成功"
+        },
+        "edit": {
+          "title": "编辑员工",
+          "updateSuccess": "员工更新成功",
+          "editCustomerDetails": "编辑客户详情",
+          "company": "公司"
+        }
       }
     },
     "approvals": {
@@ -162,7 +252,9 @@
     "back": "返回",
     "next": "下一页",
     "previous": "上一页",
-    "error": "错误"
+    "error": "错误",
+    "confirmDeletion": "确认删除",
+    "confirmDeletionDesc": "您确定要删除此项目吗？此操作无法撤销。"
     }
   }
 } 

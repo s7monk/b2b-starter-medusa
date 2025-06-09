@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ActionMenu } from "../../../components/common";
 import { DeletePrompt } from "../../../components/common/delete-prompt";
 import { useDeleteCompany } from "../../../hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import {
   CompanyApprovalSettingsDrawer,
   CompanyCustomerGroupDrawer,
@@ -20,6 +21,7 @@ export const CompanyActionsMenu = ({
   company: QueryCompany;
   customerGroups?: HttpTypes.AdminCustomerGroup[];
 }) => {
+  const { t } = useB2BTranslation();
   const [editOpen, setEditOpen] = useState(false);
   const [customerGroupOpen, setCustomerGroupOpen] = useState(false);
   const [approvalSettingsOpen, setApprovalSettingsOpen] = useState(false);
@@ -33,7 +35,7 @@ export const CompanyActionsMenu = ({
     mutateDelete(company.id, {
       onSuccess: () => {
         navigate("/companies");
-        toast.success(`Company ${company.name} deleted successfully`);
+        toast.success(t("routes.companies.toasts.deleteSuccess"));
       },
     });
   };
@@ -46,17 +48,17 @@ export const CompanyActionsMenu = ({
             actions: [
               {
                 icon: <PencilSquare />,
-                label: "Edit details",
+                label: t("routes.companies.actions.editDetails"),
                 onClick: () => setEditOpen(true),
               },
               {
                 icon: <Link />,
-                label: "Manage customer group",
+                label: t("routes.companies.actions.manageCustomerGroup"),
                 onClick: () => setCustomerGroupOpen(true),
               },
               {
                 icon: <LockClosedSolid />,
-                label: "Approval settings",
+                label: t("routes.companies.actions.approvalSettings"),
                 onClick: () => setApprovalSettingsOpen(true),
               },
             ],
@@ -65,7 +67,7 @@ export const CompanyActionsMenu = ({
             actions: [
               {
                 icon: <Trash />,
-                label: "Delete",
+                label: t("common.delete"),
                 onClick: () => setDeleteOpen(true),
               },
             ],

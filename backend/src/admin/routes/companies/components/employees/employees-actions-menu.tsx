@@ -5,6 +5,7 @@ import { EmployeesUpdateDrawer } from ".";
 import { QueryCompany, QueryEmployee } from "../../../../../types";
 import { DeletePrompt } from "../../../../components/common";
 import { useDeleteEmployee } from "../../../../hooks/api";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 
 export const EmployeesActionsMenu = ({
   company,
@@ -13,6 +14,7 @@ export const EmployeesActionsMenu = ({
   company: QueryCompany;
   employee: QueryEmployee;
 }) => {
+  const { t } = useB2BTranslation();
   const [editOpen, setEditOpen] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
   const { mutateAsync: mutateDelete, isPending: loadingDelete } =
@@ -21,7 +23,7 @@ export const EmployeesActionsMenu = ({
   const handleDelete = async () => {
     await mutateDelete(employee.id, {
       onSuccess: () => {
-        toast.success(`Employee deleted successfully`);
+        toast.success(t("routes.companies.employees.actions.deleteSuccess"));
       },
     });
   };
@@ -40,7 +42,7 @@ export const EmployeesActionsMenu = ({
             onClick={() => setEditOpen(true)}
           >
             <PencilSquare />
-            Edit
+            {t("routes.companies.employees.actions.edit")}
           </DropdownMenu.Item>
           <DropdownMenu.Separator />
           <DropdownMenu.Item
@@ -48,7 +50,7 @@ export const EmployeesActionsMenu = ({
             onClick={() => setDeleteOpen(true)}
           >
             <Trash />
-            Delete
+            {t("routes.companies.employees.actions.delete")}
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>

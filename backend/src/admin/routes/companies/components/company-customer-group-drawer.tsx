@@ -5,6 +5,7 @@ import {
   useAddCompanyToCustomerGroup,
   useRemoveCompanyFromCustomerGroup,
 } from "../../../hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 
 export function CompanyCustomerGroupDrawer({
   company,
@@ -17,6 +18,7 @@ export function CompanyCustomerGroupDrawer({
   open: boolean;
   setOpen: (open: boolean) => void;
 }) {
+  const { t } = useB2BTranslation();
   const { mutateAsync: addMutate, isPending: addLoading } =
     useAddCompanyToCustomerGroup(company.id);
 
@@ -27,10 +29,10 @@ export function CompanyCustomerGroupDrawer({
     await addMutate(groupId, {
       onSuccess: async () => {
         setOpen(false);
-        toast.success(`Company added to customer group successfully`);
+        toast.success(t("routes.companies.toasts.addToGroupSuccess"));
       },
       onError: (error) => {
-        toast.error("Failed to add company to customer group");
+        toast.error(t("routes.companies.toasts.addToGroupError"));
       },
     });
   };
@@ -38,11 +40,11 @@ export function CompanyCustomerGroupDrawer({
   const handleRemove = async (groupId: string) => {
     await removeMutate(groupId, {
       onSuccess: async () => {
-        toast.success(`Company removed from customer group successfully`);
+        toast.success(t("routes.companies.toasts.removeFromGroupSuccess"));
       },
       onError: (error) => {
         console.log(error);
-        toast.error("Failed to remove company from customer group");
+        toast.error(t("routes.companies.toasts.removeFromGroupError"));
       },
     });
   };
@@ -51,21 +53,22 @@ export function CompanyCustomerGroupDrawer({
     <Drawer open={open} onOpenChange={setOpen}>
       <Drawer.Content className="z-50">
         <Drawer.Header>
-          <Drawer.Title>Add {company.name} to a Customer Group</Drawer.Title>
+          <Drawer.Title>{t("routes.companies.customerGroup.title")}</Drawer.Title>
         </Drawer.Header>
         <Drawer.Body className="space-y-4 h-full overflow-y-hidden">
           <Hint variant="info">
-            Adding {company.name} to a customer group will automatically add{" "}
-            {company.employees?.length} linked employee
-            {company.employees?.length === 1 ? "" : "s"} to the customer group.
+            {t("routes.companies.customerGroup.hint", { 
+              companyName: company.name, 
+              employeeCount: company.employees?.length || 0 
+            })}
           </Hint>
           <div className="h-full overflow-y-auto">
             <Table>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Customer Group</Table.HeaderCell>
+                  <Table.HeaderCell>{t("routes.companies.customerGroup.customerGroupColumn")}</Table.HeaderCell>
                   <Table.HeaderCell className="text-right">
-                    Actions
+                    {t("routes.companies.customerGroup.actionsColumn")}
                   </Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
@@ -83,7 +86,7 @@ export function CompanyCustomerGroupDrawer({
                             isLoading={removeLoading}
                             variant="danger"
                           >
-                            Remove
+                            {t("routes.companies.customerGroup.removeButton")}
                           </Button>
                         ) : (
                           <Button
@@ -95,7 +98,7 @@ export function CompanyCustomerGroupDrawer({
                             }
                             isLoading={addLoading}
                           >
-                            Add
+                            {t("routes.companies.customerGroup.addButton")}
                           </Button>
                         )}
                       </Table.Cell>
@@ -103,7 +106,7 @@ export function CompanyCustomerGroupDrawer({
                   ))
                 ) : (
                   <Table.Row>
-                    <Table.Cell>No customer groups found</Table.Cell>
+                    <Table.Cell>{t("routes.companies.customerGroup.noGroupsFound")}</Table.Cell>
                   </Table.Row>
                 )}
               </Table.Body>

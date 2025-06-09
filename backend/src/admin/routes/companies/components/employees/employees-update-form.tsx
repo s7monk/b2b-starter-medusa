@@ -14,6 +14,7 @@ import {
   QueryEmployee,
 } from "../../../../../types";
 import { CoolSwitch } from "../../../../components/common";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 import { currencySymbolMap } from "../../../../utils";
 
 export function EmployeesUpdateForm({
@@ -29,6 +30,7 @@ export function EmployeesUpdateForm({
   loading: boolean;
   error: Error | null;
 }) {
+  const { t } = useB2BTranslation();
   const [formData, setFormData] = useState<{
     spending_limit: string;
     is_admin: boolean;
@@ -62,12 +64,12 @@ export function EmployeesUpdateForm({
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-2 mb-4">
             <div className="flex items-center justify-between">
-              <h2 className="h2-core">Details</h2>
+              <h2 className="h2-core">{t("routes.companies.employees.form.details")}</h2>
               <a
                 href={`/app/customers/${employee?.customer!.id}/edit`}
                 className="txt-compact-small text-ui-fg-interactive hover:text-ui-fg-interactive-hover self-end"
               >
-                Edit Customer Details
+                {t("routes.companies.employees.edit.editCustomerDetails")}
               </a>
             </div>
             <Container className="p-0 overflow-hidden">
@@ -75,7 +77,7 @@ export function EmployeesUpdateForm({
                 <Table.Body>
                   <Table.Row>
                     <Table.Cell className="font-medium font-sans txt-compact-small">
-                      Name
+                      {t("routes.companies.companyDetails.name")}
                     </Table.Cell>
                     <Table.Cell>
                       {employee?.customer!.first_name}{" "}
@@ -84,19 +86,19 @@ export function EmployeesUpdateForm({
                   </Table.Row>
                   <Table.Row>
                     <Table.Cell className="font-medium font-sans txt-compact-small">
-                      Email
+                      {t("routes.companies.companyDetails.email")}
                     </Table.Cell>
                     <Table.Cell>{employee?.customer!.email}</Table.Cell>
                   </Table.Row>
                   <Table.Row>
                     <Table.Cell className="font-medium font-sans txt-compact-small">
-                      Phone
+                      {t("routes.companies.employees.form.phone")}
                     </Table.Cell>
                     <Table.Cell>{employee?.customer!.phone}</Table.Cell>
                   </Table.Row>
                   <Table.Row>
                     <Table.Cell className="font-medium font-sans txt-compact-small">
-                      Company
+                      {t("routes.companies.employees.edit.company")}
                     </Table.Cell>
                     <Table.Cell>{company.name}</Table.Cell>
                   </Table.Row>
@@ -105,10 +107,10 @@ export function EmployeesUpdateForm({
             </Container>
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="h2-core">Permissions</h2>
+            <h2 className="h2-core">{t("routes.companies.employees.form.permissions")}</h2>
             <div className="flex flex-col gap-2">
               <Label size="xsmall" className="txt-compact-small font-medium">
-                Spending Limit
+                {t("routes.companies.employees.form.spendingLimit")}
               </Label>
               <CurrencyInput
                 symbol={currencySymbolMap[company.currency_code || "USD"]}
@@ -121,22 +123,22 @@ export function EmployeesUpdateForm({
                     spending_limit: e.target.value.replace(/[^0-9.]/g, ""),
                   })
                 }
-                placeholder="1000"
+                placeholder={t("routes.companies.employees.form.spendingLimitPlaceholder")}
               />
             </div>
             <div className="flex flex-col gap-2">
               <Label size="xsmall" className="txt-compact-small font-medium">
-                Admin Access
+                {t("routes.companies.employees.form.adminAccess")}
               </Label>
               <CoolSwitch
                 fieldName="is_admin"
-                label="Is Admin"
-                description="Enable to grant admin access"
+                label={t("routes.companies.employees.form.isAdmin")}
+                description={t("routes.companies.employees.form.isAdminDesc")}
                 checked={formData.is_admin}
                 onChange={(checked) =>
                   setFormData({ ...formData, is_admin: checked })
                 }
-                tooltip="Admins can manage the company's details and employee permissions."
+                tooltip={t("routes.companies.employees.form.isAdminTooltip")}
               />
             </div>
           </div>
@@ -144,10 +146,10 @@ export function EmployeesUpdateForm({
       </Drawer.Body>
       <Drawer.Footer>
         <Drawer.Close asChild>
-          <Button variant="secondary">Cancel</Button>
+          <Button variant="secondary">{t("common.cancel")}</Button>
         </Drawer.Close>
         <Button type="submit" disabled={loading}>
-          {loading ? "Saving..." : "Save"}
+          {loading ? t("routes.companies.employees.form.saving") : t("routes.companies.employees.form.save")}
         </Button>
         {error && <Text className="text-red-500">{error.message}</Text>}
       </Drawer.Footer>

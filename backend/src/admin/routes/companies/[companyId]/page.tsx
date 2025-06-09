@@ -11,14 +11,19 @@ import {
 import { QueryEmployee } from "../../../../types";
 import { useParams } from "react-router-dom";
 import { useAdminCustomerGroups, useCompany } from "../../../hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import { formatAmount } from "../../../utils";
+import { useMenuLabelUpdater } from "../../../lib/menu-label-updater";
 import { CompanyActionsMenu } from "../components";
 import {
   EmployeeCreateDrawer,
   EmployeesActionsMenu,
 } from "../components/employees";
+import "../../../lib/init-i18n";
 
 const CompanyDetails = () => {
+  const { t } = useB2BTranslation();
+  useMenuLabelUpdater(); // 启用菜单标签更新
   const { companyId } = useParams();
   const { data, isPending } = useCompany(companyId!, {
     fields:
@@ -30,7 +35,7 @@ const CompanyDetails = () => {
   const company = data?.company;
 
   if (!company) {
-    return <div>Company not found</div>;
+    return <div>{t("routes.companies.companyDetails.notFound")}</div>;
   }
 
   return (
@@ -57,37 +62,37 @@ const CompanyDetails = () => {
               <Table.Body>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small max-w-fit">
-                    Phone
+                    {t("routes.companies.companyDetails.phone")}
                   </Table.Cell>
                   <Table.Cell>{company?.phone}</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    Email
+                    {t("routes.companies.companyDetails.email")}
                   </Table.Cell>
                   <Table.Cell>{company?.email}</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    Address
+                    {t("routes.companies.companyDetails.address")}
                   </Table.Cell>
                   <Table.Cell>{company?.address}</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    City
+                    {t("routes.companies.companyDetails.city")}
                   </Table.Cell>
                   <Table.Cell>{company?.city}</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    State
+                    {t("routes.companies.companyDetails.state")}
                   </Table.Cell>
                   <Table.Cell>{company?.state}</Table.Cell>
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    Currency
+                    {t("routes.companies.companyDetails.currency")}
                   </Table.Cell>
                   <Table.Cell>
                     {company?.currency_code?.toUpperCase()}
@@ -95,7 +100,7 @@ const CompanyDetails = () => {
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    Customer Group
+                    {t("routes.companies.companyDetails.customerGroup")}
                   </Table.Cell>
                   <Table.Cell>
                     {company?.customer_group ? (
@@ -109,26 +114,26 @@ const CompanyDetails = () => {
                 </Table.Row>
                 <Table.Row>
                   <Table.Cell className="font-medium font-sans txt-compact-small">
-                    Approval Settings
+                    {t("routes.companies.companyDetails.approvalSettings")}
                   </Table.Cell>
                   <Table.Cell>
                     <div className="flex gap-2">
                       {company?.approval_settings?.requires_admin_approval && (
                         <Badge size="small" color="purple">
-                          Requires admin approval
+                          {t("routes.companies.companyDetails.requiresAdminApproval")}
                         </Badge>
                       )}
                       {company?.approval_settings
                         ?.requires_sales_manager_approval && (
                         <Badge size="small" color="purple">
-                          Requires sales manager approval
+                          {t("routes.companies.companyDetails.requiresSalesManagerApproval")}
                         </Badge>
                       )}
                       {!company?.approval_settings?.requires_admin_approval &&
                         !company?.approval_settings
                           ?.requires_sales_manager_approval && (
                           <Badge size="small" color="grey">
-                            No approval required
+                            {t("routes.companies.companyDetails.noApprovalRequired")}
                           </Badge>
                         )}
                     </div>
@@ -145,7 +150,7 @@ const CompanyDetails = () => {
             <div className="flex items-center gap-2 px-6 py-4 justify-between border-b border-gray-200">
               <div className="flex items-center gap-2">
                 <Heading className="font-sans font-medium h1-core">
-                  Employees
+                  {t("routes.companies.companyDetails.employees")}
                 </Heading>
               </div>
               <EmployeeCreateDrawer company={company} />
@@ -155,10 +160,10 @@ const CompanyDetails = () => {
                 <Table.Header>
                   <Table.Row>
                     <Table.HeaderCell></Table.HeaderCell>
-                    <Table.HeaderCell>Name</Table.HeaderCell>
-                    <Table.HeaderCell>Email</Table.HeaderCell>
-                    <Table.HeaderCell>Spending Limit</Table.HeaderCell>
-                    <Table.HeaderCell>Actions</Table.HeaderCell>
+                    <Table.HeaderCell>{t("routes.companies.companyDetails.name")}</Table.HeaderCell>
+                    <Table.HeaderCell>{t("routes.companies.companyDetails.email")}</Table.HeaderCell>
+                    <Table.HeaderCell>{t("routes.companies.companyDetails.spendingLimit")}</Table.HeaderCell>
+                    <Table.HeaderCell>{t("routes.companies.companyDetails.actions")}</Table.HeaderCell>
                   </Table.Row>
                 </Table.Header>
                 <Table.Body>
@@ -187,7 +192,7 @@ const CompanyDetails = () => {
                             size="2xsmall"
                             color={employee.is_admin ? "green" : "grey"}
                           >
-                            Admin
+                            {t("routes.companies.companyDetails.admin")}
                           </Badge>
                         )}
                       </Table.Cell>
@@ -214,10 +219,10 @@ const CompanyDetails = () => {
                   <ExclamationCircle />
                   <div className="flex flex-col items-center gap-y-1">
                     <Text className="font-medium font-sans txt-compact-small">
-                      No records
+                      {t("routes.companies.companyDetails.noEmployees")}
                     </Text>
                     <Text className="txt-small text-ui-fg-muted">
-                      This company doesn't have any employees.
+                      {t("routes.companies.companyDetails.noEmployeesDesc")}
                     </Text>
                   </div>
                 </div>

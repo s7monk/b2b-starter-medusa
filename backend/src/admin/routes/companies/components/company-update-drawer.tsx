@@ -1,6 +1,7 @@
 import { Drawer, toast } from "@medusajs/ui";
 import { AdminUpdateCompany, QueryCompany } from "../../../../types";
 import { useUpdateCompany } from "../../../hooks/api";
+import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import { CompanyForm } from "./company-form";
 
 export function CompanyUpdateDrawer({
@@ -12,6 +13,7 @@ export function CompanyUpdateDrawer({
   open: boolean;
   setOpen: (open: boolean) => void;
 }) {
+  const { t } = useB2BTranslation();
   const { mutateAsync, isPending, error } = useUpdateCompany(company.id);
 
   const {
@@ -28,10 +30,10 @@ export function CompanyUpdateDrawer({
     await mutateAsync(formData, {
       onSuccess: async () => {
         setOpen(false);
-        toast.success(`Company ${formData.name} updated successfully`);
+        toast.success(t("routes.companies.toasts.updateSuccess"));
       },
       onError: (error) => {
-        toast.error("Failed to update company");
+        toast.error(t("routes.companies.toasts.updateError"));
       },
     });
   };
@@ -40,7 +42,7 @@ export function CompanyUpdateDrawer({
     <Drawer open={open} onOpenChange={setOpen}>
       <Drawer.Content className="z-50">
         <Drawer.Header>
-          <Drawer.Title>Edit Company</Drawer.Title>
+          <Drawer.Title>{t("routes.companies.actions.edit")}</Drawer.Title>
         </Drawer.Header>
 
         <CompanyForm

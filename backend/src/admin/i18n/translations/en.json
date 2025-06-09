@@ -88,13 +88,103 @@
         "edit": "Edit Company",
         "delete": "Delete Company",
         "viewEmployees": "View Employees",
-        "assignGroup": "Assign Customer Group"
+        "assignGroup": "Assign Customer Group",
+        "editDetails": "Edit details",
+        "manageCustomerGroup": "Manage customer group",
+        "approvalSettings": "Approval settings"
       },
       "details": {
         "overview": "Overview",
         "employees": "Employees",
         "orders": "Orders",
         "settings": "Settings"
+      },
+      "toasts": {
+        "updateSuccess": "Company updated successfully",
+        "updateError": "Failed to update company",
+        "deleteSuccess": "Company deleted successfully",
+        "addToGroupSuccess": "Company added to customer group successfully",
+        "addToGroupError": "Failed to add company to customer group",
+        "removeFromGroupSuccess": "Company removed from customer group successfully",
+        "removeFromGroupError": "Failed to remove company from customer group"
+      },
+      "customerGroup": {
+        "title": "Manage Customer Group",
+        "addToGroup": "Add to Customer Group",
+        "hint": "Adding {companyName} to a customer group will automatically add {employeeCount} linked employee{employeeCount, plural, one {} other {s}} to the customer group.",
+        "customerGroupColumn": "Customer Group",
+        "actionsColumn": "Actions",
+        "addButton": "Add",
+        "removeButton": "Remove",
+        "noGroupsFound": "No customer groups found"
+      },
+      "approvalSettings": {
+        "title": "Company Approval Settings",
+        "requiresAdminApproval": "Requires Admin Approval",
+        "requiresAdminApprovalDesc": "Require company admin approval for all orders placed by this company.",
+        "requiresSalesManagerApproval": "Requires Sales Manager Approval",
+        "requiresSalesManagerApprovalDesc": "Require sales manager approval for all orders placed by this company.",
+        "updateSuccess": "Company approval settings updated successfully",
+        "updateError": "Failed to update company approval settings"
+      },
+      "companyDetails": {
+        "notFound": "Company not found",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address",
+        "city": "City",
+        "state": "State",
+        "currency": "Currency",
+        "customerGroup": "Customer Group",
+        "approvalSettings": "Approval Settings",
+        "requiresAdminApproval": "Requires admin approval",
+        "requiresSalesManagerApproval": "Requires sales manager approval",
+        "noApprovalRequired": "No approval required",
+        "employees": "Employees",
+        "name": "Name",
+        "spendingLimit": "Spending Limit",
+        "actions": "Actions",
+        "admin": "Admin",
+        "add": "Add",
+        "noEmployees": "No records",
+        "noEmployeesDesc": "This company doesn't have any employees."
+      },
+      "employees": {
+        "createEmployee": "Add Company Customer",
+        "createEmployeeSuccess": "Employee created successfully",
+        "createCustomerError": "Failed to create customer",
+        "createEmployeeError": "Failed to create employee",
+        "form": {
+          "details": "Details",
+          "firstName": "First Name",
+          "lastName": "Last Name",
+          "email": "Email",
+          "phone": "Phone",
+          "permissions": "Permissions",
+          "spendingLimit": "Spending Limit",
+          "adminAccess": "Admin Access",
+          "isAdmin": "Is Admin",
+          "isAdminDesc": "Enable to grant admin access",
+          "isAdminTooltip": "Admins can manage the company's details and employee permissions.",
+          "firstNamePlaceholder": "John",
+          "lastNamePlaceholder": "Doe",
+          "emailPlaceholder": "john.doe@example.com",
+          "phonePlaceholder": "0612345678",
+          "spendingLimitPlaceholder": "1000",
+          "saving": "Saving...",
+          "save": "Save"
+        },
+        "actions": {
+          "edit": "Edit",
+          "delete": "Delete",
+          "deleteSuccess": "Employee deleted successfully"
+        },
+        "edit": {
+          "title": "Edit Employee",
+          "updateSuccess": "Employee updated successfully",
+          "editCustomerDetails": "Edit Customer Details",
+          "company": "Company"
+        }
       }
     },
     "approvals": {
@@ -156,7 +246,9 @@
     "create": "Create",
     "back": "Back",
     "next": "Next",
-    "previous": "Previous"
+    "previous": "Previous",
+    "confirmDeletion": "Confirm Deletion",
+    "confirmDeletionDesc": "Are you sure you want to delete this item? This action cannot be undone."
     }
   }
 } 

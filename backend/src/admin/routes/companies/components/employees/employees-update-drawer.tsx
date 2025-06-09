@@ -6,6 +6,7 @@ import {
   QueryEmployee,
 } from "../../../../../types";
 import { useUpdateEmployee } from "../../../../hooks/api";
+import { useB2BTranslation } from "../../../../hooks/use-b2b-translation";
 
 export function EmployeesUpdateDrawer({
   company,
@@ -20,6 +21,7 @@ export function EmployeesUpdateDrawer({
   setOpen: (open: boolean) => void;
   toast: typeof toastType;
 }) {
+  const { t } = useB2BTranslation();
   const { mutateAsync, isPending, error } = useUpdateEmployee(
     employee.company_id,
     employee.id
@@ -29,9 +31,7 @@ export function EmployeesUpdateDrawer({
     await mutateAsync(formData, {
       onSuccess: () => {
         setOpen(false);
-        toast.success(
-          `Employee ${employee?.customer?.email} updated successfully`
-        );
+        toast.success(t("routes.companies.employees.edit.updateSuccess"));
       },
     });
   };
@@ -40,7 +40,7 @@ export function EmployeesUpdateDrawer({
     <Drawer open={open} onOpenChange={setOpen}>
       <Drawer.Content className="z-50 overflow-auto">
         <Drawer.Header>
-          <Drawer.Title>Edit Employee</Drawer.Title>
+          <Drawer.Title>{t("routes.companies.employees.edit.title")}</Drawer.Title>
         </Drawer.Header>
 
         <EmployeesUpdateForm
