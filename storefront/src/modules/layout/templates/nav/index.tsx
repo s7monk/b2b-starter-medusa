@@ -5,12 +5,10 @@ import CartButton from "@/modules/cart/components/cart-button"
 import LocalizedClientLink from "@/modules/common/components/localized-client-link"
 import FilePlus from "@/modules/common/icons/file-plus"
 import LogoIcon from "@/modules/common/icons/logo"
-import { MegaMenuWrapper } from "@/modules/layout/components/mega-menu"
 import { RequestQuoteConfirmation } from "@/modules/quotes/components/request-quote-confirmation"
 import { RequestQuotePrompt } from "@/modules/quotes/components/request-quote-prompt"
 import SkeletonAccountButton from "@/modules/skeletons/components/skeleton-account-button"
 import SkeletonCartButton from "@/modules/skeletons/components/skeleton-cart-button"
-import SkeletonMegaMenu from "@/modules/skeletons/components/skeleton-mega-menu"
 import { Suspense } from "react"
 
 export async function NavigationHeader() {
@@ -18,62 +16,73 @@ export async function NavigationHeader() {
   const cart = await retrieveCart()
 
   return (
-    <div className="sticky top-0 inset-x-0 group bg-white text-zinc-900 small:p-4 p-2 text-sm border-b duration-200 border-ui-border-base z-50">
-      <header className="flex w-full content-container relative small:mx-auto justify-between">
-        <div className="small:mx-auto flex justify-between items-center min-w-full">
-          <div className="flex items-center small:space-x-4">
-            <LocalizedClientLink
-              className="hover:text-ui-fg-base flex items-center w-fit"
-              href="/"
-            >
-              <h1 className="small:text-base text-sm font-medium flex items-center">
-                <LogoIcon className="inline mr-2" />
-                Medusa B2B Starter
-              </h1>
-            </LocalizedClientLink>
+    <div className="bg-white border-b border-gray-200 shadow-sm">
+      <header className="content-container py-4">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <LocalizedClientLink
+            className="hover:opacity-80 transition-opacity"
+            href="/"
+          >
+            <div className="flex items-center">
+              <div className="bg-blue-600 p-2 rounded-lg mr-3">
+                <LogoIcon className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">
+                  Industrial Automation Store
+                </h1>
+                <p className="text-xs text-gray-500">Professional Industrial Solutions</p>
+              </div>
+            </div>
+          </LocalizedClientLink>
 
-            <nav>
-              <ul className="space-x-4 hidden small:flex">
-                <li>
-                  <Suspense fallback={<SkeletonMegaMenu />}>
-                    <MegaMenuWrapper />
-                  </Suspense>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div className="flex justify-end items-center gap-2">
-            <div className="relative mr-2 hidden small:inline-flex">
+          {/* Center - Search */}
+          <div className="flex-1 max-w-2xl mx-8 hidden small:block">
+            <div className="relative">
               <input
                 disabled
                 type="text"
-                placeholder="Search for products"
-                className="bg-gray-100 text-zinc-900 px-4 py-2 rounded-full pr-10 shadow-borders-base hidden small:inline-block hover:cursor-not-allowed"
-                title="Install a search provider to enable product search"
+                placeholder="Search by part number, brand, or description..."
+                className="w-full bg-gray-50 text-gray-900 px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none text-sm hover:cursor-not-allowed"
+                title="Advanced search functionality coming soon"
               />
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Right side controls */}
+          <div className="flex items-center gap-4">
+            {/* Contact Info */}
+            <div className="hidden large:flex flex-col text-right text-sm">
+              <span className="text-gray-600">Need Help?</span>
+              <span className="text-blue-600 font-semibold">1-800-AUTOMATION</span>
             </div>
 
-            <div className="h-4 w-px bg-neutral-300" />
-
+            {/* Quote Button */}
             {customer && cart?.items && cart.items.length > 0 ? (
               <RequestQuoteConfirmation>
                 <button
-                  className="flex gap-1.5 items-center rounded-2xl bg-none shadow-none border-none hover:bg-neutral-100 px-2 py-1"
-                  // disabled={isPendingApproval}
+                  className="flex gap-2 items-center bg-orange-500 hover:bg-orange-600 text-white px-4 py-2.5 rounded-lg font-medium transition-colors shadow-sm"
                 >
-                  <FilePlus />
-                  <span className="hidden small:inline-block">Quote</span>
+                  <FilePlus className="w-4 h-4" />
+                  <span className="hidden small:inline-block">Get Quote</span>
                 </button>
               </RequestQuoteConfirmation>
             ) : (
               <RequestQuotePrompt>
-                <button className="flex gap-1.5 items-center rounded-2xl bg-none shadow-none border-none hover:bg-neutral-100 px-2 py-1">
-                  <FilePlus />
-                  <span className="hidden small:inline-block">Quote</span>
+                <button className="flex gap-2 items-center bg-orange-500 hover:bg-orange-600 text-white px-4 py-2.5 rounded-lg font-medium transition-colors shadow-sm">
+                  <FilePlus className="w-4 h-4" />
+                  <span className="hidden small:inline-block">Get Quote</span>
                 </button>
               </RequestQuotePrompt>
             )}
 
+            {/* Account & Cart */}
             <Suspense fallback={<SkeletonAccountButton />}>
               <AccountButton customer={customer} />
             </Suspense>
