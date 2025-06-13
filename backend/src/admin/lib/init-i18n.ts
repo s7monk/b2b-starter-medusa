@@ -22,8 +22,12 @@ const MENU_TRANSLATIONS: Record<string, Record<string, string>> = {
 /**
  * 更新DOM中的菜单标签
  */
-const updateMenuLabels = (language: string = 'zh') => {
-  const translations = MENU_TRANSLATIONS[language] || MENU_TRANSLATIONS.en
+const updateMenuLabels = (language?: string) => {
+  // 如果没有传入语言，获取当前语言
+  const currentLang = language || getCurrentLanguage()
+  const translations = MENU_TRANSLATIONS[currentLang] || MENU_TRANSLATIONS.en
+  
+  console.log('Updating menu labels to language:', currentLang)
   
   // 立即更新，不使用setTimeout
   const menuItems = document.querySelectorAll('nav a[href^="/"], nav button')
@@ -49,11 +53,33 @@ const updateMenuLabels = (language: string = 'zh') => {
 }
 
 /**
+ * 获取当前语言
+ */
+const getCurrentLanguage = () => {
+  // 尝试从i18next实例获取当前语言
+  if (typeof window !== 'undefined' && (window as any).i18next) {
+    return (window as any).i18next.language || 'en'
+  }
+  return 'en'
+}
+
+/**
  * 设置全局菜单更新器
  */
 const setupGlobalMenuUpdater = () => {
-  // 立即更新一次
-  updateMenuLabels()
+  // 立即更新一次，使用当前语言
+  updateMenuLabels(getCurrentLanguage())
+  
+  // 监听语言变化 - 这是关键！
+  if (typeof window !== 'undefined' && (window as any).i18next) {
+    (window as any).i18next.on('languageChanged', (lng: string) => {
+      console.log('Global menu updater: Language changed to', lng)
+      updateMenuLabels(lng)
+      // 多次尝试确保更新成功
+      setTimeout(() => updateMenuLabels(lng), 50)
+      setTimeout(() => updateMenuLabels(lng), 200)
+    })
+  }
   
   // 监听路由变化
   let lastUrl = location.href
@@ -145,8 +171,17 @@ export const initB2BI18n = () => {
 
 // 自动执行初始化
 if (typeof window !== "undefined") {
-  // 在浏览器环境中延迟执行
-  setTimeout(initB2BI18n, 100)
+  // 等待i18next初始化完成后再执行
+  const waitForI18next = () => {
+    if ((window as any).i18next && (window as any).i18next.isInitialized) {
+      initB2BI18n()
+    } else {
+      setTimeout(waitForI18next, 100)
+    }
+  }
+  
+  // 延迟执行，确保medusa的i18next已经初始化
+  setTimeout(waitForI18next, 200)
 } else {
   // 在服务器环境中立即执行
   initB2BI18n()
