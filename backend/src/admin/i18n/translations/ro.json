@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Oferte",
+      "companies": "Companii", 
+      "approvals": "Aprobări"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Oferte",
+      "subtitle": "Gestionează ofertele și propunerile clienților",
+      "noQuotes": "Fără înregistrări",
+      "noQuotesDescription": "În prezent nu există oferte. Creează una din magazin.",
+      "table": {
+        "id": "ID Ofertă",
+        "customer": "Client",
+        "status": "Status",
+        "company": "Companie", 
+        "amount": "Sumă",
+        "createdAt": "Creat",
+        "actions": "Acțiuni"
+      },
+      "status": {
+        "pending_merchant": "În așteptarea comerciantului",
+        "pending_customer": "În așteptarea clientului", 
+        "merchant_rejected": "Comerciantul a respins",
+        "customer_rejected": "Clientul a respins",
+        "accepted": "Acceptat"
+      },
+      "actions": {
+        "sendQuote": "Trimite oferta",
+        "rejectQuote": "Respinge oferta",
+        "viewOrder": "Vezi comanda"
+      },
+      "details": {
+        "header": "Detalii ofertă",
+        "quoteSummary": "Rezumat ofertă",
+        "customer": "Client",
+        "items": "Articole",
+        "total": "Total",
+        "subtotal": "Subtotal",
+        "shipping": "Livrare",
+        "tax": "Taxă",
+        "messages": "Mesaje",
+        "originalTotal": "Total original",
+        "quoteTotal": "Total ofertă",
+        "discounts": "Reduceri",
+        "pickQuoteItem": "Selectează articol ofertă",
+        "selectQuoteItem": "Selectează un articol din ofertă pentru a scrie un mesaj",
+        "selectItem": "Selectează articol",
+        "send": "Trimite",
+        "manage": "Gestionează",
+        "manageQuote": "Gestionează oferta",
+        "updatePrice": "Actualizează prețul", 
+        "overridePriceHint": "Suprascrie prețul unitar pentru acest produs",
+        "phone": "Telefon",
+        "spendingLimit": "Limită de cheltuieli",
+        "company": "Companie",
+        "name": "Nume"
+      },
+      "confirmations": {
+        "sendTitle": "Trimite oferta?",
+        "sendDescription": "Ești pe cale să trimiți această ofertă către client. Vrei să continui?",
+        "rejectTitle": "Respinge oferta?",
+        "rejectDescription": "Ești pe cale să respingi oferta acestui client. Vrei să continui?"
+      },
+      "toasts": {
+        "sendSuccess": "Oferta a fost trimisă cu succes către client",
+        "rejectSuccess": "Oferta clientului a fost respinsă cu succes",
+        "messageSuccess": "Mesajul a fost trimis cu succes către client",
+        "updateSuccess": "Oferta a fost actualizată cu succes"
+      },
+      "acceptance": {
+        "message": "Clientul a acceptat oferta. Comanda este gata pentru procesare."
+      }
+    },
+    "companies": {
+      "title": "Companii",
+      "subtitle": "Gestionează companiile și organizațiile clienților",
+      "createCompany": "Creează",
+      "noCompanies": "Nu au fost găsite companii", 
+      "noCompaniesDescription": "În prezent nu există companii. Creează una pentru a începe.",
+      "table": {
+        "name": "Nume",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresă",
+        "employees": "Angajați",
+        "customerGroup": "Grup clienți",
+        "actions": "Acțiuni"
+      },
+      "form": {
+        "generalInfo": "Informații generale",
+        "name": "Nume companie",
+        "email": "Email",
+        "phone": "Număr telefon",
+        "address": "Adresă",
+        "city": "Oraș",
+        "state": "Județ/Stat",
+        "zipCode": "Cod poștal",
+        "country": "Țară",
+        "currency": "Monedă",
+        "logoUrl": "URL logo companie",
+        "selectCountry": "Selectează țara",
+        "selectCurrency": "Selectează moneda",
+        "logo": "Logo companie",
+        "website": "Site web",
+        "description": "Descriere"
+      },
+      "actions": {
+        "edit": "Editează compania",
+        "delete": "Șterge compania",
+        "viewEmployees": "Vezi angajații",
+        "assignGroup": "Atribuie grup clienți",
+        "editDetails": "Editează detaliile",
+        "manageCustomerGroup": "Gestionează grup clienți",
+        "approvalSettings": "Setări aprobare"
+      },
+      "details": {
+        "overview": "Prezentare generală",
+        "employees": "Angajați",
+        "orders": "Comenzi",
+        "settings": "Setări"
+      },
+      "toasts": {
+        "updateSuccess": "Compania a fost actualizată cu succes",
+        "updateError": "Actualizarea companiei a eșuat",
+        "deleteSuccess": "Compania a fost ștearsă cu succes",
+        "addToGroupSuccess": "Compania a fost adăugată cu succes la grupul de clienți",
+        "addToGroupError": "Adăugarea companiei la grupul de clienți a eșuat",
+        "removeFromGroupSuccess": "Compania a fost eliminată cu succes din grupul de clienți",
+        "removeFromGroupError": "Eliminarea companiei din grupul de clienți a eșuat"
+      },
+      "customerGroup": {
+        "title": "Gestionează grup clienți",
+        "addToGroup": "Adaugă la grupul de clienți",
+        "hint": "Adăugarea {companyName} la un grup de clienți va adăuga automat {employeeCount} angajați asociați la grupul de clienți.",
+        "customerGroupColumn": "Grup clienți",
+        "actionsColumn": "Acțiuni",
+        "addButton": "Adaugă",
+        "removeButton": "Elimină",
+        "noGroupsFound": "Nu au fost găsite grupuri de clienți"
+      },
+      "approvalSettings": {
+        "title": "Setări aprobare companie",
+        "requiresAdminApproval": "Necesită aprobare administrator",
+        "requiresAdminApprovalDesc": "Solicită aprobare administrator companie pentru toate comenzile acestei companii.",
+        "requiresSalesManagerApproval": "Necesită aprobare manager vânzări",
+        "requiresSalesManagerApprovalDesc": "Solicită aprobare manager vânzări pentru toate comenzile acestei companii.",
+        "updateSuccess": "Setările de aprobare ale companiei au fost actualizate cu succes",
+        "updateError": "Actualizarea setărilor de aprobare ale companiei a eșuat"
+      },
+      "companyDetails": {
+        "notFound": "Compania nu a fost găsită",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresă",
+        "city": "Oraș",
+        "state": "Județ/Stat",
+        "currency": "Monedă",
+        "customerGroup": "Grup clienți",
+        "approvalSettings": "Setări aprobare",
+        "requiresAdminApproval": "Necesită aprobare administrator",
+        "requiresSalesManagerApproval": "Necesită aprobare manager vânzări",
+        "noApprovalRequired": "Nu este necesară aprobare",
+        "employees": "Angajați",
+        "name": "Nume",
+        "spendingLimit": "Limită cheltuieli",
+        "actions": "Acțiuni",
+        "admin": "Administrator",
+        "add": "Adaugă",
+        "noEmployees": "Fără înregistrări",
+        "noEmployeesDesc": "Această companie nu are angajați."
+      },
+      "employees": {
+        "createEmployee": "Adaugă client corporativ",
+        "createEmployeeSuccess": "Angajatul a fost creat cu succes",
+        "createCustomerError": "Crearea clientului a eșuat",
+        "createEmployeeError": "Crearea angajatului a eșuat",
+        "form": {
+          "details": "Detalii",
+          "firstName": "Prenume",
+          "lastName": "Nume",
+          "email": "Email",
+          "phone": "Telefon",
+          "permissions": "Permisiuni",
+          "spendingLimit": "Limită cheltuieli",
+          "adminAccess": "Acces administrator",
+          "isAdmin": "Este administrator",
+          "isAdminDesc": "Activează pentru acces administrator",
+          "isAdminTooltip": "Administratorii pot gestiona detaliile companiei și permisiunile angajaților.",
+          "firstNamePlaceholder": "Ion",
+          "lastNamePlaceholder": "Popescu",
+          "emailPlaceholder": "ion.popescu@example.com",
+          "phonePlaceholder": "0722 123 456",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Salvare...",
+          "save": "Salvează"
+        },
+        "actions": {
+          "edit": "Editează",
+          "delete": "Șterge",
+          "deleteSuccess": "Angajatul a fost șters cu succes"
+        },
+        "edit": {
+          "title": "Editează angajatul",
+          "updateSuccess": "Angajatul a fost actualizat cu succes",
+          "editCustomerDetails": "Editează detaliile clientului",
+          "company": "Companie"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Aprobări", 
+      "subtitle": "Gestionează fluxurile de lucru pentru aprobarea comenzilor",
+      "noApprovals": "Fără înregistrări",
+      "noApprovalsDescription": "În prezent nu există cereri de aprobare.",
+      "table": {
+        "orderId": "ID Comandă",
+        "customer": "Client",
+        "company": "Companie",
+        "amount": "Sumă",
+        "status": "Status",
+        "requestedAt": "Solicitat",
+        "actions": "Acțiuni"
+      },
+      "status": {
+        "pending": "În așteptare",
+        "approved": "Aprobat",
+        "rejected": "Respins",
+        "expired": "Expirat"
+      },
+      "actions": {
+        "approve": "Aprobă",
+        "reject": "Respinge",
+        "review": "Revizuiește"
+      },
+      "details": {
+        "approvalRequest": "Cerere de aprobare",
+        "requestedBy": "Solicitat de",
+        "reason": "Motiv",
+        "orderDetails": "Detalii comandă"
+      },
+      "confirmations": {
+        "approveTitle": "Aprobă comanda?",
+        "approveDescription": "Ești pe cale să aprobi această comandă. Vrei să continui?",
+        "rejectTitle": "Respinge comanda?",
+        "rejectDescription": "Ești pe cale să respingi această cerere de aprobare a comenzii. Vrei să continui?"
+      },
+      "toasts": {
+        "approveSuccess": "Comanda a fost aprobată cu succes",
+        "rejectSuccess": "Aprobarea comenzii a fost respinsă"
+      }
+    }
+  },
+  "common": {
+    "loading": "Se încarcă...",
+    "noData": "Fără date",
+    "search": "Caută",
+    "filter": "Filtru",
+    "export": "Exportă",
+    "import": "Importă",
+    "refresh": "Reîmprospătează",
+    "save": "Salvează",
+    "cancel": "Anulează",
+    "delete": "Șterge",
+    "edit": "Editează",
+    "view": "Vezi",
+    "create": "Creează",
+    "back": "Înapoi",
+    "next": "Pagina următoare",
+    "previous": "Pagina anterioară",
+    "error": "Eroare",
+    "confirmDeletion": "Confirmă ștergerea",
+    "confirmDeletionDesc": "Ești sigur că vrei să ștergi acest element? Această acțiune nu poate fi anulată.",
+    "confirmLeaveForm": "Ești sigur că vrei să părăsești acest formular?",
+    "confirmLeaveFormDesc": "Ai modificări nesalvate care se vor pierde dacă părăsești formularul.",
+    "continue": "Continuă"
+    }
+  }
+} 

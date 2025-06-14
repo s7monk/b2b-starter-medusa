@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Ajánlatok",
+      "companies": "Vállalatok", 
+      "approvals": "Jóváhagyások"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Ajánlatok",
+      "subtitle": "Ügyféli ajánlatok és javaslatok kezelése",
+      "noQuotes": "Nincs rekord",
+      "noQuotesDescription": "Jelenleg nincsenek ajánlatok. Hozzon létre egyet az üzletből.",
+      "table": {
+        "id": "Ajánlat ID",
+        "customer": "Ügyfél",
+        "status": "Állapot",
+        "company": "Vállalat", 
+        "amount": "Összeg",
+        "createdAt": "Létrehozva",
+        "actions": "Műveletek"
+      },
+      "status": {
+        "pending_merchant": "Kereskedő jóváhagyására vár",
+        "pending_customer": "Ügyfél jóváhagyására vár", 
+        "merchant_rejected": "Kereskedő elutasította",
+        "customer_rejected": "Ügyfél elutasította",
+        "accepted": "Elfogadva"
+      },
+      "actions": {
+        "sendQuote": "Ajánlat küldése",
+        "rejectQuote": "Ajánlat elutasítása",
+        "viewOrder": "Megrendelés megtekintése"
+      },
+      "details": {
+        "header": "Ajánlat részletei",
+        "quoteSummary": "Ajánlat összefoglalója",
+        "customer": "Ügyfél",
+        "items": "Tételek",
+        "total": "Összesen",
+        "subtotal": "Részösszeg",
+        "shipping": "Szállítás",
+        "tax": "Adó",
+        "messages": "Üzenetek",
+        "originalTotal": "Eredeti összeg",
+        "quoteTotal": "Ajánlat összege",
+        "discounts": "Kedvezmények",
+        "pickQuoteItem": "Ajánlat tétel kiválasztása",
+        "selectQuoteItem": "Válasszon ajánlat tételt üzenet íráshoz",
+        "selectItem": "Tétel kiválasztása",
+        "send": "Küldés",
+        "manage": "Kezelés",
+        "manageQuote": "Ajánlat kezelése",
+        "updatePrice": "Ár frissítése", 
+        "overridePriceHint": "A termék egységárának felülírása",
+        "phone": "Telefon",
+        "spendingLimit": "Költési limit",
+        "company": "Vállalat",
+        "name": "Név"
+      },
+      "confirmations": {
+        "sendTitle": "Ajánlat küldése?",
+        "sendDescription": "Arra készül, hogy elküldje ezt az ajánlatot az ügyfélnek. Szeretne folytatni?",
+        "rejectTitle": "Ajánlat elutasítása?",
+        "rejectDescription": "Arra készül, hogy elutasítsa ennek az ügyfélnek az ajánlatát. Szeretne folytatni?"
+      },
+      "toasts": {
+        "sendSuccess": "Ajánlat sikeresen elküldve az ügyfélnek",
+        "rejectSuccess": "Ügyfél ajánlata sikeresen elutasítva",
+        "messageSuccess": "Üzenet sikeresen elküldve az ügyfélnek",
+        "updateSuccess": "Ajánlat sikeresen frissítve"
+      },
+      "acceptance": {
+        "message": "Az ügyfél elfogadta az ajánlatot. A megrendelés feldolgozásra kész."
+      }
+    },
+    "companies": {
+      "title": "Vállalatok",
+      "subtitle": "Ügyfél vállalatok és szervezetek kezelése",
+      "createCompany": "Létrehozás",
+      "noCompanies": "Nem találhatók vállalatok", 
+      "noCompaniesDescription": "Jelenleg nincsenek vállalatok. Hozzon létre egyet a kezdéshez.",
+      "table": {
+        "name": "Név",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "address": "Cím",
+        "employees": "Alkalmazottak",
+        "customerGroup": "Ügyfélcsoport",
+        "actions": "Műveletek"
+      },
+      "form": {
+        "generalInfo": "Általános információk",
+        "name": "Vállalat neve",
+        "email": "E-mail",
+        "phone": "Telefonszám",
+        "address": "Cím",
+        "city": "Város",
+        "state": "Állam/Megye",
+        "zipCode": "Irányítószám",
+        "country": "Ország",
+        "currency": "Pénznem",
+        "logoUrl": "Vállalati logó URL",
+        "selectCountry": "Ország kiválasztása",
+        "selectCurrency": "Pénznem kiválasztása",
+        "logo": "Vállalati logó",
+        "website": "Weboldal",
+        "description": "Leírás"
+      },
+      "actions": {
+        "edit": "Vállalat szerkesztése",
+        "delete": "Vállalat törlése",
+        "viewEmployees": "Alkalmazottak megtekintése",
+        "assignGroup": "Ügyfélcsoport hozzárendelése",
+        "editDetails": "Részletek szerkesztése",
+        "manageCustomerGroup": "Ügyfélcsoport kezelése",
+        "approvalSettings": "Jóváhagyási beállítások"
+      },
+      "details": {
+        "overview": "Áttekintés",
+        "employees": "Alkalmazottak",
+        "orders": "Megrendelések",
+        "settings": "Beállítások"
+      },
+      "toasts": {
+        "updateSuccess": "Vállalat sikeresen frissítve",
+        "updateError": "Vállalat frissítése sikertelen",
+        "deleteSuccess": "Vállalat sikeresen törölve",
+        "addToGroupSuccess": "Vállalat sikeresen hozzáadva az ügyfélcsoporthoz",
+        "addToGroupError": "Vállalat ügyfélcsoporthoz adása sikertelen",
+        "removeFromGroupSuccess": "Vállalat sikeresen eltávolítva az ügyfélcsoportból",
+        "removeFromGroupError": "Vállalat ügyfélcsoportból való eltávolítása sikertelen"
+      },
+      "customerGroup": {
+        "title": "Ügyfélcsoport kezelése",
+        "addToGroup": "Hozzáadás ügyfélcsoporthoz",
+        "hint": "{companyName} ügyfélcsoporthoz adása automatikusan hozzáadja a {employeeCount} kapcsolódó alkalmazottat az ügyfélcsoporthoz.",
+        "customerGroupColumn": "Ügyfélcsoport",
+        "actionsColumn": "Műveletek",
+        "addButton": "Hozzáadás",
+        "removeButton": "Eltávolítás",
+        "noGroupsFound": "Nem találhatók ügyfélcsoportok"
+      },
+      "approvalSettings": {
+        "title": "Vállalati jóváhagyási beállítások",
+        "requiresAdminApproval": "Adminisztrátori jóváhagyást igényel",
+        "requiresAdminApprovalDesc": "Vállalati adminisztrátori jóváhagyás szükséges a vállalat összes megrendeléséhez.",
+        "requiresSalesManagerApproval": "Értékesítési vezető jóváhagyását igényel",
+        "requiresSalesManagerApprovalDesc": "Értékesítési vezető jóváhagyása szükséges a vállalat összes megrendeléséhez.",
+        "updateSuccess": "Vállalati jóváhagyási beállítások sikeresen frissítve",
+        "updateError": "Vállalati jóváhagyási beállítások frissítése sikertelen"
+      },
+      "companyDetails": {
+        "notFound": "Vállalat nem található",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "address": "Cím",
+        "city": "Város",
+        "state": "Állam/Megye",
+        "currency": "Pénznem",
+        "customerGroup": "Ügyfélcsoport",
+        "approvalSettings": "Jóváhagyási beállítások",
+        "requiresAdminApproval": "Adminisztrátori jóváhagyást igényel",
+        "requiresSalesManagerApproval": "Értékesítési vezető jóváhagyását igényel",
+        "noApprovalRequired": "Nincs szükség jóváhagyásra",
+        "employees": "Alkalmazottak",
+        "name": "Név",
+        "spendingLimit": "Költési limit",
+        "actions": "Műveletek",
+        "admin": "Adminisztrátor",
+        "add": "Hozzáadás",
+        "noEmployees": "Nincs rekord",
+        "noEmployeesDesc": "Ennek a vállalatnak nincsenek alkalmazottai."
+      },
+      "employees": {
+        "createEmployee": "Vállalati ügyfél hozzáadása",
+        "createEmployeeSuccess": "Alkalmazott sikeresen létrehozva",
+        "createCustomerError": "Ügyfél létrehozása sikertelen",
+        "createEmployeeError": "Alkalmazott létrehozása sikertelen",
+        "form": {
+          "details": "Részletek",
+          "firstName": "Keresztnév",
+          "lastName": "Vezetéknév",
+          "email": "E-mail",
+          "phone": "Telefon",
+          "permissions": "Engedélyek",
+          "spendingLimit": "Költési limit",
+          "adminAccess": "Adminisztrátor hozzáférés",
+          "isAdmin": "Adminisztrátor",
+          "isAdminDesc": "Engedélyezés adminisztrátor hozzáféréshez",
+          "isAdminTooltip": "Az adminisztrátorok kezelhetik a vállalat részleteit és az alkalmazottak engedélyeit.",
+          "firstNamePlaceholder": "János",
+          "lastNamePlaceholder": "Kovács",
+          "emailPlaceholder": "janos.kovacs@example.com",
+          "phonePlaceholder": "+36 30 123 4567",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Mentés...",
+          "save": "Mentés"
+        },
+        "actions": {
+          "edit": "Szerkesztés",
+          "delete": "Törlés",
+          "deleteSuccess": "Alkalmazott sikeresen törölve"
+        },
+        "edit": {
+          "title": "Alkalmazott szerkesztése",
+          "updateSuccess": "Alkalmazott sikeresen frissítve",
+          "editCustomerDetails": "Ügyfél részleteinek szerkesztése",
+          "company": "Vállalat"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Jóváhagyások", 
+      "subtitle": "Megrendelés jóváhagyási munkafolyamatok kezelése",
+      "noApprovals": "Nincs rekord",
+      "noApprovalsDescription": "Jelenleg nincsenek jóváhagyási kérések.",
+      "table": {
+        "orderId": "Megrendelés ID",
+        "customer": "Ügyfél",
+        "company": "Vállalat",
+        "amount": "Összeg",
+        "status": "Állapot",
+        "requestedAt": "Kérés időpontja",
+        "actions": "Műveletek"
+      },
+      "status": {
+        "pending": "Függőben",
+        "approved": "Jóváhagyva",
+        "rejected": "Elutasítva",
+        "expired": "Lejárt"
+      },
+      "actions": {
+        "approve": "Jóváhagyás",
+        "reject": "Elutasítás",
+        "review": "Áttekintés"
+      },
+      "details": {
+        "approvalRequest": "Jóváhagyási kérés",
+        "requestedBy": "Kérelmező",
+        "reason": "Ok",
+        "orderDetails": "Megrendelés részletei"
+      },
+      "confirmations": {
+        "approveTitle": "Megrendelés jóváhagyása?",
+        "approveDescription": "Arra készül, hogy jóváhagyja ezt a megrendelést. Szeretne folytatni?",
+        "rejectTitle": "Megrendelés elutasítása?",
+        "rejectDescription": "Arra készül, hogy elutasítja ezt a megrendelés jóváhagyási kérést. Szeretne folytatni?"
+      },
+      "toasts": {
+        "approveSuccess": "Megrendelés sikeresen jóváhagyva",
+        "rejectSuccess": "Megrendelés jóváhagyása elutasítva"
+      }
+    }
+  },
+  "common": {
+    "loading": "Betöltés...",
+    "noData": "Nincs adat",
+    "search": "Keresés",
+    "filter": "Szűrő",
+    "export": "Exportálás",
+    "import": "Importálás",
+    "refresh": "Frissítés",
+    "save": "Mentés",
+    "cancel": "Mégse",
+    "delete": "Törlés",
+    "edit": "Szerkesztés",
+    "view": "Megtekintés",
+    "create": "Létrehozás",
+    "back": "Vissza",
+    "next": "Következő oldal",
+    "previous": "Előző oldal",
+    "error": "Hiba",
+    "confirmDeletion": "Törlés megerősítése",
+    "confirmDeletionDesc": "Biztos, hogy törölni szeretné ezt az elemet? Ez a művelet nem vonható vissza.",
+    "confirmLeaveForm": "Biztos, hogy el szeretné hagyni ezt az űrlapot?",
+    "confirmLeaveFormDesc": "Nem mentett módosításai vannak, amelyek elvesznek, ha elhagyja az űrlapot.",
+    "continue": "Folytatás"
+    }
+  }
+} 

@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Cotizaciones",
+      "companies": "Empresas", 
+      "approvals": "Aprobaciones"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Cotizaciones",
+      "subtitle": "Gestionar cotizaciones y propuestas de clientes",
+      "noQuotes": "Sin registros",
+      "noQuotesDescription": "Actualmente no hay cotizaciones. Crea una desde la tienda.",
+      "table": {
+        "id": "ID de Cotización",
+        "customer": "Cliente",
+        "status": "Estado",
+        "company": "Empresa", 
+        "amount": "Importe",
+        "createdAt": "Creado",
+        "actions": "Acciones"
+      },
+      "status": {
+        "pending_merchant": "Pendiente comerciante",
+        "pending_customer": "Pendiente cliente", 
+        "merchant_rejected": "Comerciante rechazó",
+        "customer_rejected": "Cliente rechazó",
+        "accepted": "Aceptado"
+      },
+      "actions": {
+        "sendQuote": "Enviar cotización",
+        "rejectQuote": "Rechazar cotización",
+        "viewOrder": "Ver pedido"
+      },
+      "details": {
+        "header": "Detalles de cotización",
+        "quoteSummary": "Resumen de cotización",
+        "customer": "Cliente",
+        "items": "Artículos",
+        "total": "Total",
+        "subtotal": "Subtotal",
+        "shipping": "Envío",
+        "tax": "Impuesto",
+        "messages": "Mensajes",
+        "originalTotal": "Total original",
+        "quoteTotal": "Total cotización",
+        "discounts": "Descuentos",
+        "pickQuoteItem": "Seleccionar artículo de cotización",
+        "selectQuoteItem": "Selecciona un artículo de cotización para escribir un mensaje",
+        "selectItem": "Seleccionar artículo",
+        "send": "Enviar",
+        "manage": "Gestionar",
+        "manageQuote": "Gestionar cotización",
+        "updatePrice": "Actualizar precio", 
+        "overridePriceHint": "Sobrescribir precio unitario para este producto",
+        "phone": "Teléfono",
+        "spendingLimit": "Límite de gasto",
+        "company": "Empresa",
+        "name": "Nombre"
+      },
+      "confirmations": {
+        "sendTitle": "¿Enviar cotización?",
+        "sendDescription": "Estás a punto de enviar esta cotización al cliente. ¿Deseas continuar?",
+        "rejectTitle": "¿Rechazar cotización?",
+        "rejectDescription": "Estás a punto de rechazar la cotización de este cliente. ¿Deseas continuar?"
+      },
+      "toasts": {
+        "sendSuccess": "Cotización enviada exitosamente al cliente",
+        "rejectSuccess": "Cotización del cliente rechazada exitosamente",
+        "messageSuccess": "Mensaje enviado exitosamente al cliente",
+        "updateSuccess": "Cotización actualizada exitosamente"
+      },
+      "acceptance": {
+        "message": "El cliente ha aceptado la cotización. El pedido está listo para procesamiento."
+      }
+    },
+    "companies": {
+      "title": "Empresas",
+      "subtitle": "Gestionar empresas y organizaciones de clientes",
+      "createCompany": "Crear",
+      "noCompanies": "No se encontraron empresas", 
+      "noCompaniesDescription": "Actualmente no hay empresas. Crea una para empezar.",
+      "table": {
+        "name": "Nombre",
+        "phone": "Teléfono",
+        "email": "Correo",
+        "address": "Dirección",
+        "employees": "Empleados",
+        "customerGroup": "Grupo de clientes",
+        "actions": "Acciones"
+      },
+      "form": {
+        "generalInfo": "Información general",
+        "name": "Nombre de empresa",
+        "email": "Correo electrónico",
+        "phone": "Número de teléfono",
+        "address": "Dirección",
+        "city": "Ciudad",
+        "state": "Estado/Provincia",
+        "zipCode": "Código postal",
+        "country": "País",
+        "currency": "Moneda",
+        "logoUrl": "URL del logo de empresa",
+        "selectCountry": "Seleccionar país",
+        "selectCurrency": "Seleccionar moneda",
+        "logo": "Logo de empresa",
+        "website": "Sitio web",
+        "description": "Descripción"
+      },
+      "actions": {
+        "edit": "Editar empresa",
+        "delete": "Eliminar empresa",
+        "viewEmployees": "Ver empleados",
+        "assignGroup": "Asignar grupo de clientes",
+        "editDetails": "Editar detalles",
+        "manageCustomerGroup": "Gestionar grupo de clientes",
+        "approvalSettings": "Configuración de aprobaciones"
+      },
+      "details": {
+        "overview": "Resumen",
+        "employees": "Empleados",
+        "orders": "Pedidos",
+        "settings": "Configuración"
+      },
+      "toasts": {
+        "updateSuccess": "Empresa actualizada exitosamente",
+        "updateError": "Error al actualizar empresa",
+        "deleteSuccess": "Empresa eliminada exitosamente",
+        "addToGroupSuccess": "Empresa agregada exitosamente al grupo de clientes",
+        "addToGroupError": "Error al agregar empresa al grupo de clientes",
+        "removeFromGroupSuccess": "Empresa removida exitosamente del grupo de clientes",
+        "removeFromGroupError": "Error al remover empresa del grupo de clientes"
+      },
+      "customerGroup": {
+        "title": "Gestionar grupo de clientes",
+        "addToGroup": "Agregar al grupo de clientes",
+        "hint": "Agregar {companyName} a un grupo de clientes automáticamente agregará {employeeCount} empleados vinculados al grupo de clientes.",
+        "customerGroupColumn": "Grupo de clientes",
+        "actionsColumn": "Acciones",
+        "addButton": "Agregar",
+        "removeButton": "Remover",
+        "noGroupsFound": "No se encontraron grupos de clientes"
+      },
+      "approvalSettings": {
+        "title": "Configuración de aprobaciones de empresa",
+        "requiresAdminApproval": "Requiere aprobación de administrador",
+        "requiresAdminApprovalDesc": "Requerir aprobación del administrador de la empresa para todos los pedidos de esta empresa.",
+        "requiresSalesManagerApproval": "Requiere aprobación de gerente de ventas",
+        "requiresSalesManagerApprovalDesc": "Requerir aprobación del gerente de ventas para todos los pedidos de esta empresa.",
+        "updateSuccess": "Configuración de aprobaciones de empresa actualizada exitosamente",
+        "updateError": "Error al actualizar configuración de aprobaciones de empresa"
+      },
+      "companyDetails": {
+        "notFound": "Empresa no encontrada",
+        "phone": "Teléfono",
+        "email": "Correo",
+        "address": "Dirección",
+        "city": "Ciudad",
+        "state": "Estado/Provincia",
+        "currency": "Moneda",
+        "customerGroup": "Grupo de clientes",
+        "approvalSettings": "Configuración de aprobaciones",
+        "requiresAdminApproval": "Requiere aprobación de administrador",
+        "requiresSalesManagerApproval": "Requiere aprobación de gerente de ventas",
+        "noApprovalRequired": "No se requiere aprobación",
+        "employees": "Empleados",
+        "name": "Nombre",
+        "spendingLimit": "Límite de gasto",
+        "actions": "Acciones",
+        "admin": "Administrador",
+        "add": "Agregar",
+        "noEmployees": "Sin registros",
+        "noEmployeesDesc": "Esta empresa no tiene empleados."
+      },
+      "employees": {
+        "createEmployee": "Agregar cliente de empresa",
+        "createEmployeeSuccess": "Empleado creado exitosamente",
+        "createCustomerError": "Error al crear cliente",
+        "createEmployeeError": "Error al crear empleado",
+        "form": {
+          "details": "Detalles",
+          "firstName": "Nombre",
+          "lastName": "Apellido",
+          "email": "Correo",
+          "phone": "Teléfono",
+          "permissions": "Permisos",
+          "spendingLimit": "Límite de gasto",
+          "adminAccess": "Acceso de administrador",
+          "isAdmin": "Es administrador",
+          "isAdminDesc": "Habilitar para acceso de administrador",
+          "isAdminTooltip": "Los administradores pueden gestionar detalles de empresa y permisos de empleados.",
+          "firstNamePlaceholder": "Juan",
+          "lastNamePlaceholder": "Pérez",
+          "emailPlaceholder": "juan.perez@example.com",
+          "phonePlaceholder": "612-345-678",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Guardando...",
+          "save": "Guardar"
+        },
+        "actions": {
+          "edit": "Editar",
+          "delete": "Eliminar",
+          "deleteSuccess": "Empleado eliminado exitosamente"
+        },
+        "edit": {
+          "title": "Editar empleado",
+          "updateSuccess": "Empleado actualizado exitosamente",
+          "editCustomerDetails": "Editar detalles de cliente",
+          "company": "Empresa"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Aprobaciones", 
+      "subtitle": "Gestionar flujos de trabajo de aprobación de pedidos",
+      "noApprovals": "Sin registros",
+      "noApprovalsDescription": "Actualmente no hay solicitudes de aprobación.",
+      "table": {
+        "orderId": "ID de Pedido",
+        "customer": "Cliente",
+        "company": "Empresa",
+        "amount": "Importe",
+        "status": "Estado",
+        "requestedAt": "Solicitado",
+        "actions": "Acciones"
+      },
+      "status": {
+        "pending": "Pendiente",
+        "approved": "Aprobado",
+        "rejected": "Rechazado",
+        "expired": "Expirado"
+      },
+      "actions": {
+        "approve": "Aprobar",
+        "reject": "Rechazar",
+        "review": "Revisar"
+      },
+      "details": {
+        "approvalRequest": "Solicitud de aprobación",
+        "requestedBy": "Solicitado por",
+        "reason": "Razón",
+        "orderDetails": "Detalles del pedido"
+      },
+      "confirmations": {
+        "approveTitle": "¿Aprobar pedido?",
+        "approveDescription": "Estás a punto de aprobar este pedido. ¿Deseas continuar?",
+        "rejectTitle": "¿Rechazar pedido?",
+        "rejectDescription": "Estás a punto de rechazar esta solicitud de aprobación de pedido. ¿Deseas continuar?"
+      },
+      "toasts": {
+        "approveSuccess": "Pedido aprobado exitosamente",
+        "rejectSuccess": "Aprobación de pedido rechazada"
+      }
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "noData": "Sin datos",
+    "search": "Buscar",
+    "filter": "Filtro",
+    "export": "Exportar",
+    "import": "Importar",
+    "refresh": "Actualizar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "create": "Crear",
+    "back": "Atrás",
+    "next": "Siguiente página",
+    "previous": "Página anterior",
+    "error": "Error",
+    "confirmDeletion": "Confirmar eliminación",
+    "confirmDeletionDesc": "¿Estás seguro de que deseas eliminar este elemento? Esta acción no se puede deshacer.",
+    "confirmLeaveForm": "¿Estás seguro de que deseas salir de este formulario?",
+    "confirmLeaveFormDesc": "Tienes cambios sin guardar que se perderán si sales del formulario.",
+    "continue": "Continuar"
+    }
+  }
+} 

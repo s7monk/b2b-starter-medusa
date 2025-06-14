@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Preventivi",
+      "companies": "Aziende", 
+      "approvals": "Approvazioni"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Preventivi",
+      "subtitle": "Gestire preventivi e proposte clienti",
+      "noQuotes": "Nessun record",
+      "noQuotesDescription": "Attualmente non ci sono preventivi. Creane uno dal negozio.",
+      "table": {
+        "id": "ID Preventivo",
+        "customer": "Cliente",
+        "status": "Stato",
+        "company": "Azienda", 
+        "amount": "Importo",
+        "createdAt": "Creato",
+        "actions": "Azioni"
+      },
+      "status": {
+        "pending_merchant": "In attesa commerciante",
+        "pending_customer": "In attesa cliente", 
+        "merchant_rejected": "Commerciante rifiutato",
+        "customer_rejected": "Cliente rifiutato",
+        "accepted": "Accettato"
+      },
+      "actions": {
+        "sendQuote": "Invia preventivo",
+        "rejectQuote": "Rifiuta preventivo",
+        "viewOrder": "Visualizza ordine"
+      },
+      "details": {
+        "header": "Dettagli preventivo",
+        "quoteSummary": "Riepilogo preventivo",
+        "customer": "Cliente",
+        "items": "Articoli",
+        "total": "Totale",
+        "subtotal": "Subtotale",
+        "shipping": "Spedizione",
+        "tax": "Tassa",
+        "messages": "Messaggi",
+        "originalTotal": "Totale originale",
+        "quoteTotal": "Totale preventivo",
+        "discounts": "Sconti",
+        "pickQuoteItem": "Seleziona articolo preventivo",
+        "selectQuoteItem": "Seleziona un articolo del preventivo per scrivere un messaggio",
+        "selectItem": "Seleziona articolo",
+        "send": "Invia",
+        "manage": "Gestisci",
+        "manageQuote": "Gestisci preventivo",
+        "updatePrice": "Aggiorna prezzo", 
+        "overridePriceHint": "Sovrascrivi prezzo unitario per questo prodotto",
+        "phone": "Telefono",
+        "spendingLimit": "Limite di spesa",
+        "company": "Azienda",
+        "name": "Nome"
+      },
+      "confirmations": {
+        "sendTitle": "Inviare preventivo?",
+        "sendDescription": "Stai per inviare questo preventivo al cliente. Vuoi continuare?",
+        "rejectTitle": "Rifiutare preventivo?",
+        "rejectDescription": "Stai per rifiutare il preventivo di questo cliente. Vuoi continuare?"
+      },
+      "toasts": {
+        "sendSuccess": "Preventivo inviato con successo al cliente",
+        "rejectSuccess": "Preventivo cliente rifiutato con successo",
+        "messageSuccess": "Messaggio inviato con successo al cliente",
+        "updateSuccess": "Preventivo aggiornato con successo"
+      },
+      "acceptance": {
+        "message": "Il cliente ha accettato il preventivo. L'ordine è pronto per l'elaborazione."
+      }
+    },
+    "companies": {
+      "title": "Aziende",
+      "subtitle": "Gestire aziende e organizzazioni clienti",
+      "createCompany": "Crea",
+      "noCompanies": "Nessuna azienda trovata", 
+      "noCompaniesDescription": "Attualmente non ci sono aziende. Creane una per iniziare.",
+      "table": {
+        "name": "Nome",
+        "phone": "Telefono",
+        "email": "Email",
+        "address": "Indirizzo",
+        "employees": "Dipendenti",
+        "customerGroup": "Gruppo clienti",
+        "actions": "Azioni"
+      },
+      "form": {
+        "generalInfo": "Informazioni generali",
+        "name": "Nome azienda",
+        "email": "Email",
+        "phone": "Numero di telefono",
+        "address": "Indirizzo",
+        "city": "Città",
+        "state": "Stato/Provincia",
+        "zipCode": "Codice postale",
+        "country": "Paese",
+        "currency": "Valuta",
+        "logoUrl": "URL logo azienda",
+        "selectCountry": "Seleziona paese",
+        "selectCurrency": "Seleziona valuta",
+        "logo": "Logo azienda",
+        "website": "Sito web",
+        "description": "Descrizione"
+      },
+      "actions": {
+        "edit": "Modifica azienda",
+        "delete": "Elimina azienda",
+        "viewEmployees": "Visualizza dipendenti",
+        "assignGroup": "Assegna gruppo clienti",
+        "editDetails": "Modifica dettagli",
+        "manageCustomerGroup": "Gestisci gruppo clienti",
+        "approvalSettings": "Impostazioni approvazione"
+      },
+      "details": {
+        "overview": "Panoramica",
+        "employees": "Dipendenti",
+        "orders": "Ordini",
+        "settings": "Impostazioni"
+      },
+      "toasts": {
+        "updateSuccess": "Azienda aggiornata con successo",
+        "updateError": "Aggiornamento azienda fallito",
+        "deleteSuccess": "Azienda eliminata con successo",
+        "addToGroupSuccess": "Azienda aggiunta con successo al gruppo clienti",
+        "addToGroupError": "Aggiunta azienda al gruppo clienti fallita",
+        "removeFromGroupSuccess": "Azienda rimossa con successo dal gruppo clienti",
+        "removeFromGroupError": "Rimozione azienda dal gruppo clienti fallita"
+      },
+      "customerGroup": {
+        "title": "Gestisci gruppo clienti",
+        "addToGroup": "Aggiungi al gruppo clienti",
+        "hint": "Aggiungere {companyName} a un gruppo clienti aggiungerà automaticamente {employeeCount} dipendenti collegati al gruppo clienti.",
+        "customerGroupColumn": "Gruppo clienti",
+        "actionsColumn": "Azioni",
+        "addButton": "Aggiungi",
+        "removeButton": "Rimuovi",
+        "noGroupsFound": "Nessun gruppo clienti trovato"
+      },
+      "approvalSettings": {
+        "title": "Impostazioni approvazione azienda",
+        "requiresAdminApproval": "Richiede approvazione amministratore",
+        "requiresAdminApprovalDesc": "Richiedere approvazione amministratore aziendale per tutti gli ordini di questa azienda.",
+        "requiresSalesManagerApproval": "Richiede approvazione responsabile vendite",
+        "requiresSalesManagerApprovalDesc": "Richiedere approvazione responsabile vendite per tutti gli ordini di questa azienda.",
+        "updateSuccess": "Impostazioni approvazione azienda aggiornate con successo",
+        "updateError": "Aggiornamento impostazioni approvazione azienda fallito"
+      },
+      "companyDetails": {
+        "notFound": "Azienda non trovata",
+        "phone": "Telefono",
+        "email": "Email",
+        "address": "Indirizzo",
+        "city": "Città",
+        "state": "Stato/Provincia",
+        "currency": "Valuta",
+        "customerGroup": "Gruppo clienti",
+        "approvalSettings": "Impostazioni approvazione",
+        "requiresAdminApproval": "Richiede approvazione amministratore",
+        "requiresSalesManagerApproval": "Richiede approvazione responsabile vendite",
+        "noApprovalRequired": "Nessuna approvazione richiesta",
+        "employees": "Dipendenti",
+        "name": "Nome",
+        "spendingLimit": "Limite di spesa",
+        "actions": "Azioni",
+        "admin": "Amministratore",
+        "add": "Aggiungi",
+        "noEmployees": "Nessun record",
+        "noEmployeesDesc": "Questa azienda non ha dipendenti."
+      },
+      "employees": {
+        "createEmployee": "Aggiungi cliente aziendale",
+        "createEmployeeSuccess": "Dipendente creato con successo",
+        "createCustomerError": "Creazione cliente fallita",
+        "createEmployeeError": "Creazione dipendente fallita",
+        "form": {
+          "details": "Dettagli",
+          "firstName": "Nome",
+          "lastName": "Cognome",
+          "email": "Email",
+          "phone": "Telefono",
+          "permissions": "Permessi",
+          "spendingLimit": "Limite di spesa",
+          "adminAccess": "Accesso amministratore",
+          "isAdmin": "È amministratore",
+          "isAdminDesc": "Abilita per accesso amministratore",
+          "isAdminTooltip": "Gli amministratori possono gestire dettagli azienda e permessi dipendenti.",
+          "firstNamePlaceholder": "Mario",
+          "lastNamePlaceholder": "Rossi",
+          "emailPlaceholder": "mario.rossi@example.com",
+          "phonePlaceholder": "335-123-4567",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Salvataggio...",
+          "save": "Salva"
+        },
+        "actions": {
+          "edit": "Modifica",
+          "delete": "Elimina",
+          "deleteSuccess": "Dipendente eliminato con successo"
+        },
+        "edit": {
+          "title": "Modifica dipendente",
+          "updateSuccess": "Dipendente aggiornato con successo",
+          "editCustomerDetails": "Modifica dettagli cliente",
+          "company": "Azienda"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Approvazioni", 
+      "subtitle": "Gestire flussi di lavoro approvazione ordini",
+      "noApprovals": "Nessun record",
+      "noApprovalsDescription": "Attualmente non ci sono richieste di approvazione.",
+      "table": {
+        "orderId": "ID Ordine",
+        "customer": "Cliente",
+        "company": "Azienda",
+        "amount": "Importo",
+        "status": "Stato",
+        "requestedAt": "Richiesto",
+        "actions": "Azioni"
+      },
+      "status": {
+        "pending": "In attesa",
+        "approved": "Approvato",
+        "rejected": "Rifiutato",
+        "expired": "Scaduto"
+      },
+      "actions": {
+        "approve": "Approva",
+        "reject": "Rifiuta",
+        "review": "Rivedi"
+      },
+      "details": {
+        "approvalRequest": "Richiesta approvazione",
+        "requestedBy": "Richiesto da",
+        "reason": "Motivo",
+        "orderDetails": "Dettagli ordine"
+      },
+      "confirmations": {
+        "approveTitle": "Approvare ordine?",
+        "approveDescription": "Stai per approvare questo ordine. Vuoi continuare?",
+        "rejectTitle": "Rifiutare ordine?",
+        "rejectDescription": "Stai per rifiutare questa richiesta di approvazione ordine. Vuoi continuare?"
+      },
+      "toasts": {
+        "approveSuccess": "Ordine approvato con successo",
+        "rejectSuccess": "Approvazione ordine rifiutata"
+      }
+    }
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "noData": "Nessun dato",
+    "search": "Cerca",
+    "filter": "Filtro",
+    "export": "Esporta",
+    "import": "Importa",
+    "refresh": "Aggiorna",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "view": "Visualizza",
+    "create": "Crea",
+    "back": "Indietro",
+    "next": "Pagina successiva",
+    "previous": "Pagina precedente",
+    "error": "Errore",
+    "confirmDeletion": "Conferma eliminazione",
+    "confirmDeletionDesc": "Sei sicuro di voler eliminare questo elemento? Questa azione non può essere annullata.",
+    "confirmLeaveForm": "Sei sicuro di voler uscire da questo modulo?",
+    "confirmLeaveFormDesc": "Hai modifiche non salvate che andranno perse se esci dal modulo.",
+    "continue": "Continua"
+    }
+  }
+} 

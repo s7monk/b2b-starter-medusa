@@ -1,0 +1,76 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "견적서",
+      "companies": "회사", 
+      "approvals": "승인"
+    },
+    "routes": {
+      "quotes": {
+        "title": "견적서",
+        "subtitle": "고객 견적서 및 제안 관리",
+        "noQuotes": "기록 없음",
+        "noQuotesDescription": "현재 견적서가 없습니다. 상점에서 하나를 생성하세요.",
+        "table": {
+          "id": "견적서 ID",
+          "customer": "고객",
+          "status": "상태",
+          "company": "회사", 
+          "amount": "금액",
+          "createdAt": "생성일",
+          "actions": "작업"
+        }
+      },
+      "companies": {
+        "title": "회사",
+        "subtitle": "고객 회사 및 조직 관리",
+        "createCompany": "생성",
+        "noCompanies": "회사를 찾을 수 없음",
+        "table": {
+          "name": "이름",
+          "phone": "전화번호",
+          "email": "이메일",
+          "address": "주소",
+          "employees": "직원",
+          "customerGroup": "고객 그룹",
+          "actions": "작업"
+        }
+      },
+      "approvals": {
+        "title": "승인",
+        "subtitle": "주문 승인 요청 관리",
+        "noApprovals": "승인 요청 없음",
+        "table": {
+          "orderId": "주문 ID",
+          "customer": "고객",
+          "company": "회사",
+          "amount": "금액",
+          "status": "상태",
+          "submittedAt": "제출일",
+          "actions": "작업"
+        }
+      }
+    }
+  },
+  "common": {
+    "yes": "예",
+    "no": "아니오",
+    "save": "저장",
+    "cancel": "취소",
+    "edit": "편집",
+    "delete": "삭제",
+    "create": "생성",
+    "update": "업데이트",
+    "view": "보기",
+    "actions": "작업",
+    "search": "검색",
+    "filter": "필터",
+    "export": "내보내기",
+    "import": "가져오기",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "warning": "경고",
+    "info": "정보"
+  }
+} 

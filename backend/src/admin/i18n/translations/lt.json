@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Pasiūlymai",
+      "companies": "Įmonės", 
+      "approvals": "Patvirtinimai"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Pasiūlymai",
+      "subtitle": "Valdyti klientų pasiūlymus ir projektus",
+      "noQuotes": "Nėra įrašų",
+      "noQuotesDescription": "Šiuo metu nėra pasiūlymų. Sukurkite vieną iš parduotuvės.",
+      "table": {
+        "id": "Pasiūlymo ID",
+        "customer": "Klientas",
+        "status": "Būsena",
+        "company": "Įmonė", 
+        "amount": "Suma",
+        "createdAt": "Sukurta",
+        "actions": "Veiksmai"
+      },
+      "status": {
+        "pending_merchant": "Laukia pardavėjo",
+        "pending_customer": "Laukia kliento", 
+        "merchant_rejected": "Pardavėjas atmetė",
+        "customer_rejected": "Klientas atmetė",
+        "accepted": "Priimta"
+      },
+      "actions": {
+        "sendQuote": "Siųsti pasiūlymą",
+        "rejectQuote": "Atmesti pasiūlymą",
+        "viewOrder": "Žiūrėti užsakymą"
+      },
+      "details": {
+        "header": "Pasiūlymo detalės",
+        "quoteSummary": "Pasiūlymo suvestinė",
+        "customer": "Klientas",
+        "items": "Prekės",
+        "total": "Iš viso",
+        "subtotal": "Tarpinė suma",
+        "shipping": "Pristatymas",
+        "tax": "Mokestis",
+        "messages": "Žinutės",
+        "originalTotal": "Pradinė suma",
+        "quoteTotal": "Pasiūlymo suma",
+        "discounts": "Nuolaidos",
+        "pickQuoteItem": "Pasirinkti pasiūlymo prekę",
+        "selectQuoteItem": "Pasirinkite pasiūlymo prekę žinutės rašymui",
+        "selectItem": "Pasirinkti prekę",
+        "send": "Siųsti",
+        "manage": "Valdyti",
+        "manageQuote": "Valdyti pasiūlymą",
+        "updatePrice": "Atnaujinti kainą", 
+        "overridePriceHint": "Perrašyti šio produkto vieneto kainą",
+        "phone": "Telefonas",
+        "spendingLimit": "Išlaidų limitas",
+        "company": "Įmonė",
+        "name": "Vardas"
+      },
+      "confirmations": {
+        "sendTitle": "Siųsti pasiūlymą?",
+        "sendDescription": "Ruošiatės siųsti šį pasiūlymą klientui. Ar norite tęsti?",
+        "rejectTitle": "Atmesti pasiūlymą?",
+        "rejectDescription": "Ruošiatės atmesti šio kliento pasiūlymą. Ar norite tęsti?"
+      },
+      "toasts": {
+        "sendSuccess": "Pasiūlymas sėkmingai išsiųstas klientui",
+        "rejectSuccess": "Kliento pasiūlymas sėkmingai atmestas",
+        "messageSuccess": "Žinutė sėkmingai išsiųsta klientui",
+        "updateSuccess": "Pasiūlymas sėkmingai atnaujintas"
+      },
+      "acceptance": {
+        "message": "Klientas priėmė pasiūlymą. Užsakymas paruoštas apdorojimui."
+      }
+    },
+    "companies": {
+      "title": "Įmonės",
+      "subtitle": "Valdyti klientų įmones ir organizacijas",
+      "createCompany": "Sukurti",
+      "noCompanies": "Įmonių nerasta", 
+      "noCompaniesDescription": "Šiuo metu nėra įmonių. Sukurkite vieną pradžiai.",
+      "table": {
+        "name": "Pavadinimas",
+        "phone": "Telefonas",
+        "email": "El. paštas",
+        "address": "Adresas",
+        "employees": "Darbuotojai",
+        "customerGroup": "Klientų grupė",
+        "actions": "Veiksmai"
+      },
+      "form": {
+        "generalInfo": "Bendroji informacija",
+        "name": "Įmonės pavadinimas",
+        "email": "El. paštas",
+        "phone": "Telefono numeris",
+        "address": "Adresas",
+        "city": "Miestas",
+        "state": "Valstija/sritis",
+        "zipCode": "Pašto kodas",
+        "country": "Šalis",
+        "currency": "Valiuta",
+        "logoUrl": "Įmonės logotipo URL",
+        "selectCountry": "Pasirinkti šalį",
+        "selectCurrency": "Pasirinkti valiutą",
+        "logo": "Įmonės logotipas",
+        "website": "Svetainė",
+        "description": "Aprašymas"
+      },
+      "actions": {
+        "edit": "Redaguoti įmonę",
+        "delete": "Ištrinti įmonę",
+        "viewEmployees": "Žiūrėti darbuotojus",
+        "assignGroup": "Priskirti klientų grupę",
+        "editDetails": "Redaguoti duomenis",
+        "manageCustomerGroup": "Valdyti klientų grupę",
+        "approvalSettings": "Patvirtinimo nustatymai"
+      },
+      "details": {
+        "overview": "Apžvalga",
+        "employees": "Darbuotojai",
+        "orders": "Užsakymai",
+        "settings": "Nustatymai"
+      },
+      "toasts": {
+        "updateSuccess": "Įmonė sėkmingai atnaujinta",
+        "updateError": "Įmonės atnaujinimas nepavyko",
+        "deleteSuccess": "Įmonė sėkmingai ištrinta",
+        "addToGroupSuccess": "Įmonė sėkmingai pridėta prie klientų grupės",
+        "addToGroupError": "Nepavyko pridėti įmonės prie klientų grupės",
+        "removeFromGroupSuccess": "Įmonė sėkmingai pašalinta iš klientų grupės",
+        "removeFromGroupError": "Nepavyko pašalinti įmonės iš klientų grupės"
+      },
+      "customerGroup": {
+        "title": "Valdyti klientų grupę",
+        "addToGroup": "Pridėti prie klientų grupės",
+        "hint": "Pridėjus {companyName} prie klientų grupės, automatiškai bus pridėti {employeeCount} susieti darbuotojai prie klientų grupės.",
+        "customerGroupColumn": "Klientų grupė",
+        "actionsColumn": "Veiksmai",
+        "addButton": "Pridėti",
+        "removeButton": "Pašalinti",
+        "noGroupsFound": "Klientų grupių nerasta"
+      },
+      "approvalSettings": {
+        "title": "Įmonės patvirtinimo nustatymai",
+        "requiresAdminApproval": "Reikia administratoriaus patvirtinimo",
+        "requiresAdminApprovalDesc": "Reikalauti įmonės administratoriaus patvirtinimo visiems šios įmonės užsakymams.",
+        "requiresSalesManagerApproval": "Reikia pardavimų vadovo patvirtinimo",
+        "requiresSalesManagerApprovalDesc": "Reikalauti pardavimų vadovo patvirtinimo visiems šios įmonės užsakymams.",
+        "updateSuccess": "Įmonės patvirtinimo nustatymai sėkmingai atnaujinti",
+        "updateError": "Nepavyko atnaujinti įmonės patvirtinimo nustatymų"
+      },
+      "companyDetails": {
+        "notFound": "Įmonė nerasta",
+        "phone": "Telefonas",
+        "email": "El. paštas",
+        "address": "Adresas",
+        "city": "Miestas",
+        "state": "Valstija/sritis",
+        "currency": "Valiuta",
+        "customerGroup": "Klientų grupė",
+        "approvalSettings": "Patvirtinimo nustatymai",
+        "requiresAdminApproval": "Reikia administratoriaus patvirtinimo",
+        "requiresSalesManagerApproval": "Reikia pardavimų vadovo patvirtinimo",
+        "noApprovalRequired": "Patvirtinimo nereikia",
+        "employees": "Darbuotojai",
+        "name": "Vardas",
+        "spendingLimit": "Išlaidų limitas",
+        "actions": "Veiksmai",
+        "admin": "Administratorius",
+        "add": "Pridėti",
+        "noEmployees": "Nėra įrašų",
+        "noEmployeesDesc": "Ši įmonė neturi darbuotojų."
+      },
+      "employees": {
+        "createEmployee": "Pridėti įmonės klientą",
+        "createEmployeeSuccess": "Darbuotojas sėkmingai sukurtas",
+        "createCustomerError": "Nepavyko sukurti kliento",
+        "createEmployeeError": "Nepavyko sukurti darbuotojo",
+        "form": {
+          "details": "Duomenys",
+          "firstName": "Vardas",
+          "lastName": "Pavardė",
+          "email": "El. paštas",
+          "phone": "Telefonas",
+          "permissions": "Leidimai",
+          "spendingLimit": "Išlaidų limitas",
+          "adminAccess": "Administratoriaus prieiga",
+          "isAdmin": "Yra administratorius",
+          "isAdminDesc": "Įjungti administratoriaus prieigai",
+          "isAdminTooltip": "Administratoriai gali valdyti įmonės duomenis ir darbuotojų leidimus.",
+          "firstNamePlaceholder": "Jonas",
+          "lastNamePlaceholder": "Jonaitis",
+          "emailPlaceholder": "jonas.jonaitis@example.com",
+          "phonePlaceholder": "+370 600 12345",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Išsaugoma...",
+          "save": "Išsaugoti"
+        },
+        "actions": {
+          "edit": "Redaguoti",
+          "delete": "Ištrinti",
+          "deleteSuccess": "Darbuotojas sėkmingai ištrintas"
+        },
+        "edit": {
+          "title": "Redaguoti darbuotoją",
+          "updateSuccess": "Darbuotojas sėkmingai atnaujintas",
+          "editCustomerDetails": "Redaguoti kliento duomenis",
+          "company": "Įmonė"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Patvirtinimai", 
+      "subtitle": "Valdyti užsakymų patvirtinimo darbo eigas",
+      "noApprovals": "Nėra įrašų",
+      "noApprovalsDescription": "Šiuo metu nėra patvirtinimo užklausų.",
+      "table": {
+        "orderId": "Užsakymo ID",
+        "customer": "Klientas",
+        "company": "Įmonė",
+        "amount": "Suma",
+        "status": "Būsena",
+        "requestedAt": "Užklausta",
+        "actions": "Veiksmai"
+      },
+      "status": {
+        "pending": "Laukiantis",
+        "approved": "Patvirtintas",
+        "rejected": "Atmestas",
+        "expired": "Pasibaigęs"
+      },
+      "actions": {
+        "approve": "Patvirtinti",
+        "reject": "Atmesti",
+        "review": "Peržiūrėti"
+      },
+      "details": {
+        "approvalRequest": "Patvirtinimo užklausa",
+        "requestedBy": "Užklausė",
+        "reason": "Priežastis",
+        "orderDetails": "Užsakymo detalės"
+      },
+      "confirmations": {
+        "approveTitle": "Patvirtinti užsakymą?",
+        "approveDescription": "Ruošiatės patvirtinti šį užsakymą. Ar norite tęsti?",
+        "rejectTitle": "Atmesti užsakymą?",
+        "rejectDescription": "Ruošiatės atmesti šią užsakymo patvirtinimo užklausą. Ar norite tęsti?"
+      },
+      "toasts": {
+        "approveSuccess": "Užsakymas sėkmingai patvirtintas",
+        "rejectSuccess": "Užsakymo patvirtinimas atmestas"
+      }
+    }
+  },
+  "common": {
+    "loading": "Kraunama...",
+    "noData": "Nėra duomenų",
+    "search": "Ieškoti",
+    "filter": "Filtras",
+    "export": "Eksportuoti",
+    "import": "Importuoti",
+    "refresh": "Atnaujinti",
+    "save": "Išsaugoti",
+    "cancel": "Atšaukti",
+    "delete": "Ištrinti",
+    "edit": "Redaguoti",
+    "view": "Žiūrėti",
+    "create": "Sukurti",
+    "back": "Atgal",
+    "next": "Kitas puslapis",
+    "previous": "Ankstesnis puslapis",
+    "error": "Klaida",
+    "confirmDeletion": "Patvirtinti trynimą",
+    "confirmDeletionDesc": "Ar tikrai norite ištrinti šį elementą? Šio veiksmo negalima anuliuoti.",
+    "confirmLeaveForm": "Ar tikrai norite išeiti iš šios formos?",
+    "confirmLeaveFormDesc": "Turite neišsaugotų pakeitimų, kurie bus prarasti, jei išeisite iš formos.",
+    "continue": "Tęsti"
+    }
+  }
+} 

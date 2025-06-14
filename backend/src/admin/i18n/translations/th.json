@@ -1,0 +1,76 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "ใบเสนอราคา",
+      "companies": "บริษัท", 
+      "approvals": "การอนุมัติ"
+    },
+    "routes": {
+      "quotes": {
+        "title": "ใบเสนอราคา",
+        "subtitle": "จัดการใบเสนอราคาและข้อเสนอจากลูกค้า",
+        "noQuotes": "ไม่มีบันทึก",
+        "noQuotesDescription": "ปัจจุบันไม่มีใบเสนอราคา สร้างหนึ่งรายการจากร้านค้า",
+        "table": {
+          "id": "ID ใบเสนอราคา",
+          "customer": "ลูกค้า",
+          "status": "สถานะ",
+          "company": "บริษัท", 
+          "amount": "จำนวนเงิน",
+          "createdAt": "สร้างเมื่อ",
+          "actions": "การดำเนินการ"
+        }
+      },
+      "companies": {
+        "title": "บริษัท",
+        "subtitle": "จัดการบริษัทและองค์กรของลูกค้า",
+        "createCompany": "สร้าง",
+        "noCompanies": "ไม่พบบริษัท",
+        "table": {
+          "name": "ชื่อ",
+          "phone": "โทรศัพท์",
+          "email": "อีเมล",
+          "address": "ที่อยู่",
+          "employees": "พนักงาน",
+          "customerGroup": "กลุ่มลูกค้า",
+          "actions": "การดำเนินการ"
+        }
+      },
+      "approvals": {
+        "title": "การอนุมัติ",
+        "subtitle": "จัดการคำขออนุมัติคำสั่งซื้อ",
+        "noApprovals": "ไม่มีคำขออนุมัติ",
+        "table": {
+          "orderId": "ID คำสั่งซื้อ",
+          "customer": "ลูกค้า",
+          "company": "บริษัท",
+          "amount": "จำนวนเงิน",
+          "status": "สถานะ",
+          "submittedAt": "ส่งเมื่อ",
+          "actions": "การดำเนินการ"
+        }
+      }
+    }
+  },
+  "common": {
+    "yes": "ใช่",
+    "no": "ไม่",
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "edit": "แก้ไข",
+    "delete": "ลบ",
+    "create": "สร้าง",
+    "update": "อัปเดต",
+    "view": "ดู",
+    "actions": "การดำเนินการ",
+    "search": "ค้นหา",
+    "filter": "กรอง",
+    "export": "ส่งออก",
+    "import": "นำเข้า",
+    "loading": "กำลังโหลด...",
+    "error": "ข้อผิดพลาด",
+    "success": "สำเร็จ",
+    "warning": "คำเตือน",
+    "info": "ข้อมูล"
+  }
+} 

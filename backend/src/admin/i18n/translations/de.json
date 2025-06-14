@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Angebote",
+      "companies": "Unternehmen", 
+      "approvals": "Genehmigungen"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Angebote",
+      "subtitle": "Kundenangebote und Vorschläge verwalten",
+      "noQuotes": "Keine Einträge",
+      "noQuotesDescription": "Derzeit sind keine Angebote vorhanden. Erstellen Sie eines aus dem Geschäft.",
+      "table": {
+        "id": "Angebots-ID",
+        "customer": "Kunde",
+        "status": "Status",
+        "company": "Unternehmen", 
+        "amount": "Betrag",
+        "createdAt": "Erstellt",
+        "actions": "Aktionen"
+      },
+      "status": {
+        "pending_merchant": "Wartet auf Händler",
+        "pending_customer": "Wartet auf Kunde", 
+        "merchant_rejected": "Händler abgelehnt",
+        "customer_rejected": "Kunde abgelehnt",
+        "accepted": "Akzeptiert"
+      },
+      "actions": {
+        "sendQuote": "Angebot senden",
+        "rejectQuote": "Angebot ablehnen",
+        "viewOrder": "Bestellung anzeigen"
+      },
+      "details": {
+        "header": "Angebotsdetails",
+        "quoteSummary": "Angebotszusammenfassung",
+        "customer": "Kunde",
+        "items": "Artikel",
+        "total": "Gesamt",
+        "subtotal": "Zwischensumme",
+        "shipping": "Versand",
+        "tax": "Steuer",
+        "messages": "Nachrichten",
+        "originalTotal": "Ursprüngliche Summe",
+        "quoteTotal": "Angebotssumme",
+        "discounts": "Rabatte",
+        "pickQuoteItem": "Angebotsartikel auswählen",
+        "selectQuoteItem": "Wählen Sie einen Angebotsartikel zum Schreiben einer Nachricht",
+        "selectItem": "Artikel auswählen",
+        "send": "Senden",
+        "manage": "Verwalten",
+        "manageQuote": "Angebot verwalten",
+        "updatePrice": "Preis aktualisieren", 
+        "overridePriceHint": "Stückpreis für dieses Produkt überschreiben",
+        "phone": "Telefon",
+        "spendingLimit": "Ausgabenlimit",
+        "company": "Unternehmen",
+        "name": "Name"
+      },
+      "confirmations": {
+        "sendTitle": "Angebot senden?",
+        "sendDescription": "Sie sind dabei, dieses Angebot an den Kunden zu senden. Möchten Sie fortfahren?",
+        "rejectTitle": "Angebot ablehnen?",
+        "rejectDescription": "Sie sind dabei, das Angebot dieses Kunden abzulehnen. Möchten Sie fortfahren?"
+      },
+      "toasts": {
+        "sendSuccess": "Angebot wurde erfolgreich an den Kunden gesendet",
+        "rejectSuccess": "Kundenangebot wurde erfolgreich abgelehnt",
+        "messageSuccess": "Nachricht wurde erfolgreich an den Kunden gesendet",
+        "updateSuccess": "Angebot wurde erfolgreich aktualisiert"
+      },
+      "acceptance": {
+        "message": "Der Kunde hat das Angebot angenommen. Die Bestellung ist bereit zur Bearbeitung."
+      }
+    },
+    "companies": {
+      "title": "Unternehmen",
+      "subtitle": "Kundenunternehmen und Organisationen verwalten",
+      "createCompany": "Erstellen",
+      "noCompanies": "Keine Unternehmen gefunden", 
+      "noCompaniesDescription": "Derzeit sind keine Unternehmen vorhanden. Erstellen Sie eines für den Anfang.",
+      "table": {
+        "name": "Name",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "address": "Adresse",
+        "employees": "Mitarbeiter",
+        "customerGroup": "Kundengruppe",
+        "actions": "Aktionen"
+      },
+      "form": {
+        "generalInfo": "Allgemeine Informationen",
+        "name": "Firmenname",
+        "email": "E-Mail",
+        "phone": "Telefonnummer",
+        "address": "Adresse",
+        "city": "Stadt",
+        "state": "Bundesland/Staat",
+        "zipCode": "Postleitzahl",
+        "country": "Land",
+        "currency": "Währung",
+        "logoUrl": "Firmenlogo-URL",
+        "selectCountry": "Land auswählen",
+        "selectCurrency": "Währung auswählen",
+        "logo": "Firmenlogo",
+        "website": "Webseite",
+        "description": "Beschreibung"
+      },
+      "actions": {
+        "edit": "Unternehmen bearbeiten",
+        "delete": "Unternehmen löschen",
+        "viewEmployees": "Mitarbeiter anzeigen",
+        "assignGroup": "Kundengruppe zuweisen",
+        "editDetails": "Details bearbeiten",
+        "manageCustomerGroup": "Kundengruppe verwalten",
+        "approvalSettings": "Genehmigungseinstellungen"
+      },
+      "details": {
+        "overview": "Übersicht",
+        "employees": "Mitarbeiter",
+        "orders": "Bestellungen",
+        "settings": "Einstellungen"
+      },
+      "toasts": {
+        "updateSuccess": "Unternehmen wurde erfolgreich aktualisiert",
+        "updateError": "Aktualisierung des Unternehmens fehlgeschlagen",
+        "deleteSuccess": "Unternehmen wurde erfolgreich gelöscht",
+        "addToGroupSuccess": "Unternehmen wurde erfolgreich zur Kundengruppe hinzugefügt",
+        "addToGroupError": "Hinzufügen zur Kundengruppe fehlgeschlagen",
+        "removeFromGroupSuccess": "Unternehmen wurde erfolgreich aus der Kundengruppe entfernt",
+        "removeFromGroupError": "Entfernen aus der Kundengruppe fehlgeschlagen"
+      },
+      "customerGroup": {
+        "title": "Kundengruppe verwalten",
+        "addToGroup": "Zur Kundengruppe hinzufügen",
+        "hint": "Das Hinzufügen von {companyName} zu einer Kundengruppe fügt automatisch {employeeCount} verknüpfte Mitarbeiter zur Kundengruppe hinzu.",
+        "customerGroupColumn": "Kundengruppe",
+        "actionsColumn": "Aktionen",
+        "addButton": "Hinzufügen",
+        "removeButton": "Entfernen",
+        "noGroupsFound": "Keine Kundengruppen gefunden"
+      },
+      "approvalSettings": {
+        "title": "Unternehmensgenehmigungseinstellungen",
+        "requiresAdminApproval": "Erfordert Admin-Genehmigung",
+        "requiresAdminApprovalDesc": "Admin-Genehmigung für alle Bestellungen dieses Unternehmens erforderlich.",
+        "requiresSalesManagerApproval": "Erfordert Vertriebsleiter-Genehmigung",
+        "requiresSalesManagerApprovalDesc": "Vertriebsleiter-Genehmigung für alle Bestellungen dieses Unternehmens erforderlich.",
+        "updateSuccess": "Unternehmensgenehmigungseinstellungen wurden erfolgreich aktualisiert",
+        "updateError": "Aktualisierung der Unternehmensgenehmigungseinstellungen fehlgeschlagen"
+      },
+      "companyDetails": {
+        "notFound": "Unternehmen nicht gefunden",
+        "phone": "Telefon",
+        "email": "E-Mail",
+        "address": "Adresse",
+        "city": "Stadt",
+        "state": "Bundesland/Staat",
+        "currency": "Währung",
+        "customerGroup": "Kundengruppe",
+        "approvalSettings": "Genehmigungseinstellungen",
+        "requiresAdminApproval": "Erfordert Admin-Genehmigung",
+        "requiresSalesManagerApproval": "Erfordert Vertriebsleiter-Genehmigung",
+        "noApprovalRequired": "Keine Genehmigung erforderlich",
+        "employees": "Mitarbeiter",
+        "name": "Name",
+        "spendingLimit": "Ausgabenlimit",
+        "actions": "Aktionen",
+        "admin": "Administrator",
+        "add": "Hinzufügen",
+        "noEmployees": "Keine Einträge",
+        "noEmployeesDesc": "Dieses Unternehmen hat keine Mitarbeiter."
+      },
+      "employees": {
+        "createEmployee": "Firmenkunden hinzufügen",
+        "createEmployeeSuccess": "Mitarbeiter wurde erfolgreich erstellt",
+        "createCustomerError": "Erstellung des Kunden fehlgeschlagen",
+        "createEmployeeError": "Erstellung des Mitarbeiters fehlgeschlagen",
+        "form": {
+          "details": "Details",
+          "firstName": "Vorname",
+          "lastName": "Nachname",
+          "email": "E-Mail",
+          "phone": "Telefon",
+          "permissions": "Berechtigungen",
+          "spendingLimit": "Ausgabenlimit",
+          "adminAccess": "Admin-Zugang",
+          "isAdmin": "Ist Administrator",
+          "isAdminDesc": "Für Admin-Zugang aktivieren",
+          "isAdminTooltip": "Administratoren können Unternehmensdetails und Mitarbeiterberechtigungen verwalten.",
+          "firstNamePlaceholder": "Max",
+          "lastNamePlaceholder": "Mustermann",
+          "emailPlaceholder": "max.mustermann@example.com",
+          "phonePlaceholder": "0151-12345678",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Speichern...",
+          "save": "Speichern"
+        },
+        "actions": {
+          "edit": "Bearbeiten",
+          "delete": "Löschen",
+          "deleteSuccess": "Mitarbeiter wurde erfolgreich gelöscht"
+        },
+        "edit": {
+          "title": "Mitarbeiter bearbeiten",
+          "updateSuccess": "Mitarbeiter wurde erfolgreich aktualisiert",
+          "editCustomerDetails": "Kundendetails bearbeiten",
+          "company": "Unternehmen"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Genehmigungen", 
+      "subtitle": "Bestellgenehmigungs-Workflows verwalten",
+      "noApprovals": "Keine Einträge",
+      "noApprovalsDescription": "Derzeit sind keine Genehmigungsanfragen vorhanden.",
+      "table": {
+        "orderId": "Bestellungs-ID",
+        "customer": "Kunde",
+        "company": "Unternehmen",
+        "amount": "Betrag",
+        "status": "Status",
+        "requestedAt": "Angefragt",
+        "actions": "Aktionen"
+      },
+      "status": {
+        "pending": "Ausstehend",
+        "approved": "Genehmigt",
+        "rejected": "Abgelehnt",
+        "expired": "Abgelaufen"
+      },
+      "actions": {
+        "approve": "Genehmigen",
+        "reject": "Ablehnen",
+        "review": "Überprüfen"
+      },
+      "details": {
+        "approvalRequest": "Genehmigungsanfrage",
+        "requestedBy": "Angefragt von",
+        "reason": "Grund",
+        "orderDetails": "Bestelldetails"
+      },
+      "confirmations": {
+        "approveTitle": "Bestellung genehmigen?",
+        "approveDescription": "Sie sind dabei, diese Bestellung zu genehmigen. Möchten Sie fortfahren?",
+        "rejectTitle": "Bestellung ablehnen?",
+        "rejectDescription": "Sie sind dabei, diese Bestellgenehmigungsanfrage abzulehnen. Möchten Sie fortfahren?"
+      },
+      "toasts": {
+        "approveSuccess": "Bestellung wurde erfolgreich genehmigt",
+        "rejectSuccess": "Bestellgenehmigung wurde abgelehnt"
+      }
+    }
+  },
+  "common": {
+    "loading": "Laden...",
+    "noData": "Keine Daten",
+    "search": "Suchen",
+    "filter": "Filter",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "refresh": "Aktualisieren",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "view": "Anzeigen",
+    "create": "Erstellen",
+    "back": "Zurück",
+    "next": "Nächste Seite",
+    "previous": "Vorherige Seite",
+    "error": "Fehler",
+    "confirmDeletion": "Löschung bestätigen",
+    "confirmDeletionDesc": "Sind Sie sicher, dass Sie diesen Eintrag löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "confirmLeaveForm": "Sind Sie sicher, dass Sie dieses Formular verlassen möchten?",
+    "confirmLeaveFormDesc": "Sie haben ungespeicherte Änderungen, die verloren gehen, wenn Sie das Formular verlassen.",
+    "continue": "Fortfahren"
+    }
+  }
+} 

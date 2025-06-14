@@ -1,0 +1,76 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "قیمت‌ها",
+      "companies": "شرکت‌ها", 
+      "approvals": "تأییدیه‌ها"
+    },
+    "routes": {
+      "quotes": {
+        "title": "قیمت‌ها",
+        "subtitle": "مدیریت قیمت‌ها و درخواست‌های مشتریان",
+        "noQuotes": "هیچ رکوردی وجود ندارد",
+        "noQuotesDescription": "در حال حاضر هیچ قیمتی وجود ندارد. یکی از فروشگاه ایجاد کنید.",
+        "table": {
+          "id": "شناسه قیمت",
+          "customer": "مشتری",
+          "status": "وضعیت",
+          "company": "شرکت", 
+          "amount": "مبلغ",
+          "createdAt": "ایجاد شده",
+          "actions": "اقدامات"
+        }
+      },
+      "companies": {
+        "title": "شرکت‌ها",
+        "subtitle": "مدیریت شرکت‌ها و سازمان‌های مشتریان",
+        "createCompany": "ایجاد",
+        "noCompanies": "هیچ شرکتی یافت نشد",
+        "table": {
+          "name": "نام",
+          "phone": "تلفن",
+          "email": "ایمیل",
+          "address": "آدرس",
+          "employees": "کارکنان",
+          "customerGroup": "گروه مشتریان",
+          "actions": "اقدامات"
+        }
+      },
+      "approvals": {
+        "title": "تأییدیه‌ها",
+        "subtitle": "مدیریت درخواست‌های تأیید سفارشات",
+        "noApprovals": "هیچ درخواست تأییدی وجود ندارد",
+        "table": {
+          "orderId": "شناسه سفارش",
+          "customer": "مشتری",
+          "company": "شرکت",
+          "amount": "مبلغ",
+          "status": "وضعیت",
+          "submittedAt": "ارسال شده",
+          "actions": "اقدامات"
+        }
+      }
+    }
+  },
+  "common": {
+    "yes": "بله",
+    "no": "خیر",
+    "save": "ذخیره",
+    "cancel": "لغو",
+    "edit": "ویرایش",
+    "delete": "حذف",
+    "create": "ایجاد",
+    "update": "به‌روزرسانی",
+    "view": "مشاهده",
+    "actions": "اقدامات",
+    "search": "جستجو",
+    "filter": "فیلتر",
+    "export": "صادرات",
+    "import": "واردات",
+    "loading": "در حال بارگذاری...",
+    "error": "خطا",
+    "success": "موفقیت",
+    "warning": "هشدار",
+    "info": "اطلاعات"
+  }
+}

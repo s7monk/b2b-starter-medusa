@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Offertes",
+      "companies": "Bedrijven", 
+      "approvals": "Goedkeuringen"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Offertes",
+      "subtitle": "Klantoffertes en voorstellen beheren",
+      "noQuotes": "Geen records",
+      "noQuotesDescription": "Er zijn momenteel geen offertes. Maak er een aan vanuit de winkel.",
+      "table": {
+        "id": "Offerte ID",
+        "customer": "Klant",
+        "status": "Status",
+        "company": "Bedrijf", 
+        "amount": "Bedrag",
+        "createdAt": "Gemaakt",
+        "actions": "Acties"
+      },
+      "status": {
+        "pending_merchant": "Wacht op handelaar",
+        "pending_customer": "Wacht op klant", 
+        "merchant_rejected": "Handelaar afgewezen",
+        "customer_rejected": "Klant afgewezen",
+        "accepted": "Geaccepteerd"
+      },
+      "actions": {
+        "sendQuote": "Offerte verzenden",
+        "rejectQuote": "Offerte afwijzen",
+        "viewOrder": "Bestelling bekijken"
+      },
+      "details": {
+        "header": "Offerte details",
+        "quoteSummary": "Offerte samenvatting",
+        "customer": "Klant",
+        "items": "Items",
+        "total": "Totaal",
+        "subtotal": "Subtotaal",
+        "shipping": "Verzending",
+        "tax": "Belasting",
+        "messages": "Berichten",
+        "originalTotal": "Oorspronkelijk totaal",
+        "quoteTotal": "Offerte totaal",
+        "discounts": "Kortingen",
+        "pickQuoteItem": "Offerte item selecteren",
+        "selectQuoteItem": "Selecteer een offerte item om een bericht te schrijven",
+        "selectItem": "Item selecteren",
+        "send": "Verzenden",
+        "manage": "Beheren",
+        "manageQuote": "Offerte beheren",
+        "updatePrice": "Prijs bijwerken", 
+        "overridePriceHint": "Eenheidsprijs voor dit product overschrijven",
+        "phone": "Telefoon",
+        "spendingLimit": "Uitgavenlimiet",
+        "company": "Bedrijf",
+        "name": "Naam"
+      },
+      "confirmations": {
+        "sendTitle": "Offerte verzenden?",
+        "sendDescription": "U staat op het punt deze offerte naar de klant te verzenden. Wilt u doorgaan?",
+        "rejectTitle": "Offerte afwijzen?",
+        "rejectDescription": "U staat op het punt de offerte van deze klant af te wijzen. Wilt u doorgaan?"
+      },
+      "toasts": {
+        "sendSuccess": "Offerte succesvol verzonden naar klant",
+        "rejectSuccess": "Klantofferte succesvol afgewezen",
+        "messageSuccess": "Bericht succesvol verzonden naar klant",
+        "updateSuccess": "Offerte succesvol bijgewerkt"
+      },
+      "acceptance": {
+        "message": "De klant heeft de offerte geaccepteerd. De bestelling is klaar voor verwerking."
+      }
+    },
+    "companies": {
+      "title": "Bedrijven",
+      "subtitle": "Klantbedrijven en organisaties beheren",
+      "createCompany": "Aanmaken",
+      "noCompanies": "Geen bedrijven gevonden", 
+      "noCompaniesDescription": "Er zijn momenteel geen bedrijven. Maak er een aan om te beginnen.",
+      "table": {
+        "name": "Naam",
+        "phone": "Telefoon",
+        "email": "E-mail",
+        "address": "Adres",
+        "employees": "Medewerkers",
+        "customerGroup": "Klantengroep",
+        "actions": "Acties"
+      },
+      "form": {
+        "generalInfo": "Algemene informatie",
+        "name": "Bedrijfsnaam",
+        "email": "E-mail",
+        "phone": "Telefoonnummer",
+        "address": "Adres",
+        "city": "Stad",
+        "state": "Provincie/Staat",
+        "zipCode": "Postcode",
+        "country": "Land",
+        "currency": "Valuta",
+        "logoUrl": "Bedrijfslogo URL",
+        "selectCountry": "Land selecteren",
+        "selectCurrency": "Valuta selecteren",
+        "logo": "Bedrijfslogo",
+        "website": "Website",
+        "description": "Beschrijving"
+      },
+      "actions": {
+        "edit": "Bedrijf bewerken",
+        "delete": "Bedrijf verwijderen",
+        "viewEmployees": "Medewerkers bekijken",
+        "assignGroup": "Klantengroep toewijzen",
+        "editDetails": "Details bewerken",
+        "manageCustomerGroup": "Klantengroep beheren",
+        "approvalSettings": "Goedkeuringsinstellingen"
+      },
+      "details": {
+        "overview": "Overzicht",
+        "employees": "Medewerkers",
+        "orders": "Bestellingen",
+        "settings": "Instellingen"
+      },
+      "toasts": {
+        "updateSuccess": "Bedrijf succesvol bijgewerkt",
+        "updateError": "Bedrijf bijwerken mislukt",
+        "deleteSuccess": "Bedrijf succesvol verwijderd",
+        "addToGroupSuccess": "Bedrijf succesvol toegevoegd aan klantengroep",
+        "addToGroupError": "Bedrijf toevoegen aan klantengroep mislukt",
+        "removeFromGroupSuccess": "Bedrijf succesvol verwijderd uit klantengroep",
+        "removeFromGroupError": "Bedrijf verwijderen uit klantengroep mislukt"
+      },
+      "customerGroup": {
+        "title": "Klantengroep beheren",
+        "addToGroup": "Toevoegen aan klantengroep",
+        "hint": "Het toevoegen van {companyName} aan een klantengroep voegt automatisch {employeeCount} gekoppelde medewerkers toe aan de klantengroep.",
+        "customerGroupColumn": "Klantengroep",
+        "actionsColumn": "Acties",
+        "addButton": "Toevoegen",
+        "removeButton": "Verwijderen",
+        "noGroupsFound": "Geen klantengroepen gevonden"
+      },
+      "approvalSettings": {
+        "title": "Bedrijfsgoedkeuringsinstellingen",
+        "requiresAdminApproval": "Vereist admin goedkeuring",
+        "requiresAdminApprovalDesc": "Bedrijfsadmin goedkeuring vereisen voor alle bestellingen van dit bedrijf.",
+        "requiresSalesManagerApproval": "Vereist salesmanager goedkeuring",
+        "requiresSalesManagerApprovalDesc": "Salesmanager goedkeuring vereisen voor alle bestellingen van dit bedrijf.",
+        "updateSuccess": "Bedrijfsgoedkeuringsinstellingen succesvol bijgewerkt",
+        "updateError": "Bedrijfsgoedkeuringsinstellingen bijwerken mislukt"
+      },
+      "companyDetails": {
+        "notFound": "Bedrijf niet gevonden",
+        "phone": "Telefoon",
+        "email": "E-mail",
+        "address": "Adres",
+        "city": "Stad",
+        "state": "Provincie/Staat",
+        "currency": "Valuta",
+        "customerGroup": "Klantengroep",
+        "approvalSettings": "Goedkeuringsinstellingen",
+        "requiresAdminApproval": "Vereist admin goedkeuring",
+        "requiresSalesManagerApproval": "Vereist salesmanager goedkeuring",
+        "noApprovalRequired": "Geen goedkeuring vereist",
+        "employees": "Medewerkers",
+        "name": "Naam",
+        "spendingLimit": "Uitgavenlimiet",
+        "actions": "Acties",
+        "admin": "Administrator",
+        "add": "Toevoegen",
+        "noEmployees": "Geen records",
+        "noEmployeesDesc": "Dit bedrijf heeft geen medewerkers."
+      },
+      "employees": {
+        "createEmployee": "Bedrijfsklant toevoegen",
+        "createEmployeeSuccess": "Medewerker succesvol aangemaakt",
+        "createCustomerError": "Klant aanmaken mislukt",
+        "createEmployeeError": "Medewerker aanmaken mislukt",
+        "form": {
+          "details": "Details",
+          "firstName": "Voornaam",
+          "lastName": "Achternaam",
+          "email": "E-mail",
+          "phone": "Telefoon",
+          "permissions": "Machtigingen",
+          "spendingLimit": "Uitgavenlimiet",
+          "adminAccess": "Admin toegang",
+          "isAdmin": "Is administrator",
+          "isAdminDesc": "Inschakelen voor admin toegang",
+          "isAdminTooltip": "Administrators kunnen bedrijfsdetails en medewerkersmachtigingen beheren.",
+          "firstNamePlaceholder": "Jan",
+          "lastNamePlaceholder": "Jansen",
+          "emailPlaceholder": "jan.jansen@example.com",
+          "phonePlaceholder": "06-12345678",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Opslaan...",
+          "save": "Opslaan"
+        },
+        "actions": {
+          "edit": "Bewerken",
+          "delete": "Verwijderen",
+          "deleteSuccess": "Medewerker succesvol verwijderd"
+        },
+        "edit": {
+          "title": "Medewerker bewerken",
+          "updateSuccess": "Medewerker succesvol bijgewerkt",
+          "editCustomerDetails": "Klantdetails bewerken",
+          "company": "Bedrijf"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Goedkeuringen", 
+      "subtitle": "Bestellingsgoedkeuringsworkflows beheren",
+      "noApprovals": "Geen records",
+      "noApprovalsDescription": "Er zijn momenteel geen goedkeuringsverzoeken.",
+      "table": {
+        "orderId": "Bestelling ID",
+        "customer": "Klant",
+        "company": "Bedrijf",
+        "amount": "Bedrag",
+        "status": "Status",
+        "requestedAt": "Aangevraagd",
+        "actions": "Acties"
+      },
+      "status": {
+        "pending": "In behandeling",
+        "approved": "Goedgekeurd",
+        "rejected": "Afgewezen",
+        "expired": "Verlopen"
+      },
+      "actions": {
+        "approve": "Goedkeuren",
+        "reject": "Afwijzen",
+        "review": "Beoordelen"
+      },
+      "details": {
+        "approvalRequest": "Goedkeuringsverzoek",
+        "requestedBy": "Aangevraagd door",
+        "reason": "Reden",
+        "orderDetails": "Bestellingsdetails"
+      },
+      "confirmations": {
+        "approveTitle": "Bestelling goedkeuren?",
+        "approveDescription": "U staat op het punt deze bestelling goed te keuren. Wilt u doorgaan?",
+        "rejectTitle": "Bestelling afwijzen?",
+        "rejectDescription": "U staat op het punt dit bestellingsgoedkeuringsverzoek af te wijzen. Wilt u doorgaan?"
+      },
+      "toasts": {
+        "approveSuccess": "Bestelling succesvol goedgekeurd",
+        "rejectSuccess": "Bestellingsgoedkeuring afgewezen"
+      }
+    }
+  },
+  "common": {
+    "loading": "Laden...",
+    "noData": "Geen gegevens",
+    "search": "Zoeken",
+    "filter": "Filter",
+    "export": "Exporteren",
+    "import": "Importeren",
+    "refresh": "Vernieuwen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "view": "Bekijken",
+    "create": "Aanmaken",
+    "back": "Terug",
+    "next": "Volgende pagina",
+    "previous": "Vorige pagina",
+    "error": "Fout",
+    "confirmDeletion": "Verwijdering bevestigen",
+    "confirmDeletionDesc": "Weet u zeker dat u dit item wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "confirmLeaveForm": "Weet u zeker dat u dit formulier wilt verlaten?",
+    "confirmLeaveFormDesc": "U heeft niet-opgeslagen wijzigingen die verloren gaan als u het formulier verlaat.",
+    "continue": "Doorgaan"
+    }
+  }
+} 

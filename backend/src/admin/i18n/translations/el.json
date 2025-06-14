@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Προσφορές",
+      "companies": "Εταιρείες", 
+      "approvals": "Εγκρίσεις"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Προσφορές",
+      "subtitle": "Διαχείριση προσφορών και προτάσεων πελατών",
+      "noQuotes": "Χωρίς εγγραφές",
+      "noQuotesDescription": "Προς το παρόν δεν υπάρχουν προσφορές. Δημιουργήστε μία από το κατάστημα.",
+      "table": {
+        "id": "ID Προσφοράς",
+        "customer": "Πελάτης",
+        "status": "Κατάσταση",
+        "company": "Εταιρεία", 
+        "amount": "Ποσό",
+        "createdAt": "Δημιουργήθηκε",
+        "actions": "Ενέργειες"
+      },
+      "status": {
+        "pending_merchant": "Αναμονή έμπορου",
+        "pending_customer": "Αναμονή πελάτη", 
+        "merchant_rejected": "Ο έμπορος απέρριψε",
+        "customer_rejected": "Ο πελάτης απέρριψε",
+        "accepted": "Αποδεκτή"
+      },
+      "actions": {
+        "sendQuote": "Αποστολή προσφοράς",
+        "rejectQuote": "Απόρριψη προσφοράς",
+        "viewOrder": "Προβολή παραγγελίας"
+      },
+      "details": {
+        "header": "Στοιχεία προσφοράς",
+        "quoteSummary": "Περίληψη προσφοράς",
+        "customer": "Πελάτης",
+        "items": "Στοιχεία",
+        "total": "Σύνολο",
+        "subtotal": "Υποσύνολο",
+        "shipping": "Μεταφορικά",
+        "tax": "Φόρος",
+        "messages": "Μηνύματα",
+        "originalTotal": "Αρχικό σύνολο",
+        "quoteTotal": "Σύνολο προσφοράς",
+        "discounts": "Εκπτώσεις",
+        "pickQuoteItem": "Επιλέξτε στοιχείο προσφοράς",
+        "selectQuoteItem": "Επιλέξτε ένα στοιχείο προσφοράς για να γράψετε μήνυμα",
+        "selectItem": "Επιλογή στοιχείου",
+        "send": "Αποστολή",
+        "manage": "Διαχείριση",
+        "manageQuote": "Διαχείριση προσφοράς",
+        "updatePrice": "Ενημέρωση τιμής", 
+        "overridePriceHint": "Παράκαμψη τιμής μονάδας για αυτό το προϊόν",
+        "phone": "Τηλέφωνο",
+        "spendingLimit": "Όριο δαπανών",
+        "company": "Εταιρεία",
+        "name": "Όνομα"
+      },
+      "confirmations": {
+        "sendTitle": "Αποστολή προσφοράς;",
+        "sendDescription": "Πρόκειται να στείλετε αυτή την προσφορά στον πελάτη. Θέλετε να συνεχίσετε;",
+        "rejectTitle": "Απόρριψη προσφοράς;",
+        "rejectDescription": "Πρόκειται να απορρίψετε την προσφορά αυτού του πελάτη. Θέλετε να συνεχίσετε;"
+      },
+      "toasts": {
+        "sendSuccess": "Η προσφορά στάλθηκε επιτυχώς στον πελάτη",
+        "rejectSuccess": "Η προσφορά του πελάτη απορρίφθηκε επιτυχώς",
+        "messageSuccess": "Το μήνυμα στάλθηκε επιτυχώς στον πελάτη",
+        "updateSuccess": "Η προσφορά ενημερώθηκε επιτυχώς"
+      },
+      "acceptance": {
+        "message": "Ο πελάτης αποδέχθηκε την προσφορά. Η παραγγελία είναι έτοιμη για επεξεργασία."
+      }
+    },
+    "companies": {
+      "title": "Εταιρείες",
+      "subtitle": "Διαχείριση εταιρειών και οργανισμών πελατών",
+      "createCompany": "Δημιουργία",
+      "noCompanies": "Δεν βρέθηκαν εταιρείες", 
+      "noCompaniesDescription": "Προς το παρόν δεν υπάρχουν εταιρείες. Δημιουργήστε μία για να ξεκινήσετε.",
+      "table": {
+        "name": "Όνομα",
+        "phone": "Τηλέφωνο",
+        "email": "Email",
+        "address": "Διεύθυνση",
+        "employees": "Υπάλληλοι",
+        "customerGroup": "Ομάδα πελατών",
+        "actions": "Ενέργειες"
+      },
+      "form": {
+        "generalInfo": "Γενικές πληροφορίες",
+        "name": "Όνομα εταιρείας",
+        "email": "Email",
+        "phone": "Αριθμός τηλεφώνου",
+        "address": "Διεύθυνση",
+        "city": "Πόλη",
+        "state": "Νομός/Πολιτεία",
+        "zipCode": "Ταχυδρομικός κώδικας",
+        "country": "Χώρα",
+        "currency": "Νόμισμα",
+        "logoUrl": "URL λογότυπου εταιρείας",
+        "selectCountry": "Επιλογή χώρας",
+        "selectCurrency": "Επιλογή νομίσματος",
+        "logo": "Λογότυπο εταιρείας",
+        "website": "Ιστοσελίδα",
+        "description": "Περιγραφή"
+      },
+      "actions": {
+        "edit": "Επεξεργασία εταιρείας",
+        "delete": "Διαγραφή εταιρείας",
+        "viewEmployees": "Προβολή υπαλλήλων",
+        "assignGroup": "Ανάθεση ομάδας πελατών",
+        "editDetails": "Επεξεργασία στοιχείων",
+        "manageCustomerGroup": "Διαχείριση ομάδας πελατών",
+        "approvalSettings": "Ρυθμίσεις έγκρισης"
+      },
+      "details": {
+        "overview": "Επισκόπηση",
+        "employees": "Υπάλληλοι",
+        "orders": "Παραγγελίες",
+        "settings": "Ρυθμίσεις"
+      },
+      "toasts": {
+        "updateSuccess": "Η εταιρεία ενημερώθηκε επιτυχώς",
+        "updateError": "Η ενημέρωση της εταιρείας απέτυχε",
+        "deleteSuccess": "Η εταιρεία διαγράφηκε επιτυχώς",
+        "addToGroupSuccess": "Η εταιρεία προστέθηκε επιτυχώς στην ομάδα πελατών",
+        "addToGroupError": "Η προσθήκη της εταιρείας στην ομάδα πελατών απέτυχε",
+        "removeFromGroupSuccess": "Η εταιρεία αφαιρέθηκε επιτυχώς από την ομάδα πελατών",
+        "removeFromGroupError": "Η αφαίρεση της εταιρείας από την ομάδα πελατών απέτυχε"
+      },
+      "customerGroup": {
+        "title": "Διαχείριση ομάδας πελατών",
+        "addToGroup": "Προσθήκη σε ομάδα πελατών",
+        "hint": "Η προσθήκη της {companyName} σε μια ομάδα πελατών θα προσθέσει αυτόματα {employeeCount} συνδεδεμένους υπαλλήλους στην ομάδα πελατών.",
+        "customerGroupColumn": "Ομάδα πελατών",
+        "actionsColumn": "Ενέργειες",
+        "addButton": "Προσθήκη",
+        "removeButton": "Αφαίρεση",
+        "noGroupsFound": "Δεν βρέθηκαν ομάδες πελατών"
+      },
+      "approvalSettings": {
+        "title": "Ρυθμίσεις έγκρισης εταιρείας",
+        "requiresAdminApproval": "Απαιτεί έγκριση διαχειριστή",
+        "requiresAdminApprovalDesc": "Απαιτεί έγκριση διαχειριστή εταιρείας για όλες τις παραγγελίες αυτής της εταιρείας.",
+        "requiresSalesManagerApproval": "Απαιτεί έγκριση διευθυντή πωλήσεων",
+        "requiresSalesManagerApprovalDesc": "Απαιτεί έγκριση διευθυντή πωλήσεων για όλες τις παραγγελίες αυτής της εταιρείας.",
+        "updateSuccess": "Οι ρυθμίσεις έγκρισης της εταιρείας ενημερώθηκαν επιτυχώς",
+        "updateError": "Η ενημέρωση των ρυθμίσεων έγκρισης της εταιρείας απέτυχε"
+      },
+      "companyDetails": {
+        "notFound": "Η εταιρεία δεν βρέθηκε",
+        "phone": "Τηλέφωνο",
+        "email": "Email",
+        "address": "Διεύθυνση",
+        "city": "Πόλη",
+        "state": "Νομός/Πολιτεία",
+        "currency": "Νόμισμα",
+        "customerGroup": "Ομάδα πελατών",
+        "approvalSettings": "Ρυθμίσεις έγκρισης",
+        "requiresAdminApproval": "Απαιτεί έγκριση διαχειριστή",
+        "requiresSalesManagerApproval": "Απαιτεί έγκριση διευθυντή πωλήσεων",
+        "noApprovalRequired": "Δεν απαιτείται έγκριση",
+        "employees": "Υπάλληλοι",
+        "name": "Όνομα",
+        "spendingLimit": "Όριο δαπανών",
+        "actions": "Ενέργειες",
+        "admin": "Διαχειριστής",
+        "add": "Προσθήκη",
+        "noEmployees": "Χωρίς εγγραφές",
+        "noEmployeesDesc": "Αυτή η εταιρεία δεν έχει υπαλλήλους."
+      },
+      "employees": {
+        "createEmployee": "Προσθήκη εταιρικού πελάτη",
+        "createEmployeeSuccess": "Ο υπάλληλος δημιουργήθηκε επιτυχώς",
+        "createCustomerError": "Η δημιουργία πελάτη απέτυχε",
+        "createEmployeeError": "Η δημιουργία υπαλλήλου απέτυχε",
+        "form": {
+          "details": "Στοιχεία",
+          "firstName": "Όνομα",
+          "lastName": "Επώνυμο",
+          "email": "Email",
+          "phone": "Τηλέφωνο",
+          "permissions": "Δικαιώματα",
+          "spendingLimit": "Όριο δαπανών",
+          "adminAccess": "Πρόσβαση διαχειριστή",
+          "isAdmin": "Είναι διαχειριστής",
+          "isAdminDesc": "Ενεργοποίηση για πρόσβαση διαχειριστή",
+          "isAdminTooltip": "Οι διαχειριστές μπορούν να διαχειρίζονται τα στοιχεία της εταιρείας και τα δικαιώματα των υπαλλήλων.",
+          "firstNamePlaceholder": "Γιάννης",
+          "lastNamePlaceholder": "Παπαδόπουλος",
+          "emailPlaceholder": "giannis.papadopoulos@example.com",
+          "phonePlaceholder": "6912345678",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Αποθήκευση...",
+          "save": "Αποθήκευση"
+        },
+        "actions": {
+          "edit": "Επεξεργασία",
+          "delete": "Διαγραφή",
+          "deleteSuccess": "Ο υπάλληλος διαγράφηκε επιτυχώς"
+        },
+        "edit": {
+          "title": "Επεξεργασία υπαλλήλου",
+          "updateSuccess": "Ο υπάλληλος ενημερώθηκε επιτυχώς",
+          "editCustomerDetails": "Επεξεργασία στοιχείων πελάτη",
+          "company": "Εταιρεία"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Εγκρίσεις", 
+      "subtitle": "Διαχείριση ροών εργασίας έγκρισης παραγγελιών",
+      "noApprovals": "Χωρίς εγγραφές",
+      "noApprovalsDescription": "Προς το παρόν δεν υπάρχουν αιτήματα έγκρισης.",
+      "table": {
+        "orderId": "ID Παραγγελίας",
+        "customer": "Πελάτης",
+        "company": "Εταιρεία",
+        "amount": "Ποσό",
+        "status": "Κατάσταση",
+        "requestedAt": "Αιτήθηκε",
+        "actions": "Ενέργειες"
+      },
+      "status": {
+        "pending": "Εκκρεμής",
+        "approved": "Εγκρίθηκε",
+        "rejected": "Απορρίφθηκε",
+        "expired": "Έληξε"
+      },
+      "actions": {
+        "approve": "Έγκριση",
+        "reject": "Απόρριψη",
+        "review": "Αξιολόγηση"
+      },
+      "details": {
+        "approvalRequest": "Αίτημα έγκρισης",
+        "requestedBy": "Αιτήθηκε από",
+        "reason": "Λόγος",
+        "orderDetails": "Στοιχεία παραγγελίας"
+      },
+      "confirmations": {
+        "approveTitle": "Έγκριση παραγγελίας;",
+        "approveDescription": "Πρόκειται να εγκρίνετε αυτή την παραγγελία. Θέλετε να συνεχίσετε;",
+        "rejectTitle": "Απόρριψη παραγγελίας;",
+        "rejectDescription": "Πρόκειται να απορρίψετε αυτό το αίτημα έγκρισης παραγγελίας. Θέλετε να συνεχίσετε;"
+      },
+      "toasts": {
+        "approveSuccess": "Η παραγγελία εγκρίθηκε επιτυχώς",
+        "rejectSuccess": "Η έγκριση της παραγγελίας απορρίφθηκε"
+      }
+    }
+  },
+  "common": {
+    "loading": "Φόρτωση...",
+    "noData": "Χωρίς δεδομένα",
+    "search": "Αναζήτηση",
+    "filter": "Φίλτρο",
+    "export": "Εξαγωγή",
+    "import": "Εισαγωγή",
+    "refresh": "Ανανέωση",
+    "save": "Αποθήκευση",
+    "cancel": "Ακύρωση",
+    "delete": "Διαγραφή",
+    "edit": "Επεξεργασία",
+    "view": "Προβολή",
+    "create": "Δημιουργία",
+    "back": "Πίσω",
+    "next": "Επόμενη σελίδα",
+    "previous": "Προηγούμενη σελίδα",
+    "error": "Σφάλμα",
+    "confirmDeletion": "Επιβεβαίωση διαγραφής",
+    "confirmDeletionDesc": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το στοιχείο; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
+    "confirmLeaveForm": "Είστε βέβαιοι ότι θέλετε να αποχωρήσετε από αυτή τη φόρμα;",
+    "confirmLeaveFormDesc": "Έχετε μη αποθηκευμένες αλλαγές που θα χαθούν αν αποχωρήσετε από τη φόρμα.",
+    "continue": "Συνέχεια"
+    }
+  }
+} 

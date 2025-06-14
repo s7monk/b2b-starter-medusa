@@ -1,0 +1,226 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Үнийн санал",
+      "companies": "Компаниуд", 
+      "approvals": "Зөвшөөрөл"
+    },
+    "routes": {
+      "quotes": {
+        "title": "Үнийн санал",
+        "subtitle": "Харилцагчийн үнийн санал болон саналыг удирдах",
+        "noQuotes": "Бичлэг байхгүй",
+        "noQuotesDescription": "Одоогоор үнийн санал байхгүй. Дэлгүүрээс нэгийг үүсгэнэ үү.",
+        "table": {
+          "id": "Үнийн саналын ID",
+          "customer": "Харилцагч",
+          "status": "Төлөв",
+          "company": "Компани", 
+          "amount": "Дүн",
+          "createdAt": "Үүсгэсэн",
+          "actions": "Үйлдэл"
+        },
+        "status": {
+          "pending_merchant": "Худалдаачин хүлээж байна",
+          "pending_customer": "Харилцагч хүлээж байна", 
+          "merchant_rejected": "Худалдаачин татгалзсан",
+          "customer_rejected": "Харилцагч татгалзсан",
+          "accepted": "Хүлээн авсан"
+        },
+        "actions": {
+          "sendQuote": "Үнийн санал илгээх",
+          "rejectQuote": "Үнийн санал татгалзах",
+          "viewOrder": "Захиалга харах"
+        },
+        "details": {
+          "header": "Үнийн саналын дэлгэрэнгүй",
+          "quoteSummary": "Үнийн саналын хураангуй",
+          "customer": "Харилцагч",
+          "items": "Зүйлс",
+          "total": "Нийт",
+          "subtotal": "Дэд дүн",
+          "shipping": "Хүргэлт",
+          "tax": "Татвар",
+          "messages": "Мессеж",
+          "originalTotal": "Анхны нийт дүн",
+          "quoteTotal": "Үнийн саналын нийт дүн",
+          "discounts": "Хөнгөлөлт",
+          "pickQuoteItem": "Үнийн саналын зүйл сонгох",
+          "selectQuoteItem": "Мессеж бичихийн тулд үнийн саналын зүйл сонгоно уу",
+          "selectItem": "Зүйл сонгох",
+          "send": "Илгээх",
+          "manage": "Удирдах",
+          "manageQuote": "Үнийн санал удирдах",
+          "updatePrice": "Үнэ шинэчлэх", 
+          "overridePriceHint": "Энэ бүтээгдэхүүний нэгжийн үнэ солих",
+          "phone": "Утас",
+          "spendingLimit": "Зарцуулалтын хязгаар",
+          "company": "Компани",
+          "name": "Нэр"
+        },
+        "confirmations": {
+          "sendTitle": "Үнийн санал илгээх үү?",
+          "sendDescription": "Та энэ үнийн саналыг харилцагчид илгээх гэж байна. Үргэлжлүүлэх үү?",
+          "rejectTitle": "Үнийн санал татгалзах уу?",
+          "rejectDescription": "Та энэ харилцагчийн үнийн саналыг татгалзах гэж байна. Үргэлжлүүлэх үү?"
+        },
+        "toasts": {
+          "sendSuccess": "Үнийн санал харилцагчид амжилттай илгээгдлээ",
+          "rejectSuccess": "Харилцагчийн үнийн санал амжилттай татгалзагдлаа",
+          "messageSuccess": "Мессеж харилцагчид амжилттай илгээгдлээ",
+          "updateSuccess": "Үнийн санал амжилттай шинэчлэгдлээ"
+        },
+        "acceptance": {
+          "message": "Харилцагч үнийн саналыг хүлээн авлаа. Захиалга боловсруулахад бэлэн боллоо."
+        }
+      },
+      "companies": {
+        "title": "Компаниуд",
+        "subtitle": "Харилцагчийн компани, байгууллагуудыг удирдах",
+        "createCompany": "Үүсгэх",
+        "noCompanies": "Компани олдсонгүй", 
+        "noCompaniesDescription": "Одоогоор компани байхгүй. Эхлэхийн тулд нэгийг үүсгэнэ үү.",
+        "table": {
+          "name": "Нэр",
+          "phone": "Утас",
+          "email": "Имэйл",
+          "address": "Хаяг",
+          "employees": "Ажилтнууд",
+          "customerGroup": "Харилцагчийн бүлэг",
+          "actions": "Үйлдэл"
+        },
+        "form": {
+          "generalInfo": "Ерөнхий мэдээлэл",
+          "name": "Компанийн нэр",
+          "email": "Имэйл",
+          "phone": "Утасны дугаар",
+          "address": "Хаяг",
+          "city": "Хот",
+          "state": "Муж",
+          "zipCode": "Шуудангийн код",
+          "country": "Улс",
+          "currency": "Валют",
+          "logoUrl": "Компанийн логоны URL",
+          "selectCountry": "Улс сонгох",
+          "selectCurrency": "Валют сонгох",
+          "logo": "Компанийн лого",
+          "website": "Вэб хуудас",
+          "description": "Тодорхойлолт"
+        },
+        "actions": {
+          "edit": "Компани засах",
+          "delete": "Компани устгах",
+          "viewEmployees": "Ажилтнуудыг харах",
+          "assignGroup": "Харилцагчийн бүлэг оноох",
+          "editDetails": "Дэлгэрэнгүй засах",
+          "manageCustomerGroup": "Харилцагчийн бүлэг удирдах",
+          "approvalSettings": "Зөвшөөрлийн тохиргоо"
+        },
+        "details": {
+          "overview": "Тойм",
+          "employees": "Ажилтнууд",
+          "orders": "Захиалгууд",
+          "settings": "Тохиргоо"
+        },
+        "toasts": {
+          "updateSuccess": "Компани амжилттай шинэчлэгдлээ",
+          "updateError": "Компани шинэчлэхэд алдаа гарлаа",
+          "deleteSuccess": "Компани амжилттай устгагдлаа",
+          "addToGroupSuccess": "Компани харилцагчийн бүлэгт амжилттай нэмэгдлээ",
+          "addToGroupError": "Компанийг харилцагчийн бүлэгт нэмэхэд алдаа гарлаа",
+          "removeFromGroupSuccess": "Компани харилцагчийн бүлгээс амжилттай хасагдлаа",
+          "removeFromGroupError": "Компанийг харилцагчийн бүлгээс хасахад алдаа гарлаа"
+        },
+        "customerGroup": {
+          "title": "Харилцагчийн бүлэг удирдах",
+          "addToGroup": "Харилцагчийн бүлэгт нэмэх",
+          "hint": "{companyName}-г харилцагчийн бүлэгт нэмснээр холбогдох {employeeCount} ажилтныг автоматаар харилцагчийн бүлэгт нэмнэ.",
+          "customerGroupColumn": "Харилцагчийн бүлэг",
+          "actionsColumn": "Үйлдэл",
+          "addButton": "Нэмэх",
+          "removeButton": "Хасах", 
+          "noGroupsFound": "Харилцагчийн бүлэг олдсонгүй"
+        },
+        "approvalSettings": {
+          "title": "Компанийн зөвшөөрлийн тохиргоо",
+          "requiresAdminApproval": "Админы зөвшөөрөл шаарддаг",
+          "requiresAdminApprovalDesc": "Энэ компанийн бүх захиалгад компанийн админы зөвшөөрөл шаардах.",
+          "requiresSalesManagerApproval": "Борлуулалтын менежерийн зөвшөөрөл шаарддаг",
+          "requiresSalesManagerApprovalDesc": "Энэ компанийн бүх захиалгад борлуулалтын менежерийн зөвшөөрөл шаардах.",
+          "updateSuccess": "Компанийн зөвшөөрлийн тохиргоо амжилттай шинэчлэгдлээ",
+          "updateError": "Компанийн зөвшөөрлийн тохиргоог шинэчлэхэд алдаа гарлаа"
+        },
+        "companyDetails": {
+          "notFound": "Компани олдсонгүй",
+          "phone": "Утас",
+          "email": "Имэйл",
+          "address": "Хаяг",
+          "city": "Хот",
+          "state": "Муж",
+          "currency": "Валют",
+          "customerGroup": "Харилцагчийн бүлэг",
+          "approvalSettings": "Зөвшөөрлийн тохиргоо",
+          "requiresAdminApproval": "Админы зөвшөөрөл шаарддаг",
+          "requiresSalesManagerApproval": "Борлуулалтын менежерийн зөвшөөрөл шаарддаг",
+          "noApprovalRequired": "Зөвшөөрөл шаардагдахгүй",
+          "employees": "Ажилтнууд",
+          "name": "Нэр",
+          "spendingLimit": "Зарцуулалтын хязгаар",
+          "actions": "Үйлдэл",
+          "admin": "Админ",
+          "add": "Нэмэх",
+          "noEmployees": "Бичлэг байхгүй",
+          "noEmployeesDesc": "Энэ компанид ажилтан байхгүй."
+        }
+      },
+      "approvals": {
+        "title": "Зөвшөөрөл",
+        "subtitle": "Захиалгын зөвшөөрлийн хүсэлтүүдийг удирдах",
+        "noApprovals": "Зөвшөөрлийн хүсэлт байхгүй",
+        "noApprovalsDescription": "Одоогоор зөвшөөрлийн хүсэлт байхгүй.",
+        "table": {
+          "orderId": "Захиалгын ID",
+          "customer": "Харилцагч",
+          "company": "Компани",
+          "amount": "Дүн",
+          "status": "Төлөв",
+          "submittedAt": "Илгээсэн",
+          "actions": "Үйлдэл"
+        },
+        "status": {
+          "pending": "Хүлээгдэж байна",
+          "approved": "Зөвшөөрөгдсөн",
+          "rejected": "Татгалзсан"
+        },
+        "actions": {
+          "approve": "Зөвшөөрөх",
+          "reject": "Татгалзах",
+          "viewOrder": "Захиалга харах"
+        }
+      }
+    }
+  },
+  "common": {
+    "loading": "Ачааллаж байна...",
+    "noData": "Өгөгдөл байхгүй",
+    "search": "Хайх",
+    "filter": "Шүүх",
+    "export": "Экспорт",
+    "import": "Импорт",
+    "refresh": "Сэргээх",
+    "save": "Хадгалах",
+    "cancel": "Цуцлах",
+    "delete": "Устгах",
+    "edit": "Засах",
+    "view": "Харах",
+    "create": "Үүсгэх",
+    "back": "Буцах",
+    "next": "Дараагийн хуудас",
+    "previous": "Өмнөх хуудас",
+    "confirmDeletion": "Устгахыг баталгаажуулах",
+    "confirmDeletionDesc": "Та энэ зүйлийг устгахыг хүсэж байна уу? Энэ үйлдлийг буцаах боломжгүй.",
+    "confirmLeaveForm": "Та энэ формоос гарахыг хүсэж байна уу?",
+    "confirmLeaveFormDesc": "Танд хадгалаагүй өөрчлөлтүүд байна, хэрэв та формоос гарвал эдгээр алдагдана.",
+    "continue": "Үргэлжлүүлэх"
+  }
+} 

@@ -1,0 +1,76 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "عروض الأسعار",
+      "companies": "الشركات", 
+      "approvals": "الموافقات"
+    },
+    "routes": {
+      "quotes": {
+        "title": "عروض الأسعار",
+        "subtitle": "إدارة عروض الأسعار وطلبات العملاء",
+        "noQuotes": "لا توجد سجلات",
+        "noQuotesDescription": "لا توجد عروض أسعار حالياً. أنشئ واحداً من المتجر.",
+        "table": {
+          "id": "معرف عرض السعر",
+          "customer": "العميل",
+          "status": "الحالة",
+          "company": "الشركة", 
+          "amount": "المبلغ",
+          "createdAt": "تم الإنشاء",
+          "actions": "الإجراءات"
+        }
+      },
+      "companies": {
+        "title": "الشركات",
+        "subtitle": "إدارة شركات ومؤسسات العملاء",
+        "createCompany": "إنشاء",
+        "noCompanies": "لم يتم العثور على شركات",
+        "table": {
+          "name": "الاسم",
+          "phone": "الهاتف",
+          "email": "البريد الإلكتروني",
+          "address": "العنوان",
+          "employees": "الموظفون",
+          "customerGroup": "مجموعة العملاء",
+          "actions": "الإجراءات"
+        }
+      },
+      "approvals": {
+        "title": "الموافقات",
+        "subtitle": "إدارة طلبات الموافقة على الطلبات",
+        "noApprovals": "لا توجد طلبات موافقة",
+        "table": {
+          "orderId": "معرف الطلب",
+          "customer": "العميل",
+          "company": "الشركة",
+          "amount": "المبلغ",
+          "status": "الحالة",
+          "submittedAt": "تم التقديم",
+          "actions": "الإجراءات"
+        }
+      }
+    }
+  },
+  "common": {
+    "yes": "نعم",
+    "no": "لا",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "edit": "تحرير",
+    "delete": "حذف",
+    "create": "إنشاء",
+    "update": "تحديث",
+    "view": "عرض",
+    "actions": "الإجراءات",
+    "search": "بحث",
+    "filter": "تصفية",
+    "export": "تصدير",
+    "import": "استيراد",
+    "loading": "جارٍ التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "warning": "تحذير",
+    "info": "معلومات"
+  }
+} 

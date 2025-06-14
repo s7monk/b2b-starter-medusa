@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Ponude",
+      "companies": "Kompanije", 
+      "approvals": "Odobravanja"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Ponude",
+      "subtitle": "Upravljaj ponudama i prijedlozima korisnika",
+      "noQuotes": "Nema zapisa",
+      "noQuotesDescription": "Trenutno nema ponuda. Kreiraj jednu iz izloga.",
+      "table": {
+        "id": "ID Ponude",
+        "customer": "Korisnik",
+        "status": "Status",
+        "company": "Kompanija", 
+        "amount": "Iznos",
+        "createdAt": "Kreirano",
+        "actions": "Akcije"
+      },
+      "status": {
+        "pending_merchant": "Čeka trgovca",
+        "pending_customer": "Čeka korisnika", 
+        "merchant_rejected": "Trgovac odbio",
+        "customer_rejected": "Korisnik odbio",
+        "accepted": "Prihvaćeno"
+      },
+      "actions": {
+        "sendQuote": "Pošalji ponudu",
+        "rejectQuote": "Odbij ponudu",
+        "viewOrder": "Pogledaj narudžbu"
+      },
+      "details": {
+        "header": "Detalji ponude",
+        "quoteSummary": "Sažetak ponude",
+        "customer": "Korisnik",
+        "items": "Artikli",
+        "total": "Ukupno",
+        "subtotal": "Međuzbir",
+        "shipping": "Dostava",
+        "tax": "Porez",
+        "messages": "Poruke",
+        "originalTotal": "Originalni ukupno",
+        "quoteTotal": "Ukupno ponuda",
+        "discounts": "Popusti",
+        "pickQuoteItem": "Odaberi artikal ponude",
+        "selectQuoteItem": "Odaberi artikal ponude za pisanje poruke",
+        "selectItem": "Odaberi artikal",
+        "send": "Pošalji",
+        "manage": "Upravljaj",
+        "manageQuote": "Upravljaj ponudom",
+        "updatePrice": "Ažuriraj cijenu", 
+        "overridePriceHint": "Prebriši jediničnu cijenu ovog proizvoda",
+        "phone": "Telefon",
+        "spendingLimit": "Limit potrošnje",
+        "company": "Kompanija",
+        "name": "Ime"
+      },
+      "confirmations": {
+        "sendTitle": "Pošalji ponudu?",
+        "sendDescription": "Spremaš se poslati ovu ponudu korisniku. Želiš li nastaviti?",
+        "rejectTitle": "Odbij ponudu?",
+        "rejectDescription": "Spremaš se odbiti ponudu ovog korisnika. Želiš li nastaviti?"
+      },
+      "toasts": {
+        "sendSuccess": "Uspješno poslana ponuda korisniku",
+        "rejectSuccess": "Uspješno odbijena ponuda korisnika",
+        "messageSuccess": "Uspješno poslana poruka korisniku",
+        "updateSuccess": "Uspješno ažurirana ponuda"
+      },
+      "acceptance": {
+        "message": "Korisnik je prihvatio ponudu. Narudžba je spremna za obradu."
+      }
+    },
+    "companies": {
+      "title": "Kompanije",
+      "subtitle": "Upravljaj kompanijama i organizacijama korisnika",
+      "createCompany": "Kreiraj",
+      "noCompanies": "Nema pronađenih kompanija", 
+      "noCompaniesDescription": "Trenutno nema kompanija. Kreiraj jednu da počneš.",
+      "table": {
+        "name": "Naziv",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresa",
+        "employees": "Zaposleni",
+        "customerGroup": "Grupa korisnika",
+        "actions": "Akcije"
+      },
+      "form": {
+        "generalInfo": "Opće informacije",
+        "name": "Naziv kompanije",
+        "email": "Email",
+        "phone": "Broj telefona",
+        "address": "Adresa",
+        "city": "Grad",
+        "state": "Država/Pokrajina",
+        "zipCode": "Poštanski broj",
+        "country": "Zemlja",
+        "currency": "Valuta",
+        "logoUrl": "URL logoa kompanije",
+        "selectCountry": "Odaberi zemlju",
+        "selectCurrency": "Odaberi valutu",
+        "logo": "Logo kompanije",
+        "website": "Veb sajt",
+        "description": "Opis"
+      },
+      "actions": {
+        "edit": "Uredi kompaniju",
+        "delete": "Obriši kompaniju",
+        "viewEmployees": "Pogledaj zaposlene",
+        "assignGroup": "Dodjeli grupu korisnika",
+        "editDetails": "Uredi detalje",
+        "manageCustomerGroup": "Upravljaj grupom korisnika",
+        "approvalSettings": "Postavke odobravanja"
+      },
+      "details": {
+        "overview": "Pregled",
+        "employees": "Zaposleni",
+        "orders": "Narudžbe",
+        "settings": "Postavke"
+      },
+      "toasts": {
+        "updateSuccess": "Kompanija uspješno ažurirana",
+        "updateError": "Neuspješno ažuriranje kompanije",
+        "deleteSuccess": "Kompanija uspješno obrisana",
+        "addToGroupSuccess": "Kompanija uspješno dodana u grupu korisnika",
+        "addToGroupError": "Neuspješno dodavanje kompanije u grupu korisnika",
+        "removeFromGroupSuccess": "Kompanija uspješno uklonjena iz grupe korisnika",
+        "removeFromGroupError": "Neuspješno uklanjanje kompanije iz grupe korisnika"
+      },
+      "customerGroup": {
+        "title": "Upravljaj grupom korisnika",
+        "addToGroup": "Dodaj u grupu korisnika",
+        "hint": "Dodavanje {companyName} u grupu korisnika će automatski dodati {employeeCount} povezanih zaposlenih u grupu korisnika.",
+        "customerGroupColumn": "Grupa korisnika",
+        "actionsColumn": "Akcije",
+        "addButton": "Dodaj",
+        "removeButton": "Ukloni",
+        "noGroupsFound": "Nema pronađenih grupa korisnika"
+      },
+      "approvalSettings": {
+        "title": "Postavke odobravanja kompanije",
+        "requiresAdminApproval": "Zahtijeva odobravanje administratora",
+        "requiresAdminApprovalDesc": "Zahtijeva odobravanje administratora kompanije za sve narudžbe ove kompanije.",
+        "requiresSalesManagerApproval": "Zahtijeva odobravanje prodajnog menadžera",
+        "requiresSalesManagerApprovalDesc": "Zahtijeva odobravanje prodajnog menadžera za sve narudžbe ove kompanije.",
+        "updateSuccess": "Postavke odobravanja kompanije uspješno ažurirane",
+        "updateError": "Neuspješno ažuriranje postavki odobravanja kompanije"
+      },
+      "companyDetails": {
+        "notFound": "Kompanija nije pronađena",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresa",
+        "city": "Grad",
+        "state": "Država/Pokrajina",
+        "currency": "Valuta",
+        "customerGroup": "Grupa korisnika",
+        "approvalSettings": "Postavke odobravanja",
+        "requiresAdminApproval": "Zahtijeva odobravanje administratora",
+        "requiresSalesManagerApproval": "Zahtijeva odobravanje prodajnog menadžera",
+        "noApprovalRequired": "Nema potrebe za odobravanjem",
+        "employees": "Zaposleni",
+        "name": "Ime",
+        "spendingLimit": "Limit potrošnje",
+        "actions": "Akcije",
+        "admin": "Administrator",
+        "add": "Dodaj",
+        "noEmployees": "Nema zapisa",
+        "noEmployeesDesc": "Ova kompanija nema zaposlene."
+      },
+      "employees": {
+        "createEmployee": "Dodaj korisnika kompanije",
+        "createEmployeeSuccess": "Zaposleni uspješno kreiran",
+        "createCustomerError": "Neuspješno kreiranje korisnika",
+        "createEmployeeError": "Neuspješno kreiranje zaposlenog",
+        "form": {
+          "details": "Detalji",
+          "firstName": "Ime",
+          "lastName": "Prezime",
+          "email": "Email",
+          "phone": "Telefon",
+          "permissions": "Dozvole",
+          "spendingLimit": "Limit potrošnje",
+          "adminAccess": "Administratorski pristup",
+          "isAdmin": "Je administrator",
+          "isAdminDesc": "Omogući za administratorski pristup",
+          "isAdminTooltip": "Administratori mogu upravljati detaljima kompanije i dozvolama zaposlenih.",
+          "firstNamePlaceholder": "Marko",
+          "lastNamePlaceholder": "Marić",
+          "emailPlaceholder": "marko.maric@example.com",
+          "phonePlaceholder": "061234567",
+          "spendingLimitPlaceholder": "1000",
+          "saving": "Spremam...",
+          "save": "Spremi"
+        },
+        "actions": {
+          "edit": "Uredi",
+          "delete": "Obriši",
+          "deleteSuccess": "Zaposleni uspješno obrisan"
+        },
+        "edit": {
+          "title": "Uredi zaposlenog",
+          "updateSuccess": "Zaposleni uspješno ažuriran",
+          "editCustomerDetails": "Uredi detalje korisnika",
+          "company": "Kompanija"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Odobravanja", 
+      "subtitle": "Upravljaj workflow-om odobravanja narudžbi",
+      "noApprovals": "Nema zapisa",
+      "noApprovalsDescription": "Trenutno nema zahtjeva za odobravanje.",
+      "table": {
+        "orderId": "ID Narudžbe",
+        "customer": "Korisnik",
+        "company": "Kompanija",
+        "amount": "Iznos",
+        "status": "Status",
+        "requestedAt": "Zatraženo",
+        "actions": "Akcije"
+      },
+      "status": {
+        "pending": "Na čekanju",
+        "approved": "Odobreno",
+        "rejected": "Odbijeno",
+        "expired": "Isteklo"
+      },
+      "actions": {
+        "approve": "Odobri",
+        "reject": "Odbij",
+        "review": "Pregledaj"
+      },
+      "details": {
+        "approvalRequest": "Zahtjev za odobravanje",
+        "requestedBy": "Zatražio",
+        "reason": "Razlog",
+        "orderDetails": "Detalji narudžbe"
+      },
+      "confirmations": {
+        "approveTitle": "Odobri narudžbu?",
+        "approveDescription": "Spremaš se odobriti ovu narudžbu. Želiš li nastaviti?",
+        "rejectTitle": "Odbij narudžbu?",
+        "rejectDescription": "Spremaš se odbiti ovaj zahtjev za odobravanje narudžbe. Želiš li nastaviti?"
+      },
+      "toasts": {
+        "approveSuccess": "Narudžba uspješno odobrena",
+        "rejectSuccess": "Odobravanje narudžbe odbijeno"
+      }
+    }
+  },
+  "common": {
+    "loading": "Učitavam...",
+    "noData": "Nema podataka",
+    "search": "Pretraži",
+    "filter": "Filter",
+    "export": "Izvoz",
+    "import": "Uvoz",
+    "refresh": "Osvježi",
+    "save": "Spremi",
+    "cancel": "Otkaži",
+    "delete": "Obriši",
+    "edit": "Uredi",
+    "view": "Pogledaj",
+    "create": "Kreiraj",
+    "back": "Nazad",
+    "next": "Sljedeća stranica",
+    "previous": "Prethodna stranica",
+    "error": "Greška",
+    "confirmDeletion": "Potvrdi brisanje",
+    "confirmDeletionDesc": "Jesi li siguran da želiš obrisati ovu stavku? Ova akcija se ne može poništiti.",
+    "confirmLeaveForm": "Jesi li siguran da želiš napustiti ovu formu?",
+    "confirmLeaveFormDesc": "Imaš nesprjemljene promjene koje će biti izgubljene ako napustiš formu.",
+    "continue": "Nastavi"
+    }
+  }
+} 

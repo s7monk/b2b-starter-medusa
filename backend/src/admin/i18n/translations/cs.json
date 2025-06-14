@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Nabídky",
+      "companies": "Společnosti", 
+      "approvals": "Schválení"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Nabídky",
+      "subtitle": "Spravovat nabídky a návrhy zákazníků",
+      "noQuotes": "Žádné záznamy",
+      "noQuotesDescription": "Momentálně nejsou žádné nabídky. Vytvořte jednu z obchodu.",
+      "table": {
+        "id": "ID nabídky",
+        "customer": "Zákazník",
+        "status": "Stav",
+        "company": "Společnost", 
+        "amount": "Částka",
+        "createdAt": "Vytvořeno",
+        "actions": "Akce"
+      },
+      "status": {
+        "pending_merchant": "Čeká na obchodníka",
+        "pending_customer": "Čeká na zákazníka", 
+        "merchant_rejected": "Obchodník odmítl",
+        "customer_rejected": "Zákazník odmítl",
+        "accepted": "Přijato"
+      },
+      "actions": {
+        "sendQuote": "Odeslat nabídku",
+        "rejectQuote": "Odmítnout nabídku",
+        "viewOrder": "Zobrazit objednávku"
+      },
+      "details": {
+        "header": "Podrobnosti nabídky",
+        "quoteSummary": "Souhrn nabídky",
+        "customer": "Zákazník",
+        "items": "Položky",
+        "total": "Celkem",
+        "subtotal": "Mezisoučet",
+        "shipping": "Doprava",
+        "tax": "Daň",
+        "messages": "Zprávy",
+        "originalTotal": "Původní celkem",
+        "quoteTotal": "Celkem nabídka",
+        "discounts": "Slevy",
+        "pickQuoteItem": "Vybrat položku nabídky",
+        "selectQuoteItem": "Vyberte položku nabídky pro psaní zprávy",
+        "selectItem": "Vybrat položku",
+        "send": "Odeslat",
+        "manage": "Spravovat",
+        "manageQuote": "Spravovat nabídku",
+        "updatePrice": "Aktualizovat cenu", 
+        "overridePriceHint": "Přepsat jednotkovou cenu tohoto produktu",
+        "phone": "Telefon",
+        "spendingLimit": "Limit výdajů",
+        "company": "Společnost",
+        "name": "Jméno"
+      },
+      "confirmations": {
+        "sendTitle": "Odeslat nabídku?",
+        "sendDescription": "Chystáte se odeslat tuto nabídku zákazníkovi. Chcete pokračovat?",
+        "rejectTitle": "Odmítnout nabídku?",
+        "rejectDescription": "Chystáte se odmítnout nabídku tohoto zákazníka. Chcete pokračovat?"
+      },
+      "toasts": {
+        "sendSuccess": "Nabídka byla úspěšně odeslána zákazníkovi",
+        "rejectSuccess": "Nabídka zákazníka byla úspěšně odmítnuta",
+        "messageSuccess": "Zpráva byla úspěšně odeslána zákazníkovi",
+        "updateSuccess": "Nabídka byla úspěšně aktualizována"
+      },
+      "acceptance": {
+        "message": "Zákazník přijal nabídku. Objednávka je připravena ke zpracování."
+      }
+    },
+    "companies": {
+      "title": "Společnosti",
+      "subtitle": "Spravovat společnosti a organizace zákazníků",
+      "createCompany": "Vytvořit",
+      "noCompanies": "Nenalezeny žádné společnosti", 
+      "noCompaniesDescription": "Momentálně nejsou žádné společnosti. Vytvořte jednu pro začátek.",
+      "table": {
+        "name": "Název",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresa",
+        "employees": "Zaměstnanci",
+        "customerGroup": "Skupina zákazníků",
+        "actions": "Akce"
+      },
+      "form": {
+        "generalInfo": "Obecné informace",
+        "name": "Název společnosti",
+        "email": "Email",
+        "phone": "Telefonní číslo",
+        "address": "Adresa",
+        "city": "Město",
+        "state": "Kraj/Stát",
+        "zipCode": "PSČ",
+        "country": "Země",
+        "currency": "Měna",
+        "logoUrl": "URL loga společnosti",
+        "selectCountry": "Vybrat zemi",
+        "selectCurrency": "Vybrat měnu",
+        "logo": "Logo společnosti",
+        "website": "Webová stránka",
+        "description": "Popis"
+      },
+      "actions": {
+        "edit": "Upravit společnost",
+        "delete": "Smazat společnost",
+        "viewEmployees": "Zobrazit zaměstnance",
+        "assignGroup": "Přiřadit skupinu zákazníků",
+        "editDetails": "Upravit podrobnosti",
+        "manageCustomerGroup": "Spravovat skupinu zákazníků",
+        "approvalSettings": "Nastavení schválení"
+      },
+      "details": {
+        "overview": "Přehled",
+        "employees": "Zaměstnanci",
+        "orders": "Objednávky",
+        "settings": "Nastavení"
+      },
+      "toasts": {
+        "updateSuccess": "Společnost byla úspěšně aktualizována",
+        "updateError": "Aktualizace společnosti se nezdařila",
+        "deleteSuccess": "Společnost byla úspěšně smazána",
+        "addToGroupSuccess": "Společnost byla úspěšně přidána do skupiny zákazníků",
+        "addToGroupError": "Přidání společnosti do skupiny zákazníků se nezdařilo",
+        "removeFromGroupSuccess": "Společnost byla úspěšně odebrána ze skupiny zákazníků",
+        "removeFromGroupError": "Odebrání společnosti ze skupiny zákazníků se nezdařilo"
+      },
+      "customerGroup": {
+        "title": "Spravovat skupinu zákazníků",
+        "addToGroup": "Přidat do skupiny zákazníků",
+        "hint": "Přidáním {companyName} do skupiny zákazníků se automaticky přidá {employeeCount} propojených zaměstnanců do skupiny zákazníků.",
+        "customerGroupColumn": "Skupina zákazníků",
+        "actionsColumn": "Akce",
+        "addButton": "Přidat",
+        "removeButton": "Odebrat",
+        "noGroupsFound": "Nenalezeny žádné skupiny zákazníků"
+      },
+      "approvalSettings": {
+        "title": "Nastavení schválení společnosti",
+        "requiresAdminApproval": "Vyžaduje schválení administrátora",
+        "requiresAdminApprovalDesc": "Vyžadovat schválení administrátora společnosti pro všechny objednávky této společnosti.",
+        "requiresSalesManagerApproval": "Vyžaduje schválení obchodního manažera",
+        "requiresSalesManagerApprovalDesc": "Vyžadovat schválení obchodního manažera pro všechny objednávky této společnosti.",
+        "updateSuccess": "Nastavení schválení společnosti byla úspěšně aktualizována",
+        "updateError": "Aktualizace nastavení schválení společnosti se nezdařila"
+      },
+      "companyDetails": {
+        "notFound": "Společnost nebyla nalezena",
+        "phone": "Telefon",
+        "email": "Email",
+        "address": "Adresa",
+        "city": "Město",
+        "state": "Kraj/Stát",
+        "currency": "Měna",
+        "customerGroup": "Skupina zákazníků",
+        "approvalSettings": "Nastavení schválení",
+        "requiresAdminApproval": "Vyžaduje schválení administrátora",
+        "requiresSalesManagerApproval": "Vyžaduje schválení obchodního manažera",
+        "noApprovalRequired": "Žádné schválení není vyžadováno",
+        "employees": "Zaměstnanci",
+        "name": "Jméno",
+        "spendingLimit": "Limit výdajů",
+        "actions": "Akce",
+        "admin": "Administrátor",
+        "add": "Přidat",
+        "noEmployees": "Žádné záznamy",
+        "noEmployeesDesc": "Tato společnost nemá žádné zaměstnance."
+      },
+      "employees": {
+        "createEmployee": "Přidat zákazníka společnosti",
+        "createEmployeeSuccess": "Zaměstnanec byl úspěšně vytvořen",
+        "createCustomerError": "Vytvoření zákazníka se nezdařilo",
+        "createEmployeeError": "Vytvoření zaměstnance se nezdařilo",
+        "form": {
+          "details": "Podrobnosti",
+          "firstName": "Křestní jméno",
+          "lastName": "Příjmení",
+          "email": "Email",
+          "phone": "Telefon",
+          "permissions": "Oprávnění",
+          "spendingLimit": "Limit výdajů",
+          "adminAccess": "Přístup administrátora",
+          "isAdmin": "Je administrátor",
+          "isAdminDesc": "Povolit pro přístup administrátora",
+          "isAdminTooltip": "Administrátoři mohou spravovat podrobnosti společnosti a oprávnění zaměstnanců.",
+          "firstNamePlaceholder": "Jan",
+          "lastNamePlaceholder": "Novák",
+          "emailPlaceholder": "jan.novak@example.com",
+          "phonePlaceholder": "604123456",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Ukládám...",
+          "save": "Uložit"
+        },
+        "actions": {
+          "edit": "Upravit",
+          "delete": "Smazat",
+          "deleteSuccess": "Zaměstnanec byl úspěšně smazán"
+        },
+        "edit": {
+          "title": "Upravit zaměstnance",
+          "updateSuccess": "Zaměstnanec byl úspěšně aktualizován",
+          "editCustomerDetails": "Upravit podrobnosti zákazníka",
+          "company": "Společnost"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Schválení", 
+      "subtitle": "Spravovat workflow schvalování objednávek",
+      "noApprovals": "Žádné záznamy",
+      "noApprovalsDescription": "Momentálně nejsou žádné žádosti o schválení.",
+      "table": {
+        "orderId": "ID objednávky",
+        "customer": "Zákazník",
+        "company": "Společnost",
+        "amount": "Částka",
+        "status": "Stav",
+        "requestedAt": "Požádáno",
+        "actions": "Akce"
+      },
+      "status": {
+        "pending": "Čekající",
+        "approved": "Schváleno",
+        "rejected": "Odmítnuto",
+        "expired": "Vypršelo"
+      },
+      "actions": {
+        "approve": "Schválit",
+        "reject": "Odmítnout",
+        "review": "Přezkoumat"
+      },
+      "details": {
+        "approvalRequest": "Žádost o schválení",
+        "requestedBy": "Požádal",
+        "reason": "Důvod",
+        "orderDetails": "Podrobnosti objednávky"
+      },
+      "confirmations": {
+        "approveTitle": "Schválit objednávku?",
+        "approveDescription": "Chystáte se schválit tuto objednávku. Chcete pokračovat?",
+        "rejectTitle": "Odmítnout objednávku?",
+        "rejectDescription": "Chystáte se odmítnout tuto žádost o schválení objednávky. Chcete pokračovat?"
+      },
+      "toasts": {
+        "approveSuccess": "Objednávka byla úspěšně schválena",
+        "rejectSuccess": "Schválení objednávky bylo odmítnuto"
+      }
+    }
+  },
+  "common": {
+    "loading": "Načítám...",
+    "noData": "Žádná data",
+    "search": "Hledat",
+    "filter": "Filtr",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Obnovit",
+    "save": "Uložit",
+    "cancel": "Zrušit",
+    "delete": "Smazat",
+    "edit": "Upravit",
+    "view": "Zobrazit",
+    "create": "Vytvořit",
+    "back": "Zpět",
+    "next": "Další stránka",
+    "previous": "Předchozí stránka",
+    "error": "Chyba",
+    "confirmDeletion": "Potvrdit smazání",
+    "confirmDeletionDesc": "Jste si jisti, že chcete smazat tuto položku? Tuto akci nelze vrátit zpět.",
+    "confirmLeaveForm": "Jste si jisti, že chcete opustit tento formulář?",
+    "confirmLeaveFormDesc": "Máte neuložené změny, které budou ztraceny, pokud formulář opustíte.",
+    "continue": "Pokračovat"
+    }
+  }
+} 

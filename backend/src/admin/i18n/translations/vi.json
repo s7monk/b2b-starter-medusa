@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Báo giá",
+      "companies": "Công ty", 
+      "approvals": "Phê duyệt"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Báo giá",
+      "subtitle": "Quản lý báo giá và đề xuất của khách hàng",
+      "noQuotes": "Không có bản ghi",
+      "noQuotesDescription": "Hiện tại không có báo giá nào. Tạo một cái từ cửa hàng.",
+      "table": {
+        "id": "ID Báo giá",
+        "customer": "Khách hàng",
+        "status": "Trạng thái",
+        "company": "Công ty", 
+        "amount": "Số tiền",
+        "createdAt": "Tạo lúc",
+        "actions": "Hành động"
+      },
+      "status": {
+        "pending_merchant": "Chờ người bán",
+        "pending_customer": "Chờ khách hàng", 
+        "merchant_rejected": "Người bán từ chối",
+        "customer_rejected": "Khách hàng từ chối",
+        "accepted": "Đã chấp nhận"
+      },
+      "actions": {
+        "sendQuote": "Gửi báo giá",
+        "rejectQuote": "Từ chối báo giá",
+        "viewOrder": "Xem đơn hàng"
+      },
+      "details": {
+        "header": "Chi tiết báo giá",
+        "quoteSummary": "Tóm tắt báo giá",
+        "customer": "Khách hàng",
+        "items": "Mục",
+        "total": "Tổng cộng",
+        "subtotal": "Tạm tính",
+        "shipping": "Vận chuyển",
+        "tax": "Thuế",
+        "messages": "Tin nhắn",
+        "originalTotal": "Tổng ban đầu",
+        "quoteTotal": "Tổng báo giá",
+        "discounts": "Giảm giá",
+        "pickQuoteItem": "Chọn mục báo giá",
+        "selectQuoteItem": "Chọn một mục báo giá để viết tin nhắn",
+        "selectItem": "Chọn mục",
+        "send": "Gửi",
+        "manage": "Quản lý",
+        "manageQuote": "Quản lý báo giá",
+        "updatePrice": "Cập nhật giá", 
+        "overridePriceHint": "Ghi đè giá đơn vị cho sản phẩm này",
+        "phone": "Điện thoại",
+        "spendingLimit": "Hạn mức chi tiêu",
+        "company": "Công ty",
+        "name": "Tên"
+      },
+      "confirmations": {
+        "sendTitle": "Gửi báo giá?",
+        "sendDescription": "Bạn sắp gửi báo giá này cho khách hàng. Bạn có muốn tiếp tục?",
+        "rejectTitle": "Từ chối báo giá?",
+        "rejectDescription": "Bạn sắp từ chối báo giá của khách hàng này. Bạn có muốn tiếp tục?"
+      },
+      "toasts": {
+        "sendSuccess": "Báo giá đã được gửi thành công cho khách hàng",
+        "rejectSuccess": "Báo giá của khách hàng đã được từ chối thành công",
+        "messageSuccess": "Tin nhắn đã được gửi thành công cho khách hàng",
+        "updateSuccess": "Báo giá đã được cập nhật thành công"
+      },
+      "acceptance": {
+        "message": "Khách hàng đã chấp nhận báo giá. Đơn hàng đã sẵn sàng để xử lý."
+      }
+    },
+    "companies": {
+      "title": "Công ty",
+      "subtitle": "Quản lý các công ty và tổ chức khách hàng",
+      "createCompany": "Tạo",
+      "noCompanies": "Không tìm thấy công ty", 
+      "noCompaniesDescription": "Hiện tại không có công ty nào. Tạo một công ty để bắt đầu.",
+      "table": {
+        "name": "Tên",
+        "phone": "Điện thoại",
+        "email": "Email",
+        "address": "Địa chỉ",
+        "employees": "Nhân viên",
+        "customerGroup": "Nhóm khách hàng",
+        "actions": "Hành động"
+      },
+      "form": {
+        "generalInfo": "Thông tin chung",
+        "name": "Tên công ty",
+        "email": "Email",
+        "phone": "Số điện thoại",
+        "address": "Địa chỉ",
+        "city": "Thành phố",
+        "state": "Tỉnh/Bang",
+        "zipCode": "Mã bưu điện",
+        "country": "Quốc gia",
+        "currency": "Tiền tệ",
+        "logoUrl": "URL logo công ty",
+        "selectCountry": "Chọn quốc gia",
+        "selectCurrency": "Chọn tiền tệ",
+        "logo": "Logo công ty",
+        "website": "Website",
+        "description": "Mô tả"
+      },
+      "actions": {
+        "edit": "Chỉnh sửa công ty",
+        "delete": "Xóa công ty",
+        "viewEmployees": "Xem nhân viên",
+        "assignGroup": "Gán nhóm khách hàng",
+        "editDetails": "Chỉnh sửa chi tiết",
+        "manageCustomerGroup": "Quản lý nhóm khách hàng",
+        "approvalSettings": "Cài đặt phê duyệt"
+      },
+      "details": {
+        "overview": "Tổng quan",
+        "employees": "Nhân viên",
+        "orders": "Đơn hàng",
+        "settings": "Cài đặt"
+      },
+      "toasts": {
+        "updateSuccess": "Công ty đã được cập nhật thành công",
+        "updateError": "Cập nhật công ty thất bại",
+        "deleteSuccess": "Công ty đã được xóa thành công",
+        "addToGroupSuccess": "Công ty đã được thêm vào nhóm khách hàng thành công",
+        "addToGroupError": "Thêm công ty vào nhóm khách hàng thất bại",
+        "removeFromGroupSuccess": "Công ty đã được xóa khỏi nhóm khách hàng thành công",
+        "removeFromGroupError": "Xóa công ty khỏi nhóm khách hàng thất bại"
+      },
+      "customerGroup": {
+        "title": "Quản lý nhóm khách hàng",
+        "addToGroup": "Thêm vào nhóm khách hàng",
+        "hint": "Thêm {companyName} vào nhóm khách hàng sẽ tự động thêm {employeeCount} nhân viên liên kết vào nhóm khách hàng.",
+        "customerGroupColumn": "Nhóm khách hàng",
+        "actionsColumn": "Hành động",
+        "addButton": "Thêm",
+        "removeButton": "Xóa",
+        "noGroupsFound": "Không tìm thấy nhóm khách hàng"
+      },
+      "approvalSettings": {
+        "title": "Cài đặt phê duyệt công ty",
+        "requiresAdminApproval": "Yêu cầu phê duyệt của quản trị viên",
+        "requiresAdminApprovalDesc": "Yêu cầu phê duyệt của quản trị viên công ty cho tất cả đơn hàng của công ty này.",
+        "requiresSalesManagerApproval": "Yêu cầu phê duyệt của quản lý bán hàng",
+        "requiresSalesManagerApprovalDesc": "Yêu cầu phê duyệt của quản lý bán hàng cho tất cả đơn hàng của công ty này.",
+        "updateSuccess": "Cài đặt phê duyệt công ty đã được cập nhật thành công",
+        "updateError": "Cập nhật cài đặt phê duyệt công ty thất bại"
+      },
+      "companyDetails": {
+        "notFound": "Không tìm thấy công ty",
+        "phone": "Điện thoại",
+        "email": "Email",
+        "address": "Địa chỉ",
+        "city": "Thành phố",
+        "state": "Tỉnh/Bang",
+        "currency": "Tiền tệ",
+        "customerGroup": "Nhóm khách hàng",
+        "approvalSettings": "Cài đặt phê duyệt",
+        "requiresAdminApproval": "Yêu cầu phê duyệt của quản trị viên",
+        "requiresSalesManagerApproval": "Yêu cầu phê duyệt của quản lý bán hàng",
+        "noApprovalRequired": "Không yêu cầu phê duyệt",
+        "employees": "Nhân viên",
+        "name": "Tên",
+        "spendingLimit": "Hạn mức chi tiêu",
+        "actions": "Hành động",
+        "admin": "Quản trị viên",
+        "add": "Thêm",
+        "noEmployees": "Không có bản ghi",
+        "noEmployeesDesc": "Công ty này không có nhân viên."
+      },
+      "employees": {
+        "createEmployee": "Thêm khách hàng doanh nghiệp",
+        "createEmployeeSuccess": "Nhân viên đã được tạo thành công",
+        "createCustomerError": "Tạo khách hàng thất bại",
+        "createEmployeeError": "Tạo nhân viên thất bại",
+        "form": {
+          "details": "Chi tiết",
+          "firstName": "Tên",
+          "lastName": "Họ",
+          "email": "Email",
+          "phone": "Điện thoại",
+          "permissions": "Quyền",
+          "spendingLimit": "Hạn mức chi tiêu",
+          "adminAccess": "Quyền truy cập quản trị viên",
+          "isAdmin": "Là quản trị viên",
+          "isAdminDesc": "Bật để có quyền truy cập quản trị viên",
+          "isAdminTooltip": "Quản trị viên có thể quản lý chi tiết công ty và quyền của nhân viên.",
+          "firstNamePlaceholder": "Văn",
+          "lastNamePlaceholder": "Nguyễn",
+          "emailPlaceholder": "van.nguyen@example.com",
+          "phonePlaceholder": "0901 234 567",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Đang lưu...",
+          "save": "Lưu"
+        },
+        "actions": {
+          "edit": "Chỉnh sửa",
+          "delete": "Xóa",
+          "deleteSuccess": "Nhân viên đã được xóa thành công"
+        },
+        "edit": {
+          "title": "Chỉnh sửa nhân viên",
+          "updateSuccess": "Nhân viên đã được cập nhật thành công",
+          "editCustomerDetails": "Chỉnh sửa chi tiết khách hàng",
+          "company": "Công ty"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Phê duyệt", 
+      "subtitle": "Quản lý quy trình phê duyệt đơn hàng",
+      "noApprovals": "Không có bản ghi",
+      "noApprovalsDescription": "Hiện tại không có yêu cầu phê duyệt nào.",
+      "table": {
+        "orderId": "ID Đơn hàng",
+        "customer": "Khách hàng",
+        "company": "Công ty",
+        "amount": "Số tiền",
+        "status": "Trạng thái",
+        "requestedAt": "Yêu cầu lúc",
+        "actions": "Hành động"
+      },
+      "status": {
+        "pending": "Đang chờ",
+        "approved": "Đã phê duyệt",
+        "rejected": "Đã từ chối",
+        "expired": "Đã hết hạn"
+      },
+      "actions": {
+        "approve": "Phê duyệt",
+        "reject": "Từ chối",
+        "review": "Xem xét"
+      },
+      "details": {
+        "approvalRequest": "Yêu cầu phê duyệt",
+        "requestedBy": "Yêu cầu bởi",
+        "reason": "Lý do",
+        "orderDetails": "Chi tiết đơn hàng"
+      },
+      "confirmations": {
+        "approveTitle": "Phê duyệt đơn hàng?",
+        "approveDescription": "Bạn sắp phê duyệt đơn hàng này. Bạn có muốn tiếp tục?",
+        "rejectTitle": "Từ chối đơn hàng?",
+        "rejectDescription": "Bạn sắp từ chối yêu cầu phê duyệt đơn hàng này. Bạn có muốn tiếp tục?"
+      },
+      "toasts": {
+        "approveSuccess": "Đơn hàng đã được phê duyệt thành công",
+        "rejectSuccess": "Phê duyệt đơn hàng đã bị từ chối"
+      }
+    }
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "noData": "Không có dữ liệu",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "export": "Xuất",
+    "import": "Nhập",
+    "refresh": "Làm mới",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Chỉnh sửa",
+    "view": "Xem",
+    "create": "Tạo",
+    "back": "Quay lại",
+    "next": "Trang tiếp",
+    "previous": "Trang trước",
+    "error": "Lỗi",
+    "confirmDeletion": "Xác nhận xóa",
+    "confirmDeletionDesc": "Bạn có chắc chắn muốn xóa mục này? Hành động này không thể hoàn tác.",
+    "confirmLeaveForm": "Bạn có chắc chắn muốn rời khỏi biểu mẫu này?",
+    "confirmLeaveFormDesc": "Bạn có những thay đổi chưa được lưu sẽ bị mất nếu rời khỏi biểu mẫu.",
+    "continue": "Tiếp tục"
+    }
+  }
+} 

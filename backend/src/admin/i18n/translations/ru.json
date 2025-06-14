@@ -1,0 +1,226 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Предложения",
+      "companies": "Компании", 
+      "approvals": "Одобрения"
+    },
+    "routes": {
+      "quotes": {
+        "title": "Предложения",
+        "subtitle": "Управление предложениями и заявками клиентов",
+        "noQuotes": "Нет записей",
+        "noQuotesDescription": "В настоящее время нет предложений. Создайте одно из магазина.",
+        "table": {
+          "id": "ID предложения",
+          "customer": "Клиент",
+          "status": "Статус",
+          "company": "Компания", 
+          "amount": "Сумма",
+          "createdAt": "Создано",
+          "actions": "Действия"
+        },
+        "status": {
+          "pending_merchant": "Ожидает торговца",
+          "pending_customer": "Ожидает клиента", 
+          "merchant_rejected": "Торговец отклонил",
+          "customer_rejected": "Клиент отклонил",
+          "accepted": "Принято"
+        },
+        "actions": {
+          "sendQuote": "Отправить предложение",
+          "rejectQuote": "Отклонить предложение",
+          "viewOrder": "Посмотреть заказ"
+        },
+        "details": {
+          "header": "Детали предложения",
+          "quoteSummary": "Резюме предложения",
+          "customer": "Клиент",
+          "items": "Товары",
+          "total": "Итого",
+          "subtotal": "Промежуточная сумма",
+          "shipping": "Доставка",
+          "tax": "Налог",
+          "messages": "Сообщения",
+          "originalTotal": "Первоначальная сумма",
+          "quoteTotal": "Общая сумма предложения",
+          "discounts": "Скидки",
+          "pickQuoteItem": "Выбрать элемент предложения",
+          "selectQuoteItem": "Выберите элемент предложения для написания сообщения",
+          "selectItem": "Выбрать элемент",
+          "send": "Отправить",
+          "manage": "Управлять",
+          "manageQuote": "Управлять предложением",
+          "updatePrice": "Обновить цену", 
+          "overridePriceHint": "Переопределить цену за единицу для этого продукта",
+          "phone": "Телефон",
+          "spendingLimit": "Лимит расходов",
+          "company": "Компания",
+          "name": "Имя"
+        },
+        "confirmations": {
+          "sendTitle": "Отправить предложение?",
+          "sendDescription": "Вы собираетесь отправить это предложение клиенту. Хотите продолжить?",
+          "rejectTitle": "Отклонить предложение?",
+          "rejectDescription": "Вы собираетесь отклонить предложение этого клиента. Хотите продолжить?"
+        },
+        "toasts": {
+          "sendSuccess": "Предложение успешно отправлено клиенту",
+          "rejectSuccess": "Предложение клиента успешно отклонено",
+          "messageSuccess": "Сообщение успешно отправлено клиенту",
+          "updateSuccess": "Предложение успешно обновлено"
+        },
+        "acceptance": {
+          "message": "Клиент принял предложение. Заказ готов к обработке."
+        }
+      },
+      "companies": {
+        "title": "Компании",
+        "subtitle": "Управление компаниями и организациями клиентов",
+        "createCompany": "Создать",
+        "noCompanies": "Компании не найдены", 
+        "noCompaniesDescription": "В настоящее время нет компаний. Создайте одну для начала.",
+        "table": {
+          "name": "Название",
+          "phone": "Телефон",
+          "email": "Email",
+          "address": "Адрес",
+          "employees": "Сотрудники",
+          "customerGroup": "Группа клиентов",
+          "actions": "Действия"
+        },
+        "form": {
+          "generalInfo": "Общая информация",
+          "name": "Название компании",
+          "email": "Email",
+          "phone": "Номер телефона",
+          "address": "Адрес",
+          "city": "Город",
+          "state": "Область",
+          "zipCode": "Почтовый индекс",
+          "country": "Страна",
+          "currency": "Валюта",
+          "logoUrl": "URL логотипа компании",
+          "selectCountry": "Выбрать страну",
+          "selectCurrency": "Выбрать валюту",
+          "logo": "Логотип компании",
+          "website": "Веб-сайт",
+          "description": "Описание"
+        },
+        "actions": {
+          "edit": "Редактировать компанию",
+          "delete": "Удалить компанию",
+          "viewEmployees": "Посмотреть сотрудников",
+          "assignGroup": "Назначить группу клиентов",
+          "editDetails": "Редактировать детали",
+          "manageCustomerGroup": "Управлять группой клиентов",
+          "approvalSettings": "Настройки одобрения"
+        },
+        "details": {
+          "overview": "Обзор",
+          "employees": "Сотрудники",
+          "orders": "Заказы",
+          "settings": "Настройки"
+        },
+        "toasts": {
+          "updateSuccess": "Компания успешно обновлена",
+          "updateError": "Не удалось обновить компанию",
+          "deleteSuccess": "Компания успешно удалена",
+          "addToGroupSuccess": "Компания успешно добавлена в группу клиентов",
+          "addToGroupError": "Не удалось добавить компанию в группу клиентов",
+          "removeFromGroupSuccess": "Компания успешно удалена из группы клиентов",
+          "removeFromGroupError": "Не удалось удалить компанию из группы клиентов"
+        },
+        "customerGroup": {
+          "title": "Управление группой клиентов",
+          "addToGroup": "Добавить в группу клиентов",
+          "hint": "Добавление {companyName} в группу клиентов автоматически добавит {employeeCount} связанных сотрудников в группу клиентов.",
+          "customerGroupColumn": "Группа клиентов",
+          "actionsColumn": "Действия",
+          "addButton": "Добавить",
+          "removeButton": "Удалить",
+          "noGroupsFound": "Группы клиентов не найдены"
+        },
+        "approvalSettings": {
+          "title": "Настройки одобрения компании",
+          "requiresAdminApproval": "Требуется одобрение администратора",
+          "requiresAdminApprovalDesc": "Требовать одобрение администратора компании для всех заказов, размещенных этой компанией.",
+          "requiresSalesManagerApproval": "Требуется одобрение менеджера по продажам",
+          "requiresSalesManagerApprovalDesc": "Требовать одобрение менеджера по продажам для всех заказов, размещенных этой компанией.",
+          "updateSuccess": "Настройки одобрения компании успешно обновлены",
+          "updateError": "Не удалось обновить настройки одобрения компании"
+        },
+        "companyDetails": {
+          "notFound": "Компания не найдена",
+          "phone": "Телефон",
+          "email": "Email",
+          "address": "Адрес",
+          "city": "Город",
+          "state": "Область",
+          "currency": "Валюта",
+          "customerGroup": "Группа клиентов",
+          "approvalSettings": "Настройки одобрения",
+          "requiresAdminApproval": "Требуется одобрение администратора",
+          "requiresSalesManagerApproval": "Требуется одобрение менеджера по продажам",
+          "noApprovalRequired": "Одобрение не требуется",
+          "employees": "Сотрудники",
+          "name": "Имя",
+          "spendingLimit": "Лимит расходов",
+          "actions": "Действия",
+          "admin": "Администратор",
+          "add": "Добавить",
+          "noEmployees": "Нет записей",
+          "noEmployeesDesc": "У этой компании нет сотрудников."
+        }
+      },
+      "approvals": {
+        "title": "Одобрения",
+        "subtitle": "Управление запросами на одобрение заказов",
+        "noApprovals": "Нет запросов на одобрение",
+        "noApprovalsDescription": "В настоящее время нет запросов на одобрение.",
+        "table": {
+          "orderId": "ID заказа",
+          "customer": "Клиент",
+          "company": "Компания",
+          "amount": "Сумма",
+          "status": "Статус",
+          "submittedAt": "Отправлено",
+          "actions": "Действия"
+        },
+        "status": {
+          "pending": "Ожидает",
+          "approved": "Одобрено",
+          "rejected": "Отклонено"
+        },
+        "actions": {
+          "approve": "Одобрить",
+          "reject": "Отклонить",
+          "viewOrder": "Посмотреть заказ"
+        }
+      }
+    }
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "noData": "Нет данных",
+    "search": "Поиск",
+    "filter": "Фильтр",
+    "export": "Экспорт",
+    "import": "Импорт",
+    "refresh": "Обновить",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "edit": "Редактировать",
+    "view": "Посмотреть",
+    "create": "Создать",
+    "back": "Назад",
+    "next": "Следующая страница",
+    "previous": "Предыдущая страница",
+    "confirmDeletion": "Подтвердить удаление",
+    "confirmDeletionDesc": "Вы уверены, что хотите удалить этот элемент? Это действие нельзя отменить.",
+    "confirmLeaveForm": "Вы уверены, что хотите покинуть эту форму?",
+    "confirmLeaveFormDesc": "У вас есть несохраненные изменения, которые будут потеряны, если вы покинете форму.",
+    "continue": "Продолжить"
+  }
+}

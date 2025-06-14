@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "Oferty",
+      "companies": "Firmy", 
+      "approvals": "Zatwierdzenia"
+    },
+    "routes": {
+    "quotes": {
+      "title": "Oferty",
+      "subtitle": "Zarządzaj ofertami i propozycjami klientów",
+      "noQuotes": "Brak rekordów",
+      "noQuotesDescription": "Obecnie nie ma żadnych ofert. Utwórz jedną z sklepu.",
+      "table": {
+        "id": "ID Oferty",
+        "customer": "Klient",
+        "status": "Status",
+        "company": "Firma", 
+        "amount": "Kwota",
+        "createdAt": "Utworzono",
+        "actions": "Działania"
+      },
+      "status": {
+        "pending_merchant": "Oczekuje na sprzedawcę",
+        "pending_customer": "Oczekuje na klienta", 
+        "merchant_rejected": "Sprzedawca odrzucił",
+        "customer_rejected": "Klient odrzucił",
+        "accepted": "Zaakceptowano"
+      },
+      "actions": {
+        "sendQuote": "Wyślij ofertę",
+        "rejectQuote": "Odrzuć ofertę",
+        "viewOrder": "Zobacz zamówienie"
+      },
+      "details": {
+        "header": "Szczegóły oferty",
+        "quoteSummary": "Podsumowanie oferty",
+        "customer": "Klient",
+        "items": "Pozycje",
+        "total": "Razem",
+        "subtotal": "Suma częściowa",
+        "shipping": "Dostawa",
+        "tax": "Podatek",
+        "messages": "Wiadomości",
+        "originalTotal": "Suma oryginalna",
+        "quoteTotal": "Suma oferty",
+        "discounts": "Rabaty",
+        "pickQuoteItem": "Wybierz pozycję oferty",
+        "selectQuoteItem": "Wybierz pozycję oferty, aby napisać wiadomość",
+        "selectItem": "Wybierz pozycję",
+        "send": "Wyślij",
+        "manage": "Zarządzaj",
+        "manageQuote": "Zarządzaj ofertą",
+        "updatePrice": "Aktualizuj cenę", 
+        "overridePriceHint": "Zastąp cenę jednostkową dla tego produktu",
+        "phone": "Telefon",
+        "spendingLimit": "Limit wydatków",
+        "company": "Firma",
+        "name": "Nazwa"
+      },
+      "confirmations": {
+        "sendTitle": "Wysłać ofertę?",
+        "sendDescription": "Zamierzasz wysłać tę ofertę do klienta. Czy chcesz kontynuować?",
+        "rejectTitle": "Odrzucić ofertę?",
+        "rejectDescription": "Zamierzasz odrzucić ofertę tego klienta. Czy chcesz kontynuować?"
+      },
+      "toasts": {
+        "sendSuccess": "Oferta została pomyślnie wysłana do klienta",
+        "rejectSuccess": "Oferta klienta została pomyślnie odrzucona",
+        "messageSuccess": "Wiadomość została pomyślnie wysłana do klienta",
+        "updateSuccess": "Oferta została pomyślnie zaktualizowana"
+      },
+      "acceptance": {
+        "message": "Klient zaakceptował ofertę. Zamówienie jest gotowe do przetworzenia."
+      }
+    },
+    "companies": {
+      "title": "Firmy",
+      "subtitle": "Zarządzaj firmami i organizacjami klientów",
+      "createCompany": "Utwórz",
+      "noCompanies": "Nie znaleziono firm", 
+      "noCompaniesDescription": "Obecnie nie ma żadnych firm. Utwórz jedną, aby rozpocząć.",
+      "table": {
+        "name": "Nazwa",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "address": "Adres",
+        "employees": "Pracownicy",
+        "customerGroup": "Grupa klientów",
+        "actions": "Działania"
+      },
+      "form": {
+        "generalInfo": "Informacje ogólne",
+        "name": "Nazwa firmy",
+        "email": "E-mail",
+        "phone": "Numer telefonu",
+        "address": "Adres",
+        "city": "Miasto",
+        "state": "Województwo/Stan",
+        "zipCode": "Kod pocztowy",
+        "country": "Kraj",
+        "currency": "Waluta",
+        "logoUrl": "URL logo firmy",
+        "selectCountry": "Wybierz kraj",
+        "selectCurrency": "Wybierz walutę",
+        "logo": "Logo firmy",
+        "website": "Strona internetowa",
+        "description": "Opis"
+      },
+      "actions": {
+        "edit": "Edytuj firmę",
+        "delete": "Usuń firmę",
+        "viewEmployees": "Zobacz pracowników",
+        "assignGroup": "Przypisz grupę klientów",
+        "editDetails": "Edytuj szczegóły",
+        "manageCustomerGroup": "Zarządzaj grupą klientów",
+        "approvalSettings": "Ustawienia zatwierdzeń"
+      },
+      "details": {
+        "overview": "Przegląd",
+        "employees": "Pracownicy",
+        "orders": "Zamówienia",
+        "settings": "Ustawienia"
+      },
+      "toasts": {
+        "updateSuccess": "Firma została pomyślnie zaktualizowana",
+        "updateError": "Aktualizacja firmy nie powiodła się",
+        "deleteSuccess": "Firma została pomyślnie usunięta",
+        "addToGroupSuccess": "Firma została pomyślnie dodana do grupy klientów",
+        "addToGroupError": "Dodanie firmy do grupy klientów nie powiodło się",
+        "removeFromGroupSuccess": "Firma została pomyślnie usunięta z grupy klientów",
+        "removeFromGroupError": "Usunięcie firmy z grupy klientów nie powiodło się"
+      },
+      "customerGroup": {
+        "title": "Zarządzaj grupą klientów",
+        "addToGroup": "Dodaj do grupy klientów",
+        "hint": "Dodanie {companyName} do grupy klientów automatycznie doda {employeeCount} powiązanych pracowników do grupy klientów.",
+        "customerGroupColumn": "Grupa klientów",
+        "actionsColumn": "Działania",
+        "addButton": "Dodaj",
+        "removeButton": "Usuń",
+        "noGroupsFound": "Nie znaleziono grup klientów"
+      },
+      "approvalSettings": {
+        "title": "Ustawienia zatwierdzeń firmy",
+        "requiresAdminApproval": "Wymaga zatwierdzenia administratora",
+        "requiresAdminApprovalDesc": "Wymagaj zatwierdzenia administratora firmy dla wszystkich zamówień tej firmy.",
+        "requiresSalesManagerApproval": "Wymaga zatwierdzenia menedżera sprzedaży",
+        "requiresSalesManagerApprovalDesc": "Wymagaj zatwierdzenia menedżera sprzedaży dla wszystkich zamówień tej firmy.",
+        "updateSuccess": "Ustawienia zatwierdzeń firmy zostały pomyślnie zaktualizowane",
+        "updateError": "Aktualizacja ustawień zatwierdzeń firmy nie powiodła się"
+      },
+      "companyDetails": {
+        "notFound": "Firma nie została znaleziona",
+        "phone": "Telefon",
+        "email": "E-mail",
+        "address": "Adres",
+        "city": "Miasto",
+        "state": "Województwo/Stan",
+        "currency": "Waluta",
+        "customerGroup": "Grupa klientów",
+        "approvalSettings": "Ustawienia zatwierdzeń",
+        "requiresAdminApproval": "Wymaga zatwierdzenia administratora",
+        "requiresSalesManagerApproval": "Wymaga zatwierdzenia menedżera sprzedaży",
+        "noApprovalRequired": "Nie wymagane zatwierdzenie",
+        "employees": "Pracownicy",
+        "name": "Nazwa",
+        "spendingLimit": "Limit wydatków",
+        "actions": "Działania",
+        "admin": "Administrator",
+        "add": "Dodaj",
+        "noEmployees": "Brak rekordów",
+        "noEmployeesDesc": "Ta firma nie ma pracowników."
+      },
+      "employees": {
+        "createEmployee": "Dodaj klienta firmowego",
+        "createEmployeeSuccess": "Pracownik został pomyślnie utworzony",
+        "createCustomerError": "Utworzenie klienta nie powiodło się",
+        "createEmployeeError": "Utworzenie pracownika nie powiodło się",
+        "form": {
+          "details": "Szczegóły",
+          "firstName": "Imię",
+          "lastName": "Nazwisko",
+          "email": "E-mail",
+          "phone": "Telefon",
+          "permissions": "Uprawnienia",
+          "spendingLimit": "Limit wydatków",
+          "adminAccess": "Dostęp administratora",
+          "isAdmin": "Jest administratorem",
+          "isAdminDesc": "Włącz dla dostępu administratora",
+          "isAdminTooltip": "Administratorzy mogą zarządzać szczegółami firmy i uprawnieniami pracowników.",
+          "firstNamePlaceholder": "Jan",
+          "lastNamePlaceholder": "Kowalski",
+          "emailPlaceholder": "jan.kowalski@example.com",
+          "phonePlaceholder": "+48 600 123 456",
+          "spendingLimitPlaceholder": "10000",
+          "saving": "Zapisywanie...",
+          "save": "Zapisz"
+        },
+        "actions": {
+          "edit": "Edytuj",
+          "delete": "Usuń",
+          "deleteSuccess": "Pracownik został pomyślnie usunięty"
+        },
+        "edit": {
+          "title": "Edytuj pracownika",
+          "updateSuccess": "Pracownik został pomyślnie zaktualizowany",
+          "editCustomerDetails": "Edytuj szczegóły klienta",
+          "company": "Firma"
+        }
+      }
+    },
+    "approvals": {
+      "title": "Zatwierdzenia", 
+      "subtitle": "Zarządzaj przepływami pracy zatwierdzeń zamówień",
+      "noApprovals": "Brak rekordów",
+      "noApprovalsDescription": "Obecnie nie ma żadnych próśb o zatwierdzenie.",
+      "table": {
+        "orderId": "ID Zamówienia",
+        "customer": "Klient",
+        "company": "Firma",
+        "amount": "Kwota",
+        "status": "Status",
+        "requestedAt": "Zgłoszono",
+        "actions": "Działania"
+      },
+      "status": {
+        "pending": "Oczekujące",
+        "approved": "Zatwierdzone",
+        "rejected": "Odrzucone",
+        "expired": "Wygasłe"
+      },
+      "actions": {
+        "approve": "Zatwierdź",
+        "reject": "Odrzuć",
+        "review": "Przejrzyj"
+      },
+      "details": {
+        "approvalRequest": "Prośba o zatwierdzenie",
+        "requestedBy": "Zgłoszono przez",
+        "reason": "Powód",
+        "orderDetails": "Szczegóły zamówienia"
+      },
+      "confirmations": {
+        "approveTitle": "Zatwierdzić zamówienie?",
+        "approveDescription": "Zamierzasz zatwierdzić to zamówienie. Czy chcesz kontynuować?",
+        "rejectTitle": "Odrzucić zamówienie?",
+        "rejectDescription": "Zamierzasz odrzucić tę prośbę o zatwierdzenie zamówienia. Czy chcesz kontynuować?"
+      },
+      "toasts": {
+        "approveSuccess": "Zamówienie zostało pomyślnie zatwierdzone",
+        "rejectSuccess": "Zatwierdzenie zamówienia zostało odrzucone"
+      }
+    }
+  },
+  "common": {
+    "loading": "Ładowanie...",
+    "noData": "Brak danych",
+    "search": "Szukaj",
+    "filter": "Filtr",
+    "export": "Eksportuj",
+    "import": "Importuj",
+    "refresh": "Odśwież",
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "delete": "Usuń",
+    "edit": "Edytuj",
+    "view": "Zobacz",
+    "create": "Utwórz",
+    "back": "Wstecz",
+    "next": "Następna strona",
+    "previous": "Poprzednia strona",
+    "error": "Błąd",
+    "confirmDeletion": "Potwierdź usunięcie",
+    "confirmDeletionDesc": "Czy na pewno chcesz usunąć ten element? Ta czynność nie może zostać cofnięta.",
+    "confirmLeaveForm": "Czy na pewno chcesz opuścić ten formularz?",
+    "confirmLeaveFormDesc": "Masz niezapisane zmiany, które zostaną utracone, jeśli opuścisz formularz.",
+    "continue": "Kontynuuj"
+    }
+  }
+} 

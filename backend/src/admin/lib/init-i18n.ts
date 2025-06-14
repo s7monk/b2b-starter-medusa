@@ -1,39 +1,65 @@
 import { extendI18nResources } from "../i18n"
+import i18next from "i18next"
 
-// 菜单标签映射
-const MENU_TRANSLATIONS: Record<string, Record<string, string>> = {
-  en: {
-    Companies: "Companies",
-    Quotes: "Quotes", 
-    Approvals: "Approvals"
-  },
-  zh: {
-    Companies: "公司",
-    Quotes: "报价",
-    Approvals: "审批"
-  },
-  zhCN: {
-    Companies: "公司", 
-    Quotes: "报价",
-    Approvals: "审批"
+/**
+ * 获取当前语言
+ */
+const getCurrentLanguage = (): string => {
+  if (typeof i18next !== 'undefined' && i18next.language) {
+    return i18next.language
   }
+  
+  // 尝试从localStorage获取
+  try {
+    const stored = localStorage.getItem('i18nextLng')
+    if (stored) return stored
+  } catch (e) {
+    // 静默处理
+  }
+  
+  return 'en' // 默认语言
+}
+
+/**
+ * 使用i18next动态获取翻译
+ */
+const getMenuTranslation = (originalText: string): string => {
+  if (typeof i18next === 'undefined' || !i18next.isInitialized) {
+    return originalText
+  }
+
+  // 菜单项到翻译键的映射
+  const menuKeyMap: Record<string, string> = {
+    'Companies': 'b2b:nav.companies',
+    'Quotes': 'b2b:nav.quotes',
+    'Approvals': 'b2b:nav.approvals'
+  }
+
+  const translationKey = menuKeyMap[originalText]
+  if (translationKey) {
+    const translation = i18next.t(translationKey, { defaultValue: originalText })
+    return translation !== translationKey ? translation : originalText
+  }
+
+  return originalText
 }
 
 /**
  * 更新DOM中的菜单标签
  */
-const updateMenuLabels = (language: string = 'zh') => {
-  const translations = MENU_TRANSLATIONS[language] || MENU_TRANSLATIONS.en
-  
-  // 立即更新，不使用setTimeout
+const updateMenuLabels = () => {
+  // 查找扩展菜单项并更新标签
   const menuItems = document.querySelectorAll('nav a[href^="/"], nav button')
   
   menuItems.forEach((item) => {
     const textElement = item.querySelector('span, p')
     if (textElement) {
       const currentText = textElement.textContent?.trim()
-      if (currentText && translations[currentText]) {
-        textElement.textContent = translations[currentText]
+      if (currentText) {
+        const translatedText = getMenuTranslation(currentText)
+        if (translatedText !== currentText) {
+          textElement.textContent = translatedText
+        }
       }
     }
   })
@@ -42,8 +68,11 @@ const updateMenuLabels = (language: string = 'zh') => {
   const allMenuElements = document.querySelectorAll('nav span, nav p, nav a')
   allMenuElements.forEach((element) => {
     const currentText = element.textContent?.trim()
-    if (currentText && translations[currentText] && currentText !== translations[currentText]) {
-      element.textContent = translations[currentText]
+    if (currentText) {
+      const translatedText = getMenuTranslation(currentText)
+      if (translatedText !== currentText) {
+        element.textContent = translatedText
+      }
     }
   })
 }
@@ -55,10 +84,27 @@ const setupGlobalMenuUpdater = () => {
   // 立即更新一次
   updateMenuLabels()
   
+  // 监听i18next语言变化事件
+  if (typeof i18next !== 'undefined') {
+    const handleLanguageChange = () => {
+      setTimeout(updateMenuLabels, 50)
+      setTimeout(updateMenuLabels, 200) // 多次尝试确保更新成功
+    }
+    
+    i18next.on('languageChanged', handleLanguageChange)
+  }
+  
+  // 监听localStorage变化（手动切换语言时的后备方案）
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'i18nextLng') {
+      setTimeout(updateMenuLabels, 100)
+    }
+  })
+  
   // 监听路由变化
   let lastUrl = location.href
   
-  // 更精确的MutationObserver，特别关注菜单区域的变化
+  // 监听DOM变化
   const observer = new MutationObserver((mutations) => {
     let shouldUpdate = false
     
@@ -69,10 +115,9 @@ const setupGlobalMenuUpdater = () => {
       shouldUpdate = true
     }
     
-    // 检查是否有菜单相关的DOM变化
+    // 检查菜单相关的DOM变化
     mutations.forEach((mutation) => {
       if (mutation.type === 'childList') {
-        // 检查是否是导航菜单区域的变化
         const target = mutation.target as Element
         if (target.tagName === 'NAV' || 
             target.closest('nav') || 
@@ -82,12 +127,38 @@ const setupGlobalMenuUpdater = () => {
           shouldUpdate = true
         }
         
-        // 检查新添加的节点是否包含我们关心的菜单项
+        // 检查新添加的节点是否包含菜单项
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === Node.ELEMENT_NODE) {
             const element = node as Element
             const text = element.textContent?.trim()
-            if (text && (text === 'Companies' || text === 'Quotes' || text === 'Approvals')) {
+            if (text && (text === 'Companies' || text === 'Quotes' || text === 'Approvals' ||
+                        text.includes('公司') || text.includes('报价') || text.includes('审批') ||
+                        text.includes('企業') || text.includes('見積もり') || text.includes('承認') ||
+                        text.includes('Kompanije') || text.includes('Ponude') || text.includes('Odobravanja') ||
+                        text.includes('Společnosti') || text.includes('Nabídky') || text.includes('Schválení') ||
+                        text.includes('Unternehmen') || text.includes('Angebote') || text.includes('Genehmigungen') ||
+                        text.includes('Empresas') || text.includes('Cotizaciones') || text.includes('Aprobaciones') ||
+                        text.includes('Entreprises') || text.includes('Devis') || text.includes('Approbations') ||
+                        text.includes('Aziende') || text.includes('Preventivi') || text.includes('Approvazioni') ||
+                        text.includes('Įmonės') || text.includes('Pasiūlymai') || text.includes('Patvirtinimai') ||
+                        text.includes('Vállalatok') || text.includes('Ajánlatok') || text.includes('Jóváhagyások') ||
+                        text.includes('Bedrijven') || text.includes('Offertes') || text.includes('Goedkeuringen') ||
+                        text.includes('Firmy') || text.includes('Oferty') || text.includes('Zatwierdzenia') ||
+                        text.includes('Cotações') || text.includes('Aprovações') ||
+                        text.includes('Companii') || text.includes('Oferte') || text.includes('Aprobări') ||
+                        text.includes('Công ty') || text.includes('Báo giá') || text.includes('Phê duyệt') ||
+                        text.includes('Şirketler') || text.includes('Teklifler') || text.includes('Onaylar') ||
+                        text.includes('Εταιρείες') || text.includes('Προσφορές') || text.includes('Εγκρίσεις') ||
+                        text.includes('Компании') || text.includes('Оферти') || text.includes('Одобрения') ||
+                        text.includes('Понуди') || text.includes('Одобрувања') ||
+                        text.includes('Компаниуд') || text.includes('Үнийн санал') || text.includes('Зөвшөөрөл') ||
+                        text.includes('Предложения') || text.includes('Одобрения') ||
+                        text.includes('Компанії') || text.includes('Пропозиції') || text.includes('Затвердження') ||
+                        text.includes('الشركات') || text.includes('عروض الأسعار') || text.includes('الموافقات') ||
+                        text.includes('شرکت‌ها') || text.includes('قیمت‌ها') || text.includes('تأییدیه‌ها') ||
+                        text.includes('บริษัท') || text.includes('ใบเสนอราคา') || text.includes('การอนุมัติ') ||
+                        text.includes('회사') || text.includes('견적서') || text.includes('승인'))) {
               shouldUpdate = true
             }
           }
@@ -96,34 +167,31 @@ const setupGlobalMenuUpdater = () => {
     })
     
     if (shouldUpdate) {
-      // 立即更新
-      updateMenuLabels()
-      // 再延迟一点点再次更新，确保DOM完全渲染
       setTimeout(updateMenuLabels, 10)
+      setTimeout(updateMenuLabels, 100) // 双重保险
     }
   })
   
-  // 观察整个文档的变化，但重点关注子树和属性变化
+  // 观察整个文档
   observer.observe(document, { 
     subtree: true, 
     childList: true, 
     attributes: true,
-    attributeFilter: ['class', 'style'] // 监听样式变化（比如展开/折叠）
+    attributeFilter: ['class', 'style']
   })
   
-  // 更频繁的定期更新（作为后备方案）
-  setInterval(updateMenuLabels, 500)
+  // 定期更新作为后备方案
+  setInterval(updateMenuLabels, 2000)
   
-  // 监听点击事件，特别是可能导致菜单展开/折叠的点击
+  // 监听点击事件
   document.addEventListener('click', (e) => {
     const target = e.target as Element
-    // 如果点击的是菜单相关元素，延迟一点更新
     if (target.closest('nav') || 
         target.classList?.contains('expand') ||
         target.classList?.contains('collapse') ||
         target.closest('[role="button"]')) {
       setTimeout(updateMenuLabels, 50)
-      setTimeout(updateMenuLabels, 150)
+      setTimeout(updateMenuLabels, 200)
     }
   })
 }
@@ -145,9 +213,14 @@ export const initB2BI18n = () => {
 
 // 自动执行初始化
 if (typeof window !== "undefined") {
-  // 在浏览器环境中延迟执行
-  setTimeout(initB2BI18n, 100)
+  // 等待DOM加载完成和i18next初始化
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(initB2BI18n, 300)
+    })
+  } else {
+    setTimeout(initB2BI18n, 300)
+  }
 } else {
-  // 在服务器环境中立即执行
   initB2BI18n()
 } 

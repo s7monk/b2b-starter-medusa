@@ -1,0 +1,224 @@
+﻿{
+  "b2b": {
+    "nav": {
+      "quotes": "Оферти",
+      "companies": "Компании",
+      "approvals": "Одобрения"
+    },
+    "routes": {
+      "quotes": {
+        "title": "Оферти",
+        "subtitle": "Управление на оферти и предложения от клиенти",
+        "noQuotes": "Няма записи",
+        "noQuotesDescription": "В момента няма оферти. Създайте една от магазина.",
+        "table": {
+          "id": "ID на офертата",
+          "customer": "Клиент",
+          "status": "Статус",
+          "company": "Компания",
+          "amount": "Сума",
+          "createdAt": "Създадено",
+          "actions": "Действия"
+        },
+        "status": {
+          "pending_merchant": "Чака търговец",
+          "pending_customer": "Чака клиент",
+          "merchant_rejected": "Търговец отхвърли",
+          "customer_rejected": "Клиент отхвърли",
+          "accepted": "Прието"
+        },
+        "actions": {
+          "sendQuote": "Изпращане на оферта",
+          "rejectQuote": "Отхвърляне на оферта",
+          "viewOrder": "Преглед на поръчка"
+        },
+        "details": {
+          "header": "Детайли на офертата",
+          "quoteSummary": "Резюме на офертата",
+          "customer": "Клиент",
+          "items": "Артикули",
+          "total": "Общо",
+          "subtotal": "Междинна сума",
+          "shipping": "Доставка",
+          "tax": "Данък",
+          "messages": "Съобщения",
+          "originalTotal": "Първоначална сума",
+          "quoteTotal": "Обща сума на офертата",
+          "discounts": "Отстъпки",
+          "pickQuoteItem": "Избиране на артикул от офертата",
+          "selectQuoteItem": "Изберете артикул от офертата за писане на съобщение",
+          "selectItem": "Избиране на артикул",
+          "send": "Изпращане",
+          "manage": "Управление",
+          "manageQuote": "Управление на оферта",
+          "updatePrice": "Актуализиране на цена",
+          "overridePriceHint": "Замяна на единичната цена за този продукт",
+          "phone": "Телефон",
+          "spendingLimit": "Лимит за разходи",
+          "company": "Компания",
+          "name": "Име"
+        },
+        "confirmations": {
+          "sendTitle": "Изпращане на оферта?",
+          "sendDescription": "На път сте да изпратите тази оферта до клиента. Искате ли да продължите?",
+          "rejectTitle": "Отхвърляне на оферта?",
+          "rejectDescription": "На път сте да отхвърлите офертата на този клиент. Искате ли да продължите?"
+        },
+        "toasts": {
+          "sendSuccess": "Офертата е изпратена успешно до клиента",
+          "rejectSuccess": "Офертата на клиента е отхвърлена успешно",
+          "messageSuccess": "Съобщението е изпратено успешно до клиента",
+          "updateSuccess": "Офертата е актуализирана успешно"
+        },
+        "acceptance": {
+          "message": "Клиентът прие офертата. Поръчката е готова за обработка."
+        }
+      },
+      "companies": {
+        "title": "Компании",
+        "subtitle": "Управление на компании и организации на клиенти",
+        "createCompany": "Създаване",
+        "noCompanies": "Няма намерени компании",
+        "noCompaniesDescription": "В момента няма компании. Създайте една за да започнете.",
+        "table": {
+          "name": "Име",
+          "phone": "Телефон",
+          "email": "Имейл",
+          "address": "Адрес",
+          "employees": "Служители",
+          "customerGroup": "Група клиенти",
+          "actions": "Действия"
+        },
+        "form": {
+          "generalInfo": "Обща информация",
+          "name": "Име на компанията",
+          "email": "Имейл",
+          "phone": "Телефонен номер",
+          "address": "Адрес",
+          "city": "Град",
+          "state": "Област",
+          "zipCode": "Пощенски код",
+          "country": "Държава",
+          "currency": "Валута",
+          "logoUrl": "URL на логото на компанията",
+          "selectCountry": "Избиране на държава",
+          "selectCurrency": "Избиране на валута",
+          "logo": "Лого на компанията",
+          "website": "Уебсайт",
+          "description": "Описание"
+        },
+        "actions": {
+          "edit": "Редактиране на компания",
+          "delete": "Изтриване на компания",
+          "viewEmployees": "Преглед на служители",
+          "assignGroup": "Присвояване на група клиенти",
+          "editDetails": "Редактиране на детайли",
+          "manageCustomerGroup": "Управление на група клиенти",
+          "approvalSettings": "Настройки за одобрение"
+        },
+        "details": {
+          "overview": "Преглед",
+          "employees": "Служители",
+          "orders": "Поръчки",
+          "settings": "Настройки"
+        },
+        "toasts": {
+          "updateSuccess": "Компанията е актуализирана успешно",
+          "updateError": "Неуспешна актуализация на компанията",
+          "deleteSuccess": "Компанията е изтрита успешно",
+          "addToGroupSuccess": "Компанията е добавена успешно към група клиенти",
+          "addToGroupError": "Неуспешно добавяне на компания към група клиенти",
+          "removeFromGroupSuccess": "Компанията е премахната успешно от група клиенти",
+          "removeFromGroupError": "Неуспешно премахване на компания от група клиенти"
+        },
+        "customerGroup": {
+          "title": "Управление на група клиенти",
+          "addToGroup": "Добавяне към група клиенти",
+          "hint": "Добавянето на {companyName} към група клиенти автоматично ще добави {employeeCount} свързани служители към групата клиенти.",
+          "customerGroupColumn": "Група клиенти",
+          "actionsColumn": "Действия",
+          "addButton": "Добавяне",
+          "removeButton": "Премахване",
+          "noGroupsFound": "Няма намерени групи клиенти"
+        },
+        "approvalSettings": {
+          "title": "Настройки за одобрение на компанията",
+          "requiresAdminApproval": "Изисква одобрение от администратор",
+          "requiresAdminApprovalDesc": "Изискване на одобрение от администратор на компанията за всички поръчки от тази компания.",
+          "requiresSalesManagerApproval": "Изисква одобрение от мениджър продажби",
+          "requiresSalesManagerApprovalDesc": "Изискване на одобрение от мениджър продажби за всички поръчки от тази компания.",
+          "updateSuccess": "Настройките за одобрение на компанията са актуализирани успешно",
+          "updateError": "Неуспешна актуализация на настройките за одобрение на компанията"
+        },
+        "companyDetails": {
+          "notFound": "Компанията не е намерена",
+          "phone": "Телефон",
+          "email": "Имейл",
+          "address": "Адрес",
+          "city": "Град",
+          "state": "Област",
+          "currency": "Валута",
+          "customerGroup": "Група клиенти",
+          "approvalSettings": "Настройки за одобрение",
+          "requiresAdminApproval": "Изисква одобрение от администратор",
+          "requiresSalesManagerApproval": "Изисква одобрение от мениджър продажби",
+          "noApprovalRequired": "Не се изисква одобрение",
+          "employees": "Служители",
+          "name": "Име",
+          "spendingLimit": "Лимит за разходи",
+          "actions": "Действия",
+          "admin": "Администратор",
+          "add": "Добавяне",
+          "noEmployees": "Няма записи",
+          "noEmployeesDesc": "Тази компания няма служители."
+        }
+      },
+      "approvals": {
+        "title": "Одобрения",
+        "subtitle": "Управление на заявки за одобрение на поръчки",
+        "noApprovals": "Няма заявки за одобрение",
+        "noApprovalsDescription": "В момента няма заявки за одобрение.",
+        "table": {
+          "orderId": "ID на поръчката",
+          "customer": "Клиент",
+          "company": "Компания",
+          "amount": "Сума",
+          "status": "Статус",
+          "submittedAt": "Подадено на",
+          "actions": "Действия"
+        },
+        "status": {
+          "pending": "Чакащо",
+          "approved": "Одобрено",
+          "rejected": "Отхвърлено"
+        },
+        "actions": {
+          "approve": "Одобряване",
+          "reject": "Отхвърляне",
+          "viewOrder": "Преглед на поръчка"
+        }
+      }
+    }
+  },
+  "common": {
+    "yes": "Да",
+    "no": "Не",
+    "save": "Запазване",
+    "cancel": "Отказ",
+    "edit": "Редактиране",
+    "delete": "Изтриване",
+    "create": "Създаване",
+    "update": "Актуализиране",
+    "view": "Преглед",
+    "actions": "Действия",
+    "search": "Търсене",
+    "filter": "Филтриране",
+    "export": "Експортиране",
+    "import": "Импортиране",
+    "loading": "Зареждане...",
+    "error": "Грешка",
+    "success": "Успех",
+    "warning": "Предупреждение",
+    "info": "Информация"
+  }
+} 

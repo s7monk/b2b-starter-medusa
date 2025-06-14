@@ -1,0 +1,281 @@
+{
+  "b2b": {
+    "nav": {
+      "quotes": "見積もり",
+      "companies": "企業", 
+      "approvals": "承認"
+    },
+    "routes": {
+    "quotes": {
+      "title": "見積もり",
+      "subtitle": "顧客の見積もりと提案を管理",
+      "noQuotes": "レコードなし",
+      "noQuotesDescription": "現在見積もりはありません。ストアフロントから作成してください。",
+      "table": {
+        "id": "見積もり番号",
+        "customer": "顧客",
+        "status": "ステータス",
+        "company": "企業", 
+        "amount": "金額",
+        "createdAt": "作成日時",
+        "actions": "操作"
+      },
+      "status": {
+        "pending_merchant": "販売者処理待ち",
+        "pending_customer": "顧客返答待ち", 
+        "merchant_rejected": "販売者が拒否",
+        "customer_rejected": "顧客が拒否",
+        "accepted": "承諾済み"
+      },
+      "actions": {
+        "sendQuote": "見積もり送信",
+        "rejectQuote": "見積もり拒否",
+        "viewOrder": "注文確認"
+      },
+      "details": {
+        "header": "見積もり詳細",
+        "quoteSummary": "見積もり概要",
+        "customer": "顧客",
+        "items": "商品",
+        "total": "合計",
+        "subtotal": "小計",
+        "shipping": "送料",
+        "tax": "税金",
+        "messages": "メッセージ",
+        "originalTotal": "元の合計",
+        "quoteTotal": "見積もり合計",
+        "discounts": "割引",
+        "pickQuoteItem": "見積もり商品選択",
+        "selectQuoteItem": "メッセージを書くための見積もり商品を選択してください",
+        "selectItem": "商品選択",
+        "send": "送信",
+        "manage": "管理",
+        "manageQuote": "見積もり管理",
+        "updatePrice": "価格更新", 
+        "overridePriceHint": "この商品の単価を上書きする",
+        "phone": "電話番号",
+        "spendingLimit": "利用限度額",
+        "company": "企業",
+        "name": "名前"
+      },
+      "confirmations": {
+        "sendTitle": "見積もりを送信しますか？",
+        "sendDescription": "顧客にこの見積もりを送信しようとしています。続行しますか？",
+        "rejectTitle": "見積もりを拒否しますか？",
+        "rejectDescription": "顧客の見積もりを拒否しようとしています。続行しますか？"
+      },
+      "toasts": {
+        "sendSuccess": "見積もりを顧客に送信しました",
+        "rejectSuccess": "顧客の見積もりを拒否しました",
+        "messageSuccess": "顧客にメッセージを送信しました",
+        "updateSuccess": "見積もりを更新しました"
+      },
+      "acceptance": {
+        "message": "顧客が見積もりを承諾しました。注文の処理準備が完了しています。"
+      }
+    },
+    "companies": {
+      "title": "企業",
+      "subtitle": "顧客企業と組織を管理",
+      "createCompany": "作成",
+      "noCompanies": "企業が見つかりません", 
+      "noCompaniesDescription": "現在企業がありません。一つ作成して始めましょう。",
+      "table": {
+        "name": "企業名",
+        "phone": "電話番号",
+        "email": "メールアドレス",
+        "address": "住所",
+        "employees": "従業員",
+        "customerGroup": "顧客グループ",
+        "actions": "操作"
+      },
+      "form": {
+        "generalInfo": "基本情報",
+        "name": "企業名",
+        "email": "メールアドレス",
+        "phone": "電話番号",
+        "address": "住所",
+        "city": "市区町村",
+        "state": "都道府県",
+        "zipCode": "郵便番号",
+        "country": "国",
+        "currency": "通貨",
+        "logoUrl": "企業ロゴURL",
+        "selectCountry": "国を選択",
+        "selectCurrency": "通貨を選択",
+        "logo": "企業ロゴ",
+        "website": "ウェブサイト",
+        "description": "説明"
+      },
+      "actions": {
+        "edit": "企業編集",
+        "delete": "企業削除",
+        "viewEmployees": "従業員確認",
+        "assignGroup": "顧客グループ割り当て",
+        "editDetails": "詳細編集",
+        "manageCustomerGroup": "顧客グループ管理",
+        "approvalSettings": "承認設定"
+      },
+      "details": {
+        "overview": "概要",
+        "employees": "従業員",
+        "orders": "注文",
+        "settings": "設定"
+      },
+      "toasts": {
+        "updateSuccess": "企業の更新が完了しました",
+        "updateError": "企業の更新に失敗しました",
+        "deleteSuccess": "企業の削除が完了しました",
+        "addToGroupSuccess": "企業を顧客グループに追加しました",
+        "addToGroupError": "企業の顧客グループ追加に失敗しました",
+        "removeFromGroupSuccess": "企業を顧客グループから削除しました",
+        "removeFromGroupError": "企業の顧客グループ削除に失敗しました"
+      },
+      "customerGroup": {
+        "title": "顧客グループ管理",
+        "addToGroup": "顧客グループに追加",
+        "hint": "{companyName}を顧客グループに追加すると、関連する{employeeCount}名の従業員も自動的に顧客グループに追加されます。",
+        "customerGroupColumn": "顧客グループ",
+        "actionsColumn": "操作",
+        "addButton": "追加",
+        "removeButton": "削除",
+        "noGroupsFound": "顧客グループが見つかりません"
+      },
+      "approvalSettings": {
+        "title": "企業承認設定",
+        "requiresAdminApproval": "管理者承認が必要",
+        "requiresAdminApprovalDesc": "この企業が発注するすべての注文について企業管理者の承認が必要です。",
+        "requiresSalesManagerApproval": "営業責任者承認が必要",
+        "requiresSalesManagerApprovalDesc": "この企業が発注するすべての注文について営業責任者の承認が必要です。",
+        "updateSuccess": "企業承認設定の更新が完了しました",
+        "updateError": "企業承認設定の更新に失敗しました"
+      },
+      "companyDetails": {
+        "notFound": "企業が見つかりません",
+        "phone": "電話番号",
+        "email": "メールアドレス",
+        "address": "住所",
+        "city": "市区町村",
+        "state": "都道府県",
+        "currency": "通貨",
+        "customerGroup": "顧客グループ",
+        "approvalSettings": "承認設定",
+        "requiresAdminApproval": "管理者承認が必要",
+        "requiresSalesManagerApproval": "営業責任者承認が必要",
+        "noApprovalRequired": "承認不要",
+        "employees": "従業員",
+        "name": "氏名",
+        "spendingLimit": "利用限度額",
+        "actions": "操作",
+        "admin": "管理者",
+        "add": "追加",
+        "noEmployees": "レコードなし",
+        "noEmployeesDesc": "この企業には従業員がいません。"
+      },
+      "employees": {
+        "createEmployee": "企業顧客追加",
+        "createEmployeeSuccess": "従業員の作成が完了しました",
+        "createCustomerError": "顧客の作成に失敗しました",
+        "createEmployeeError": "従業員の作成に失敗しました",
+        "form": {
+          "details": "詳細情報",
+          "firstName": "名前",
+          "lastName": "姓",
+          "email": "メールアドレス",
+          "phone": "電話番号",
+          "permissions": "権限",
+          "spendingLimit": "利用限度額",
+          "adminAccess": "管理者権限",
+          "isAdmin": "管理者",
+          "isAdminDesc": "管理者アクセス権を付与する場合は有効にしてください",
+          "isAdminTooltip": "管理者は企業の詳細と従業員権限を管理できます。",
+          "firstNamePlaceholder": "太郎",
+          "lastNamePlaceholder": "田中",
+          "emailPlaceholder": "tanaka.taro@example.com",
+          "phonePlaceholder": "090-1234-5678",
+          "spendingLimitPlaceholder": "100000",
+          "saving": "保存中...",
+          "save": "保存"
+        },
+        "actions": {
+          "edit": "編集",
+          "delete": "削除",
+          "deleteSuccess": "従業員の削除が完了しました"
+        },
+        "edit": {
+          "title": "従業員編集",
+          "updateSuccess": "従業員の更新が完了しました",
+          "editCustomerDetails": "顧客詳細編集",
+          "company": "企業"
+        }
+      }
+    },
+    "approvals": {
+      "title": "承認", 
+      "subtitle": "注文承認ワークフローを管理",
+      "noApprovals": "レコードなし",
+      "noApprovalsDescription": "現在承認待ちのリクエストはありません。",
+      "table": {
+        "orderId": "注文番号",
+        "customer": "顧客",
+        "company": "企業",
+        "amount": "金額",
+        "status": "ステータス",
+        "requestedAt": "申請日時",
+        "actions": "操作"
+      },
+      "status": {
+        "pending": "承認待ち",
+        "approved": "承認済み",
+        "rejected": "拒否済み",
+        "expired": "期限切れ"
+      },
+      "actions": {
+        "approve": "承認",
+        "reject": "拒否",
+        "review": "確認"
+      },
+      "details": {
+        "approvalRequest": "承認リクエスト",
+        "requestedBy": "申請者",
+        "reason": "理由",
+        "orderDetails": "注文詳細"
+      },
+      "confirmations": {
+        "approveTitle": "注文を承認しますか？",
+        "approveDescription": "この注文を承認しようとしています。続行しますか？",
+        "rejectTitle": "注文を拒否しますか？",
+        "rejectDescription": "この注文の承認リクエストを拒否しようとしています。続行しますか？"
+      },
+      "toasts": {
+        "approveSuccess": "注文の承認が完了しました",
+        "rejectSuccess": "注文の承認を拒否しました"
+      }
+    }
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "noData": "データがありません",
+    "search": "検索",
+    "filter": "フィルター",
+    "export": "エクスポート",
+    "import": "インポート",
+    "refresh": "更新",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "view": "表示",
+    "create": "作成",
+    "back": "戻る",
+    "next": "次のページ",
+    "previous": "前のページ",
+    "error": "エラー",
+    "confirmDeletion": "削除確認",
+    "confirmDeletionDesc": "この項目を削除してもよろしいですか？この操作は元に戻せません。",
+    "confirmLeaveForm": "このフォームから離れてもよろしいですか？",
+    "confirmLeaveFormDesc": "保存されていない変更があります。フォームを離れると変更が失われます。",
+    "continue": "続行"
+    }
+  }
+} 
