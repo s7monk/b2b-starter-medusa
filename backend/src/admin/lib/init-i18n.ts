@@ -45,7 +45,25 @@ const getMenuTranslation = (originalText: string): string => {
 }
 
 /**
- * 更新DOM中的菜单标签
+ * 使用i18next动态获取页面标题翻译
+ */
+const getPageTitleTranslation = (originalText: string): string => {
+  if (typeof i18next === 'undefined' || !i18next.isInitialized) {
+    return originalText
+  }
+
+  // 检查是否是翻译键
+  if (originalText.startsWith('routes.')) {
+    const translationKey = `b2b:${originalText}`
+    const translation = i18next.t(translationKey, { defaultValue: originalText })
+    return translation !== translationKey ? translation : originalText
+  }
+
+  return originalText
+}
+
+/**
+ * 更新DOM中的菜单标签和页面标题
  */
 const updateMenuLabels = () => {
   // 查找扩展菜单项并更新标签
@@ -74,6 +92,38 @@ const updateMenuLabels = () => {
         element.textContent = translatedText
       }
     }
+  })
+
+  // 更新页面标题
+  updatePageTitles()
+}
+
+/**
+ * 更新页面标题
+ */
+const updatePageTitles = () => {
+  // 查找页面标题元素 - 通常是 Heading 组件或 h1, h2 等标签
+  const titleSelectors = [
+    'h1', 'h2', 'h3', 
+    '[class*="h1-core"]', 
+    '[class*="heading"]',
+    '.heading',
+    '[data-testid*="heading"]',
+    '[role="heading"]'
+  ]
+  
+  titleSelectors.forEach(selector => {
+    const titleElements = document.querySelectorAll(`main ${selector}, article ${selector}, section ${selector}, .container ${selector}`)
+    
+    titleElements.forEach((element) => {
+      const currentText = element.textContent?.trim()
+      if (currentText && currentText.startsWith('routes.')) {
+        const translatedText = getPageTitleTranslation(currentText)
+        if (translatedText !== currentText) {
+          element.textContent = translatedText
+        }
+      }
+    })
   })
 }
 
@@ -123,16 +173,21 @@ const setupGlobalMenuUpdater = () => {
             target.closest('nav') || 
             target.querySelector('nav') ||
             target.classList?.contains('navigation') ||
-            target.classList?.contains('sidebar')) {
+            target.classList?.contains('sidebar') ||
+            target.tagName === 'MAIN' ||
+            target.closest('main') ||
+            target.querySelector('main') ||
+            target.classList?.contains('container')) {
           shouldUpdate = true
         }
         
-        // 检查新添加的节点是否包含菜单项
+        // 检查新添加的节点是否包含菜单项或标题
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === Node.ELEMENT_NODE) {
             const element = node as Element
             const text = element.textContent?.trim()
             if (text && (text === 'Companies' || text === 'Quotes' || text === 'Approvals' ||
+                        text.startsWith('routes.') ||
                         text.includes('公司') || text.includes('报价') || text.includes('审批') ||
                         text.includes('企業') || text.includes('見積もり') || text.includes('承認') ||
                         text.includes('Kompanije') || text.includes('Ponude') || text.includes('Odobravanja') ||

@@ -7,14 +7,17 @@ import { QuotesTable } from "./components/quotes-table";
 import "../../lib/init-i18n";
 
 const Quotes = () => {
-  const { t } = useB2BTranslation();
+  const { t, isReady } = useB2BTranslation();
   useMenuLabelUpdater(); // 启用菜单标签更新
+
+  // 如果翻译还没准备好，显示加载状态或回退文本
+  const pageTitle = isReady ? t("routes.quotes.title") : "Quotes";
 
   return (
     <>
       <Container className="flex flex-col p-0 overflow-hidden">
         <Heading className="p-6 pb-0 font-sans font-medium h1-core">
-          {t("routes.quotes.title")}
+          {pageTitle}
         </Heading>
 
         <QuotesTable />

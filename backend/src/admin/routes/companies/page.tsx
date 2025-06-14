@@ -17,7 +17,7 @@ import { CompanyActionsMenu, CompanyCreateDrawer } from "./components";
 import "../../lib/init-i18n";
 
 const Companies = () => {
-  const { t } = useB2BTranslation();
+  const { t, isReady } = useB2BTranslation();
   useMenuLabelUpdater(); // 启用菜单标签更新
   const { data, isPending } = useCompanies({
     fields:
@@ -26,11 +26,14 @@ const Companies = () => {
 
   const { data: customerGroups } = useAdminCustomerGroups();
 
+  // 如果翻译还没准备好，显示加载状态或回退文本
+  const pageTitle = isReady ? t("routes.companies.title") : "Companies";
+
   return (
     <>
       <Container className="flex flex-col p-0 overflow-hidden">
         <div className="p-6 flex justify-between">
-          <Heading className="font-sans font-medium h1-core">{t("routes.companies.title")}</Heading>
+          <Heading className="font-sans font-medium h1-core">{pageTitle}</Heading>
           <CompanyCreateDrawer />
         </div>
         {isPending && <Text>{t("common.loading")}</Text>}
