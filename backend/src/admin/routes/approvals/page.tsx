@@ -1,17 +1,18 @@
 import { defineRouteConfig } from "@medusajs/admin-sdk";
 import { CheckCircle } from "@medusajs/icons";
 import { Container, Heading, Toaster } from "@medusajs/ui";
-import { useB2BTranslation } from "../../hooks/use-b2b-translation";
+import { useB2BTranslation, usePageTitleTranslation } from "../../hooks/use-b2b-translation";
 import { useMenuLabelUpdater } from "../../lib/menu-label-updater";
 import { ApprovalsTable } from "./components/approvals-table";
 import "../../lib/init-i18n";
 
 const Approvals = () => {
-  const { t, isReady } = useB2BTranslation();
+  const { t } = useB2BTranslation();
+  const { t: tTitle } = usePageTitleTranslation(); // 专门用于页面标题，避免显示翻译键
   useMenuLabelUpdater(); // 启用菜单标签更新
 
-  // 如果翻译还没准备好，显示加载状态或回退文本
-  const pageTitle = isReady ? t("routes.approvals.title") : "Approvals";
+  // 使用专门的页面标题翻译hook，在任何语言下都不会显示翻译键
+  const pageTitle = tTitle("routes.approvals.title");
 
   return (
     <>
@@ -26,9 +27,10 @@ const Approvals = () => {
   );
 };
 
+export default Approvals;
+
 export const config = defineRouteConfig({
   label: "Approvals",
   icon: CheckCircle,
 });
 
-export default Approvals;

@@ -11,13 +11,14 @@ import {
 } from "@medusajs/ui";
 import { QueryCompany } from "../../../types";
 import { useAdminCustomerGroups, useCompanies } from "../../hooks/api";
-import { useB2BTranslation } from "../../hooks/use-b2b-translation";
+import { useB2BTranslation, usePageTitleTranslation } from "../../hooks/use-b2b-translation";
 import { useMenuLabelUpdater } from "../../lib/menu-label-updater";
 import { CompanyActionsMenu, CompanyCreateDrawer } from "./components";
 import "../../lib/init-i18n";
 
 const Companies = () => {
-  const { t, isReady } = useB2BTranslation();
+  const { t } = useB2BTranslation();
+  const { t: tTitle } = usePageTitleTranslation(); // 专门用于页面标题，避免显示翻译键
   useMenuLabelUpdater(); // 启用菜单标签更新
   const { data, isPending } = useCompanies({
     fields:
@@ -26,8 +27,8 @@ const Companies = () => {
 
   const { data: customerGroups } = useAdminCustomerGroups();
 
-  // 如果翻译还没准备好，显示加载状态或回退文本
-  const pageTitle = isReady ? t("routes.companies.title") : "Companies";
+  // 使用专门的页面标题翻译hook，在任何语言下都不会显示翻译键
+  const pageTitle = tTitle("routes.companies.title");
 
   return (
     <>
