@@ -22,7 +22,7 @@ const Companies = () => {
   const { t: tTitle } = usePageTitleTranslation(); // 专门用于页面标题，避免显示翻译键
   useMenuLabelUpdater(); // 启用菜单标签更新
   const navigate = useNavigate();
-  const { data, isPending } = useCompanies({
+  const { data, isPending, isError } = useCompanies({
     fields:
       "*employees,*employees.customer,*employees.company,*customer_group,*approval_settings",
   });
@@ -32,6 +32,39 @@ const Companies = () => {
   // 使用专门的页面标题翻译hook，在任何语言下都不会显示翻译键
   const pageTitle = tTitle("routes.companies.title");
 
+  // 显示加载状态
+  if (isPending) {
+    return (
+      <Container className="flex flex-col p-0 overflow-hidden">
+        <div className="p-6 flex justify-between">
+          <Heading className="font-sans font-medium h1-core">{pageTitle}</Heading>
+          <CompanyCreateDrawer />
+        </div>
+        <div className="flex items-center justify-center p-8">
+          <Text>{t("common.loading")}</Text>
+        </div>
+      </Container>
+    );
+  }
+
+  // 显示错误状态
+  if (isError) {
+    return (
+      <Container className="flex flex-col p-0 overflow-hidden">
+        <div className="p-6 flex justify-between">
+          <Heading className="font-sans font-medium h1-core">{pageTitle}</Heading>
+          <CompanyCreateDrawer />
+        </div>
+        <div className="flex items-center justify-center p-8">
+          <Text>{t("common.error")}</Text>
+        </div>
+      </Container>
+    );
+  }
+
+  const companies = data?.companies || [];
+  const hasCompanies = companies.length > 0;
+
   return (
     <>
       <Container className="flex flex-col p-0 overflow-hidden">
@@ -39,23 +72,23 @@ const Companies = () => {
           <Heading className="font-sans font-medium h1-core">{pageTitle}</Heading>
           <CompanyCreateDrawer />
         </div>
-        {isPending && <Text>{t("common.loading")}</Text>}
-        <Table>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell></Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.name")}</Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.phone")}</Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.email")}</Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.address")}</Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.employees")}</Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.customerGroup")}</Table.HeaderCell>
-              <Table.HeaderCell>{t("routes.companies.table.actions")}</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          {data?.companies && (
+        
+        {hasCompanies ? (
+          <Table>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell></Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.name")}</Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.phone")}</Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.email")}</Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.address")}</Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.employees")}</Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.customerGroup")}</Table.HeaderCell>
+                <Table.HeaderCell>{t("routes.companies.table.actions")}</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
             <Table.Body>
-              {data.companies.map((company: QueryCompany) => (
+              {companies.map((company: QueryCompany) => (
                 <Table.Row
                   key={company.id}
                   className="cursor-pointer hover:bg-gray-50"
@@ -92,8 +125,17 @@ const Companies = () => {
                 </Table.Row>
               ))}
             </Table.Body>
-          )}
-        </Table>
+          </Table>
+        ) : (
+          <div className="flex flex-col items-center justify-center p-8 text-center">
+            <Text className="text-ui-fg-subtle mb-2">
+              {t("routes.companies.noCompanies")}
+            </Text>
+            <Text className="text-ui-fg-muted text-sm">
+              {t("routes.companies.noCompaniesDescription")}
+            </Text>
+          </div>
+        )}
       </Container>
       <Toaster />
     </>
