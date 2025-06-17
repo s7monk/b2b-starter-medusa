@@ -9,7 +9,7 @@ import {
   Toaster,
 } from "@medusajs/ui";
 import { QueryEmployee } from "../../../../types";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useAdminCustomerGroups, useCompany } from "../../../hooks/api";
 import { useB2BTranslation } from "../../../hooks/use-b2b-translation";
 import { formatAmount } from "../../../utils";
@@ -25,7 +25,8 @@ const CompanyDetails = () => {
   const { t } = useB2BTranslation();
   useMenuLabelUpdater(); // 启用菜单标签更新
   const { companyId } = useParams();
-  const { data, isPending } = useCompany(companyId!, {
+  const navigate = useNavigate();
+  const { data, isPending, isError } = useCompany(companyId!, {
     fields:
       "*employees,*employees.customer,*employees.company,*customer_group,*approval_settings",
   });
@@ -34,8 +35,22 @@ const CompanyDetails = () => {
 
   const company = data?.company;
 
-  if (!company) {
-    return <div>{t("routes.companies.companyDetails.notFound")}</div>;
+  // 显示加载状态
+  if (isPending) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Text>{t("common.loading")}</Text>
+      </div>
+    );
+  }
+
+  // 只有在不是加载状态且确实没有找到公司时才显示错误
+  if (!isPending && (!company || isError)) {
+    return (
+      <div className="flex items-center justify-center h-64">
+        <Text>{t("routes.companies.companyDetails.notFound")}</Text>
+      </div>
+    );
   }
 
   return (
@@ -171,9 +186,7 @@ const CompanyDetails = () => {
                     <Table.Row
                       key={employee.id}
                       onClick={() => {
-                        window.location.href = `/app/customers/${
-                          employee!.customer!.id
-                        }`;
+                        navigate(`/customers/${employee!.customer!.id}`);
                       }}
                       className="cursor-pointer"
                     >

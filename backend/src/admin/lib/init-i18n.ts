@@ -25,6 +25,24 @@ const getCurrentLanguage = (): string => {
  */
 const getMenuTranslation = (originalText: string): string => {
   if (typeof i18next === 'undefined' || !i18next.isInitialized) {
+    // 如果i18next还没初始化，使用本地翻译映射作为后备
+    const currentLang = getCurrentLanguage()
+    const localTranslations: Record<string, Record<string, string>> = {
+      'zh': {
+        'Companies': '公司',
+        'Quotes': '报价', 
+        'Approvals': '审批'
+      },
+      'zhCN': {
+        'Companies': '公司',
+        'Quotes': '报价',
+        'Approvals': '审批'
+      }
+    }
+    
+    if (localTranslations[currentLang] && localTranslations[currentLang][originalText]) {
+      return localTranslations[currentLang][originalText]
+    }
     return originalText
   }
 
@@ -66,34 +84,38 @@ const getPageTitleTranslation = (originalText: string): string => {
  * 更新DOM中的菜单标签和页面标题
  */
 const updateMenuLabels = () => {
-  // 查找扩展菜单项并更新标签
-  const menuItems = document.querySelectorAll('nav a[href^="/"], nav button')
+  // 更精确的菜单项选择器
+  const menuSelectors = [
+    'nav a[href^="/"]',
+    'nav button',
+    'aside a[href^="/"]', 
+    'aside button',
+    '[role="navigation"] a',
+    '[role="navigation"] button',
+    '.sidebar a',
+    '.sidebar button',
+    '.navigation a',
+    '.navigation button'
+  ]
   
-  menuItems.forEach((item) => {
-    const textElement = item.querySelector('span, p')
-    if (textElement) {
-      const currentText = textElement.textContent?.trim()
-      if (currentText) {
-        const translatedText = getMenuTranslation(currentText)
-        if (translatedText !== currentText) {
-          textElement.textContent = translatedText
+  menuSelectors.forEach(selector => {
+    const menuItems = document.querySelectorAll(selector)
+    
+    menuItems.forEach((item) => {
+      // 查找文本元素（span, p, 或直接文本内容）
+      const textElement = item.querySelector('span, p') || item
+      if (textElement && textElement.textContent) {
+        const currentText = textElement.textContent.trim()
+        if (currentText && (currentText === 'Companies' || currentText === 'Quotes' || currentText === 'Approvals')) {
+          const translatedText = getMenuTranslation(currentText)
+          if (translatedText !== currentText) {
+            textElement.textContent = translatedText
+          }
         }
       }
-    }
+    })
   })
   
-  // 也检查直接包含文本的菜单项
-  const allMenuElements = document.querySelectorAll('nav span, nav p, nav a')
-  allMenuElements.forEach((element) => {
-    const currentText = element.textContent?.trim()
-    if (currentText) {
-      const translatedText = getMenuTranslation(currentText)
-      if (translatedText !== currentText) {
-        element.textContent = translatedText
-      }
-    }
-  })
-
   // 更新页面标题
   updatePageTitles()
 }
@@ -131,14 +153,19 @@ const updatePageTitles = () => {
  * 设置全局菜单更新器
  */
 const setupGlobalMenuUpdater = () => {
-  // 立即更新一次
+  // 立即更新多次，确保快速生效
   updateMenuLabels()
+  setTimeout(updateMenuLabels, 10)
+  setTimeout(updateMenuLabels, 50)
+  setTimeout(updateMenuLabels, 100)
   
   // 监听i18next语言变化事件
   if (typeof i18next !== 'undefined') {
     const handleLanguageChange = () => {
+      updateMenuLabels() // 立即更新
+      setTimeout(updateMenuLabels, 10)
       setTimeout(updateMenuLabels, 50)
-      setTimeout(updateMenuLabels, 200) // 多次尝试确保更新成功
+      setTimeout(updateMenuLabels, 100)
     }
     
     i18next.on('languageChanged', handleLanguageChange)
@@ -147,7 +174,9 @@ const setupGlobalMenuUpdater = () => {
   // 监听localStorage变化（手动切换语言时的后备方案）
   window.addEventListener('storage', (e) => {
     if (e.key === 'i18nextLng') {
-      setTimeout(updateMenuLabels, 100)
+      updateMenuLabels()
+      setTimeout(updateMenuLabels, 10)
+      setTimeout(updateMenuLabels, 50)
     }
   })
   
@@ -222,8 +251,10 @@ const setupGlobalMenuUpdater = () => {
     })
     
     if (shouldUpdate) {
+      updateMenuLabels() // 立即更新
+      setTimeout(updateMenuLabels, 1) // 1ms 极速更新
       setTimeout(updateMenuLabels, 10)
-      setTimeout(updateMenuLabels, 100) // 双重保险
+      setTimeout(updateMenuLabels, 50)
     }
   })
   
@@ -235,20 +266,34 @@ const setupGlobalMenuUpdater = () => {
     attributeFilter: ['class', 'style']
   })
   
-  // 定期更新作为后备方案
-  setInterval(updateMenuLabels, 2000)
+  // 更频繁的定期更新作为后备方案
+  setInterval(updateMenuLabels, 1000)
   
-  // 监听点击事件
+  // 监听点击事件，特别是菜单展开/折叠
   document.addEventListener('click', (e) => {
     const target = e.target as Element
     if (target.closest('nav') || 
         target.classList?.contains('expand') ||
         target.classList?.contains('collapse') ||
-        target.closest('[role="button"]')) {
+        target.closest('[role="button"]') ||
+        target.closest('button') ||
+        target.tagName === 'BUTTON') {
+      updateMenuLabels() // 立即更新
+      setTimeout(updateMenuLabels, 1)
+      setTimeout(updateMenuLabels, 10)
       setTimeout(updateMenuLabels, 50)
-      setTimeout(updateMenuLabels, 200)
+      setTimeout(updateMenuLabels, 100)
     }
   })
+  
+  // 监听鼠标进入菜单区域
+  document.addEventListener('mouseenter', (e) => {
+    const target = e.target as Element
+    if (target.closest('nav') || target.closest('aside') || target.closest('[role="navigation"]')) {
+      updateMenuLabels()
+      setTimeout(updateMenuLabels, 10)
+    }
+  }, true)
 }
 
 // 在应用启动时初始化B2B翻译
@@ -268,14 +313,22 @@ export const initB2BI18n = () => {
 
 // 自动执行初始化
 if (typeof window !== "undefined") {
+  // 立即执行初始化，不等待任何事件
+  initB2BI18n()
+  
   // 等待DOM加载完成和i18next初始化
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(initB2BI18n, 300)
+      setTimeout(initB2BI18n, 10) // 大幅减少延迟
     })
   } else {
-    setTimeout(initB2BI18n, 300)
+    setTimeout(initB2BI18n, 10) // 大幅减少延迟
   }
+  
+  // 页面完全加载后再次执行
+  window.addEventListener('load', () => {
+    setTimeout(initB2BI18n, 10)
+  })
 } else {
   initB2BI18n()
 } 

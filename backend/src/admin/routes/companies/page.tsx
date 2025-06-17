@@ -9,6 +9,7 @@ import {
   Text,
   Toaster,
 } from "@medusajs/ui";
+import { useNavigate } from "react-router-dom";
 import { QueryCompany } from "../../../types";
 import { useAdminCustomerGroups, useCompanies } from "../../hooks/api";
 import { useB2BTranslation, usePageTitleTranslation } from "../../hooks/use-b2b-translation";
@@ -20,6 +21,7 @@ const Companies = () => {
   const { t } = useB2BTranslation();
   const { t: tTitle } = usePageTitleTranslation(); // 专门用于页面标题，避免显示翻译键
   useMenuLabelUpdater(); // 启用菜单标签更新
+  const navigate = useNavigate();
   const { data, isPending } = useCompanies({
     fields:
       "*employees,*employees.customer,*employees.company,*customer_group,*approval_settings",
@@ -58,7 +60,7 @@ const Companies = () => {
                   key={company.id}
                   className="cursor-pointer hover:bg-gray-50"
                   onClick={() =>
-                    (window.location.href = `/app/companies/${company.id}`)
+                    navigate(`/companies/${company.id}`)
                   }
                 >
                   <Table.Cell className="w-6 h-6 items-center justify-center">
