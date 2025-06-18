@@ -81,7 +81,7 @@ const MegaMenu = ({
         className="z-50"
       >
         <LocalizedClientLink
-          className="hover:text-ui-fg-base hover:bg-neutral-100 rounded-full px-3 py-2"
+          className="relative text-zinc-900 font-medium px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
           href="/store"
         >
           Products

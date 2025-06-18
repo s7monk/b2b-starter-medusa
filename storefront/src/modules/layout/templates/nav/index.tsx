@@ -27,17 +27,33 @@ export async function NavigationHeader() {
               href="/"
             >
               <h1 className="small:text-base text-sm font-medium flex items-center">
-                <LogoIcon className="inline mr-2" />
-                Medusa B2B Starter
+                <LogoIcon className="inline" />
               </h1>
             </LocalizedClientLink>
+            <div style={{ width: '120px' }}></div>
 
             <nav>
-              <ul className="space-x-4 hidden small:flex">
+              <ul className="space-x-6 hidden small:flex items-center">
                 <li>
                   <Suspense fallback={<SkeletonMegaMenu />}>
                     <MegaMenuWrapper />
                   </Suspense>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    className="relative text-zinc-900 font-medium px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                    href="/about"
+                  >
+                    About Us
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    className="relative text-zinc-900 font-medium px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                    href="/contact"
+                  >
+                    Contact Us
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </nav>
