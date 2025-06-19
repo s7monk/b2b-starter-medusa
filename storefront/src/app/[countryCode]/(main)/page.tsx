@@ -32,11 +32,13 @@ export default async function Home(props: {
   const { countryCode } = params
 
   return (
-    <div className="flex flex-col gap-y-2 m-2">
+    <div className="flex flex-col">
       <Hero />
-      <Suspense fallback={<SkeletonFeaturedProducts />}>
-        <FeaturedProducts countryCode={countryCode} />
-      </Suspense>
+      <div className="flex flex-col gap-y-2 m-2">
+        <Suspense fallback={<SkeletonFeaturedProducts />}>
+          <FeaturedProducts countryCode={countryCode} />
+        </Suspense>
+      </div>
     </div>
   )
 }

@@ -26,6 +26,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         'jxd': ['JXD-Medium', 'sans-serif'],
+        'jxd-light': ['JXD-Light', 'sans-serif'],
+        'jxd-regular': ['JXD-Regular', 'sans-serif'],
+        'jxd-bold': ['JXD-Bold', 'sans-serif'],
       },
       keyframes: {
         "accordion-open": {

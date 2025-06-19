@@ -1,8 +1,6 @@
 "use client"
 
-import { Listbox, Transition } from "@headlessui/react"
-import { ChevronDownMini } from "@medusajs/icons"
-import { Fragment, useState } from "react"
+import { useState } from "react"
 import ReactCountryFlag from "react-country-flag"
 
 type LanguageOption = {
@@ -13,93 +11,156 @@ type LanguageOption = {
 
 // 基于后端支持的语言，选择主要的几种语言
 const languages: LanguageOption[] = [
-  { code: "EN", label: "English", countryCode: "US" },
-  { code: "中文", label: "中文", countryCode: "CN" },
-  { code: "日本語", label: "日本語", countryCode: "JP" },
-  { code: "한국어", label: "한국어", countryCode: "KR" },
-  { code: "Español", label: "Español", countryCode: "ES" },
-  { code: "Français", label: "Français", countryCode: "FR" },
-  { code: "Deutsch", label: "Deutsch", countryCode: "DE" },
-  { code: "Italiano", label: "Italiano", countryCode: "IT" },
-  { code: "Português", label: "Português", countryCode: "PT" },
-  { code: "Русский", label: "Русский", countryCode: "RU" },
+  { code: "EN", label: "English", countryCode: "GB" },
+  { code: "BE", label: "Français", countryCode: "BE" },
+  { code: "NL", label: "Nederlands", countryCode: "NL" },
+  { code: "CN", label: "中文", countryCode: "CN" },
+  { code: "JP", label: "日本語", countryCode: "JP" },
+  { code: "KR", label: "한국어", countryCode: "KR" },
+  { code: "ES", label: "Español", countryCode: "ES" },
+  { code: "DE", label: "Deutsch", countryCode: "DE" },
+  { code: "IT", label: "Italiano", countryCode: "IT" },
+  { code: "PT", label: "Português", countryCode: "PT" },
+  { code: "RU", label: "Русский", countryCode: "RU" },
 ]
 
 const LanguageSelect = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0])
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleLanguageChange = (language: LanguageOption) => {
     setSelectedLanguage(language)
+    setIsOpen(false)
     console.log("Language changed to:", language.code)
   }
 
+  const handleToggle = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const handleMouseLeave = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <div className="relative">
-      <Listbox value={selectedLanguage} onChange={handleLanguageChange}>
-        <div className="relative">
-          <Listbox.Button className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-md hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200">
-            <ReactCountryFlag
-              countryCode={selectedLanguage.countryCode}
-              svg
-              style={{
-                width: "18px",
-                height: "18px",
-              }}
-            />
-            <span className="text-[#0f0f0f] text-base font-medium font-jxd">
-              {selectedLanguage.code}
-            </span>
-            <ChevronDownMini className="w-4 h-4 text-gray-400 ml-1" />
-          </Listbox.Button>
-          
-          <Transition
-            as={Fragment}
-            enter="transition ease-out duration-100"
-            enterFrom="transform opacity-0 scale-95"
-            enterTo="transform opacity-100 scale-100"
-            leave="transition ease-in duration-75"
-            leaveFrom="transform opacity-100 scale-100"
-            leaveTo="transform opacity-0 scale-95"
-          >
-            <Listbox.Options className="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl z-50 py-2 focus:outline-none overflow-hidden">
-              {languages.map((language) => (
-                <Listbox.Option
-                  key={language.code}
-                  value={language}
-                  className={({ active, selected }) =>
-                    `relative cursor-pointer select-none py-3 px-4 transition-colors duration-150 ${
-                      active ? "bg-blue-50" : ""
-                    } ${
-                      selected ? "bg-blue-100 text-blue-900" : "text-gray-900"
-                    }`
-                  }
-                >
-                  {({ selected }) => (
-                    <div className="flex items-center gap-3">
-                      <ReactCountryFlag
-                        countryCode={language.countryCode}
-                        svg
-                        style={{
-                          width: "20px",
-                          height: "20px",
-                        }}
-                      />
-                      <span className={`block text-sm ${selected ? "font-semibold" : "font-normal"}`}>
-                        {language.label}
-                      </span>
-                      {selected && (
-                        <div className="ml-auto">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
-          </Transition>
+    <div 
+      className="relative z-[1100] justify-center mr-[10px] lg:mr-0" 
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* 主按钮 */}
+      <div 
+        className="h-10 flex space-between xl:px-3 duration-300 items-center w-10 xl:w-fit border border-gray-300 rounded-full cursor-pointer hover:border-gray-400"
+        onClick={handleToggle}
+      >
+        <div className="select-none mx-auto lg:mx-0">
+          <ReactCountryFlag
+            countryCode={selectedLanguage.countryCode}
+            svg
+            style={{
+              width: "20px",
+              height: "20px",
+              borderRadius: "50%",
+            }}
+            className="w-5 h-5 max-w-none"
+          />
         </div>
-      </Listbox>
+        <div className="hidden xl:flex ml-3 items-center">
+          <span className="select-none duration-300 text-rg uppercase text-blue-900">
+            {selectedLanguage.code}
+          </span>
+          <svg 
+            width="9" 
+            height="7" 
+            viewBox="0 0 9 7" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg" 
+            className={`pointer-events-none z-20 ml-5 [&>path]:duration-300 transition-all ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          >
+            <path 
+              d="M0.832031 1.53027L4.59836 5.29674L8.36482 1.53027" 
+              stroke="#2B2D41" 
+              strokeWidth="1.208" 
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* 下拉菜单 */}
+      {isOpen && (
+        <div className="lg:w-fit px-[9px] xl:px-3 bg-white gap-2 absolute top-0 left-0 border border-gray-300 py-2 rounded-[20px] flex flex-col shadow-lg">
+          {/* 当前选中的语言选项 - 显示在顶部并有下边框 */}
+          <div className="flex items-center justify-between">
+            <div className="h-[33px] w-fit hover:opacity-100 opacity-100 duration-300 flex items-center pb-2 border-b !opacity-100">
+              <div className="select-none lg:mx-0">
+                <ReactCountryFlag
+                  countryCode={selectedLanguage.countryCode}
+                  svg
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                  }}
+                  className="w-5 h-5 max-w-none"
+                />
+              </div>
+              <span className="select-none ml-[12px] uppercase mr-[10px] xl:mr-[20px] text-rg">
+                {selectedLanguage.code}
+              </span>
+            </div>
+            <svg 
+              width="9" 
+              height="7" 
+              viewBox="0 0 9 7" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="hidden xl:block opacity-0"
+            >
+              <path 
+                d="M0.832031 1.53027L4.59836 5.29674L8.36482 1.53027" 
+                stroke="#2B2D41" 
+                strokeWidth="1.208" 
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+          
+          {/* 其他语言选项 */}
+          {languages
+            .filter(lang => lang.code !== selectedLanguage.code)
+            .map((language, index, filteredArray) => (
+              <div
+                key={language.code}
+                className="flex items-center justify-between"
+                onClick={() => handleLanguageChange(language)}
+              >
+                <div 
+                  className={`
+                    h-[33px] w-fit hover:opacity-100 opacity-50 duration-300 
+                    flex items-center cursor-pointer
+                    ${index < filteredArray.length - 1 ? 'pb-2 border-b' : ''}
+                  `}
+                >
+                  <div className="select-none lg:mx-0">
+                    <ReactCountryFlag
+                      countryCode={language.countryCode}
+                      svg
+                      style={{
+                        width: "20px",
+                        height: "20px",
+                        borderRadius: "50%",
+                      }}
+                      className="w-5 h-5 max-w-none"
+                    />
+                  </div>
+                  <span className="select-none ml-[12px] uppercase mr-[10px] xl:mr-[20px] text-rg">
+                    {language.code}
+                  </span>
+                </div>
+              </div>
+            ))}
+        </div>
+      )}
     </div>
   )
 }
