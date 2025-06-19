@@ -2,6 +2,39 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* JXD Font Family */
+@font-face {
+  font-family: 'JXD-Light';
+  src: url('/front/ABBvoice_W_Lt.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JXD-Regular';
+  src: url('/front/ABBvoice_W_Rg.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JXD-Medium';
+  src: url('/front/ABBvoice_W_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JXD-Bold';
+  src: url('/front/ABBvoice_W_Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
