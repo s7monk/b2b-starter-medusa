@@ -49,7 +49,7 @@ const LanguageSelect = () => {
     >
       {/* 主按钮 */}
       <div 
-        className="h-10 flex space-between xl:px-3 duration-300 items-center w-10 xl:w-fit border border-gray-300 rounded-full cursor-pointer hover:border-gray-400"
+        className="h-10 flex space-between xl:px-3 duration-300 items-center w-10 xl:w-fit border border-gray-600 rounded-full cursor-pointer hover:border-gray-700"
         onClick={handleToggle}
       >
         <div className="select-none mx-auto lg:mx-0">
@@ -65,7 +65,7 @@ const LanguageSelect = () => {
           />
         </div>
         <div className="hidden xl:flex ml-3 items-center">
-          <span className="select-none duration-300 text-rg uppercase text-blue-900">
+          <span className="select-none duration-300 text-rg uppercase text-gray-900">
             {selectedLanguage.code}
           </span>
           <svg 
@@ -88,7 +88,7 @@ const LanguageSelect = () => {
 
       {/* 下拉菜单 */}
       {isOpen && (
-        <div className="lg:w-fit px-[9px] xl:px-3 bg-white gap-2 absolute top-0 left-0 border border-gray-300 py-2 rounded-[20px] flex flex-col shadow-lg">
+        <div className="lg:w-fit px-[9px] xl:px-3 bg-white gap-2 absolute top-0 left-0 border border-gray-600 py-2 rounded-[20px] flex flex-col shadow-lg">
           {/* 当前选中的语言选项 - 显示在顶部并有下边框 */}
           <div className="flex items-center justify-between">
             <div className="h-[33px] w-fit hover:opacity-100 opacity-100 duration-300 flex items-center pb-2 border-b !opacity-100">

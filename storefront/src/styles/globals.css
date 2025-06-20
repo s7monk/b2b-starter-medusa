@@ -91,6 +91,26 @@
     @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
   }
 
+  /* Matt购物车样式 */
+  .border-grey {
+    border-color: #e5e5e5;
+  }
+
+  .popInDelay {
+    animation: popIn 0.3s ease-out 0.3s both;
+  }
+
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   .text-xsmall-regular {
     @apply text-[10px] leading-4 font-normal;
   }

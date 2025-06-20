@@ -73,7 +73,7 @@ const Hero = () => {
   return (
     <div className="relative w-full h-[calc(100vh-115px)] overflow-hidden">
       {/* Video Background */}
-      {!videoError ? (
+      {!videoError && (
         <video
           ref={videoRef}
           autoPlay
@@ -89,14 +89,6 @@ const Hero = () => {
           <source src="/video/jxd_banner_V2.mp4" type="video/mp4" />
           您的浏览器不支持视频播放。
         </video>
-      ) : (
-        // 视频加载失败时的后备图片
-        <div 
-          className="absolute top-0 right-0 bottom-0 left-px w-[calc(100%-1px)] h-full bg-cover bg-center bg-gray-900"
-          style={{
-            backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/hero-image.jpg')"
-          }}
-        />
       )}
 
       {/* Pause/Play Button */}
