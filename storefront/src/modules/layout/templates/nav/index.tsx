@@ -47,6 +47,14 @@ export async function NavigationHeader() {
               <nav>
                 <ul className="space-x-6 hidden small:flex items-center">
                   <li>
+                    <LocalizedClientLink
+                      className="relative text-[#0f0f0f] text-base font-medium font-jxd px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                      href="/"
+                    >
+                      Home
+                    </LocalizedClientLink>
+                  </li>
+                  <li>
                     <Suspense fallback={<SkeletonMegaMenu />}>
                       <MegaMenuWrapper />
                     </Suspense>
