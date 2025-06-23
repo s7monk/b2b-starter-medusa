@@ -164,7 +164,7 @@ export default async function Footer() {
             <Text className="txt-compact-small" style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}>
               © {new Date().getFullYear()} Medusa Store. All rights reserved.
             </Text>
-            <div className="text-gray-200">
+            <div className="text-gray-200 mr-2">
               <SocialLinks />
             </div>
           </div>
