@@ -21,12 +21,20 @@ export async function NavigationHeader() {
   return (
     <>
       {/* 顶部灰色长条 - 像ABB网站那样 */}
-      <div className="w-full h-[40px] bg-[#F5F5F5] flex items-center justify-end px-4">
-        <div className="flex items-center space-x-4 text-sm text-gray-600 mr-4">
-          <span>News & Media</span>
-          <span>Careers</span>
-          <span>Investors</span>
-          <span>Contact Us</span>
+      <div className="w-full h-[40px] bg-[#F5F5F5] flex items-center px-4 small:px-8 relative">
+
+        {/* 右侧联系信息 */}
+        <div className="flex items-center space-x-6 font-jxd-regular text-gray-600 ml-auto" style={{ fontSize: '13px' }}>
+          <span className="flex items-center gap-1">
+            📞 +86 010-8888-9999
+          </span>
+          <span className="flex items-center gap-1">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" fill="#E1294D"/>
+              <path d="M22 6L12 13L2 6" stroke="#ffffff" strokeWidth="1.5"/>
+            </svg>
+            info@jxdtech.com
+          </span>
         </div>
       </div>
       
@@ -47,10 +55,10 @@ export async function NavigationHeader() {
         {/* 中间 - 菜单导航 绝对居中 */}
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <nav>
-            <ul className="space-x-8 hidden small:flex items-center">
+            <ul className="space-x-[26px] hidden small:flex items-center">
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                   href="/"
                 >
                   Home
@@ -63,7 +71,15 @@ export async function NavigationHeader() {
               </li>
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  href="/about"
+                >
+                  About Us
+                </LocalizedClientLink>
+              </li>
+              <li>
+                <LocalizedClientLink
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                   href="/faq"
                 >
                   FAQ
@@ -71,10 +87,10 @@ export async function NavigationHeader() {
               </li>
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-3 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
-                  href="/about"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  href="/contact"
                 >
-                  About Us
+                  Contact Us
                 </LocalizedClientLink>
               </li>
             </ul>
