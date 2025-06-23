@@ -1,8 +1,11 @@
 import React from "react"
+import Tooltip from "@/modules/common/components/tooltip"
 
 export default function SkeletonQuoteButton() {
   return (
-    <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md animate-pulse">
+    <Tooltip text="Quote" position="bottom">
+      <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md animate-pulse"
+      >
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_quote_skeleton)">
@@ -25,5 +28,6 @@ export default function SkeletonQuoteButton() {
         </svg>
       </div>
     </button>
+    </Tooltip>
   )
 } 

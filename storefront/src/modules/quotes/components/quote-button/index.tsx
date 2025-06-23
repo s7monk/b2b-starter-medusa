@@ -4,6 +4,7 @@ import { useCart } from "@/lib/context/cart-context"
 import { B2BCustomer } from "@/types/global"
 import { RequestQuoteConfirmation } from "@/modules/quotes/components/request-quote-confirmation"
 import { RequestQuotePrompt } from "@/modules/quotes/components/request-quote-prompt"
+import Tooltip from "@/modules/common/components/tooltip"
 
 type QuoteButtonProps = {
   customer: B2BCustomer | null
@@ -14,8 +15,10 @@ export default function QuoteButton({ customer }: QuoteButtonProps) {
 
   if (customer && cart?.items && cart.items.length > 0) {
     return (
-      <RequestQuoteConfirmation>
-        <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md">
+      <Tooltip text="Quote" position="bottom">
+        <RequestQuoteConfirmation>
+          <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md"
+          >
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_quote_icon)">
@@ -39,12 +42,15 @@ export default function QuoteButton({ customer }: QuoteButtonProps) {
           </div>
         </button>
       </RequestQuoteConfirmation>
+        </Tooltip>
     )
   }
 
   return (
-    <RequestQuotePrompt>
-      <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md">
+    <Tooltip text="Quote" position="bottom">
+      <RequestQuotePrompt>
+        <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md"
+        >
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_quote_icon_prompt)">
@@ -68,5 +74,6 @@ export default function QuoteButton({ customer }: QuoteButtonProps) {
         </div>
       </button>
     </RequestQuotePrompt>
+      </Tooltip>
   )
 } 

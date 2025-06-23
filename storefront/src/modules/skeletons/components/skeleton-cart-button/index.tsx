@@ -2,7 +2,7 @@ import React from "react"
 
 export default function SkeletonCartButton() {
   return (
-    <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md animate-pulse">
+    <button className="cursor-pointer px-[4px] relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md animate-pulse">
       <div className="absolute left-[13px] top-1/2 transform -translate-y-1/2">
         <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_234_1944)">
@@ -16,11 +16,7 @@ export default function SkeletonCartButton() {
           </defs>
         </svg>
       </div>
-      <div className="-top-[6px] -right-[6px] absolute w-6 h-6 text-white bg-gray-300 rounded-full flex items-center justify-center">
-        <span className="select-none text-[10px] font-medium">
-          0
-        </span>
-      </div>
+      {/* 骨架加载时不显示徽章，与实际组件行为保持一致 */}
     </button>
   )
 }

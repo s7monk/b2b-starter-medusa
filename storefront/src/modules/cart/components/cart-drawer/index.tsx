@@ -123,7 +123,7 @@ const CartDrawer = ({
         {...(props as any)}
       >
         <Drawer.Trigger asChild>
-          <button className="cursor-pointer px-[4px] md:overflow-hidden relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md">
+          <button className="cursor-pointer px-[4px] relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md">
             <div className="absolute left-[13px] top-1/2 transform -translate-y-1/2">
               <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_234_1944)">
@@ -137,9 +137,10 @@ const CartDrawer = ({
                 </defs>
               </svg>
             </div>
+            {/* 购物车数量徽章 - 只在有商品时显示 */}
             {totalItems > 0 && (
-              <div className="-top-[6px] -right-[6px] absolute w-6 h-6 text-white bg-blue-500 rounded-full flex items-center justify-center transform transition-all duration-300 ease-out scale-100 hover:scale-110">
-                <span className="select-none text-[10px] font-medium">
+              <div className="absolute -top-2 -right-2 z-[60] min-w-[20px] h-[20px] px-1 text-white bg-[#E53E3E] rounded-full flex items-center justify-center border-2 border-white shadow-lg">
+                <span className="text-[11px] font-bold leading-none whitespace-nowrap">
                   {totalItems > 99 ? '99+' : totalItems}
                 </span>
               </div>

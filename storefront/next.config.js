@@ -15,6 +15,14 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+  async rewrites() {
+    return [
+      {
+        source: "/static/:path*",
+        destination: "http://localhost:9001/static/:path*",
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

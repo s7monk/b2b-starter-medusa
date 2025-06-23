@@ -26,7 +26,10 @@ export async function NavigationHeader() {
         {/* 右侧联系信息 */}
         <div className="flex items-center space-x-6 font-jxd-regular text-gray-600 ml-auto" style={{ fontSize: '13px' }}>
           <span className="flex items-center gap-1">
-            📞 +86 010-8888-9999
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.23 15.26L16.69 14.97C16.08 14.9 15.48 15.11 15.05 15.54L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.46 8.94C8.89 8.51 9.1 7.91 9.03 7.3L8.74 4.78C8.63 3.77 7.78 3.01 6.76 3.01H5.03C3.9 3.01 2.96 3.95 3.03 5.08C3.56 13.62 10.39 20.44 18.92 20.97C20.05 21.04 20.99 20.1 20.99 18.97V17.24C21 16.22 20.24 15.37 19.23 15.26Z" fill="#E1294D" stroke="#E1294D" strokeWidth="0.5"/>
+            </svg>
+            +86 010-8888-9999
           </span>
           <span className="flex items-center gap-1">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +117,9 @@ export async function NavigationHeader() {
           </Suspense>
 
           <Suspense fallback={<SkeletonCartButton />}>
-            <CartButton />
+            <CartProvider cart={cart}>
+              <CartButton />
+            </CartProvider>
           </Suspense>
         </div>
       </div>
