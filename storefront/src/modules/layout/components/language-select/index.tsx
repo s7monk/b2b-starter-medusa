@@ -65,7 +65,7 @@ const LanguageSelect = () => {
           />
         </div>
         <div className="hidden xl:flex ml-3 items-center">
-          <span className="select-none duration-300 text-rg uppercase text-gray-900">
+          <span className="select-none duration-300 font-jxd font-medium uppercase text-gray-900">
             {selectedLanguage.code}
           </span>
           <svg 
@@ -104,7 +104,7 @@ const LanguageSelect = () => {
                   className="w-5 h-5 max-w-none"
                 />
               </div>
-              <span className="select-none ml-[12px] uppercase mr-[10px] xl:mr-[20px] text-rg">
+              <span className="select-none ml-[12px] uppercase mr-[10px] xl:mr-[20px] font-jxd font-medium">
                 {selectedLanguage.code}
               </span>
             </div>
@@ -153,7 +153,7 @@ const LanguageSelect = () => {
                       className="w-5 h-5 max-w-none"
                     />
                   </div>
-                  <span className="select-none ml-[12px] uppercase mr-[10px] xl:mr-[20px] text-rg">
+                  <span className="select-none ml-[12px] uppercase mr-[10px] xl:mr-[20px] font-jxd font-medium">
                     {language.code}
                   </span>
                 </div>

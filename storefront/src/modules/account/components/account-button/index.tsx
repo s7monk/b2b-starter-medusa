@@ -35,7 +35,7 @@ export default async function AccountButton({
             <div className="-top-1 -right-1 absolute w-2 h-2 bg-green-500 rounded-full border border-white"></div>
           </div>
           {/* 用户名显示 */}
-          <span className="text-sm font-medium text-gray-700 hidden small:block">
+          <span className="text-sm font-jxd font-medium text-gray-700 hidden small:block">
             {customer.first_name || customer.email}
           </span>
         </div>
