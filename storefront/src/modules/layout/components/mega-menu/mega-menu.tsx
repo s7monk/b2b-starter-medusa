@@ -87,14 +87,21 @@ const MegaMenu = ({
           Products
         </LocalizedClientLink>
         {isHovered && (
-          <div className="fixed left-0 right-0 top-[60px] flex gap-32 py-10 px-20 bg-white border-b border-neutral-200 ">
-            <div className="flex flex-col gap-2">
+          <div 
+            className="fixed left-0 top-[60px] flex gap-20 py-10 px-4 bg-white border-b border-neutral-200 transition-all duration-300 mr-24"
+            style={{
+              width: 'max-content',
+              minWidth: selectedCategory && getSubCategories(selectedCategory).length > 0 ? '400px' : '120px',
+              maxWidth: '1080px'
+            }}
+          >
+            <div className="flex flex-col gap-2 min-w-[120px]">
               {mainCategories.map((category) => (
                 <LocalizedClientLink
                   key={category.id}
                   href={`/categories/${category.handle}`}
                   className={clx(
-                    "hover:bg-neutral-100 hover:cursor-pointer rounded-full px-3 py-2 w-fit font-medium",
+                    "hover:bg-neutral-100 hover:cursor-pointer rounded-full px-3 py-2 w-fit font-medium transition-all duration-200",
                     selectedCategory === category.id && "bg-neutral-100"
                   )}
                   onMouseEnter={() => handleCategoryHover(category.id)}
@@ -104,10 +111,10 @@ const MegaMenu = ({
                 </LocalizedClientLink>
               ))}
             </div>
-            {selectedCategory && (
-              <div className="grid grid-cols-4 gap-16">
+            {selectedCategory && getSubCategories(selectedCategory).length > 0 && (
+              <div className="flex flex-wrap gap-3 min-w-0">
                 {getSubCategories(selectedCategory).map((category) => (
-                  <div key={category.id} className="flex flex-col gap-2">
+                  <div key={category.id} className="flex flex-col gap-2 min-w-[130px]">
                     <LocalizedClientLink
                       className="font-medium text-zinc-500 hover:underline"
                       href={`/categories/${category.handle}`}
