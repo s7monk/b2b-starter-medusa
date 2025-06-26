@@ -1,7 +1,7 @@
 import { addToCartEventBus } from "@/lib/data/cart-event-bus"
 import { getProductPrice } from "@/lib/util/get-product-price"
 import { HttpTypes, StoreProduct, StoreProductVariant } from "@medusajs/types"
-import { clx, Table } from "@medusajs/ui"
+import { clx, Table, Text } from "@medusajs/ui"
 import Button from "@/modules/common/components/button"
 import ShoppingBag from "@/modules/common/icons/shopping-bag"
 import { useState } from "react"
@@ -72,29 +72,45 @@ const ProductVariantsTable = ({
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="overflow-x-auto p-px">
-        <Table className="w-full rounded-xl overflow-hidden shadow-borders-base border-none ">
-          <Table.Header className="border-t-0">
-            <Table.Row className="bg-neutral-100 border-none hover:!bg-neutral-100">
-              <Table.HeaderCell className="px-4">SKU</Table.HeaderCell>
+    <div className="flex flex-col gap-8">
+      {/* 变体选择标题 */}
+      <div className="flex items-center gap-3">
+        <div className="w-6 h-0.5 bg-[#FF000F]"></div>
+        <Text className="text-sm font-jxd text-gray-500 uppercase tracking-wider">
+          PRODUCT VARIANTS
+        </Text>
+      </div>
+      
+      {/* 变体表格 */}
+      <div className="overflow-x-auto">
+        <Table className="w-full rounded-lg overflow-hidden border border-gray-200">
+          <Table.Header className="border-b border-gray-200">
+            <Table.Row className="bg-gray-50 hover:!bg-gray-50">
+              <Table.HeaderCell className="px-6 py-4 font-jxd-bold text-[#0F0F0F] text-sm">
+                SKU
+              </Table.HeaderCell>
               {product.options?.map((option) => {
                 if (option.title === "Default option") {
                   return null
                 }
                 return (
-                  <Table.HeaderCell key={option.id} className="px-4 border-x">
+                  <Table.HeaderCell 
+                    key={option.id} 
+                    className="px-6 py-4 font-jxd-bold text-[#0F0F0F] text-sm border-l border-gray-200"
+                  >
                     {option.title}
                   </Table.HeaderCell>
                 )
               })}
-              <Table.HeaderCell className="px-4 border-x">
+              <Table.HeaderCell className="px-6 py-4 font-jxd-bold text-[#0F0F0F] text-sm border-l border-gray-200">
                 Price
               </Table.HeaderCell>
-              <Table.HeaderCell className="px-4">Quantity</Table.HeaderCell>
+              <Table.HeaderCell className="px-6 py-4 font-jxd-bold text-[#0F0F0F] text-sm border-l border-gray-200">
+                Quantity
+              </Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-          <Table.Body className="border-none">
+          <Table.Body>
             {product.variants?.map((variant, index) => {
               const { variantPrice } = getProductPrice({
                 product,
@@ -104,25 +120,30 @@ const ProductVariantsTable = ({
               return (
                 <Table.Row
                   key={variant.id}
-                  className={clx({
+                  className={clx("border-b border-gray-100 hover:bg-gray-50/50 transition-colors duration-200", {
                     "border-b-0": index === product.variants?.length! - 1,
                   })}
                 >
-                  <Table.Cell className="px-4">{variant.sku}</Table.Cell>
+                  <Table.Cell className="px-6 py-4 font-jxd text-[#0F0F0F]">
+                    {variant.sku}
+                  </Table.Cell>
                   {variant.options?.map((option, index) => {
                     if (option.value === "Default option value") {
                       return null
                     }
                     return (
-                      <Table.Cell key={option.id} className="px-4 border-x">
+                      <Table.Cell 
+                        key={option.id} 
+                        className="px-6 py-4 font-jxd text-gray-600 border-l border-gray-100"
+                      >
                         {option.value}
                       </Table.Cell>
                     )
                   })}
-                  <Table.Cell className="px-4 border-x">
+                  <Table.Cell className="px-6 py-4 font-jxd-bold text-[#0F0F0F] border-l border-gray-100">
                     {variantPrice?.calculated_price}
                   </Table.Cell>
-                  <Table.Cell className="pl-1 !pr-1">
+                  <Table.Cell className="px-4 py-4 border-l border-gray-100">
                     <BulkTableQuantity
                       variantId={variant.id}
                       onChange={handleQuantityChange}
@@ -134,21 +155,30 @@ const ProductVariantsTable = ({
           </Table.Body>
         </Table>
       </div>
+      
+      {/* 添加到购物车按钮 */}
       <Button
         onClick={handleAddToCart}
-        variant="primary"
-        className="w-full h-10"
+        className={clx(
+          "w-full h-14 rounded-lg font-jxd-bold text-white transition-all duration-300 flex items-center justify-center gap-3",
+          {
+            "bg-[#FF000F] hover:bg-[#BB2924] hover:shadow-lg": totalQuantity > 0,
+            "bg-gray-300 cursor-not-allowed": totalQuantity === 0,
+          }
+        )}
         isLoading={isAdding}
         disabled={totalQuantity === 0}
         data-testid="add-product-button"
       >
         <ShoppingBag
-          className="text-white"
-          fill={totalQuantity === 0 ? "none" : "#fff"}
+          className="w-5 h-5"
+          fill={totalQuantity === 0 ? "none" : "currentColor"}
         />
-        {totalQuantity === 0
-          ? "Choose product variant(s) above"
-          : "Add to cart"}
+        <span>
+          {totalQuantity === 0
+            ? "Choose product variant(s) above"
+            : `Add ${totalQuantity} item${totalQuantity > 1 ? 's' : ''} to cart`}
+        </span>
       </Button>
     </div>
   )

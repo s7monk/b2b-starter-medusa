@@ -61,7 +61,7 @@ export async function NavigationHeader() {
             <ul className="space-x-[26px] hidden small:flex items-center">
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-[#FF000F] after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                   href="/"
                 >
                   Home
@@ -74,7 +74,7 @@ export async function NavigationHeader() {
               </li>
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-[#FF000F] after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                   href="/about"
                 >
                   About
@@ -82,7 +82,7 @@ export async function NavigationHeader() {
               </li>
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-[#FF000F] after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                   href="/faq"
                 >
                   FAQ
@@ -90,7 +90,7 @@ export async function NavigationHeader() {
               </li>
               <li>
                 <LocalizedClientLink
-                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-[#FF000F] after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                   href="/contact"
                 >
                   Contact

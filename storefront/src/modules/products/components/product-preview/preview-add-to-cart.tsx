@@ -37,14 +37,14 @@ const PreviewAddToCart = ({
   }
   return (
     <Button
-      className="rounded-full p-3 border-none shadow-none"
+      className="w-10 h-10 rounded-full p-0 border-none shadow-lg bg-[#FF000F] hover:bg-[#BB2924] text-white transition-all duration-300 hover:scale-110 flex items-center justify-center"
       onClick={(e) => {
         e.preventDefault()
         handleAddToCart()
       }}
       isLoading={isAdding}
     >
-      <ShoppingBag fill="#fff" />
+      <ShoppingBag fill="currentColor" className="w-4 h-4" />
     </Button>
   )
 }

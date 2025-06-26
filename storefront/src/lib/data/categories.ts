@@ -21,6 +21,7 @@ export const listCategories = async (
           fields:
             "*category_children, *products, *parent_category, *parent_category.parent_category",
           limit,
+          order: "rank",
           ...query,
         },
         next,

@@ -1,15 +1,17 @@
 "use client"
 
 import { HttpTypes } from "@medusajs/types"
-import { Table, Text } from "@medusajs/ui"
+import { Text, Table } from "@medusajs/ui"
 import Markdown from "react-markdown"
-import Accordion from "./accordion"
+import { useState } from "react"
 
 type ProductTabsProps = {
   product: HttpTypes.StoreProduct
 }
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
+  const [activeTab, setActiveTab] = useState("Description")
+  
   const tabs = [
     {
       label: "Description",
@@ -23,79 +25,124 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 
   return (
     <div className="w-full">
-      <Accordion type="multiple" className="flex flex-col gap-y-2">
-        {tabs.map((tab, i) => (
-          <Accordion.Item
-            className="bg-neutral-100 small:px-24 px-6"
-            key={i}
-            title={tab.label}
-            headingSize="medium"
-            value={tab.label}
-          >
-            {tab.component}
-          </Accordion.Item>
-        ))}
-      </Accordion>
+      {/* 标签页导航 */}
+      <div className="border-b border-gray-200 mb-8">
+        <div className="flex space-x-8">
+          {tabs.map((tab) => (
+            <button
+              key={tab.label}
+              onClick={() => setActiveTab(tab.label)}
+              className={`py-4 px-2 relative transition-colors duration-200 ${
+                activeTab === tab.label
+                  ? "text-[#0F0F0F] font-jxd-bold"
+                  : "text-gray-500 font-jxd hover:text-gray-700"
+              }`}
+            >
+              {tab.label}
+              {activeTab === tab.label && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FF000F]"></div>
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+      
+      {/* 标签页内容 */}
+      <div className="bg-white rounded-lg border border-gray-200 p-8">
+        {tabs.find(tab => tab.label === activeTab)?.component}
+      </div>
     </div>
   )
 }
 
 const ProductSpecsTab = ({ product }: ProductTabsProps) => {
   return (
-    <div className="text-small-regular py-8 xl:w-2/3">
+    <div className="prose prose-lg max-w-none">
       <Markdown
         components={{
           p: ({ children }) => (
-            <Text className="text-neutral-950 mb-2">{children}</Text>
+            <Text className="text-[#0F0F0F] font-jxd mb-4 leading-relaxed text-base">
+              {children}
+            </Text>
           ),
           h2: ({ children }) => (
-            <Text className="text-xl text-neutral-950 my-4 font-semibold">
+            <Text className="text-xl font-jxd-bold text-[#0F0F0F] my-6 first:mt-0">
               {children}
             </Text>
           ),
           h3: ({ children }) => (
-            <Text className="text-lg text-neutral-950 mb-2">{children}</Text>
+            <Text className="text-lg font-jxd-bold text-[#0F0F0F] mb-4 mt-6">
+              {children}
+            </Text>
+          ),
+          ul: ({ children }) => (
+            <ul className="list-disc list-inside space-y-2 mb-4 ml-4">
+              {children}
+            </ul>
+          ),
+          li: ({ children }) => (
+            <li className="text-[#0F0F0F] font-jxd">
+              {children}
+            </li>
           ),
         }}
       >
-        {product.description ? product.description : "-"}
+        {product.description || "No description available for this product."}
       </Markdown>
     </div>
   )
 }
 
 const ProductSpecificationsTab = ({ product }: ProductTabsProps) => {
+  const hasSpecs = product.weight || product.height || product.width || product.length || 
+                   (product.metadata && Object.keys(product.metadata).length > 0)
+  
+  if (!hasSpecs) {
+    return (
+      <Text className="text-gray-500 font-jxd italic">
+        No specifications available for this product.
+      </Text>
+    )
+  }
+
   return (
-    <div className="text-small-regular py-8">
-      <Table className="rounded-lg shadow-borders-base overflow-hidden border-none">
+    <div>
+      <Table className="w-full border border-gray-200 rounded-lg overflow-hidden">
         <Table.Body>
           {product.weight && (
-            <Table.Row>
-              <Table.Cell className="border-r">
-                <span className="font-semibold">Weight</span>
+            <Table.Row className="border-b border-gray-100 last:border-b-0">
+              <Table.Cell className="bg-gray-50 border-r border-gray-200 px-6 py-4 w-1/3">
+                <Text className="font-jxd-bold text-[#0F0F0F]">Weight</Text>
               </Table.Cell>
-              <Table.Cell className="px-4">{product.weight} grams</Table.Cell>
+              <Table.Cell className="px-6 py-4">
+                <Text className="font-jxd text-[#0F0F0F]">{product.weight} grams</Text>
+              </Table.Cell>
             </Table.Row>
           )}
+          
           {(product.height || product.width || product.length) && (
-            <Table.Row>
-              <Table.Cell className="border-r">
-                <span className="font-semibold">Dimensions (HxWxL)</span>
+            <Table.Row className="border-b border-gray-100 last:border-b-0">
+              <Table.Cell className="bg-gray-50 border-r border-gray-200 px-6 py-4 w-1/3">
+                <Text className="font-jxd-bold text-[#0F0F0F]">Dimensions (H×W×L)</Text>
               </Table.Cell>
-              <Table.Cell className="px-4">
-                {product.height}mm x {product.width}mm x {product.length}mm
+              <Table.Cell className="px-6 py-4">
+                <Text className="font-jxd text-[#0F0F0F]">
+                  {product.height}mm × {product.width}mm × {product.length}mm
+                </Text>
               </Table.Cell>
             </Table.Row>
           )}
 
           {product.metadata &&
             Object.entries(product.metadata).map(([key, value]) => (
-              <Table.Row key={key}>
-                <Table.Cell className="border-r">
-                  <span className="font-semibold">{key}</span>
+              <Table.Row key={key} className="border-b border-gray-100 last:border-b-0">
+                <Table.Cell className="bg-gray-50 border-r border-gray-200 px-6 py-4 w-1/3">
+                  <Text className="font-jxd-bold text-[#0F0F0F] capitalize">
+                    {key.replace(/_/g, ' ')}
+                  </Text>
                 </Table.Cell>
-                <Table.Cell className="px-4">
-                  <p>{value as string}</p>
+                <Table.Cell className="px-6 py-4">
+                  <Text className="font-jxd text-[#0F0F0F]">{value as string}</Text>
                 </Table.Cell>
               </Table.Row>
             ))}

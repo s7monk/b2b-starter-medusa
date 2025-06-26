@@ -115,12 +115,27 @@ const CategoryList = ({
         </div>
         {hasChildren && isExpanded && (
           <ul>
-            {category.category_children.map((childId) => {
-              const childCategory = categories.find(
-                (cat) => cat.id === childId.id
-              )
-              return childCategory ? renderCategory(childCategory) : null
-            })}
+            {category.category_children
+              .map((childId) => {
+                const childCategory = categories.find(
+                  (cat) => cat.id === childId.id
+                )
+                return childCategory
+              })
+              .filter(Boolean)
+              .sort((a, b) => {
+                // 按 rank 字段排序，如果 rank 不存在则按创建时间排序
+                const rankA = a!.rank !== undefined && a!.rank !== null ? a!.rank : 999999;
+                const rankB = b!.rank !== undefined && b!.rank !== null ? b!.rank : 999999;
+                
+                if (rankA !== rankB) {
+                  return rankA - rankB;
+                }
+                
+                // 如果 rank 相同，按创建时间排序
+                return new Date(a!.created_at || 0).getTime() - new Date(b!.created_at || 0).getTime();
+              })
+              .map((childCategory) => renderCategory(childCategory!))}
           </ul>
         )}
       </li>
@@ -143,6 +158,16 @@ const CategoryList = ({
       <ul className="flex flex-col gap-3 text-sm p-3 text-neutral-500">
         {categories
           .filter((cat) => cat.parent_category_id === null)
+          .sort((a, b) => {
+            const rankA = a.rank !== undefined && a.rank !== null ? a.rank : 999999;
+            const rankB = b.rank !== undefined && b.rank !== null ? b.rank : 999999;
+            
+            if (rankA !== rankB) {
+              return rankA - rankB;
+            }
+            
+            return new Date(a.created_at || 0).getTime() - new Date(b.created_at || 0).getTime();
+          })
           .map(renderCategory)}
       </ul>
     </Container>
