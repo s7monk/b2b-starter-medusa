@@ -125,11 +125,11 @@ const MegaMenu = ({
                     </LocalizedClientLink>
                     <div className="flex flex-col gap-2">
                       {getSubCategories(category.id).map((subCategory) => (
-                        <LocalizedClientLink
-                          key={subCategory.id}
-                          className="relative w-fit py-1 font-jxd text-zinc-400 transition-all duration-300 after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-zinc-600"
-                          href={`/categories/${subCategory.handle}`}
-                        >
+                                                  <LocalizedClientLink
+                            key={subCategory.id}
+                            className="relative w-fit max-w-[160px] py-1 font-jxd text-zinc-400 transition-all duration-300 after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-zinc-600 break-words"
+                            href={`/categories/${subCategory.handle}`}
+                          >
                           {subCategory.name}
                         </LocalizedClientLink>
                       ))}

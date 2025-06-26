@@ -44,13 +44,6 @@ export default async function Footer() {
                       return
                     }
 
-                    const children =
-                      c.category_children?.map((child) => ({
-                        name: child.name,
-                        handle: child.handle,
-                        id: child.id,
-                      })) || null
-
                     return (
                       <li
                         className="flex flex-col gap-2 text-gray-200 txt-small"
@@ -58,33 +51,13 @@ export default async function Footer() {
                         style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}
                       >
                         <LocalizedClientLink
-                          className={clx(
-                            "hover:text-white",
-                            children && "txt-small-plus"
-                          )}
+                          className="hover:text-white"
                           href={`/categories/${c.handle}`}
                           data-testid="category-link"
                           style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}
                         >
                           {c.name}
                         </LocalizedClientLink>
-                        {children && (
-                          <ul className="grid grid-cols-1 ml-3 gap-2">
-                            {children &&
-                              children.map((child) => (
-                                <li key={child.id}>
-                                  <LocalizedClientLink
-                                    className="hover:text-white"
-                                    href={`/categories/${child.handle}`}
-                                    data-testid="category-link"
-                                    style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}
-                                  >
-                                    {child.name}
-                                  </LocalizedClientLink>
-                                </li>
-                              ))}
-                          </ul>
-                        )}
                       </li>
                     )
                   })}
