@@ -40,6 +40,7 @@ const MegaMenu = ({
   const handleMenuLeave = () => {
     menuTimeout = setTimeout(() => {
       setIsHovered(false)
+      setSelectedCategory(null) // 重置选中的分类
     }, 300)
 
     return () => {
@@ -88,21 +89,22 @@ const MegaMenu = ({
         </LocalizedClientLink>
         {isHovered && (
           <div 
-            className="fixed left-0 top-[60px] flex gap-20 py-10 px-4 bg-white border-b border-neutral-200 transition-all duration-300 mr-24"
+            className="fixed top-[60px] flex gap-20 py-10 px-4 bg-white border-b border-neutral-200 transition-all duration-300 mr-24"
             style={{
               width: 'max-content',
-              minWidth: selectedCategory && getSubCategories(selectedCategory).length > 0 ? '400px' : '120px',
-              maxWidth: '1080px'
+              minWidth: selectedCategory && getSubCategories(selectedCategory).length > 0 ? '400px' : '130px',
+              maxWidth: 'calc(100vw - 640px)', // 动态宽度：屏幕宽度减去边距
+              left: 'calc(50% - 130px)', // 调整对齐Products菜单项
             }}
           >
-            <div className="flex flex-col gap-2 min-w-[120px]">
+            <div className="flex flex-col gap-2 min-w-[130px]">
               {mainCategories.map((category) => (
                 <LocalizedClientLink
                   key={category.id}
                   href={`/categories/${category.handle}`}
                   className={clx(
-                    "hover:bg-neutral-100 hover:cursor-pointer rounded-full px-3 py-2 w-fit font-medium transition-all duration-200",
-                    selectedCategory === category.id && "bg-neutral-100"
+                    "relative px-3 py-2 w-fit font-medium font-jxd transition-all duration-300 cursor-pointer after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100",
+                    selectedCategory === category.id && "after:scale-x-100"
                   )}
                   onMouseEnter={() => handleCategoryHover(category.id)}
                   onMouseLeave={handleCategoryLeave}
@@ -112,11 +114,11 @@ const MegaMenu = ({
               ))}
             </div>
             {selectedCategory && getSubCategories(selectedCategory).length > 0 && (
-              <div className="flex flex-wrap gap-3 min-w-0">
+              <div className="flex flex-wrap gap-3">
                 {getSubCategories(selectedCategory).map((category) => (
-                  <div key={category.id} className="flex flex-col gap-2 min-w-[130px]">
+                  <div key={category.id} className="flex flex-col gap-2 min-w-[130px] flex-shrink-0">
                     <LocalizedClientLink
-                      className="font-medium text-zinc-500 hover:underline"
+                      className="relative font-medium font-jxd text-zinc-500 w-fit py-1 transition-all duration-300 after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
                       href={`/categories/${category.handle}`}
                     >
                       {category.name}
@@ -125,7 +127,7 @@ const MegaMenu = ({
                       {getSubCategories(category.id).map((subCategory) => (
                         <LocalizedClientLink
                           key={subCategory.id}
-                          className="hover:underline"
+                          className="relative w-fit py-1 font-jxd text-zinc-400 transition-all duration-300 after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:w-full after:h-0.5 after:bg-red-600 after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-zinc-600"
                           href={`/categories/${subCategory.handle}`}
                         >
                           {subCategory.name}
