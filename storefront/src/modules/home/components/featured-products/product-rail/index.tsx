@@ -1,6 +1,5 @@
 import { getProductsById } from "@/lib/data/products"
 import { HttpTypes } from "@medusajs/types"
-import { Text } from "@medusajs/ui"
 
 import InteractiveLink from "@/modules/common/components/interactive-link"
 import ProductPreview from "@/modules/products/components/product-preview"
@@ -24,9 +23,14 @@ export default async function ProductRail({
   })
 
   return (
-    <div className="content-container py-12 small:py-24 bg-neutral-100">
-      <div className="flex justify-between mb-12">
-        <Text className="text-3xl font-jxd-bold text-[#0F0F0F] relative after:content-[''] after:absolute after:-top-6 after:left-0 after:w-[48px] after:h-[6px] after:bg-[#FF000F]">{collection.title}</Text>
+    <div className="content-container py-20 small:py-24 bg-neutral-100">
+      <div className="flex justify-between items-start mb-16">
+        <div>
+          <div className="w-12 h-1 bg-[#FF000F] mb-4"></div>
+          <h2 className="font-jxd-bold text-[#0F0F0F] text-4xl">
+            {collection.title}
+          </h2>
+        </div>
         <InteractiveLink 
           href={`/collections/${collection.handle}`}
           textClassName="text-[#0F0F0F] font-jxd-bold"
