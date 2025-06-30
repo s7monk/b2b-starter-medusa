@@ -6,6 +6,7 @@ import LocalizedClientLink from "@/modules/common/components/localized-client-li
 import LogoIcon from "@/modules/common/icons/logo"
 import { MegaMenuWrapper } from "@/modules/layout/components/mega-menu"
 import LanguageSelect from "@/modules/layout/components/language-select"
+import SearchButton from "@/modules/layout/components/search-button"
 import SkeletonAccountButton from "@/modules/skeletons/components/skeleton-account-button"
 import SkeletonCartButton from "@/modules/skeletons/components/skeleton-cart-button"
 import SkeletonMegaMenu from "@/modules/skeletons/components/skeleton-mega-menu"
@@ -21,21 +22,30 @@ export async function NavigationHeader() {
       {/* 顶部灰色长条 - 像ABB网站那样 */}
       <div className="w-full h-[40px] bg-[#F5F5F5] flex items-center px-4 small:px-8 relative">
 
-        {/* 右侧联系信息 */}
-        <div className="flex items-center space-x-6 font-jxd-regular text-gray-600 ml-auto" style={{ fontSize: '13px' }}>
-          <span className="flex items-center gap-1">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19.23 15.26L16.69 14.97C16.08 14.9 15.48 15.11 15.05 15.54L13.21 17.38C10.38 15.93 8.06 13.62 6.62 10.79L8.46 8.94C8.89 8.51 9.1 7.91 9.03 7.3L8.74 4.78C8.63 3.77 7.78 3.01 6.76 3.01H5.03C3.9 3.01 2.96 3.95 3.03 5.08C3.56 13.62 10.39 20.44 18.92 20.97C20.05 21.04 20.99 20.1 20.99 18.97V17.24C21 16.22 20.24 15.37 19.23 15.26Z" fill="#E1294D" stroke="#E1294D" strokeWidth="0.5"/>
-            </svg>
-            +86 010-8888-9999
-          </span>
-          <span className="flex items-center gap-1">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" fill="#E1294D"/>
-              <path d="M22 6L12 13L2 6" stroke="#ffffff" strokeWidth="1.5"/>
-            </svg>
-            info@jxdtech.com
-          </span>
+        {/* Language Select, News, Brands & Contact Us */}
+        <div className="flex items-center ml-auto space-x-6">
+          <LanguageSelect />
+          <LocalizedClientLink
+            href="/news"
+            className="hover:opacity-80 transition-colors duration-200 font-jxd-regular"
+            style={{ fontSize: '13px', color: '#0f0f0f' }}
+          >
+            News
+          </LocalizedClientLink>
+          <LocalizedClientLink
+            href="/brands"
+            className="hover:opacity-80 transition-colors duration-200 font-jxd-regular"
+            style={{ fontSize: '13px', color: '#0f0f0f' }}
+          >
+            Brands
+          </LocalizedClientLink>
+          <LocalizedClientLink
+            href="/contact"
+            className="hover:opacity-80 transition-colors duration-200 font-jxd-regular"
+            style={{ fontSize: '13px', color: '#0f0f0f' }}
+          >
+            Contact Us
+          </LocalizedClientLink>
         </div>
       </div>
       
@@ -73,9 +83,9 @@ export async function NavigationHeader() {
               <li>
                 <LocalizedClientLink
                   className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-[#FF000F] after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
-                  href="/about"
+                  href="/service"
                 >
-                  About
+                  Service
                 </LocalizedClientLink>
               </li>
               <li>
@@ -89,18 +99,19 @@ export async function NavigationHeader() {
               <li>
                 <LocalizedClientLink
                   className="relative text-[#0f0f0f] text-base font-medium font-jxd px-2 py-2 pb-3 transition-all duration-300 after:content-[''] after:absolute after:-bottom-4 after:left-0 after:w-full after:h-0.5 after:bg-[#FF000F] after:transform after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
-                  href="/contact"
+                  href="/about"
                 >
-                  Contact
+                  About
                 </LocalizedClientLink>
               </li>
+
             </ul>
           </nav>
         </div>
 
         {/* 右侧 - 功能按钮 紧贴最右边 */}
-        <div className="flex-shrink-0 flex items-center gap-4 ml-auto">
-          <LanguageSelect />
+        <div className="flex-shrink-0 flex items-center ml-auto gap-8">
+          <SearchButton />
 
           <Suspense fallback={<SkeletonAccountButton />}>
             <AccountButton customer={customer} />

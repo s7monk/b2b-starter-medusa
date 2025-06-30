@@ -7,63 +7,26 @@ export default async function AccountButton({
   customer: B2BCustomer | null
 }) {
   return (
-    <LocalizedClientLink className="hover:text-ui-fg-base" href="/account">
+    <LocalizedClientLink className="cursor-pointer" href="/account">
       {customer ? (
-        // 已登录状态 - 显示用户名和头像
-        <div className="cursor-pointer px-3 py-2 relative ease-out duration-300 transition-all flex items-center gap-2 h-[40px] rounded-full border-[1px] border-gray-600 hover:border-gray-700 hover:shadow-md">
-          <div className="relative">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clipPath="url(#clip0_user_icon)">
-                <path
-                  d="M7 5.825C8.6569 5.825 10 4.48188 10 2.825C10 1.16812 8.6569 -0.175 7 -0.175C5.34315 -0.175 4 1.16812 4 2.825C4 4.48188 5.34315 5.825 7 5.825Z"
-                  fill="#2B2D41"
-                  className="duration-300"
-                />
-                <path
-                  d="M12.2884 10.078C11.2009 8.179 9.1747 7 7.0002 7C4.8257 7 2.7984 8.179 1.7119 10.078C1.4209 10.585 1.3549 11.191 1.5319 11.744C1.7079 12.295 2.1109 12.751 2.6384 12.995C4.0844 13.666 5.5424 14 7.0002 14C8.4579 14 9.9159 13.666 11.3619 12.995C11.8894 12.751 12.2914 12.295 12.4684 11.744C12.6454 11.191 12.5794 10.585 12.2884 10.078Z"
-                  fill="#2B2D41"
-                  className="duration-300"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_user_icon">
-                  <rect width="14" height="14" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-            {/* 在线状态指示器 */}
-            <div className="-top-1 -right-1 absolute w-2 h-2 bg-green-500 rounded-full border border-white"></div>
-          </div>
-          {/* 用户名显示 */}
-          <span className="text-sm font-jxd font-medium text-gray-700 hidden small:block">
+        // 已登录状态 - 显示图标和用户名，统一高度
+        <div className="flex items-center gap-2 h-6">
+          <svg className="w-6 h-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path fill="#000000" fillRule="evenodd" d="M12 4.125a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5Zm-5.75 4.25a5.75 5.75 0 1 1 11.5 0 5.75 5.75 0 0 1-11.5 0Z" clipRule="evenodd"></path>
+            <path fill="#000000" fillRule="evenodd" d="M5.813 15.188a8.75 8.75 0 0 1 14.937 6.187h-1.5a7.25 7.25 0 1 0-14.5 0h-1.5a8.75 8.75 0 0 1 2.563-6.187Z" clipRule="evenodd"></path>
+          </svg>
+          <span className="text-sm font-medium font-jxd text-black hidden small:block leading-none">
             {customer.first_name || customer.email}
           </span>
         </div>
       ) : (
-        // 未登录状态 - 保持原来的样式（只显示用户图标）
-        <button className="cursor-pointer px-[4px] relative ease-out duration-300 transition-all flex items-center justify-center h-[40px] rounded-full border-[1px] w-[40px] border-gray-600 hover:border-gray-700 hover:shadow-md">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clipPath="url(#clip0_user_icon)">
-                <path
-                  d="M7 5.825C8.6569 5.825 10 4.48188 10 2.825C10 1.16812 8.6569 -0.175 7 -0.175C5.34315 -0.175 4 1.16812 4 2.825C4 4.48188 5.34315 5.825 7 5.825Z"
-                  fill="#2B2D41"
-                  className="duration-300"
-                />
-                <path
-                  d="M12.2884 10.078C11.2009 8.179 9.1747 7 7.0002 7C4.8257 7 2.7984 8.179 1.7119 10.078C1.4209 10.585 1.3549 11.191 1.5319 11.744C1.7079 12.295 2.1109 12.751 2.6384 12.995C4.0844 13.666 5.5424 14 7.0002 14C8.4579 14 9.9159 13.666 11.3619 12.995C11.8894 12.751 12.2914 12.295 12.4684 11.744C12.6454 11.191 12.5794 10.585 12.2884 10.078Z"
-                  fill="#2B2D41"
-                  className="duration-300"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_user_icon">
-                  <rect width="14" height="14" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </button>
+        // 未登录状态 - 只显示图标，统一高度
+        <div className="flex items-center justify-center w-6 h-6">
+          <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path fill="#000000" fillRule="evenodd" d="M12 4.125a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5Zm-5.75 4.25a5.75 5.75 0 1 1 11.5 0 5.75 5.75 0 0 1-11.5 0Z" clipRule="evenodd"></path>
+            <path fill="#000000" fillRule="evenodd" d="M5.813 15.188a8.75 8.75 0 0 1 14.937 6.187h-1.5a7.25 7.25 0 1 0-14.5 0h-1.5a8.75 8.75 0 0 1 2.563-6.187Z" clipRule="evenodd"></path>
+          </svg>
+        </div>
       )}
     </LocalizedClientLink>
   )
