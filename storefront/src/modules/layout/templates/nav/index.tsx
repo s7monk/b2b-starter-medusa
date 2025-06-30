@@ -6,10 +6,8 @@ import LocalizedClientLink from "@/modules/common/components/localized-client-li
 import LogoIcon from "@/modules/common/icons/logo"
 import { MegaMenuWrapper } from "@/modules/layout/components/mega-menu"
 import LanguageSelect from "@/modules/layout/components/language-select"
-import QuoteButton from "@/modules/quotes/components/quote-button"
 import SkeletonAccountButton from "@/modules/skeletons/components/skeleton-account-button"
 import SkeletonCartButton from "@/modules/skeletons/components/skeleton-cart-button"
-import SkeletonQuoteButton from "@/modules/skeletons/components/skeleton-quote-button"
 import SkeletonMegaMenu from "@/modules/skeletons/components/skeleton-mega-menu"
 import { CartProvider } from "@/lib/context/cart-context"
 import { Suspense } from "react"
@@ -101,16 +99,8 @@ export async function NavigationHeader() {
         </div>
 
         {/* 右侧 - 功能按钮 紧贴最右边 */}
-        <div className="flex-shrink-0 flex items-center gap-2 ml-auto">
+        <div className="flex-shrink-0 flex items-center gap-4 ml-auto">
           <LanguageSelect />
-
-          <div className="h-4 w-px bg-neutral-300" />
-
-          <Suspense fallback={<SkeletonQuoteButton />}>
-            <CartProvider cart={cart}>
-              <QuoteButton customer={customer} />
-            </CartProvider>
-          </Suspense>
 
           <Suspense fallback={<SkeletonAccountButton />}>
             <AccountButton customer={customer} />
