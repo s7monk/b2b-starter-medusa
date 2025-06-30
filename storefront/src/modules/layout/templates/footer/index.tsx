@@ -5,6 +5,7 @@ import { Text, clx } from "@medusajs/ui"
 import LocalizedClientLink from "@/modules/common/components/localized-client-link"
 import MedusaCTA from "@/modules/layout/components/medusa-cta"
 import SocialLinks from "@/modules/layout/components/social-links"
+import PaymentMethods from "@/modules/layout/components/payment-methods"
 
 export default async function Footer() {
   const { collections } = await listCollections({
@@ -23,11 +24,15 @@ export default async function Footer() {
           <div className="flex-1">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-white hover:text-gray-200 uppercase mb-8 block"
+              className="txt-compact-xlarge-plus text-white hover:text-gray-200 uppercase mb-4 block"
               style={{ fontFamily: 'JXD-Bold' }}
             >
-              Medusa Store
+              jxd automation
             </LocalizedClientLink>
+            
+            <div className="mt-12">
+              <SocialLinks />
+            </div>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3 flex-1">
             {product_categories && product_categories?.length > 0 && (
@@ -130,15 +135,16 @@ export default async function Footer() {
               </ul>
             </div>
           </div>
-
         </div>
+        
         <div className="border-t pt-6 pb-6" style={{ borderTopColor: '#a0a0a0' }}>
-          <div className="flex w-full justify-between items-center text-gray-200">
+          <div className="flex flex-col small:flex-row w-full justify-between items-center gap-4 text-gray-200">
             <Text className="txt-compact-small" style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}>
-              © {new Date().getFullYear()} Medusa Store. All rights reserved.
+              © {new Date().getFullYear()} JXD Automation. All rights reserved.
             </Text>
-            <div className="text-gray-200 mr-2">
-              <SocialLinks />
+            
+            <div>
+              <PaymentMethods />
             </div>
           </div>
         </div>

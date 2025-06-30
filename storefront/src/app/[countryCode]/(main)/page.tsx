@@ -5,7 +5,9 @@ import WhoWeAre from "@/modules/home/components/who-we-are"
 import HowWeHelp from "@/modules/home/components/how-we-help"
 import OurBrands from "@/modules/home/components/our-brands"
 import ProductCategories from "@/modules/home/components/product-categories"
+import WhyChooseUs from "@/modules/home/components/why-choose-us"
 import CompanyInfo from "@/modules/home/components/company-info"
+import GetQuote from "@/modules/home/components/get-quote"
 import SkeletonFeaturedProducts from "@/modules/skeletons/templates/skeleton-featured-products"
 import { Metadata } from "next"
 import { Suspense } from "react"
@@ -43,12 +45,14 @@ export default async function Home(props: {
       <HowWeHelp />
       <ProductCategories />
       <OurBrands />
+      <WhyChooseUs />
       <CompanyInfo />
       <div className="flex flex-col">
         <Suspense fallback={<SkeletonFeaturedProducts />}>
           <FeaturedProducts countryCode={countryCode} />
         </Suspense>
       </div>
+      <GetQuote />
     </div>
   )
 }

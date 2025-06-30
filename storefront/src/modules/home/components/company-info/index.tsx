@@ -75,36 +75,32 @@ const CompanyInfo = () => {
                   </h3>
                 </div>
 
-                <div className="space-y-8">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-[#FF000F]/30 backdrop-blur-sm flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                        <svg className="w-6 h-6 text-[#FF000F]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
-                        </svg>
-                      </div>
-                      <div className="text-left">
-                        <p className="font-jxd-light text-white text-sm">
-                          Open Monday – Friday
-                        </p>
-                        <p className="font-jxd-bold text-white">
-                          7:30 AM To 5:30 PM EST
-                        </p>
-                      </div>
+                <div className="space-y-8 flex flex-col items-center">
+                  <div className="flex items-center w-full max-w-[200px]">
+                    <div className="w-10 h-10 rounded-full bg-[#FF000F]/30 backdrop-blur-sm flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+                      <svg className="w-6 h-6 text-[#FF000F]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                      </svg>
+                    </div>
+                    <div className="text-left">
+                      <p className="font-jxd-light text-white text-sm">
+                        Open Monday – Friday
+                      </p>
+                      <p className="font-jxd-bold text-white">
+                        7:30 AM To 5:30 PM EST
+                      </p>
                     </div>
                   </div>
 
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-[#FF000F]/30 backdrop-blur-sm flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
-                        <svg className="w-6 h-6 text-[#FF000F]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                        </svg>
-                      </div>
-                      <p className="font-jxd-bold text-white">
-                        Order Online Anytime
-                      </p>
+                  <div className="flex items-center w-full max-w-[200px]">
+                    <div className="w-10 h-10 rounded-full bg-[#FF000F]/30 backdrop-blur-sm flex items-center justify-center mr-4 shadow-lg flex-shrink-0">
+                      <svg className="w-6 h-6 text-[#FF000F]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
                     </div>
+                    <p className="font-jxd-bold text-white text-left">
+                      Order Online Anytime
+                    </p>
                   </div>
                 </div>
               </div>
