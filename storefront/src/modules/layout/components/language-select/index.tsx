@@ -3,6 +3,23 @@
 import ReactCountryFlag from "react-country-flag"
 import { useState, useRef, useEffect } from "react"
 
+// 自定义滚动条样式
+const scrollbarStyles = `
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 2px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+`
+
 type LanguageOption = {
   code: string
   label: string
@@ -57,10 +74,12 @@ const LanguageSelect = () => {
   }, [isOpen])
 
   return (
-    <div 
-      ref={containerRef}
-      className="relative z-[1100] mr-2" 
-    >
+    <>
+      <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
+      <div 
+        ref={containerRef}
+        className="relative z-[1100] mr-2" 
+      >
       {/* 主按钮 - 统一高度，无悬停效果 */}
       <div 
         className="flex items-center gap-1.5 h-5 cursor-pointer"
@@ -98,7 +117,7 @@ const LanguageSelect = () => {
 
       {/* 下拉菜单 - 简洁设计 */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-[180px]">
+        <div className="absolute top-full right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg py-2 min-w-[150px]">
           {/* 当前选中的语言选项 - 显示在顶部 */}
           <div className="px-4 py-2 border-b border-gray-100">
             <div className="flex items-center gap-3">
@@ -131,7 +150,13 @@ const LanguageSelect = () => {
           </div>
           
           {/* 其他语言选项 */}
-          <div className="max-h-48 overflow-y-auto">
+          <div 
+            className="max-h-48 overflow-y-auto custom-scrollbar"
+            style={{
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#d1d5db transparent'
+            }}
+          >
             {languages
               .filter((lang) => lang.code !== selectedLanguage.code)
               .map((language) => (
@@ -158,6 +183,7 @@ const LanguageSelect = () => {
         </div>
       )}
     </div>
+    </>
   )
 }
 
