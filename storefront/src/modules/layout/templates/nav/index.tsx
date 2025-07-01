@@ -110,7 +110,7 @@ export async function NavigationHeader() {
         </div>
 
         {/* 右侧 - 功能按钮 紧贴最右边 */}
-        <div className="flex-shrink-0 flex items-center ml-auto gap-8">
+        <div className="flex-shrink-0 flex items-center ml-auto gap-6">
           <SearchButton />
 
           <Suspense fallback={<SkeletonAccountButton />}>

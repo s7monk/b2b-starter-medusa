@@ -113,11 +113,11 @@ const CartDrawer = ({
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-[-2rem] z-10 backdrop-blur-sm p-0" />
+        <div className="fixed inset-[-2rem] z-[1150] backdrop-blur-sm p-0" />
       )}
       <Drawer
         onMouseEnter={cancelTimer}
-        className="rounded-none m-0 p-0 bg-none z-50"
+        className="rounded-none m-0 p-0 bg-none z-[1200]"
         open={isOpen}
         onOpenChange={setIsOpen}
         {...(props as any)}
@@ -131,7 +131,7 @@ const CartDrawer = ({
             </svg>
             {/* 购物车数量徽章 - 精确定位 */}
             {totalItems > 0 && (
-              <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 z-[60] min-w-[18px] h-[18px] px-1 text-white bg-[#FF000F] rounded-full flex items-center justify-center text-[10px] font-bold leading-none">
+              <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 z-[1300] min-w-[18px] h-[18px] px-1 text-white bg-[#FF000F] rounded-full flex items-center justify-center text-[10px] font-bold leading-none">
                 <span className="whitespace-nowrap">
                   {totalItems > 99 ? '99+' : totalItems}
                 </span>
@@ -140,15 +140,19 @@ const CartDrawer = ({
           </button>
         </Drawer.Trigger>
         <Drawer.Content
-          className="z-50 rounded-none m-0 p-0 inset-y-0 sm:right-0"
+          className="z-[1200] rounded-none m-0 p-0 inset-y-0 sm:right-0"
           onMouseEnter={cancelTimer}
         >
-          <Drawer.Header className="flex self-center">
-            <Drawer.Title>
-              {totalItems > 0
-                ? `You have ${totalItems} items in your cart`
-                : "Your cart is empty"}
-            </Drawer.Title>
+          <Drawer.Header className="flex self-center p-6 border-b border-gray-100">
+            {/* 红色装饰线 - 模仿首页风格 */}
+            <div className="w-full">
+              <div className="w-16 h-2 mb-6" style={{ backgroundColor: '#FF000F' }}></div>
+                             <Drawer.Title className="font-jxd-bold text-2xl text-gray-900 leading-tight">
+                {totalItems > 0
+                  ? `You have ${totalItems} items in your cart`
+                  : "Your cart is empty"}
+              </Drawer.Title>
+            </div>
           </Drawer.Header>
           {cart?.approvals && cart.approvals.length > 0 && (
             <div className="p-4">
@@ -168,7 +172,7 @@ const CartDrawer = ({
                   showBorders={false}
                   showTotal={false}
                 />
-                <div className="flex flex-col gap-y-3 w-full p-4">
+                <div className="flex flex-col gap-y-6 w-full p-6 border-t border-gray-100">
                   {cart && freeShippingPrices && (
                     <FreeShippingPriceNudge
                       variant="inline"
@@ -176,45 +180,52 @@ const CartDrawer = ({
                       freeShippingPrices={freeShippingPrices}
                     />
                   )}
-                  <div className="flex justify-between">
-                    <Text>Subtotal</Text>
-                    <Text>
+                  <div className="flex justify-between items-center py-4 border-t border-gray-200">
+                    <Text className="font-jxd-regular text-lg text-gray-700">Subtotal</Text>
+                    <Text className="font-jxd-bold text-xl text-gray-900">
                       {convertToLocale({
                         amount: subtotal,
                         currency_code: cart?.currency_code,
                       })}
                     </Text>
                   </div>
-                  <div className="flex flex-col gap-y-2">
+                  <div className="flex flex-col gap-y-3">
                     <LocalizedClientLink href="/cart">
-                      <Button
-                        variant="secondary"
-                        className="w-full"
-                        size="large"
-                      >
-                        View Cart
-                      </Button>
+                      <button className="w-full h-12 border border-gray-300 text-gray-700 hover:border-gray-500 hover:text-gray-900 font-jxd-regular text-sm rounded-full transition-all duration-300 uppercase tracking-wide">
+                        View Cart Details
+                      </button>
                     </LocalizedClientLink>
                     <LocalizedClientLink href={checkoutPath}>
-                      <Button
-                        className="w-full"
-                        size="large"
+                      <button
+                        className="w-full h-12 text-white font-jxd-regular text-sm rounded-full transition-all duration-300 uppercase tracking-wide flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        style={{ 
+                          backgroundColor: (totalItems === 0 || spendLimitExceeded) ? '#9CA3AF' : '#FF000F'
+                        }}
+                        onMouseEnter={(e) => {
+                          if (!(totalItems === 0 || spendLimitExceeded)) {
+                            e.currentTarget.style.backgroundColor = '#BB2924'
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (!(totalItems === 0 || spendLimitExceeded)) {
+                            e.currentTarget.style.backgroundColor = '#FF000F'
+                          }
+                        }}
                         disabled={totalItems === 0 || spendLimitExceeded}
                       >
-                        <LockClosedSolidMini />
+                        <LockClosedSolidMini className="w-4 h-4" />
                         {customer
                           ? spendLimitExceeded
                             ? "Spending Limit Exceeded"
                             : "Secure Checkout"
                           : "Log in to checkout"}
-                      </Button>
+                      </button>
                     </LocalizedClientLink>
                     {spendLimitExceeded && (
-                      <div className="flex items-center gap-x-2 bg-neutral-100 p-3 rounded-md shadow-borders-base">
-                        <ExclamationCircle className="text-orange-500 w-fit overflow-visible" />
-                        <p className="text-neutral-950 text-xs">
-                          This order exceeds your spending limit. Please contact
-                          your manager for approval.
+                      <div className="flex items-center gap-x-3 bg-orange-50 border border-orange-200 p-4 rounded-lg">
+                        <ExclamationCircle className="text-orange-500 w-5 h-5 flex-shrink-0" />
+                        <p className="text-orange-700 font-jxd-light text-sm">
+                          This order exceeds your spending limit. Please contact your manager for approval.
                         </p>
                       </div>
                     )}
