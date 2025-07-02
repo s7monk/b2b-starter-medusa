@@ -16,18 +16,19 @@ const ApprovalStatusBanner = ({ cart }: { cart: B2BCart }) => {
       {cartApprovalStatus === ApprovalStatusType.PENDING && (
         <>
           <LockClosedSolid className="w-4 h-4" />
-          <Text className="text-left">This cart is locked for approval.</Text>
+          <Text className="text-left !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>This cart is locked for approval.</Text>
         </>
       )}
 
       {cartApprovalStatus === ApprovalStatusType.REJECTED && (
         <>
           <XMarkMini className="w-4 h-4" />
-          <Text className="text-left">
+          <Text className="text-left !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
             This cart has been rejected. You can re-request approval from the{" "}
             <LocalizedClientLink
               href="/checkout"
-              className="text-ui-bg-interactive hover:text-ui-fg-interactive-hover"
+              className="text-ui-bg-interactive hover:text-ui-fg-interactive-hover !font-jxd-medium"
+              style={{ fontFamily: 'JXD-Medium, sans-serif' }}
             >
               checkout page
             </LocalizedClientLink>
@@ -39,7 +40,7 @@ const ApprovalStatusBanner = ({ cart }: { cart: B2BCart }) => {
       {cartApprovalStatus === ApprovalStatusType.APPROVED && (
         <>
           <CheckMini className="w-4 h-4" />
-          <Text className="text-left">
+          <Text className="text-left !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
             This cart has been approved and can now be completed.
           </Text>
         </>

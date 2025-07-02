@@ -37,7 +37,7 @@ const SignInPrompt = () => {
     <Container className="flex justify-between self-stretch relative w-full h-28 p-0 overflow-hidden">
       <BackgroundImage />
       <div className="absolute inset-0 z-1 flex justify-between items-center text-center p-4">
-        <Text className="small:text-4xl text-lg text-white text-left">
+        <Text className="small:text-4xl text-lg text-white text-left font-jxd-bold">
           Log in for
           <br />
           faster checkout.

@@ -8,12 +8,12 @@ const AppliedPromotions = ({
 }) => {
   return (
     <Container className="flex gap-2 items-center py-3 flex-wrap">
-      <Text>Promotions applied:</Text>
+      <Text className="!font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Promotions applied:</Text>
       {promotions?.map((promotion) => (
         <Badge
           key={promotion.id}
           color={promotion.is_automatic ? "green" : "blue"}
-          className="font-mono text-[0.7rem] p-1 py-px h-fit"
+          className="font-jxd-medium text-[0.7rem] p-1 py-px h-fit"
         >
           {promotion.code}
         </Badge>

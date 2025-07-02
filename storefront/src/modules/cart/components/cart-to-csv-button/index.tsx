@@ -59,7 +59,7 @@ const CartToCsvButton = ({ cart }: CartToCsvButtonProps) => {
       >
         Export Cart (.csv)
       </Button>
-      {error && <Text className="text-red-500">{error}</Text>}
+      {error && <Text className="text-red-500 font-jxd-regular text-sm">{error}</Text>}
     </div>
   )
 }

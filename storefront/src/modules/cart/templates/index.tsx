@@ -25,18 +25,24 @@ const CartTemplate = ({ customer }: { customer: B2BCustomer | null }) => {
   )
 
   return (
-    <div className="small:py-12 py-6 bg-neutral-100">
+    <div className="small:py-12 py-6 bg-gray-50">
       <div className="content-container" data-testid="cart-container">
         {cart?.items?.length ? (
           <div>
             <div className="flex flex-col py-6 gap-y-6">
-              <div className="pb-3 flex items-center">
-                <Heading className="text-neutral-950">
-                  You have {totalItems} items in your cart
-                </Heading>
+              <div className="mb-2">
+                <div className="w-16 h-1.5 bg-gradient-to-r from-[#FF000F] to-[#CC0000] rounded-full mb-3"></div>
+                <h1 className="text-[#0F0F0F] !font-jxd-bold text-2xl small:text-3xl" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+                  Shopping Cart
+                </h1>
               </div>
-              <div className="grid grid-cols-1 small:grid-cols-[1fr_360px] gap-2">
-                <div className="flex flex-col gap-y-2">
+              <div className="pb-3 flex items-center">
+                <p className="text-[#0F0F0F] !font-jxd-medium text-lg" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+                  You have {totalItems} items in your cart
+                </p>
+              </div>
+              <div className="grid grid-cols-1 small:grid-cols-[1fr_380px] gap-6">
+                <div className="flex flex-col gap-y-4">
                   {!customer && <SignInPrompt />}
                   {cart?.approvals && cart.approvals.length > 0 && (
                     <ApprovalStatusBanner cart={cart} />

@@ -103,12 +103,12 @@ const ItemFull = ({
         </LocalizedClientLink>
         <div className="flex flex-col gap-y-2 justify-between min-h-full self-stretch">
           <div className="flex flex-col">
-            <span className="text-neutral-600 text-[0.6rem]">BRAND</span>
+            <span className="text-[#6B7280] text-[0.6rem] !font-jxd-regular uppercase tracking-wider" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>BRAND</span>
 
-            <span className="txt-medium-plus text-neutral-950">
+            <span className="!font-jxd-medium text-lg text-neutral-950" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
               {item.product?.title}
             </span>
-            <span className="text-neutral-600 text-xs">
+            <span className="text-[#6B7280] text-sm !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
               {item.variant?.title}
             </span>
           </div>
@@ -122,7 +122,7 @@ const ItemFull = ({
               <div className="flex gap-x-3 shadow-[0_0_0_1px_rgba(0,0,0,0.1)] rounded-full w-fit p-px items-center">
                 <button
                   className={clx(
-                    "w-4 h-4 flex items-center justify-center text-neutral-600 hover:bg-neutral-100 rounded-full text-md",
+                    "w-4 h-4 flex items-center justify-center text-[#6B7280] hover:bg-neutral-100 rounded-full text-md font-jxd-regular",
                     disabled ? "opacity-50 pointer-events-none" : "opacity-100"
                   )}
                   onClick={() => changeQuantity(item.quantity - 1)}
@@ -136,7 +136,7 @@ const ItemFull = ({
                   ) : (
                     <Input
                       className={clx(
-                        "w-10 h-4 flex items-center justify-center text-center text-neutral-950 text-xs [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-transparent shadow-none",
+                        "w-10 h-4 flex items-center justify-center text-center text-neutral-950 text-xs [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none bg-transparent shadow-none font-jxd-medium",
                         disabled
                           ? "opacity-50 pointer-events-none"
                           : "opacity-100"
@@ -156,7 +156,7 @@ const ItemFull = ({
                 </span>
                 <button
                   className={clx(
-                    "w-4 h-4 flex items-center justify-center text-neutral-600 hover:bg-neutral-100 rounded-full text-md",
+                    "w-4 h-4 flex items-center justify-center text-[#6B7280] hover:bg-neutral-100 rounded-full text-md font-jxd-regular",
                     disabled ? "opacity-50 pointer-events-none" : "opacity-100"
                   )}
                   onClick={() => changeQuantity(item.quantity + 1)}

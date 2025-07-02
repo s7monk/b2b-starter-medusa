@@ -52,8 +52,8 @@ const ItemsTemplate = ({
       {showTotal && (
         <Container>
           <div className="flex items-start justify-between h-full self-stretch">
-            <Text>Total: {totalQuantity} items</Text>
-            <Text>
+            <Text className="!font-jxd-regular text-[#6B7280]" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Total: {totalQuantity} items</Text>
+            <Text className="!font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
               {convertToLocale({
                 amount: cart?.item_total,
                 currency_code: cart?.currency_code,

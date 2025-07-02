@@ -36,18 +36,18 @@ const ItemPreview = ({ item, showBorders = true, currencyCode }: ItemProps) => {
         </LocalizedClientLink>
         <div className="flex flex-col gap-y-2 justify-between min-h-full self-stretch">
           <div className="flex flex-col">
-            <span className="txt-medium-plus text-neutral-950">
+            <span className="text-neutral-950 !font-jxd-medium text-base" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
               {item.product?.title}
             </span>
-            <span className="text-neutral-600 text-xs">
+            <span className="text-[#6B7280] text-xs !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
               {item.variant?.title}
             </span>
           </div>
           <div className="flex small:flex-row flex-col gap-2">
             {(item.metadata?.note as string) && (
               <div className="flex gap-x-1">
-                <span className="text-neutral-950 text-xs">Note:</span>
-                <span className="text-xs text-neutral-600 italic truncate max-w-44 pr-px">
+                <span className="text-neutral-950 text-xs font-jxd-medium">Note:</span>
+                <span className="text-xs text-[#6B7280] italic truncate max-w-44 pr-px font-jxd-light">
                   {item.metadata?.note as string}
                 </span>
               </div>
@@ -62,7 +62,7 @@ const ItemPreview = ({ item, showBorders = true, currencyCode }: ItemProps) => {
           style="tight"
           currencyCode={currencyCode}
         />
-        <span className="self-end text-xs text-neutral-600 italic">
+        <span className="self-end text-xs text-[#6B7280] italic font-jxd-light">
           {item.quantity}x
         </span>
       </div>

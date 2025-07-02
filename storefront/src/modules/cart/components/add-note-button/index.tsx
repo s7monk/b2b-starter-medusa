@@ -50,7 +50,7 @@ const AddNoteButton = ({
       {!note && !isOpen && (
         <button
           className={clx(
-            "text-neutral-950 text-xs shadow-[0_0_0_1px_rgba(0,0,0,0.1)] rounded-full px-2 py-1 w-fit min-w-20 h-6 flex items-center justify-center hover:bg-neutral-100 transition-all duration-300",
+            "text-neutral-950 text-xs font-jxd-regular shadow-[0_0_0_1px_rgba(0,0,0,0.1)] rounded-full px-2 py-1 w-fit min-w-20 h-6 flex items-center justify-center hover:bg-neutral-100 transition-all duration-300",
             isOpen ? "opacity-0 pointer-events-none" : "opacity-100",
             disabled ? "opacity-50 pointer-events-none" : "opacity-100"
           )}
@@ -67,15 +67,15 @@ const AddNoteButton = ({
             isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
           )}
         >
-          <span className="text-neutral-950">Note:&nbsp;</span>
+          <span className="text-neutral-950 font-jxd-medium">Note:&nbsp;</span>
           <span
-            className="text-neutral-600 italic cursor-pointer hover:text-neutral-950 hover:underline"
+            className="text-[#6B7280] italic cursor-pointer hover:text-neutral-950 hover:underline font-jxd-light"
             onClick={() => setIsOpen(true)}
           >
             {note}
           </span>
           <button
-            className="text-neutral-600 text-xs ml-2 hover:text-ui-fg-interactive-hover"
+            className="text-[#6B7280] text-xs ml-2 hover:text-ui-fg-interactive-hover font-jxd-regular"
             onClick={deleteNote}
           >
             x
@@ -89,11 +89,11 @@ const AddNoteButton = ({
             : "opacity-0 pointer-events-none"
         }`}
       >
-        <span className="text-neutral-950">Note:&nbsp;</span>
+        <span className="text-neutral-950 font-jxd-medium">Note:&nbsp;</span>
 
         <Input
           ref={inputRef}
-          className="w-fit small:max-w-40 max-w-32 h-6 flex items-center justify-center text-neutral-950 text-xs rounded-full"
+          className="w-fit small:max-w-40 max-w-32 h-6 flex items-center justify-center text-neutral-950 text-xs rounded-full font-jxd-regular"
           type="text"
           value={note}
           onChange={(e) => setNote(e.target.value)}

@@ -2,7 +2,7 @@
 
 import { useCart } from "@/lib/context/cart-context"
 import { getCheckoutStep } from "@/lib/util/get-checkout-step"
-import CartToCsvButton from "@/modules/cart/components/cart-to-csv-button"
+
 import CartTotals from "@/modules/cart/components/cart-totals"
 import PromotionCode from "@/modules/checkout/components/promotion-code"
 import Button from "@/modules/common/components/button"
@@ -37,19 +37,22 @@ const Summary = ({ customer, spendLimitExceeded }: SummaryProps) => {
   )
 
   return (
-    <Container className="flex flex-col gap-y-3">
+    <Container className="flex flex-col gap-y-4 bg-white rounded-xl shadow-lg border border-gray-100">
       <CartTotals />
       <Divider />
       <PromotionCode cart={cart} />
-      <Divider className="my-6" />
+      <Divider className="my-4" />
       {spendLimitExceeded && (
-        <div className="flex items-center gap-x-2 bg-neutral-100 p-3 rounded-md shadow-borders-base">
-          <ExclamationCircle className="text-orange-500 w-fit overflow-visible" />
-          <p className="text-neutral-950 text-xs">
-            This order exceeds your spending limit.
-            <br />
-            Please contact your manager for approval.
-          </p>
+        <div className="flex items-start gap-3 bg-orange-50 border border-orange-200 p-4 rounded-lg">
+          <ExclamationCircle className="text-orange-500 w-5 h-5 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="text-orange-800 !font-jxd-medium text-sm mb-1" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+              Spending Limit Exceeded
+            </p>
+            <p className="text-orange-700 !font-jxd-light text-xs" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+              This order exceeds your spending limit. Please contact your manager for approval.
+            </p>
+          </div>
         </div>
       )}
       <LocalizedClientLink
@@ -57,20 +60,37 @@ const Summary = ({ customer, spendLimitExceeded }: SummaryProps) => {
         data-testid="checkout-button"
       >
         <Button
-          className="w-full h-10 rounded-full shadow-none"
+          className="w-full h-12 rounded-xl !font-jxd-medium text-white shadow-lg hover:shadow-xl transition-all duration-300"
+          style={{
+            fontFamily: 'JXD-Medium, sans-serif',
+            background: spendLimitExceeded 
+              ? '#9CA3AF' 
+              : 'linear-gradient(135deg, #FF000F 0%, #CC0000 100%)',
+          }}
+          onMouseEnter={(e) => {
+            if (!spendLimitExceeded) {
+              e.currentTarget.style.background = 'linear-gradient(135deg, #CC0000 0%, #990000 100%)'
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!spendLimitExceeded) {
+              e.currentTarget.style.background = 'linear-gradient(135deg, #FF000F 0%, #CC0000 100%)'
+            }
+          }}
           disabled={spendLimitExceeded}
         >
           {customer
             ? spendLimitExceeded
               ? "Spending Limit Exceeded"
-              : "Checkout"
+              : "Secure Checkout"
             : "Log in to Checkout"}
         </Button>
       </LocalizedClientLink>
       {!!customer && (
         <RequestQuoteConfirmation>
           <Button
-            className="w-full h-10 rounded-full shadow-borders-base"
+            className="w-full h-11 rounded-xl border border-gray-300 hover:border-[#FF000F] text-gray-600 hover:text-white !font-jxd-regular bg-gradient-to-r from-gray-50 to-gray-100 hover:from-[#FF000F] hover:to-[#CC0000] transition-all duration-300 hover:shadow-lg"
+            style={{ fontFamily: 'JXD-Regular, sans-serif' }}
             variant="secondary"
             disabled={isPendingApproval}
           >
@@ -81,7 +101,8 @@ const Summary = ({ customer, spendLimitExceeded }: SummaryProps) => {
       {!customer && (
         <RequestQuotePrompt>
           <Button
-            className="w-full h-10 rounded-full shadow-borders-base"
+            className="w-full h-11 rounded-xl border border-gray-300 hover:border-[#FF000F] text-gray-600 hover:text-white !font-jxd-regular bg-gradient-to-r from-gray-50 to-gray-100 hover:from-[#FF000F] hover:to-[#CC0000] transition-all duration-300 hover:shadow-lg"
+            style={{ fontFamily: 'JXD-Regular, sans-serif' }}
             variant="secondary"
             disabled={isPendingApproval}
           >
@@ -89,10 +110,11 @@ const Summary = ({ customer, spendLimitExceeded }: SummaryProps) => {
           </Button>
         </RequestQuotePrompt>
       )}
-      <CartToCsvButton cart={cart} />
+
       <Button
         onClick={handleEmptyCart}
-        className="w-full h-10 rounded-full shadow-borders-base"
+        className="w-full h-10 rounded-xl border border-gray-300 hover:border-red-500 text-gray-500 hover:text-white !font-jxd-light bg-gradient-to-r from-gray-50 to-gray-100 hover:from-red-500 hover:to-red-600 transition-all duration-300 hover:shadow-lg"
+        style={{ fontFamily: 'JXD-Light, sans-serif' }}
         variant="secondary"
         disabled={isPendingApproval}
       >

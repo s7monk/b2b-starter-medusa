@@ -162,4 +162,21 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+
+  /* 促销代码输入框样式覆盖 */
+  #promotion-input {
+    @apply border-gray-300 !important;
+  }
+
+  #promotion-input:focus {
+    @apply outline-none !important;
+    border-color: #FF000F !important;
+    border-width: 2px !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease-in-out !important;
+  }
+
+  #promotion-input:hover:not(:focus) {
+    @apply border-gray-400 !important;
+  }
 }

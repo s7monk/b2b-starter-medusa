@@ -29,7 +29,7 @@ const LineItemPrice = ({
   return (
     <Text
       className={clx(
-        "flex flex-col gap-x-2 text-ui-fg-subtle items-end",
+        "flex flex-col gap-x-2 text-ui-fg-subtle items-end font-jxd-regular",
         className
       )}
     >
@@ -37,7 +37,7 @@ const LineItemPrice = ({
         {hasReducedPrice && (
           <>
             <span
-              className="line-through text-ui-fg-muted"
+              className="line-through text-ui-fg-muted font-jxd-light"
               data-testid="product-original-price"
             >
               {convertToLocale({
@@ -47,7 +47,7 @@ const LineItemPrice = ({
             </span>
 
             {style === "default" && (
-              <span className="text-base-regular text-ui-fg-interactive">
+              <span className="font-jxd-regular text-ui-fg-interactive">
                 -
                 {convertToLocale({
                   amount: adjustmentsSum,
@@ -57,7 +57,7 @@ const LineItemPrice = ({
             )}
           </>
         )}
-        <span className="text-base-regular" data-testid="product-price">
+        <span className="font-jxd-medium" data-testid="product-price">
           {convertToLocale({
             amount: currentPrice,
             currency_code: currencyCode ?? "eur",

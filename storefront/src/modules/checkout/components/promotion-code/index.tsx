@@ -68,7 +68,8 @@ const PromotionCode: React.FC<PromotionCodeProps> = ({ cart }) => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="flex gap-x-1 my-2 items-center txt-medium text-ui-fg-interactive hover:text-ui-fg-interactive-hover"
+              className="flex gap-x-1 my-2 items-center txt-medium text-[#FF000F] hover:text-[#CC0000] !font-jxd-regular"
+              style={{ fontFamily: 'JXD-Regular, sans-serif' }}
               data-testid="add-discount-button"
             >
               Enter Promotion Code{" "}
@@ -85,6 +86,7 @@ const PromotionCode: React.FC<PromotionCodeProps> = ({ cart }) => {
                     type="text"
                     autoFocus={false}
                     data-testid="discount-input"
+                    placeholder="Enter promotion code"
                   />
                   <SubmitButton
                     className="w-fit h-8"
@@ -107,7 +109,7 @@ const PromotionCode: React.FC<PromotionCodeProps> = ({ cart }) => {
         {promotions.length > 0 && (
           <div className="w-full flex items-center">
             <div className="flex flex-col w-full">
-              <Heading className="txt-medium mb-2">
+              <Heading className="txt-medium mb-2 !font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                 Promotion{promotions.length > 1 ? "s" : ""} applied:
               </Heading>
 
@@ -118,7 +120,7 @@ const PromotionCode: React.FC<PromotionCodeProps> = ({ cart }) => {
                     className="flex items-center justify-between w-full max-w-full mb-2"
                     data-testid="discount-row"
                   >
-                    <Text className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1">
+                    <Text className="flex gap-x-1 items-baseline txt-small-plus w-4/5 pr-1 !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
                       <span className="truncate" data-testid="discount-code">
                         <Badge
                           color={promotion.is_automatic ? "green" : "blue"}
