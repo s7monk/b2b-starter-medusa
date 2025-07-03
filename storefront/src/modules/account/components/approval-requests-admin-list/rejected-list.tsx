@@ -46,11 +46,11 @@ export default async function RejectedApprovalRequestsAdminList({
   }
 
   return (
-    <div className="w-full flex flex-col items-center gap-y-4 py-8 bg-red-50 rounded-lg border border-red-200">
-      <Text className="!font-jxd-medium text-red-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+    <div className="w-full flex flex-col items-center gap-y-4 py-8 bg-slate-50 rounded-lg border border-slate-200">
+      <Text className="!font-jxd-medium text-slate-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
         No rejected requests
       </Text>
-      <Text className="!font-jxd-light text-red-700 text-sm" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+      <Text className="!font-jxd-light text-slate-600 text-sm" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
         Rejected requests will appear here.
       </Text>
     </div>

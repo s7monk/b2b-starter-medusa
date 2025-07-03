@@ -15,7 +15,7 @@ const SecurityCard = ({ customer }: { customer: B2BCustomer }) => {
           </div>
           <div className="flex flex-col gap-y-2">
             <Text className="!font-jxd-medium text-slate-900 text-sm" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Last Updated</Text>
-            <Text className="!font-jxd-light text-slate-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>Not available</Text>
+            <Text className="!font-jxd-regular text-slate-600" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Not available</Text>
           </div>
         </div>
 

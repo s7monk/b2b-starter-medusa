@@ -46,11 +46,11 @@ export default async function PendingApprovalRequestsAdminList({
   }
 
   return (
-    <div className="w-full flex flex-col items-center gap-y-4 py-8 bg-amber-50 rounded-lg border border-amber-200">
-      <Text className="!font-jxd-medium text-amber-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+    <div className="w-full flex flex-col items-center gap-y-4 py-8 bg-slate-50 rounded-lg border border-slate-200">
+      <Text className="!font-jxd-medium text-slate-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
         No pending requests
       </Text>
-      <Text className="!font-jxd-light text-amber-700 text-sm" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+      <Text className="!font-jxd-light text-slate-600 text-sm" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
         All approval requests have been processed.
       </Text>
     </div>

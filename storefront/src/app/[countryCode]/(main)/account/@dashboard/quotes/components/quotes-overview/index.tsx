@@ -31,7 +31,8 @@ const QuotesOverview = ({
         <LocalizedClientLink href="/" passHref>
           <Button 
             data-testid="continue-shopping-button"
-            className="!font-jxd-medium !bg-[#FF000F] hover:!bg-[#E6000E] !rounded-full"
+            variant="secondary"
+            className="!rounded-full !font-jxd-medium border-slate-300 text-slate-600 hover:border-[#FF000F] hover:text-[#FF000F] transition-colors duration-200"
             style={{ fontFamily: 'JXD-Medium, sans-serif' }}
           >
             Continue shopping

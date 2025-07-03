@@ -83,15 +83,15 @@ const QuoteCard = ({ quote }: QuoteCardProps) => {
         </div>
 
         <div className="flex gap-x-6 small:divide-x divide-slate-200 small:justify-normal justify-between w-full small:w-auto items-center">
-          <div className="flex items-center text-slate-700">
-            <span className="text-lg !font-jxd-medium text-[#FF000F] px-2" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+          <div className="flex items-center gap-x-3 !font-jxd-medium text-slate-700" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+            <span className="text-lg font-semibold">
               {convertToLocale({
                 amount: order.total,
                 currency_code: order.currency_code,
               })}
             </span>
-            <span className="text-slate-400 mx-2">·</span>
-            <span className="text-slate-600 !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
+            <span className="text-slate-400">•</span>
+            <span className="text-sm">
               {`${numberOfLines} ${numberOfLines > 1 ? "items" : "item"}`}
             </span>
           </div>
@@ -100,7 +100,7 @@ const QuoteCard = ({ quote }: QuoteCardProps) => {
             <LocalizedClientLink href={`/account/quotes/details/${quote.id}`}>
               <Button 
                 variant="secondary" 
-                className="!font-jxd-medium !bg-slate-100 hover:!bg-[#FF000F] hover:!text-white !rounded-full !text-xs transition-all duration-200 border border-slate-200 hover:border-[#FF000F]"
+                className="!rounded-full text-xs !font-jxd-medium border-slate-300 text-slate-600 hover:border-[#FF000F] hover:text-[#FF000F] transition-colors duration-200"
                 style={{ fontFamily: 'JXD-Medium, sans-serif' }}
               >
                 See details
