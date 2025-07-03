@@ -20,17 +20,24 @@ export default async function Profile() {
   }
 
   return (
-    <div className="w-full" data-testid="profile-page-wrapper">
-      <div className="mb-8 flex flex-col gap-y-4">
-        <Heading level="h2" className="text-lg text-neutral-950">
-          Details
-        </Heading>
+    <div className="w-full space-y-8" data-testid="profile-page-wrapper">
+      <div className="flex flex-col gap-y-6">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+          <Heading level="h2" className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+            Personal Details
+          </Heading>
+        </div>
         <ProfileCard customer={customer} />
       </div>
-      <div className="mb-8 flex flex-col gap-y-4">
-        <Heading level="h2" className="text-lg text-neutral-950">
-          Security
-        </Heading>
+      
+      <div className="flex flex-col gap-y-6">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-slate-400 to-slate-500 rounded-full"></div>
+          <Heading level="h2" className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+            Security Settings
+          </Heading>
+        </div>
         <SecurityCard customer={customer} />
       </div>
     </div>

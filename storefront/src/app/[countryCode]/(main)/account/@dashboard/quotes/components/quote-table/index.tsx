@@ -30,40 +30,42 @@ export const QuoteTableItem = ({
   }, [item])
 
   return (
-    <div className="flex gap-x-4">
+    <div className="flex gap-x-4 p-4">
       <Thumbnail thumbnail={item.thumbnail} size="square" className="w-16" />
 
       <div className="flex flex-col w-full">
-        <div>
+        <div className="mb-2">
           <Text
             size="small"
             leading="compact"
             weight="plus"
-            className="text-ui-fg-base"
+            className="text-ui-fg-base !font-jxd-medium"
+            style={{ fontFamily: 'JXD-Medium, sans-serif' }}
           >
             {item.product_title}
           </Text>
 
           {item.variant_sku && (
             <div className="flex items-center gap-x-1">
-              <Text size="small">{item.variant_sku}</Text>
+              <Text size="small" className="!font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{item.variant_sku}</Text>
             </div>
           )}
-          <Text size="small">
+          <Text size="small" className="!font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
             {item.variant?.options?.map((o) => o.value).join(" · ")}
           </Text>
         </div>
 
         <div className="flex justify-between w-full items-center">
           <div>
-            <Text className="text-">
-              <span>{item.quantity}</span>x{" "}
+            <Text className="text- !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
+              <span className="!font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>{item.quantity}</span>x{" "}
             </Text>
           </div>
 
           <div className="flex gap-x-2">
             <AmountCell
-              className="text-sm text-right justify-end items-end"
+              className="text-sm text-right justify-end items-end !font-jxd-regular"
+              style={{ fontFamily: 'JXD-Regular, sans-serif' }}
               currencyCode={currencyCode}
               amount={item.unit_price}
               originalAmount={originalItem?.unit_price}
@@ -100,7 +102,8 @@ export const QuoteTableItem = ({
 
           <div>
             <AmountCell
-              className="text-sm text-right justify-end items-end"
+              className="text-sm text-right justify-end items-end !font-jxd-medium text-[#FF000F]"
+              style={{ fontFamily: 'JXD-Medium, sans-serif' }}
               currencyCode={currencyCode}
               amount={item.total}
               originalAmount={originalItem?.total}

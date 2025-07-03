@@ -17,29 +17,44 @@ export default async function Company() {
   const company = await retrieveCompany(customer.employee.company.id)
 
   return (
-    <div className="w-full">
-      <div className="mb-8 flex flex-col gap-y-4">
-        <Heading level="h2" className="text-lg text-neutral-950">
-          Company Details
-        </Heading>
+    <div className="w-full space-y-8">
+      <div className="flex flex-col gap-y-6">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+          <Heading level="h2" className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+            Company Information
+          </Heading>
+        </div>
         <CompanyCard company={company} regions={regions} />
       </div>
-      <div className="mb-8 flex flex-col gap-y-4">
-        <Heading level="h2" className="text-lg text-neutral-950">
-          Approval Settings
-        </Heading>
+      
+      <div className="flex flex-col gap-y-6">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+          <Heading level="h2" className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+            Order Approval Settings
+          </Heading>
+        </div>
         <ApprovalSettingsCard company={company} customer={customer} />
       </div>
-      <div className="mb-8 flex flex-col gap-y-4">
-        <Heading level="h2" className="text-lg text-neutral-950">
-          Employees
-        </Heading>
+      
+      <div className="flex flex-col gap-y-6">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+          <Heading level="h2" className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+            Team Members
+          </Heading>
+        </div>
         <EmployeesCard company={company} />
       </div>
-      <div className="mb-8 flex flex-col gap-y-4">
-        <Heading level="h2" className="text-lg text-neutral-950">
-          Invite Employees
-        </Heading>
+      
+      <div className="flex flex-col gap-y-6">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+          <Heading level="h2" className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+            Invite New Member
+          </Heading>
+        </div>
         <InviteEmployeeCard company={company} />
       </div>
     </div>

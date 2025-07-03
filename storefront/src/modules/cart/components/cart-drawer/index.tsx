@@ -263,9 +263,6 @@ const CartDrawer = ({
             ) : (
               /* 空购物车状态 */
               <div className="flex-1 flex flex-col items-center justify-center p-8 text-center bg-white">
-                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-6">
-                  <ShoppingCart className="w-10 h-10 text-gray-400" />
-                </div>
                 <h3 className="!font-jxd-bold text-xl text-[#0F0F0F] mb-3" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>Your cart is empty</h3>
                 <p className="!font-jxd-light text-gray-600 mb-8 max-w-sm leading-relaxed" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
                   Discover our products and start building your order

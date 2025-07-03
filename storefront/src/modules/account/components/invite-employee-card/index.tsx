@@ -21,10 +21,10 @@ const InviteEmployeeCard = ({ company }: { company: QueryCompany }) => {
   }
 
   return (
-    <Container className="p-0 overflow-hidden">
-      <div className="grid small:grid-cols-4 grid-cols-2 gap-4 p-4 border-b border-neutral-200">
-        <div className="flex flex-col gap-y-2">
-          <Text className="font-medium text-neutral-950">Name</Text>
+    <Container className="p-0 overflow-hidden bg-white rounded-2xl border border-slate-200 shadow-sm">
+      <div className="grid small:grid-cols-4 grid-cols-2 gap-6 p-6 border-b border-slate-100">
+        <div className="flex flex-col gap-y-3">
+          <Text className="!font-jxd-medium text-slate-900 text-sm" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>First Name</Text>
           <Input 
             name="first_name" 
             label="First name" 
@@ -32,7 +32,8 @@ const InviteEmployeeCard = ({ company }: { company: QueryCompany }) => {
             onChange={(e) => handleInputChange("first_name", e.target.value)}
           />
         </div>
-        <div className="flex flex-col gap-y-2 justify-end">
+        <div className="flex flex-col gap-y-3">
+          <Text className="!font-jxd-medium text-slate-900 text-sm" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Last Name</Text>
           <Input 
             name="last_name" 
             label="Last name"
@@ -40,8 +41,8 @@ const InviteEmployeeCard = ({ company }: { company: QueryCompany }) => {
             onChange={(e) => handleInputChange("last_name", e.target.value)}
           />
         </div>
-        <div className="flex flex-col col-span-2 gap-y-2">
-          <Text className="font-medium text-neutral-950">Email</Text>
+        <div className="flex flex-col col-span-2 gap-y-3">
+          <Text className="!font-jxd-medium text-slate-900 text-sm" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Email Address</Text>
           <Input 
             name="email" 
             label="Enter an email"
@@ -50,9 +51,14 @@ const InviteEmployeeCard = ({ company }: { company: QueryCompany }) => {
           />
         </div>
       </div>
-      <div className="flex items-center justify-end gap-2 bg-neutral-50 p-4">
-        <Button variant="primary" onClick={() => toast.info("Not implemented")}>
-          Send Invite
+      <div className="flex items-center justify-end gap-3 bg-slate-50 p-6">
+        <Button 
+          variant="primary" 
+          onClick={() => toast.info("Employee invitation feature will be available soon")}
+          className="!font-jxd-medium px-6 py-2 !bg-[#FF000F] hover:!bg-[#E6000E] !rounded-full"
+          style={{ fontFamily: 'JXD-Medium, sans-serif' }}
+        >
+          Send Invitation
         </Button>
       </div>
     </Container>

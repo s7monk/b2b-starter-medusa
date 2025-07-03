@@ -63,9 +63,9 @@ const QuoteMessages = ({
   }, [preview])
 
   return (
-    <Container className="divide-y divide-dashed p-0 ">
+    <Container className="divide-y divide-dashed p-0">
       <div className="flex items-center justify-between px-6 py-4">
-        <Heading level="h3">Messages</Heading>
+        <Heading level="h3" className="!font-jxd-bold" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>Messages</Heading>
       </div>
 
       <div>
@@ -76,7 +76,7 @@ const QuoteMessages = ({
               "!bg-ui-bg-subtle !inset-x-5 !inset-y-3": !!message.customer_id,
             })}
           >
-            <div className="font-medium font-sans txt-compact-small text-ui-fg-subtle ">
+            <div className="font-medium font-sans txt-compact-small text-ui-fg-subtle !font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
               {!!message.admin &&
                 `${message.admin.first_name} ${message.admin.last_name}`}
 
@@ -95,7 +95,7 @@ const QuoteMessages = ({
               </div>
             )}
 
-            <div>{message.text}</div>
+            <div className="!font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{message.text}</div>
           </div>
         ))}
       </div>
@@ -108,12 +108,13 @@ const QuoteMessages = ({
           <div className="flex items-center gap-3">
             <div className="flex-1">
               <div className="flex items-center gap-x-1">
-                <label className="font-sans txt-compact-small font-medium">
+                <label className="font-sans txt-compact-small font-medium !font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                   Pick Quote Item
                 </label>
               </div>
               <span
-                className="txt-small text-ui-fg-subtle"
+                className="txt-small text-ui-fg-subtle !font-jxd-regular"
+                style={{ fontFamily: 'JXD-Regular, sans-serif' }}
                 id=":r10:-form-item-description"
               >
                 Select a quote item to write a message around
@@ -125,7 +126,10 @@ const QuoteMessages = ({
                 control={control}
                 render={({ field: { onChange, ref, value, ...field } }) => (
                   <Select {...field} onValueChange={onChange} value={value}>
-                    <Select.Trigger className="bg-ui-bg-base" ref={ref}>
+                    <Select.Trigger 
+                      className="bg-ui-bg-base [&[data-state=open]]:!border-[#FF000F] [&[data-state=open]]:!ring-2 [&[data-state=open]]:!ring-[#FF000F] [&[data-state=open]]:!ring-opacity-50 focus:!border-[#FF000F] focus:!ring-2 focus:!ring-[#FF000F] focus:!ring-opacity-50 focus:!outline-none"
+                      ref={ref}
+                    >
                       <Select.Value />
                       {value ? <Select.Value /> : "Select Item"}
                     </Select.Trigger>
@@ -140,17 +144,42 @@ const QuoteMessages = ({
                   </Select>
                 )}
               />
-              {errors.item_id?.message && <p>{errors.item_id?.message}</p>}
+              {errors.item_id?.message && <p className="text-red-600 text-xs mt-1" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{errors.item_id?.message}</p>}
             </div>
           </div>
 
-          <Textarea {...register("text")} />
-          {errors.text?.message && <p>{errors.text?.message}</p>}
+          <Textarea 
+            {...register("text")} 
+            style={{ fontFamily: 'JXD-Regular, sans-serif' }}
+            onFocus={(e) => {
+              e.target.style.borderColor = '#FF000F';
+              e.target.style.boxShadow = '0 0 0 2px rgba(255, 0, 15, 0.5)';
+              e.target.style.outline = 'none';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = '';
+              e.target.style.boxShadow = '';
+            }}
+          />
+          {errors.text?.message && <p className="text-red-600 text-xs" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{errors.text?.message}</p>}
 
           <Button
             size="small"
             type="submit"
-            className="self-end"
+            className="self-end transition-all duration-200"
+            style={{ 
+              fontFamily: 'JXD-Medium, sans-serif',
+              backgroundColor: '#FF000F',
+              border: 'none',
+              boxShadow: 'none',
+              outline: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#E6000E';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#FF000F';
+            }}
             disabled={isCreatingMessage}
           >
             Send

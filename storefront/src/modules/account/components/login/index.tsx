@@ -105,7 +105,8 @@ const Login = ({ setCurrentView }: Props) => {
         <div className="flex flex-col gap-4 mt-8">
           <SubmitButton 
             data-testid="sign-in-button" 
-            className="w-full bg-[#FF000F] hover:bg-[#D9000C] text-white font-jxd-bold py-4 rounded-xl transition-colors duration-200 text-base"
+            className="w-full !bg-[#FF000F] hover:!bg-[#D9000C] !text-white font-jxd-bold py-4 !rounded-full transition-colors duration-200 text-base !shadow-none border-none"
+            variant="transparent"
           >
             Sign In
           </SubmitButton>

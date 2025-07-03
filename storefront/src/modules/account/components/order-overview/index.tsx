@@ -20,16 +20,20 @@ const OrderOverview = ({ orders }: { orders: HttpTypes.StoreOrder[] }) => {
 
   return (
     <div
-      className="w-full flex flex-col items-center gap-y-4"
+      className="w-full flex flex-col items-center gap-y-4 py-8"
       data-testid="no-orders-container"
     >
-      <h2 className="text-large-semi">Nothing to see here</h2>
-      <p className="text-base-regular">
+      <h2 className="!font-jxd-medium text-slate-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Nothing to see here</h2>
+      <p className="!font-jxd-light text-slate-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
         You don&apos;t have any orders yet, let us change that {":)"}
       </p>
       <div className="mt-4">
         <LocalizedClientLink href="/" passHref>
-          <Button data-testid="continue-shopping-button">
+          <Button 
+            data-testid="continue-shopping-button"
+            className="!font-jxd-medium !bg-[#FF000F] hover:!bg-[#E6000E] !rounded-full"
+            style={{ fontFamily: 'JXD-Medium, sans-serif' }}
+          >
             Continue shopping
           </Button>
         </LocalizedClientLink>

@@ -154,88 +154,105 @@ const AccountNav = ({
         )}
       </div>
       <div className="hidden small:block" data-testid="account-nav">
-        <div className="text-lg">
-          <ul className="flex mb-0 justify-start items-start flex-col gap-y-4">
-            <li>
-              <AccountNavLink
-                href="/account"
-                route={route!}
-                data-testid="overview-link"
-              >
-                Overview
-              </AccountNavLink>
-            </li>
-            <li>
-              <AccountNavLink
-                href="/account/profile"
-                route={route!}
-                data-testid="profile-link"
-              >
-                Profile
-              </AccountNavLink>
-            </li>
-            <li>
-              <AccountNavLink
-                href="/account/company"
-                route={route!}
-                data-testid="company-link"
-              >
-                Company
-              </AccountNavLink>
-            </li>
-            <li>
-              <AccountNavLink
-                href="/account/addresses"
-                route={route!}
-                data-testid="addresses-link"
-              >
-                Addresses
-              </AccountNavLink>
-            </li>
-            <li>
-              <AccountNavLink
-                href="/account/orders"
-                route={route!}
-                data-testid="orders-link"
-              >
-                Orders
-              </AccountNavLink>
-            </li>
-            {customer?.employee?.is_admin && (
+        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-lg shadow-slate-200/50 overflow-hidden backdrop-blur-sm">
+          <div className="p-6 bg-gradient-to-r from-slate-50/50 to-white border-b border-slate-100">
+            <div className="flex items-center gap-x-3">
+              <div className="w-10 h-1.5 bg-gradient-to-r from-[#FF000F] via-[#FF000F] to-[#CC0000] rounded-full shadow-sm"></div>
+              <h2 className="!font-jxd-bold text-xl text-slate-900 tracking-tight" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+                Account
+              </h2>
+            </div>
+          </div>
+          
+          <nav className="p-5">
+            <ul className="space-y-1">
               <li>
                 <AccountNavLink
-                  href="/account/approvals"
+                  href="/account"
                   route={route!}
-                  data-testid="approvals-link"
+                  data-testid="overview-link"
                 >
-                  Approvals{" "}
-                  {numPendingApprovals > 0 && (
-                    <span className="bg-blue-500 text-white text-xs px-1.5 py-px rounded-full">
-                      {numPendingApprovals}
-                    </span>
-                  )}
+                  Overview
                 </AccountNavLink>
               </li>
-            )}
-            <li>
-              <AccountNavLink
-                href="/account/quotes"
-                route={route!}
-                data-testid="quotes-link"
-              >
-                Quotes
-              </AccountNavLink>
-            </li>
-            <li className="text-neutral-400 hover:text-neutral-950">
+              <li>
+                <AccountNavLink
+                  href="/account/profile"
+                  route={route!}
+                  data-testid="profile-link"
+                >
+                  Profile
+                </AccountNavLink>
+              </li>
+              <li>
+                <AccountNavLink
+                  href="/account/company"
+                  route={route!}
+                  data-testid="company-link"
+                >
+                  Company
+                </AccountNavLink>
+              </li>
+              <li>
+                <AccountNavLink
+                  href="/account/addresses"
+                  route={route!}
+                  data-testid="addresses-link"
+                >
+                  Addresses
+                </AccountNavLink>
+              </li>
+              <li>
+                <AccountNavLink
+                  href="/account/orders"
+                  route={route!}
+                  data-testid="orders-link"
+                >
+                  Orders
+                </AccountNavLink>
+              </li>
+              {customer?.employee?.is_admin && (
+                <li>
+                  <AccountNavLink
+                    href="/account/approvals"
+                    route={route!}
+                    data-testid="approvals-link"
+                  >
+                    <span>Approvals</span>
+                    {numPendingApprovals > 0 && (
+                      <span className="bg-[#FF000F] text-white text-xs px-2 py-1 rounded-full !font-jxd-bold ml-2" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
+                        {numPendingApprovals}
+                      </span>
+                    )}
+                  </AccountNavLink>
+                </li>
+              )}
+              <li>
+                <AccountNavLink
+                  href="/account/quotes"
+                  route={route!}
+                  data-testid="quotes-link"
+                >
+                  Quotes
+                </AccountNavLink>
+              </li>
+            </ul>
+            
+            <div className="mt-6 pt-4 border-t border-slate-100">
               <button
                 type="button"
                 onClick={handleLogout}
+                className="w-full flex items-center gap-x-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors duration-200 !font-jxd-medium"
+                style={{ fontFamily: 'JXD-Medium, sans-serif' }}
                 data-testid="logout-button"
               >
-                Log out
+                <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 9V5.25A2.25 2.25 0 0110.5 3h6a2.25 2.25 0 012.25 2.25v13.5A2.25 2.25 0 0116.5 21h-6a2.25 2.25 0 01-2.25-2.25V15m0 0l3-3m0 0l-3-3m3 3H3" />
+                </svg>
+                <span>Log out</span>
               </button>
-            </li>
-          </ul>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
@@ -262,14 +279,21 @@ const AccountNavLink = ({
     <LocalizedClientLink
       href={href}
       className={clx(
-        "text-neutral-400 hover:text-neutral-950 flex items-center gap-x-2",
+        "relative flex items-center gap-x-3 px-4 py-3 rounded-xl transition-all duration-300 !font-jxd-medium group",
         {
-          "text-neutral-950": active,
+          "bg-gradient-to-r from-[#FF000F] to-[#E6000E] text-white shadow-lg shadow-[#FF000F]/20 transform scale-[1.02]": active,
+          "text-slate-600 hover:text-white hover:bg-gradient-to-r hover:from-[#FF000F]/80 hover:to-[#E6000E]/80 hover:shadow-md hover:scale-[1.01] hover:shadow-[#FF000F]/10": !active,
         }
       )}
+      style={{ fontFamily: 'JXD-Medium, sans-serif' }}
       data-testid={dataTestId}
     >
-      {children}
+      {/* 右侧装饰点 - 只在选中时显示 */}
+      {active && (
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-white/30 rounded-full"></div>
+      )}
+      
+      <span className="relative z-10">{children}</span>
     </LocalizedClientLink>
   )
 }

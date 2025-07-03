@@ -12,7 +12,7 @@ const QuotesOverview = ({
 }) => {
   if (quotes?.length) {
     return (
-      <div className="flex flex-col gap-y-2 w-full">
+      <div className="flex flex-col gap-y-3 w-full">
         {quotes.map((quote) => (
           <div key={quote.id}>
             <QuoteCard quote={quote} />
@@ -23,13 +23,17 @@ const QuotesOverview = ({
   }
 
   return (
-    <div className="w-full flex flex-col items-center gap-y-4">
-      <h2 className="text-large-semi">Nothing to see here</h2>
-      <p className="text-base-regular">You don&apos;t have any quotes yet</p>
+    <div className="w-full flex flex-col items-center gap-y-4 py-8">
+      <h2 className="!font-jxd-medium text-slate-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Nothing to see here</h2>
+      <p className="text-slate-600 !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>You don&apos;t have any quotes yet</p>
 
       <div className="mt-4">
         <LocalizedClientLink href="/" passHref>
-          <Button data-testid="continue-shopping-button">
+          <Button 
+            data-testid="continue-shopping-button"
+            className="!font-jxd-medium !bg-[#FF000F] hover:!bg-[#E6000E] !rounded-full"
+            style={{ fontFamily: 'JXD-Medium, sans-serif' }}
+          >
             Continue shopping
           </Button>
         </LocalizedClientLink>

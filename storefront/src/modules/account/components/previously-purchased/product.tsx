@@ -13,20 +13,28 @@ const PreviouslyPurchasedProduct = ({
   const { thumbnail, product_title, product_handle, title } = variant
 
   return (
-    <Container className="flex justify-between items-center">
-      <div className="flex gap-2">
-        <div className="w-14 h-14 rounded-md overflow-hidden bg-neutral-100">
+    <Container className="flex justify-between items-center p-4 rounded-xl border border-slate-200 hover:shadow-md transition-shadow duration-200 bg-white">
+      <div className="flex gap-4 items-center">
+        <div className="w-16 h-16 rounded-lg overflow-hidden bg-slate-100 shadow-sm flex-shrink-0">
           <Thumbnail thumbnail={thumbnail} size="square" />
         </div>
-        <div className="flex flex-col justify-center">
-          <Text className="text-lg text-neutral-950">{product_title}</Text>
-          <Text className="text-sm text-neutral-500">{title}</Text>
+        <div className="flex flex-col justify-center gap-y-1">
+          <h3 className="!font-jxd-medium text-slate-900 text-base leading-tight" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+            {product_title}
+          </h3>
+          <p className="!font-jxd-regular text-slate-500 text-sm" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
+            {title}
+          </p>
         </div>
       </div>
       <LocalizedClientLink href={`/products/${product_handle}`}>
-        <Button variant="secondary" className="h-8 px-4 text-neutral-600">
-          Buy again
-          <ArrowUturnLeft className="inline-block ml-1 " />
+        <Button 
+          variant="secondary" 
+          className="h-9 px-4 !font-jxd-medium border-slate-300 text-slate-600 hover:border-[#FF000F] hover:text-[#FF000F] transition-colors duration-200 !rounded-full flex items-center gap-x-2"
+          style={{ fontFamily: 'JXD-Medium, sans-serif' }}
+        >
+          <span>Buy again</span>
+          <ArrowUturnLeft className="w-4 h-4" />
         </Button>
       </LocalizedClientLink>
     </Container>

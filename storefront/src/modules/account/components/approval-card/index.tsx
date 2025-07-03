@@ -30,7 +30,7 @@ export default async function ApprovalCard({
   const numberOfLines = cart.items?.length ?? 0
 
   return (
-    <Container className="bg-white flex small:flex-row flex-col p-4 rounded-md small:justify-between small:items-center gap-y-2 items-start">
+    <Container className="bg-white flex small:flex-row flex-col p-4 rounded-lg border border-slate-200 small:justify-between small:items-center gap-y-2 items-start">
       <div className="flex gap-x-4 items-center pl-3">
         <div className="flex min-w-10">
           {cart.items?.slice(0, 3).map((i, index) => {
@@ -71,7 +71,8 @@ export default async function ApprovalCard({
         </div>
 
         <div
-          className="flex pr-2 text-small-regular items-center"
+          className="flex pr-2 !font-jxd-light text-slate-600 items-center"
+          style={{ fontFamily: 'JXD-Light, sans-serif' }}
           data-testid="order-created-at"
         >
           <CalendarIcon className="inline-block mr-1" />
@@ -82,14 +83,14 @@ export default async function ApprovalCard({
           })}
         </div>
 
-        <div className="flex items-center text-small-regular">
+        <div className="flex items-center !font-jxd-light text-slate-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
           <DocumentIcon className="inline-block mr-1" />
           <span data-testid="order-display-id">#{cart.id.slice(-4)}</span>
         </div>
         {cartWithApprovals.approval_status?.status ===
         ApprovalStatusType.APPROVED ? (
           cartWithApprovals.completed_at ? (
-            <Text className="flex items-center gap-x-1 text-xs text-grey-500">
+            <Text className="flex items-center gap-x-1 text-xs !font-jxd-light text-green-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
               <CheckMini className="inline-block" />
               Order completed at{" "}
               {updatedAt.toLocaleDateString("en-GB", {
@@ -99,7 +100,7 @@ export default async function ApprovalCard({
               })}
             </Text>
           ) : (
-            <Text className="flex items-center gap-x-1 text-xs text-grey-500">
+            <Text className="flex items-center gap-x-1 text-xs !font-jxd-light text-blue-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
               Approved at{" "}
               {updatedAt.toLocaleDateString("en-GB", {
                 year: "numeric",
@@ -113,7 +114,7 @@ export default async function ApprovalCard({
 
         {cartWithApprovals.approval_status?.status ===
           ApprovalStatusType.REJECTED && (
-          <div className="flex items-center text-small-regular">
+          <div className="flex items-center !font-jxd-light text-red-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
             <XMarkMini className="inline-block mr-1" />
             <span data-testid="order-display-id">
               Rejected at{" "}
@@ -128,8 +129,8 @@ export default async function ApprovalCard({
       </div>
 
       <div className="flex gap-x-4 divide-gray-200 small:justify-normal justify-between w-full small:w-auto">
-        <div className="flex items-center text-small-regular text-ui-fg-base">
-          <span className="px-2" data-testid="order-amount">
+        <div className="flex items-center !font-jxd-light text-slate-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+          <span className="px-2 !font-jxd-medium text-slate-900" style={{ fontFamily: 'JXD-Medium, sans-serif' }} data-testid="order-amount">
             {convertToLocale({
               amount: cart.total,
               currency_code: cart.currency_code,

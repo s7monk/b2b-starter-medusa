@@ -22,11 +22,11 @@ const PendingCustomerApprovals = ({
 
   return (
     <div
-      className="w-full flex flex-col items-center gap-y-4"
+      className="w-full flex flex-col items-center gap-y-4 py-8"
       data-testid="no-approvals-container"
     >
-      <Text className="text-large-semi">Nothing to see here</Text>
-      <Text className="text-base-regular">
+      <Text className="!font-jxd-medium text-slate-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Nothing to see here</Text>
+      <Text className="!font-jxd-light text-slate-600" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
         You don&apos;t have any approvals yet.
       </Text>
     </div>

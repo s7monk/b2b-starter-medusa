@@ -24,7 +24,7 @@ export default async function RejectedApprovalRequestsAdminList({
   if (carts_with_approvals.length > 0) {
     return (
       <div className="flex flex-col gap-y-4 w-full">
-        <div className="flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-3">
           {carts_with_approvals.map((cartWithApprovals) => (
             <ApprovalCard
               key={cartWithApprovals.id}
@@ -45,5 +45,14 @@ export default async function RejectedApprovalRequestsAdminList({
     )
   }
 
-  return <Text>No requests</Text>
+  return (
+    <div className="w-full flex flex-col items-center gap-y-4 py-8 bg-red-50 rounded-lg border border-red-200">
+      <Text className="!font-jxd-medium text-red-800" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+        No rejected requests
+      </Text>
+      <Text className="!font-jxd-light text-red-700 text-sm" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+        Rejected requests will appear here.
+      </Text>
+    </div>
+  )
 }

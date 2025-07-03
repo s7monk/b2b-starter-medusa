@@ -40,31 +40,38 @@ const QuoteDetails: React.FC<QuoteDetailsProps> = ({
   const [isRejecting, setIsRejecting] = useState(false)
 
   return (
-    <div className="flex flex-col gap-y-2 p-0">
-      <div className="flex gap-2 justify-between items-center mb-2">
+    <div className="flex flex-col gap-y-4 p-0">
+      <div className="flex gap-3 justify-between items-center mb-2">
+        <div className="flex items-center gap-x-3">
+          <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+          <Heading className="!font-jxd-bold text-xl" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>Quote Details</Heading>
+        </div>
+        
         <LocalizedClientLink
           href="/account/quotes"
           className="flex gap-2 items-center text-ui-fg-subtle hover:text-ui-fg-base"
           data-testid="back-to-overview-button"
         >
-          <Button variant="secondary">
+          <Button variant="secondary" className="!font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
             <ArrowUturnLeft /> Back
           </Button>
         </LocalizedClientLink>
       </div>
 
       <div className="small:grid small:grid-cols-6 flex flex-col-reverse small:gap-4 gap-2">
-        <div className="small:col-span-4 flex flex-col gap-y-2">
+        <div className="small:col-span-4 flex flex-col gap-y-3">
           {quote.status === "accepted" && (
             <Container className="p-0">
               <div className="flex items-center justify-between px-6 py-4">
-                <Text className="txt-compact-small">
+                <Text className="txt-compact-small !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
                   <CheckCircleSolid className="inline-block mr-2 text-green-500 text-lg" />
                   Quote accepted by customer. Order is ready for processing.
                 </Text>
 
                 <Button
                   size="small"
+                  className="!font-jxd-medium !bg-[#FF000F] hover:!bg-[#E6000E]"
+                  style={{ fontFamily: 'JXD-Medium, sans-serif' }}
                   onClick={() =>
                     router.push(
                       `/${countryCode}/account/orders/details/${quote.draft_order_id}`
@@ -91,21 +98,21 @@ const QuoteDetails: React.FC<QuoteDetailsProps> = ({
           <Container className="p-0">
             <div className="py-4">
               <div className="flex items-center justify-between mb-2 px-6">
-                <span className="txt-small text-ui-fg-subtle font-semibold">
+                <span className="txt-small text-ui-fg-subtle font-semibold" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                   Current Total
                 </span>
 
-                <span className="txt-small text-ui-fg-subtle">
+                <span className="txt-small text-ui-fg-subtle" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
                   {formatAmount(order.total, order.currency_code)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between px-6">
-                <span className="txt-small text-ui-fg-subtle font-semibold">
+                <span className="txt-small text-ui-fg-subtle font-semibold text-[#FF000F]" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                   New Total
                 </span>
 
-                <span className="txt-small text-ui-fg-subtle">
+                <span className="txt-small text-ui-fg-subtle text-[#FF000F]" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                   {formatAmount(preview.total, order.currency_code)}
                 </span>
               </div>
@@ -126,7 +133,7 @@ const QuoteDetails: React.FC<QuoteDetailsProps> = ({
                 }}
                 isLoading={isRejecting}
               >
-                <Button size="small" variant="secondary">
+                <Button size="small" variant="secondary" className="!font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                   Reject Quote
                 </Button>
               </PromptModal>
@@ -143,7 +150,7 @@ const QuoteDetails: React.FC<QuoteDetailsProps> = ({
                 }}
                 isLoading={isAccepting}
               >
-                <Button size="small" variant="primary">
+                <Button size="small" variant="primary" className="!font-jxd-medium !bg-[#FF000F] hover:!bg-[#E6000E]" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
                   Accept Quote
                 </Button>
               </PromptModal>
@@ -153,35 +160,35 @@ const QuoteDetails: React.FC<QuoteDetailsProps> = ({
           <QuoteMessages quote={quote} preview={preview} />
         </div>
 
-        <div className="col-span-2 flex flex-col gap-y-2">
+        <div className="col-span-2 flex flex-col gap-y-3">
           <Container className="flex gap-x-3 justify-between">
-            <div className="text-sm">
-              <span className="font-semibold text-ui-fg-subtle">Quote ID:</span>{" "}
-              #<span>{quote.draft_order.display_id}</span>
+            <div className="text-sm !font-jxd-regular" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
+              <span className="font-semibold text-ui-fg-subtle !font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>Quote ID:</span>{" "}
+              #<span className="!font-jxd-bold text-[#FF000F]" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>{quote.draft_order.display_id}</span>
             </div>
 
             <QuoteStatusBadge status={quote.status} />
           </Container>
 
           <Container>
-            <Heading level="h3" className="mb-2">
+            <Heading level="h3" className="mb-2" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
               Customer
             </Heading>
 
-            <div className="text-sm text-ui-fg-subtle">
+            <div className="text-sm text-ui-fg-subtle" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
               <div className="flex justify-between">
-                <Text>Email</Text>
-                <Text>{quote.customer?.email || "-"}</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Email</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{quote.customer?.email || "-"}</Text>
               </div>
 
               <div className="flex justify-between">
-                <Text>Phone</Text>
-                <Text>{quote.customer?.phone || "-"}</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Phone</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{quote.customer?.phone || "-"}</Text>
               </div>
 
               <div className="flex justify-between">
-                <Text>Spend Limit</Text>
-                <Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Spend Limit</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
                   {(quote.customer?.employee?.spending_limit &&
                     formatAmount(
                       quote.customer?.employee?.spending_limit || 0,
@@ -194,14 +201,14 @@ const QuoteDetails: React.FC<QuoteDetailsProps> = ({
           </Container>
 
           <Container>
-            <Heading level="h3" className="mb-2">
+            <Heading level="h3" className="mb-2" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>
               Company
             </Heading>
 
-            <div className="text-sm text-ui-fg-subtle">
+            <div className="text-sm text-ui-fg-subtle" style={{ fontFamily: 'JXD-Regular, sans-serif' }}>
               <div className="flex justify-between">
-                <Text>Name</Text>
-                <Text>{quote.customer?.employee?.company?.name || "-"}</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>Name</Text>
+                <Text style={{ fontFamily: 'JXD-Regular, sans-serif' }}>{quote.customer?.employee?.company?.name || "-"}</Text>
               </div>
             </div>
           </Container>

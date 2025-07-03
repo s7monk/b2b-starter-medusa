@@ -30,15 +30,16 @@ export default async function Orders() {
 
   return (
     <div
-      className="w-full flex flex-col gap-y-4"
+      className="w-full flex flex-col gap-y-6"
       data-testid="orders-page-wrapper"
     >
-      <div className="mb-4">
-        <Heading>Orders</Heading>
+      <div className="flex items-center gap-x-3">
+        <div className="w-1 h-6 bg-gradient-to-b from-[#FF000F] to-[#CC0000] rounded-full"></div>
+        <Heading className="!font-jxd-bold text-xl text-slate-900" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>Orders</Heading>
       </div>
       {approval_required && (
         <div>
-          <Heading level="h2" className="text-neutral-700 mb-4">
+          <Heading level="h2" className="!font-jxd-medium text-slate-700 mb-4" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
             Pending Approvals
           </Heading>
 
@@ -46,7 +47,7 @@ export default async function Orders() {
         </div>
       )}
       <div>
-        <Heading level="h2" className="text-neutral-700 mb-4">
+        <Heading level="h2" className="!font-jxd-medium text-slate-700 mb-4" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
           Completed Orders
         </Heading>
 
