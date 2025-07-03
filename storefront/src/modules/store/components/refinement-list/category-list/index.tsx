@@ -70,7 +70,7 @@ const CategoryList = ({
           (cat) => cat.id === currentCategory.parent_category_id
         ) as HttpTypes.StoreProductCategory
       }
-      return level * 4
+      return level * 16
     },
     [categories]
   )
@@ -79,26 +79,37 @@ const CategoryList = ({
     const hasChildren = category.category_children.length > 0
     const isExpanded = expandedCategories.includes(category.id)
     const paddingLeft = getCategoryMarginLeft(category)
+    const isCurrent = isCurrentCategory(category.handle)
 
     return (
       <li key={category.id}>
-        <div className={`flex items-center gap-2 mb-2 pl-${paddingLeft}`}>
+        <div className="flex items-center gap-2 mb-2" style={{ paddingLeft: `${paddingLeft}px` }}>
           {hasChildren ? (
-            <div className="flex items-center gap-2 hover:text-neutral-700">
-              <button onClick={() => toggleCategory(category.id)}>
+            <div className="flex items-center gap-2 w-full">
+              <button 
+                onClick={() => toggleCategory(category.id)}
+                className="p-1 hover:bg-gray-100 rounded"
+              >
                 {isExpanded ? (
-                  <SquareMinus className="h-3 mx-1" />
+                  <SquareMinus className="h-3 w-3 text-gray-600" />
                 ) : (
-                  <SquarePlus className="h-3 mx-1" />
+                  <SquarePlus className="h-3 w-3 text-gray-600" />
                 )}
               </button>
               <LocalizedClientLink
                 href={`/categories/${category.handle}${
                   searchParams.size ? `?${searchParams.toString()}` : ""
                 }`}
-                className="flex gap-2 items-center hover:text-neutral-700"
+                className={`flex-1 flex items-center justify-between py-1 transition-colors ${
+                  isCurrent ? 'text-[#FF000F]' : 'text-gray-700 hover:text-[#FF000F]'
+                }`}
               >
-                {category.name} ({category.products?.length})
+                <span className="!font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+                  {category.name}
+                </span>
+                <span className="!font-jxd-light text-xs text-gray-500" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+                  ({category.products?.length})
+                </span>
               </LocalizedClientLink>
             </div>
           ) : (
@@ -106,10 +117,19 @@ const CategoryList = ({
               href={`/categories/${category.handle}${
                 searchParams.size ? `?${searchParams.toString()}` : ""
               }`}
-              className="flex gap-2 items-center hover:text-neutral-700 text-start hover:cursor-pointer"
+              className={`flex items-center gap-2 w-full py-1 transition-colors ${
+                isCurrent ? 'text-[#FF000F]' : 'text-gray-700 hover:text-[#FF000F]'
+              }`}
             >
-              <Radio checked={isCurrentCategory(category.handle)} />
-              {category.name} ({category.products?.length})
+              <Radio checked={isCurrent} />
+              <div className="flex-1 flex items-center justify-between">
+                <span className="!font-jxd-medium" style={{ fontFamily: 'JXD-Medium, sans-serif' }}>
+                  {category.name}
+                </span>
+                <span className="!font-jxd-light text-xs text-gray-500" style={{ fontFamily: 'JXD-Light, sans-serif' }}>
+                  ({category.products?.length})
+                </span>
+              </div>
             </LocalizedClientLink>
           )}
         </div>
@@ -124,7 +144,6 @@ const CategoryList = ({
               })
               .filter(Boolean)
               .sort((a, b) => {
-                // 按 rank 字段排序，如果 rank 不存在则按创建时间排序
                 const rankA = a!.rank !== undefined && a!.rank !== null ? a!.rank : 999999;
                 const rankB = b!.rank !== undefined && b!.rank !== null ? b!.rank : 999999;
                 
@@ -132,7 +151,6 @@ const CategoryList = ({
                   return rankA - rankB;
                 }
                 
-                // 如果 rank 相同，按创建时间排序
                 return new Date(a!.created_at || 0).getTime() - new Date(b!.created_at || 0).getTime();
               })
               .map((childCategory) => renderCategory(childCategory!))}
@@ -145,17 +163,18 @@ const CategoryList = ({
   return (
     <Container className="flex flex-col p-0 divide-y divide-neutral-200">
       <div className="flex justify-between items-center p-3">
-        <Text className="text-sm font-medium">Categories</Text>
+        <Text className="!font-jxd-bold text-gray-800" style={{ fontFamily: 'JXD-Bold, sans-serif' }}>Categories</Text>
         {pathname.includes("/categories") && (
           <LocalizedClientLink
             href="/store"
-            className="text-xs text-neutral-500 hover:text-neutral-700"
+            className="text-xs !font-jxd-regular text-[#FF000F] hover:text-[#CC0000]"
+            style={{ fontFamily: 'JXD-Regular, sans-serif' }}
           >
             Clear
           </LocalizedClientLink>
         )}
       </div>
-      <ul className="flex flex-col gap-3 text-sm p-3 text-neutral-500">
+      <ul className="flex flex-col gap-1 text-sm p-3">
         {categories
           .filter((cat) => cat.parent_category_id === null)
           .sort((a, b) => {

@@ -31,7 +31,10 @@ export default async function ProductPreview({
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
       <div
         data-testid="product-wrapper"
-        className="flex flex-col relative w-full h-[520px] overflow-hidden bg-white border border-gray-100 group-hover:border-[#FF000F] transition-all ease-in-out duration-300 group-hover:shadow-[0_8px_32px_rgba(255,0,15,0.1)]"
+        className={clx("flex flex-col relative w-full overflow-hidden bg-white border border-gray-100 group-hover:border-[#FF000F] transition-all ease-in-out duration-300 group-hover:shadow-[0_8px_32px_rgba(255,0,15,0.1)]", {
+          "h-[520px]": isFeatured,
+          "h-[510px]": !isFeatured,
+        })}
         style={{ borderRadius: '8px' }}
       >
         {/* 产品图片区域 */}
