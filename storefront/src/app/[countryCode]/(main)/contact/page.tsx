@@ -7,14 +7,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="content-container py-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      <div className="content-container py-12">
+        <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center">Contact Us</h1>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
+          <div className="bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-gray-900">Get in Touch</h2>
             <p className="text-gray-600 mb-8">
               We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
@@ -51,8 +52,8 @@ export default function ContactPage() {
           </div>
           
           {/* Contact Form */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
+          <div className="bg-white rounded-lg shadow-sm p-8">
+            <h2 className="text-2xl font-semibold mb-6 text-gray-900">Send us a Message</h2>
             
             <form className="space-y-6">
               <div>
@@ -64,7 +65,7 @@ export default function ContactPage() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF000F] focus:border-transparent transition-colors duration-200"
                 />
               </div>
               
@@ -77,7 +78,7 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF000F] focus:border-transparent transition-colors duration-200"
                 />
               </div>
               
@@ -89,7 +90,7 @@ export default function ContactPage() {
                   type="text"
                   id="company"
                   name="company"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF000F] focus:border-transparent transition-colors duration-200"
                 />
               </div>
               
@@ -102,7 +103,7 @@ export default function ContactPage() {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF000F] focus:border-transparent transition-colors duration-200"
                 />
               </div>
               
@@ -115,13 +116,13 @@ export default function ContactPage() {
                   name="message"
                   rows={6}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF000F] focus:border-transparent transition-colors duration-200"
                 ></textarea>
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white py-3 px-4 rounded-md hover:bg-red-700 transition-colors duration-300 font-medium"
+                className="w-full bg-[#FF000F] text-white py-3 px-4 rounded-md hover:bg-red-700 transition-colors duration-300 font-medium shadow-sm"
               >
                 Send Message
               </button>
@@ -130,5 +131,6 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </div>
   )
-} 
+}

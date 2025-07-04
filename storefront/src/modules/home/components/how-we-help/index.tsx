@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import LocalizedClientLink from "@/modules/common/components/localized-client-link"
 
 const services = [
   {
@@ -70,8 +71,9 @@ const HowWeHelp = () => {
 
         {/* Bottom CTA Button - matching your brand style */}
         <div className="text-center mt-12">
-          <button
-            className="font-jxd-regular text-white text-sm rounded-full transition-all duration-300 flex items-center justify-center mx-auto px-8 py-3"
+          <LocalizedClientLink
+            href="/service"
+            className="font-jxd-regular text-white text-sm rounded-full transition-all duration-300 inline-flex items-center justify-center px-8 py-3"
             style={{ 
               backgroundColor: isButtonHovered ? '#BB2924' : '#FF000F'
             }}
@@ -82,11 +84,11 @@ const HowWeHelp = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
             <span>View All Services</span>
-          </button>
+          </LocalizedClientLink>
         </div>
       </div>
     </div>
   )
 }
 
-export default HowWeHelp 
+export default HowWeHelp

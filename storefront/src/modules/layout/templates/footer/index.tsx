@@ -97,40 +97,34 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus text-white font-semibold" style={{ fontFamily: 'JXD-Bold', fontSize: '16px' }}>Medusa</span>
+              <span className="txt-small-plus text-white font-semibold" style={{ fontFamily: 'JXD-Bold', fontSize: '16px' }}>Company</span>
               <ul className="grid grid-cols-1 gap-y-2 text-gray-200 txt-small">
                 <li>
-                  <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/about"
                     className="hover:text-white"
                     style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}
                   >
-                    GitHub
-                  </a>
+                    Who we are
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/service"
                     className="hover:text-white"
                     style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}
                   >
-                    Documentation
-                  </a>
+                    Services
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/medusajs/b2b-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/news"
                     className="hover:text-white"
                     style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}
                   >
-                    Source code
-                  </a>
+                    News
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>

@@ -70,8 +70,9 @@ const OurBrands = () => {
 
         {/* Bottom CTA Button */}
         <div className="text-center mt-12">
-          <button
-            className="font-jxd-regular text-white text-sm rounded-full transition-all duration-300 flex items-center justify-center mx-auto px-8 py-3"
+          <a
+            href="/brands"
+            className="font-jxd-regular text-white text-sm rounded-full transition-all duration-300 inline-flex items-center justify-center px-8 py-3"
             style={{ 
               backgroundColor: isButtonHovered ? '#BB2924' : '#FF000F'
             }}
@@ -82,11 +83,11 @@ const OurBrands = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
             <span>View All Brands</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   )
 }
 
-export default OurBrands 
+export default OurBrands

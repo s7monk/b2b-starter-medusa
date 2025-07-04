@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import LocalizedClientLink from "@/modules/common/components/localized-client-link"
 
 const WhoWeAre = () => {
   const [isButtonHovered, setIsButtonHovered] = useState(false)
@@ -46,8 +47,9 @@ const WhoWeAre = () => {
               most affordable cost.
             </p>
 
-            <button
-              className="font-jxd-regular text-white text-sm rounded-full transition-all duration-300 flex items-center justify-center px-8 py-3"
+            <LocalizedClientLink
+              href="/about"
+              className="font-jxd-regular text-white text-sm rounded-full transition-all duration-300 flex items-center justify-center px-8 py-3 inline-flex"
               style={{ 
                 backgroundColor: isButtonHovered ? '#BB2924' : '#FF000F'
               }}
@@ -58,7 +60,7 @@ const WhoWeAre = () => {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </LocalizedClientLink>
           </div>
         </div>
       </div>
@@ -66,4 +68,4 @@ const WhoWeAre = () => {
   )
 }
 
-export default WhoWeAre 
+export default WhoWeAre
