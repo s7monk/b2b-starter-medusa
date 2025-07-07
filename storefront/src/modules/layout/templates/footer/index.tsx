@@ -21,7 +21,7 @@ export default async function Footer() {
     <footer className="w-full" style={{ backgroundColor: '#696969' }}>
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-12">
-          <div className="flex-1">
+          <div className="flex-1 max-w-sm">
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus text-white hover:text-gray-200 uppercase mb-4 block"
@@ -34,7 +34,7 @@ export default async function Footer() {
               <SocialLinks />
             </div>
           </div>
-          <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3 flex-1">
+          <div className="text-small-regular gap-6 md:gap-x-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 flex-1 ml-8">
             {product_categories && product_categories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
                 <span className="txt-small-plus text-white font-semibold" style={{ fontFamily: 'JXD-Bold', fontSize: '16px' }}>
@@ -127,6 +127,30 @@ export default async function Footer() {
                   </LocalizedClientLink>
                 </li>
               </ul>
+            </div>
+            
+            <div className="flex flex-col gap-y-2 lg:w-56">
+              <span className="txt-small-plus text-white font-semibold" style={{ fontFamily: 'JXD-Bold', fontSize: '16px' }}>
+                Subscribe Newsletter
+              </span>
+              <p className="text-gray-200 mb-3" style={{ fontFamily: 'JXD-Light', fontSize: '16px' }}>
+                Get updates on automation solutions
+              </p>
+              <form className="flex flex-col gap-y-3">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="px-4 py-3 bg-white border border-gray-300 text-gray-800 placeholder-gray-500 rounded-md focus:outline-none focus:border-[#FF000F] focus:ring-1 focus:ring-[#FF000F] transition-all duration-200"
+                  style={{ fontFamily: 'JXD-Light', fontSize: '14px' }}
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-3 bg-[#FF000F] text-white hover:bg-[#E6000D] rounded-md transition-all duration-200 hover:shadow-md"
+                  style={{ fontFamily: 'JXD-Bold', fontSize: '14px' }}
+                >
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
         </div>
