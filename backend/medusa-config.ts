@@ -15,9 +15,9 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
-    redisUrl: "redis://117.72.100.207:6379",
+    redisUrl: process.env.REDIS_URL,
     redisOptions: {
-      password: "paimon123456"
+      password: process.env.REDIS_PASSWORD
     },
     databaseDriverOptions: {
       connection: {
