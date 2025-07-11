@@ -32,6 +32,14 @@ module.exports = defineConfig({
         optimizeDeps: {
           include: ["i18next", "react-i18next", "i18next-browser-languagedetector", "i18next-http-backend"],
         },
+        build: {
+          rollupOptions: {
+            input: {
+              main: 'index.html', // Default entry
+              // Add custom routes if needed to ensure inclusion
+            }
+          }
+        }
       }
     },
     outDir: '.medusa/server/public/admin',
