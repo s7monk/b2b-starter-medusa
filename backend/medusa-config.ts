@@ -25,6 +25,17 @@ module.exports = defineConfig({
       }
     }
   },
+  admin: {
+    backendUrl: process.env.MEDUSA_BACKEND_URL || "http://117.72.100.207:9001/",
+    vite: () => {
+      return {
+        optimizeDeps: {
+          include: ["i18next", "react-i18next", "i18next-browser-languagedetector", "i18next-http-backend"],
+        },
+      }
+    },
+    outDir: '.medusa/server/public/admin',
+  },
   modules: {
     [COMPANY_MODULE]: {
       resolve: "./modules/company",

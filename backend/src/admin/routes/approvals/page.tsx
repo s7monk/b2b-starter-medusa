@@ -18,7 +18,7 @@ const Approvals = () => {
     <>
       <Container className="flex flex-col p-0 overflow-hidden">
         <Heading className="p-6 pb-0 font-sans font-medium h1-core">
-          {pageTitle}
+          {pageTitle as string}
         </Heading>
         <ApprovalsTable />
       </Container>
