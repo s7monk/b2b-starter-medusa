@@ -25,6 +25,7 @@ module.exports = defineConfig({
       }
     }
   },
+  admin: { disable: true },
   modules: {
     [COMPANY_MODULE]: {
       resolve: "./modules/company",
