@@ -2174,6 +2174,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@medusajs/admin-shared@npm:2.8.7":
+  version: 2.8.7
+  resolution: "@medusajs/admin-shared@npm:2.8.7"
+  checksum: 10c0/05d6543a169771c20edfc1dd82eebb3e08cbf80dc8ecbb2da826a236f26bd5aaebfca04e39d15ef765426411bc7a2e0bad8a2233bc3848bcc7bb92ad9a943bb6
+  languageName: node
+  linkType: hard
+
 "@medusajs/admin-vite-plugin@npm:2.8.3":
   version: 2.8.3
   resolution: "@medusajs/admin-vite-plugin@npm:2.8.3"
@@ -2392,9 +2399,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/dashboard@npm:2.8.3":
-  version: 2.8.3
-  resolution: "@medusajs/dashboard@npm:2.8.3"
+"@medusajs/dashboard@npm:@s7monk/admin-dashboard@2.8.9, @s7monk/admin-dashboard@npm:2.8.9":
+  version: 2.8.9
+  resolution: "@s7monk/admin-dashboard@npm:2.8.9"
   dependencies:
     "@ariakit/react": "npm:^0.4.15"
     "@dnd-kit/core": "npm:^6.1.0"
@@ -2402,10 +2409,10 @@ __metadata:
     "@dnd-kit/utilities": "npm:^3.2.2"
     "@hookform/error-message": "npm:^2.0.1"
     "@hookform/resolvers": "npm:3.4.2"
-    "@medusajs/admin-shared": "npm:2.8.3"
-    "@medusajs/icons": "npm:2.8.3"
-    "@medusajs/js-sdk": "npm:2.8.3"
-    "@medusajs/ui": "npm:4.0.13"
+    "@medusajs/admin-shared": "npm:2.8.7"
+    "@medusajs/icons": "npm:2.8.7"
+    "@medusajs/js-sdk": "npm:2.8.7"
+    "@medusajs/ui": "npm:4.0.17"
     "@tanstack/react-query": "npm:5.64.2"
     "@tanstack/react-table": "npm:8.20.5"
     "@tanstack/react-virtual": "npm:^3.8.3"
@@ -2431,7 +2438,7 @@ __metadata:
     react-jwt: "npm:^1.2.0"
     react-router-dom: "npm:6.20.1"
     zod: "npm:3.22.4"
-  checksum: 10c0/614fe55194a9599c7ae224079f1b6c2f7e89d54e266fa9053b4c07fc707bd98e62e53dc1918dc303f32c21457732d8a3afb85dc4ce2ac559cfdb311607bf2816
+  checksum: 10c0/6c033fa5dd9bcd48146d596c48ad5d01b88d142175b0b72ea410c15f71d71bfed93ba0de914abbb13d80f6e78ea1b7ff08acae0bd6d22da566bbcfa0e7d19445
   languageName: node
   linkType: hard
 
@@ -2570,12 +2577,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/icons@npm:2.8.3":
-  version: 2.8.3
-  resolution: "@medusajs/icons@npm:2.8.3"
+"@medusajs/icons@npm:2.8.7":
+  version: 2.8.7
+  resolution: "@medusajs/icons@npm:2.8.7"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-  checksum: 10c0/4c16b1f285391e7de8bcf4862993a4cccd88a375524def9f04ffe3f37397de1f3a53df6c6d282c38afe8ce940c0870d663a0ec7566789d5cb0eddd616a61bea2
+  checksum: 10c0/deabf81e38e1b24e82f1814ed791a947305f0ffe79203c8a72c51c97139286ff3237a15de216a628b49eb8c143efede5e09f5a0895a989d9307add7d2120e2c3
   languageName: node
   linkType: hard
 
@@ -2623,6 +2630,17 @@ __metadata:
     fetch-event-stream: "npm:^0.1.5"
     qs: "npm:^6.12.1"
   checksum: 10c0/5169f4e8df235f4298310694169c67af13ac7573477b2cae046e2cf65351d7109fc5c0959a42d3939f4ef343cd5c2a919a31be29a28fe9f51206f4b239229565
+  languageName: node
+  linkType: hard
+
+"@medusajs/js-sdk@npm:2.8.7":
+  version: 2.8.7
+  resolution: "@medusajs/js-sdk@npm:2.8.7"
+  dependencies:
+    "@medusajs/types": "npm:2.8.7"
+    fetch-event-stream: "npm:^0.1.5"
+    qs: "npm:^6.12.1"
+  checksum: 10c0/1a603b97c5f143074d6e30a5ecee66fdaaf00ff8206f3e77c8986d5c344a6d0d6b8012d7250223a3befde3758348be851715dad125256f717f3afcd0c93900d8
   languageName: node
   linkType: hard
 
@@ -3046,6 +3064,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@medusajs/types@npm:2.8.7":
+  version: 2.8.7
+  resolution: "@medusajs/types@npm:2.8.7"
+  dependencies:
+    bignumber.js: "npm:^9.1.2"
+  peerDependencies:
+    awilix: ^8.0.1
+    ioredis: ^5.4.1
+    vite: ^5 || ^6
+  peerDependenciesMeta:
+    ioredis:
+      optional: true
+    vite:
+      optional: true
+  checksum: 10c0/67034197c0dc864dc9935543edcc2bb0bccb699e038c50c0bf4cdec78816909f837414741a428810dc5b81dcb0bd791395cceb0ea81b9c4357af1d54fe2d2312
+  languageName: node
+  linkType: hard
+
 "@medusajs/ui-preset@npm:2.8.3":
   version: 2.8.3
   resolution: "@medusajs/ui-preset@npm:2.8.3"
@@ -3058,11 +3094,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/ui@npm:4.0.13":
-  version: 4.0.13
-  resolution: "@medusajs/ui@npm:4.0.13"
+"@medusajs/ui@npm:4.0.17":
+  version: 4.0.17
+  resolution: "@medusajs/ui@npm:4.0.17"
   dependencies:
-    "@medusajs/icons": "npm:2.8.3"
+    "@medusajs/icons": "npm:2.8.7"
     "@tanstack/react-table": "npm:8.20.5"
     clsx: "npm:^1.2.1"
     copy-to-clipboard: "npm:^3.3.3"
@@ -3078,7 +3114,7 @@ __metadata:
   peerDependencies:
     react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
     react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-  checksum: 10c0/07609c64e01a182e0f1419de8a0626328c73912e24ab3b477010588392cc48f59a4e5d94095def8c3d7541f6cd16c1b0a55cb3ddbfa0240fbe7b8aebb225ba54
+  checksum: 10c0/5ada360b66267d9b7886683f9f01bac52a0015a648468de66d4b93964ba71df095953206ae32b488c6c8a8bc7388612009e96501ec5a5e00605de6315d8730b2
   languageName: node
   linkType: hard
 
@@ -12149,6 +12185,7 @@ __metadata:
     "@mikro-orm/knex": "npm:6.4.3"
     "@mikro-orm/migrations": "npm:6.4.3"
     "@mikro-orm/postgresql": "npm:6.4.3"
+    "@s7monk/admin-dashboard": "npm:2.8.9"
     "@swc/core": "npm:^1.5.7"
     "@swc/jest": "npm:^0.2.36"
     "@types/jest": "npm:^29.5.14"
